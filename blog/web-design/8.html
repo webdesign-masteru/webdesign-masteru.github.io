@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="canonical" href="https://webdesign-masteru.github.io/blog/web-design/8.html">
+  <meta name="generator" content="Jekyll v">
+
+  <title>Создание дизайна Landing Page для студии разработки сайтов (Урок 1)</title>
+  <meta name="description" content="Здравствуйте, веб-мастера и веб-мастерята. Сегодня мы открываем серию уроков по созданию дизайна Landing Page (или в простонародье, LP) для студии разработки сайтов.">
+
+  <link rel="icon" href="https://webdesign-masteru.github.io/favicon.ico?v=15" type="image/x-icon">
+  <meta property="og:image" content="../../public/images/thumbs/web-design/sozdaniye-dizaina-landing-page-dlya-studii-web-design/sozdaniye-dizaina-landing-page-dlya-studii-web-design-cover.jpg">
+
+  <link rel="stylesheet" href="../../styles/index.css?v=15">
+  
+  <script src="../../scripts/dist/main.js?v=15" defer></script>
+  
+  <script>/* no flicker */document.documentElement.classList.add(localStorage.getItem('mode') === 'auto' ? (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : localStorage.getItem('mode'))</script>
+
+</head>
+
+<body>
+
+  <header class="main-head">
+
+    <div class="container-fluid">
+
+      <div class="row">
+
+        <div class="col-md-6">
+          <div class="mobile-pannel d-xl-none d-lg-none d-md-none">
+            <div class="toggler"><button title="Переключить тему"></button></div>
+            <div class="toggle-mnu"><span></span></div>
+          </div>
+        
+          <a href="../../index.html" class="logo"><img src="../../assets/images/logo-site.svg" alt="WebDesign Master"></a>
+        
+        </div>
+
+        <div class="col-md-6 d-none d-md-block d-lg-block d-xl-block">
+          <div class="toggler"><button title="Переключить тему"></button></div>
+                    <div class="social">
+            <a title="ВКонтакте" href="https://vk.com/jediweb" target="_blank"><i class="fa fa-vk"></i></a>
+            <a title="Телеграм" href="https://t.me/jediweb" target="_blank"><i class="fa custom-tg"></i></a>
+            <a title="YouTube" href="https://youtube.com/@wdm" target="_blank"><i class="fa fa-youtube-play"></i></a>
+            <a title="GitHub" href="https://github.com/webdesign-masteru" target="_blank"><i class="fa fa-github"></i></a>
+            <a title="Дзен" href="https://dzen.ru/jediweb" target="_blank"><i class="fa custom-dzen"></i></a>
+          </div>
+
+          <div class="courses-link">
+            <a href="../../courses/index.html"><i class="fa fa-diamond"></i>Курсы</a>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="mobile-menu"></div>
+
+    </div>
+
+  </header>
+
+
+  <div class="content">
+    <div class="container-fluid">
+
+      <div class="row">
+
+        <div class="col-md-8">
+
+          <article class="list-item single-page">
+  <div class="item-link">
+
+    
+    <div class="item-img-wrap post-img">
+      <img class="img-responsive" src="../../public/images/thumbs/web-design/sozdaniye-dizaina-landing-page-dlya-studii-web-design/sozdaniye-dizaina-landing-page-dlya-studii-web-design.jpg" alt="Создание дизайна Landing Page для студии разработки сайтов (Урок 1)">
+    </div>
+    
+
+    <div class="item-content">
+
+    <div class="td">
+        <a href="../../blog/web-design/index.html" class="item-icon hidden-xs" title="Категория: Веб-дизайн"><i class="fa fa-paint-brush"></i></a>
+      </div>
+      <div class="td article-title"><h1>Создание дизайна Landing Page для студии разработки сайтов (Урок 1)</h1></div>
+    
+
+      <div class="article-content">
+
+        <p>Здравствуйте, веб-мастера и веб-мастерята.</p>
+
+<p>Сегодня мы открываем серию уроков по <strong>созданию дизайна Landing Page</strong> (или в простонародье, LP) для студии разработки сайтов.</p>
+
+<p>Почему мы будем создавать дизайн именно для студии по созданию сайтов? Все просто - это именно та область, в которой можно по полной реализовать флэтовый стиль, не прибегая к использованию сторонних картинок и иллюстраций, все будем рисовать сами. Оторвемся по-полной.</p>
+
+<p>Сразу предупреждаю - при создании любого дизайна я руководствуюсь таким понятием, как "Прогрессивный JPEG". То есть мы будем рисовать от простого к сложному. Как картина, которая загружается в браузере - сначала некрасивая и в квадратиках, а потом все красивее и красивее по мере загрузки. Так что прошу не судить по эстетическому виду прототипа о конечном результате. Как это любят делать многие клиенты. Результат будет хорошим.</p>
+
+<p>Итак, с чего начинается создание дизайна сайта? Конечно-же с прототипа. Его-то мы и будем рисовать в данном уроке. Прототип - это блок-схема расположения различных элементов на странице. Важной задачей прототипа является правильно определить структуру дизайна и правильно сформировать текстовое содержимое. Без рыбы.</p>
+
+<p>Без прототипа ни куда. Можно, конечно взять схему с какого-то готового сайта студии, но так делать нельзя. И дело тут даже не в нарушении прав, просто такой сайт работать не будет.</p>
+
+<blockquote>Вася! Почему наш сайт получился как у всех? <br>
+Ну как, все так делают и пусть у нас такой-же будет.
+</blockquote>
+
+<p>Это большая ошибка. В том-то и дело, что все копируют друг у друга, абсолютно не вникая в смысл структуры. Копируют, по большей мере не успешные сайты. А если копируют успешный, то потом замучаются объяснять клиентам, почему их сайт 1 в 1 похож на сайт студии "Петя Продакшен".</p>
+
+<p>Для создания успешного дизайна сайта нужен анализ. В первую очередь, нужно определить аудиторию. В нашем случае - это представители малого и среднего бизнеса, т. к. мы делаем дизайн для региональной студии. А такие представители хотят чего? Правильно - денег. Побольше заработать с помощью сайта и как можно быстрее окупить затраты на разработку.</p>
+
+<p>Такой несложный анализ позволяет нам двигаться дальше. Такие "быстрые" бизнесмены хотят побыстрее увидеть то, что вы уже сделали, то-есть выдержки лучших работ из портфолио вашей студии. Это будут узнаваемые бренды, для которых вы делали сайт. Ну, или однажды поправили форму заявки по срочному заказу, тоже пойдет.</p>
+
+<p>Конечно, следующее, что их интересует - это цена разработки. Но ее мы писать не будем, оставим это менеджерам компании, которые будут принимать звонки и разговаривать с клиентом. Можно, конечно следующим экраном сделать информацию о расценках, но в данном уроке мы этого делать не будем.</p>
+
+<p>После шапки с выдержками работ, мы сделаем экран...</p>
+
+<p>Так, стоп. Если кто не в курсе, что такое экран Landing Page, объясню. Структура продающей страницы разделяется на экраны - это такие секции, которые, в среднем, занимают один экран монитора ноутбука или компа.</p>
+
+<p>Итак, следующий экран - это профессионализм. Клиент хочет знать, на сколько студия профессиональна, тут мы разместим инфографику и убедительный текст. Какой именно, мы подумаем позже.</p>
+
+<p>После экрана "Профессионализм", назовем его пока так, разместим секцию "Как мы работаем". Конечно, толстый дядька бизнесмен хочет знать, какого такого веселого он должен заказывать у нас сайт? Что это ему даст, как поможет его бизнесу. И тут-то у нас наготове весомые аргументы, от которых просто так не отвертишься.</p>
+
+<p>Последней секцией или экраном - разместим контакты и форму обратной связи.</p>
+
+<p>Итак, у нас получилось 4 экрана:</p>
+
+<ol>
+    <li>Шапка, выдержки из портфолио лучших работ;</li>
+    <li>Мы - профессионалы;</li>
+    <li>Как мы работаем;</li>
+    <li>Контакты.</li>
+</ol>
+
+<h4>Рисуем прототип</h4>
+
+<p><strong>Прототип</strong> - это такая штука, которая схематично отображает структуру сайта и текст. Обязательно прототипы нужно наполнять живым, рабочим текстом, а не рыбой.</p>
+
+<p>Прототип можно рисовать в любой программе для создания прототипов. Я же рисую или в фотошопе или в Inkskape. <strong>Landing Page</strong> - это одностраничный простой достаточно сайт, поэтому, нет смысла использовать платные профессиональные инструменты, типа Axure.</p>
+
+<p>У меня получился такой вот несложный прототип страницы, нарисованный в Inkscape. Далее поясню каждый элемент прототипа. Так, как студия мы крутая, текст у нас будет белым по темному.</p>
+
+<img src="../../public/images/blog/web-design/dizain-landing-page-dlya-studii/886998.png" title="Прототип сайта"  alt="Прототип сайта" />
+
+<p>Что мы видим в прототипе.</p>
+
+<ul>
+    <li>В верхней ленте шапки - <strong>логотип</strong> (нарисуем позже), <strong>меню</strong> и <strong>телефон</strong> с обратным звонком. Обратный звонок обязателен на любом сайте;</li>
+    <li>Шапка - пишем красивый и простой <strong>заголовок</strong>. Смотрим <a href="../../blog/web-design/3.html" target="_blank">7 простых советов о том, как создать шапку для продающего сайта</a>. Но форма обратной связи, в нашем примере будет находиться в разделе "Контакты";</li>
+    <li><strong>Слайдер</strong> с самыми крутыми работами из основного портфолио;</li>
+    <li>Наш опыт - <strong>текст + иллюстрация</strong>. Все иллюстрации и картинки в прототипах обозначаются фигурой, перечеркнутой крестом. Кроме того, в данной секции видим кнопку "<strong>Заказать сайт</strong>". Такие кнопки должны быть в теле Landing Page, но злоупотреблять их количеством не стоит;</li>
+    <li>Как мы работаем. Тут мы схематично показываем <strong>этапы работы</strong>. Вообще, в продающих страницах можно не бояться переборщить с инфорграфикой и схемами. Пользователи любят инфографику.</li>
+    <li>Контакты. Тут все стандартно - в конце обязательно указываем <strong>контакты</strong>. Можно было запилить Яндекс.Карту, но как нибудь в другой раз.</li>
+</ul>
+
+<p>На этом урок окончен. До встречи в следующих уроках. А в следующем уроке мы рассмотрим создание дизайна шапки нашего Landing Page.</p>
+
+                <div class="premium">
+          <div class="row">
+
+            <div class="col-md-12">
+              <h4>Премиум уроки от WebDesign Master</h4>
+            </div>
+
+            <div class="col-md-4 col-sm-6">
+              <a href="../../courses/jekyll/index.html" class="premium-item">
+                <span class="premium-img-wrap"><img src="../../public/images/premium/jekyll.jpg" alt="Курс по созданию сайта от А до Я на Jekyll" class="img-responsive"></span>
+                <p>Создание сайта от А до Я. Комплексный курс</p>
+              </a>
+            </div>
+
+            <div class="col-md-4 col-sm-6">
+              <a href="../../courses/webdesign/index.html" class="premium-item">
+                <span class="premium-img-wrap"><img src="../../public/images/premium/webdesign.jpg" alt="Большой комплексный курс по современному веб-дизайну" class="img-responsive"></span>
+                <p>Веб-дизайн с нейросетями для начинающих</p>
+              </a>
+            </div>
+
+            <div class="col-md-4 col-sm-6">
+              <a href="../../courses/freelance/index.html" class="premium-item">
+                <span class="premium-img-wrap"><img src="../../public/images/premium/freelance.jpg" alt="Фриланс для начинающих" class="img-responsive"></span>
+                <p>Я - фрилансер! Базовый курс для начинающих</p>
+              </a>
+            </div>
+
+          </div>
+        </div>
+
+
+        <div class="read-more">
+          <h4>Другие уроки по теме «Веб-дизайн»</h4>
+          <ul>
+            
+            
+            
+              
+              <li><a href="../../blog/web-design/web-design-course.html">Веб-дизайн для начинающих. Полный курс</a></li>
+              
+            
+              
+              <li><a href="../../blog/web-design/sozdanie-dizaina-v-fgma-woodtech.html">Мастер-класс по веб-дизайну в Figma (Woodtech)</a></li>
+              
+            
+              
+              <li><a href="../../blog/web-design/figma-bootstrap-grid.html">Как создать сетку в Figma. Подробный урок</a></li>
+              
+            
+              
+              <li><a href="../../blog/web-design/s-chego-nachat-web-design.html">С чего начать изучение веб-дизайна</a></li>
+              
+            
+              
+              <li><a href="../../blog/web-design/master-web-design-7.html">Мастер-класс по созданию дизайна сайта салона красоты </a></li>
+              
+            
+              
+              <li><a href="../../blog/web-design/master-web-design-5.html">Мастер-класс по созданию дизайна сайта пиццерии</a></li>
+              
+            
+          </ul>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</article>
+
+
+        </div>
+
+        <div class="col-md-4 col-aside">
+
+  <aside class="site-aside">
+
+
+
+<div class="box box-search">
+
+<form class="search" action="https://www.google.com/search" target="_blank">
+  <div>
+    <input type="text" name="q" size="55" placeholder="Поиск по сайту..." required>
+    <input type="hidden" name="sitesearch" value="https://webdesign-masteru.github.io">
+    <button type="submit">
+      <i class="fa fa-search"></i>
+    </button>
+  </div>
+</form>
+
+
+    </div>
+
+    <nav class="box box-mnu">
+      <p class="mnu-header">Разделы сайта:</p>
+      <ul class="list-unstyled box-dashed main-menu">
+
+  <li class="d-lg-none">
+    <a href="../../courses/index.html"><i class="fa fa-diamond"></i> Курсы</a>
+  </li>
+
+  <li>
+    <a href="../../blog/html-css/index.html"><i class="fa fa-code"></i> Веб-разработка</a>
+  </li>
+
+  <li>
+    <a href="../../blog/web-design/index.html"><i class="fa fa-paint-brush"></i> Веб-дизайн</a>
+  </li>
+
+  <li>
+    <a href="../../blog/tools/index.html"><i class="fa fa-cogs"></i> Инструменты</a>
+  </li>
+
+  <li>
+    <a href="../../blog/cms/index.html"><i class="fa fa-folder-open-o"></i> CMS/Framework</a>
+  </li>
+
+</ul>
+
+    </nav>
+
+    <nav class="box box-mnu services-mnu">
+      <p class="mnu-header">Полезные ресурсы:</p>
+      <ul class="list-unstyled">
+
+  <li>
+    <a href="../../blog/tools/wsl-nodejs-new.html"><i class="fa fa-cogs"></i> Установка WSL и окружения</a>
+  </li>
+
+  <li>
+    <a href="../../blog/docs/webdev-without-wsl.html"><i class="fa fa-cogs"></i> Настройка окружения без WSL</a>
+  </li>
+
+  <li>
+    <a href="../../blog/tools/hosting-lesson.html"><i class="fa fa-server"></i> Работа с хостингом от А до Я</a>
+  </li>
+
+  <li>
+    <a href="../../blog/tools/vscode.html"><i class="fa custom-vscode-3"></i> Настройка VS Code</a>
+  </li>
+
+  <li>
+    <a href="../../blog/tools/cubic-bezier/index.html"><i class="fa custom-bezier"></i> Cubic-Bezier Generator</a>
+  </li>
+
+  <li>
+    <a href="../../blog/tools/lazy-load/index.html"><i class="fa fa-image"></i> Lazy Load Placeholder</a>
+  </li>
+
+  <li>
+    <a href="../../blog/docs/gulp-documentation.html"><i class="fa fa-file-text-o"></i> Документация Gulp</a>
+  </li>
+
+</ul>
+
+    </nav>
+
+    <div class="box box-sidebar">
+      <div id="vk_groups"></div>
+    </div>
+
+  </aside>
+
+
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <footer class="main-foot">
+    <div class="container-fluid">
+
+      <span class="year"></span> © WebDesign Master
+
+    </div>
+    <div class="top" title="Наверх"><i class="fa fa-angle-double-up"></i></div>
+  </footer>
+
+  <script>(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return}}k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window,document,"script","https://mc.yandex.ru/metrika/tag.js","ym");ym(100695574,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true,webvisor:true});</script><noscript><div><img src="https://mc.yandex.ru/watch/100695574" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+
+
+</body>
+</html>
+

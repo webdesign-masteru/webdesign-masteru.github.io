@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="canonical" href="https://webdesign-masteru.github.io/blog/tools/cubic-bezier/">
+  <meta name="generator" content="Jekyll v">
+
+  <title>Cubic-Bezier Generator</title>
+  <meta name="description" content="Generate timing-functions or create customized functions for transition and animations">
+
+  <link rel="icon" href="https://webdesign-masteru.github.io/favicon.ico?v=15" type="image/x-icon">
+  
+
+  <link rel="stylesheet" href="../../../styles/index.css?v=15">
+  <link rel="stylesheet" href="../../../blog/tools/cubic-bezier/style.css?v=15">
+  <script src="../../../scripts/dist/main.js?v=15" defer></script>
+  <script src="../../../blog/tools/cubic-bezier/cubic-bezier.js?v=15" defer></script>
+  <script>/* no flicker */document.documentElement.classList.add(localStorage.getItem('mode') === 'auto' ? (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : localStorage.getItem('mode'))</script>
+
+</head>
+
+<body>
+
+  <header class="main-head">
+
+    <div class="container-fluid">
+
+      <div class="row">
+
+        <div class="col-md-6">
+          <div class="mobile-pannel d-xl-none d-lg-none d-md-none">
+            <div class="toggler"><button title="Переключить тему"></button></div>
+            <div class="toggle-mnu"><span></span></div>
+          </div>
+        
+          <a href="../../../index.html" class="logo"><img src="../../../assets/images/logo-site.svg" alt="WebDesign Master"></a>
+        
+        </div>
+
+        <div class="col-md-6 d-none d-md-block d-lg-block d-xl-block">
+          <div class="toggler"><button title="Переключить тему"></button></div>
+                    <div class="social">
+            <a title="ВКонтакте" href="https://vk.com/jediweb" target="_blank"><i class="fa fa-vk"></i></a>
+            <a title="Телеграм" href="https://t.me/jediweb" target="_blank"><i class="fa custom-tg"></i></a>
+            <a title="YouTube" href="https://youtube.com/@wdm" target="_blank"><i class="fa fa-youtube-play"></i></a>
+            <a title="GitHub" href="https://github.com/webdesign-masteru" target="_blank"><i class="fa fa-github"></i></a>
+            <a title="Дзен" href="https://dzen.ru/jediweb" target="_blank"><i class="fa custom-dzen"></i></a>
+          </div>
+
+          <div class="courses-link">
+            <a href="../../../courses/index.html"><i class="fa fa-diamond"></i>Курсы</a>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="mobile-menu"></div>
+
+    </div>
+
+  </header>
+
+
+  <div class="content">
+    <div class="container-fluid">
+
+      <div class="row">
+
+        <div class="col-md-8">
+
+          <div class="list-item bezier-page">
+  <div class="item-link">
+    <div class="item-content">
+
+      <h1 style="margin: 0;">Cubic-Bezier Generator </h1>
+      <p>Create preset or custom easing functions for animations and transitions.</p>
+
+      <section class="demo">
+        <div class="controls">
+          <div class="graph">
+          <figure>
+            <span id="axisTime">Time</span>
+            <span id="axisAnimation">Animation (%)</span>
+            <canvas id="curve" width="200" height="450"></canvas>
+          </figure>
+          </div>
+          <div class="options">
+            <div class="form-label"><span class="text">Easing:</span>
+              <select class="form-select" name="presets" id="presets">
+                <optgroup label="defaults">
+                  <option value="0.250, 0.250, 0.750, 0.750" selected>linear</option>
+                  <option value="0.250, 0.100, 0.250, 1.000">ease (default)</option>
+                  <option value="0.420, 0.000, 1.000, 1.000">ease-in</option>
+                  <option value="0.000, 0.000, 0.580, 1.000">ease-out</option>
+                  <option value="0.420, 0.000, 0.580, 1.000">ease-in-out</option>
+                </optgroup>
+                <optgroup label="Penner Equations">
+                  <option value="0.550, 0.085, 0.680, 0.530">easeInQuad</option>
+                  <option value="0.550, 0.055, 0.675, 0.190">easeInCubic</option>
+                  <option value="0.895, 0.030, 0.685, 0.220">easeInQuart</option>
+                  <option value="0.755, 0.050, 0.855, 0.060">easeInQuint</option>
+                  <option value="0.470, 0.000, 0.745, 0.715">easeInSine</option>
+                  <option value="0.950, 0.050, 0.795, 0.035">easeInExpo</option>
+                  <option value="0.600, 0.040, 0.980, 0.335">easeInCirc</option>
+                  <option value="0.600, -0.280, 0.735, 0.045">easeInBack</option>
+                  <option value="0.250, 0.460, 0.450, 0.940">easeOutQuad</option>
+                  <option value="0.215, 0.610, 0.355, 1.000">easeOutCubic</option>
+                  <option value="0.165, 0.840, 0.440, 1.000">easeOutQuart</option>
+                  <option value="0.230, 1.000, 0.320, 1.000">easeOutQuint</option>
+                  <option value="0.390, 0.575, 0.565, 1.000">easeOutSine</option>
+                  <option value="0.190, 1.000, 0.220, 1.000">easeOutExpo</option>
+                  <option value="0.075, 0.820, 0.165, 1.000">easeOutCirc</option>
+                  <option value="0.175, 0.885, 0.320, 1.275">easeOutBack</option>
+                  <option value="0.455, 0.030, 0.515, 0.955">easeInOutQuad</option>
+                  <option value="0.645, 0.045, 0.355, 1.000">easeInOutCubic</option>
+                  <option value="0.770, 0.000, 0.175, 1.000">easeInOutQuart</option>
+                  <option value="0.860, 0.000, 0.070, 1.000">easeInOutQuint</option>
+                  <option value="0.445, 0.050, 0.550, 0.950">easeInOutSine</option>
+                  <option value="1.000, 0.000, 0.000, 1.000">easeInOutExpo</option>
+                  <option value="0.785, 0.135, 0.150, 0.860">easeInOutCirc</option>
+                  <option value="0.680, -0.550, 0.265, 1.550">easeInOutBack</option>
+                </optgroup>
+                <optgroup label="custom">
+                  <option value="0.500, 0.250, 0.500, 0.750">custom (drag the handles)</option>
+                </optgroup>
+              </select>
+            </div>
+            <div class="form-label"><span class="text">Duration (ms):</span>
+              <input class="form-control" type="number" step="100" value="1000" name="time" id="time">
+            </div>
+            <div class="mt-3 mb-3"><span class="text">Effect:</span>
+              <input type="button" name="left" value="left" id="left" class="testButton btn btn-secondary">
+              <input type="button" name="width" value="width" id="width" class="testButton btn btn-secondary">
+              <input type="button" name="height" value="height" id="height" class="testButton btn btn-secondary">
+              <input type="button" name="opacity" value="opacity" id="opacity" class="testButton btn btn-secondary">
+            </div>
+            <div class="anim"><div id="box"></div></div>
+          </div>
+        </div>
+        <div class="bezier-footer">
+          <h2>Code snippets, short and long-hand:</h2>
+          <code id="codeOutput"></code>
+        </div>
+      </section>
+
+              <div class="premium">
+          <div class="row">
+
+            <div class="col-md-12">
+              <h4>Премиум уроки от WebDesign Master</h4>
+            </div>
+
+            <div class="col-md-4 col-sm-6">
+              <a href="../../../courses/jekyll/index.html" class="premium-item">
+                <span class="premium-img-wrap"><img src="../../../public/images/premium/jekyll.jpg" alt="Курс по созданию сайта от А до Я на Jekyll" class="img-responsive"></span>
+                <p>Создание сайта от А до Я. Комплексный курс</p>
+              </a>
+            </div>
+
+            <div class="col-md-4 col-sm-6">
+              <a href="../../../courses/webdesign/index.html" class="premium-item">
+                <span class="premium-img-wrap"><img src="../../../public/images/premium/webdesign.jpg" alt="Большой комплексный курс по современному веб-дизайну" class="img-responsive"></span>
+                <p>Веб-дизайн с нейросетями для начинающих</p>
+              </a>
+            </div>
+
+            <div class="col-md-4 col-sm-6">
+              <a href="../../../courses/freelance/index.html" class="premium-item">
+                <span class="premium-img-wrap"><img src="../../../public/images/premium/freelance.jpg" alt="Фриланс для начинающих" class="img-responsive"></span>
+                <p>Я - фрилансер! Базовый курс для начинающих</p>
+              </a>
+            </div>
+
+          </div>
+        </div>
+
+
+    </div>
+  </div>
+</div>
+
+
+        </div>
+
+        <div class="col-md-4 col-aside">
+
+  <aside class="site-aside">
+
+
+
+<div class="box box-search">
+
+<form class="search" action="https://www.google.com/search" target="_blank">
+  <div>
+    <input type="text" name="q" size="55" placeholder="Поиск по сайту..." required>
+    <input type="hidden" name="sitesearch" value="https://webdesign-masteru.github.io">
+    <button type="submit">
+      <i class="fa fa-search"></i>
+    </button>
+  </div>
+</form>
+
+
+    </div>
+
+    <nav class="box box-mnu">
+      <p class="mnu-header">Разделы сайта:</p>
+      <ul class="list-unstyled box-dashed main-menu">
+
+  <li class="d-lg-none">
+    <a href="../../../courses/index.html"><i class="fa fa-diamond"></i> Курсы</a>
+  </li>
+
+  <li>
+    <a href="../../../blog/html-css/index.html"><i class="fa fa-code"></i> Веб-разработка</a>
+  </li>
+
+  <li>
+    <a href="../../../blog/web-design/index.html"><i class="fa fa-paint-brush"></i> Веб-дизайн</a>
+  </li>
+
+  <li>
+    <a href="../../../blog/tools/index.html"><i class="fa fa-cogs"></i> Инструменты</a>
+  </li>
+
+  <li>
+    <a href="../../../blog/cms/index.html"><i class="fa fa-folder-open-o"></i> CMS/Framework</a>
+  </li>
+
+</ul>
+
+    </nav>
+
+    <nav class="box box-mnu services-mnu">
+      <p class="mnu-header">Полезные ресурсы:</p>
+      <ul class="list-unstyled">
+
+  <li>
+    <a href="../../../blog/tools/wsl-nodejs-new.html"><i class="fa fa-cogs"></i> Установка WSL и окружения</a>
+  </li>
+
+  <li>
+    <a href="../../../blog/docs/webdev-without-wsl.html"><i class="fa fa-cogs"></i> Настройка окружения без WSL</a>
+  </li>
+
+  <li>
+    <a href="../../../blog/tools/hosting-lesson.html"><i class="fa fa-server"></i> Работа с хостингом от А до Я</a>
+  </li>
+
+  <li>
+    <a href="../../../blog/tools/vscode.html"><i class="fa custom-vscode-3"></i> Настройка VS Code</a>
+  </li>
+
+  <li>
+    <span><i class="fa custom-bezier"></i> Cubic-Bezier Generator</span>
+    
+  </li>
+
+  <li>
+    <a href="../../../blog/tools/lazy-load/index.html"><i class="fa fa-image"></i> Lazy Load Placeholder</a>
+  </li>
+
+  <li>
+    <a href="../../../blog/docs/gulp-documentation.html"><i class="fa fa-file-text-o"></i> Документация Gulp</a>
+  </li>
+
+</ul>
+
+    </nav>
+
+    <div class="box box-sidebar">
+      <div id="vk_groups"></div>
+    </div>
+
+  </aside>
+
+
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <footer class="main-foot">
+    <div class="container-fluid">
+
+      <span class="year"></span> © WebDesign Master
+
+    </div>
+    <div class="top" title="Наверх"><i class="fa fa-angle-double-up"></i></div>
+  </footer>
+
+  <script>(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return}}k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window,document,"script","https://mc.yandex.ru/metrika/tag.js","ym");ym(100695574,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true,webvisor:true});</script><noscript><div><img src="https://mc.yandex.ru/watch/100695574" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+
+
+</body>
+</html>
+

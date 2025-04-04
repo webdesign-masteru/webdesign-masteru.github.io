@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /success.html
+Host: webdesign-masteru.github.io
+Sitemap: https://webdesign-masteru.github.io/sitemap.xml

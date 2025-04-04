@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="canonical" href="https://webdesign-masteru.github.io/blog/cms/modx-ajax-filter.html">
+  <meta name="generator" content="Jekyll v">
+
+  <title>Ajax фильтр на MODx Revolution</title>
+  <meta name="description" content="Создание Ajax фильтра с сортировкой и подгрузкой на MODx с выводом ресурсов через pdoResources">
+
+  <link rel="icon" href="https://webdesign-masteru.github.io/favicon.ico?v=15" type="image/x-icon">
+  <meta property="og:image" content="../../public/images/thumbs/cms/modx-ajax-filter/modx-ajax-filter-cover.jpg">
+
+  <link rel="stylesheet" href="../../styles/index.css?v=15">
+  
+  <script src="../../scripts/dist/main.js?v=15" defer></script>
+  
+  <script>/* no flicker */document.documentElement.classList.add(localStorage.getItem('mode') === 'auto' ? (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : localStorage.getItem('mode'))</script>
+
+</head>
+
+<body>
+
+  <header class="main-head">
+
+    <div class="container-fluid">
+
+      <div class="row">
+
+        <div class="col-md-6">
+          <div class="mobile-pannel d-xl-none d-lg-none d-md-none">
+            <div class="toggler"><button title="Переключить тему"></button></div>
+            <div class="toggle-mnu"><span></span></div>
+          </div>
+        
+          <a href="../../index.html" class="logo"><img src="../../assets/images/logo-site.svg" alt="WebDesign Master"></a>
+        
+        </div>
+
+        <div class="col-md-6 d-none d-md-block d-lg-block d-xl-block">
+          <div class="toggler"><button title="Переключить тему"></button></div>
+                    <div class="social">
+            <a title="ВКонтакте" href="https://vk.com/jediweb" target="_blank"><i class="fa fa-vk"></i></a>
+            <a title="Телеграм" href="https://t.me/jediweb" target="_blank"><i class="fa custom-tg"></i></a>
+            <a title="YouTube" href="https://youtube.com/@wdm" target="_blank"><i class="fa fa-youtube-play"></i></a>
+            <a title="GitHub" href="https://github.com/webdesign-masteru" target="_blank"><i class="fa fa-github"></i></a>
+            <a title="Дзен" href="https://dzen.ru/jediweb" target="_blank"><i class="fa custom-dzen"></i></a>
+          </div>
+
+          <div class="courses-link">
+            <a href="../../courses/index.html"><i class="fa fa-diamond"></i>Курсы</a>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="mobile-menu"></div>
+
+    </div>
+
+  </header>
+
+
+  <div class="content">
+    <div class="container-fluid">
+
+      <div class="row">
+
+        <div class="col-md-8">
+
+          <article class="list-item single-page">
+  <div class="item-link">
+
+    
+    <div class="item-img-wrap post-img">
+      <img class="img-responsive" src="../../public/images/thumbs/cms/modx-ajax-filter/modx-ajax-filter.jpg" alt="Ajax фильтр на MODx Revolution">
+    </div>
+    
+
+    <div class="item-content">
+
+    <div class="td">
+        <a href="../../blog/cms/index.html" class="item-icon hidden-xs" title="Категория: CMS/Framework"><i class="fa fa-modx"></i></a>
+      </div>
+      <div class="td article-title"><h1>Ajax фильтр на MODx Revolution</h1></div>
+    
+
+      <div class="article-content">
+
+        <p>Сегодня мы научимся создавать фильтр ресурсов в MODx Revolution с возможностью сортировки по любому TV полю и подгрузкой результатов по клику "Загрузить еще". Для вывода результатов будем использовать сниппет pdoResources.</p>
+
+<div class="likely-scroll">
+  <div class="likely">
+    <button class="vkontakte">Поделиться</button>
+    <button class="telegram">Отправить</button>
+    <button class="pinterest" data-media="https://webdesign-masteru.github.io/public/images/thumbs/cms/modx-ajax-filter/modx-ajax-filter-cover.jpg">Запинить</button>
+    <button class="odnoklassniki">Класснуть</button>
+  </div>
+</div>
+
+
+<div class="video-wrap">
+  <div class="table">
+    <div class="tr">
+      <div class="td">
+        <div class="videowrapper" title="Смотреть урок «Ajax фильтр на MODx Revolution» на YouTube">
+          <img class="img-responsive" src="../../public/images/thumbs/cms/modx-ajax-filter/modx-ajax-filter-cover.jpg" alt="Ajax фильтр на MODx Revolution - Видеоурок">
+        </div>
+        <a href="https://youtu.be/NRZkTqCLYVU" class="button button-youtube" target="_blank"><i class="fa fa-youtube-play"></i>Смотреть <span class="d-none d-lg-inline">урок </span>на YouTube</a>
+      </div>
+      <div class="td">
+        <a href="../../courses/bundle/index.html" class="premium-banner">
+          <img src="../../public/images/premium/bundle-b.jpg" alt="Все курсы канала WebDesign Master">
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<p><a href="https://archive.org/download/modx-ajax-filter/modx-ajax-filter.zip">Скачать</a> все сниппеты и необходимые файлы урока.</p>
+
+<p>Для начала необходимо установить пакет <strong>pdoResources</strong>, который входит в состав пакета <strong>pdoTools</strong>. Вы можете установить или весь набор пакетов pdo (pdoTools) или только pdoResources отдельным пакетом для создания фильтра на MODx Revolution.</p>
+
+<p>После установки пакетов, давайте подключим сниппет, который вы скачали в ваш проект. Если вы разрабатываете каталог сейчас с нуля, то советую придерживаться использования определенных классов для Ajax фильтрации. Схема именования классов:</p>
+
+<img src="../../public/images/blog/cms/modx-ajax-filter/modx-ajax-filter-scheme.jpg" alt="MODx Revolution Ajax Filter">
+
+<p>Однако если у вас уже готовый каталог, вы можете определить классы элементов Ajax фиьтра в JS файле (см. ниже).</p>
+
+<p>Обратите внимание, что <strong>.ajax-item</strong> должен быть непосредственным потомком <strong>.ajax-container</strong>. Если вы используете сетку Bootstrap для разметки колонок, можете определить класс контейнера как <strong>"row ajax-container"</strong>, а колонки айтема как <strong>"col-md-4 ajax-item"</strong>.</p>
+
+<h2>Подключение JS скрипта Ajax фильтра</h2>
+
+<p>Подключим скрипт JS к проекту. Вы можете подключить его как отдельным файлом, так и непосредственно в файл кастомных скриптов проекта. Для работы скрипта требуется jQuery.</p>
+
+<pre class="language-javascript"><code>$(function() {
+
+  //MODx pdoResources Ajax Filter
+  //Filter Settings
+  var fadeSpeed             = 200, // Fade Animation Speed
+      ajaxCountSelector     = '.ajax-count', // CSS Selector of Items Counter
+      ajaxContainerSelector = '.ajax-container', // CSS Selector of Ajax Container
+      ajaxItemSelector      = '.ajax-item', // CSS Selector of Ajax Item
+      ajaxFormSelector      = '.ajax-form', // CSS Selector of Ajax Filter Form
+      ajaxFormButtonStart   = '.ajax-start', // CSS Selector of Button Start Filtering
+      ajaxFormButtonReset   = '.ajax-reset', // CSS Selector of Button Reset Ajax Form
+      sortDownText          = 'По убыванию',
+      sortUpText            = 'По возрастанию';
+
+  function ajaxCount() {
+    if($('.ajax-filter-count').length) {
+      var count = $('.ajax-filter-count').data('count');
+      $(ajaxCountSelector).text(count);
+    } else {
+      $(ajaxCountSelector).text($(ajaxItemSelector).length);
+    }
+  }ajaxCount();
+
+  function ajaxMainFunction() {
+    $.ajax({
+      data: $(ajaxFormSelector).serialize()
+    }).done(function(response) {
+      var $response = $(response);
+      $(ajaxContainerSelector).fadeOut(fadeSpeed);
+      setTimeout(function() {
+        $(ajaxContainerSelector).html($response.find(ajaxContainerSelector).html()).fadeIn(fadeSpeed);
+        ajaxCount();
+      }, fadeSpeed);
+    });
+  }
+
+  $(ajaxContainerSelector).on('click', '.ajax-more', function(e) {
+    e.preventDefault();
+    var offset = $(ajaxItemSelector).length;
+    $.ajax({
+      data: $(ajaxFormSelector).serialize()+'&amp;offset='+offset
+    }).done(function(response) {
+      $('.ajax-more').remove();
+      var $response = $(response);
+      $response.find(ajaxItemSelector).hide();
+      $(ajaxContainerSelector).append($response.find(ajaxContainerSelector).html());
+      $(ajaxItemSelector).fadeIn();
+    });
+  })
+
+  $(ajaxFormButtonStart).click(function(e) {
+    e.preventDefault();
+    ajaxMainFunction();
+  })
+
+  $(ajaxFormButtonReset).click(function(e) {
+    e.preventDefault();
+    $(ajaxFormSelector).trigger('reset');
+    $('input[name=sortby]').val('pagetitle');
+    $('input[name=sortdir]').val('asc');
+    setTimeout(function() {
+      $('[data-sort-by]').data('sort-dir', 'asc').toggleClass('button-sort-asc').text(sortUpText);
+    }, fadeSpeed);
+    ajaxMainFunction();
+    ajaxCount();
+  })
+
+  $(''+ajaxFormSelector+' input').change(function() {
+    ajaxMainFunction();
+  })
+
+  $('[data-sort-by]').data('sort-dir', 'asc').click(function() {
+    var ths = $(this);
+    $('input[name=sortby]').val($(this).data('sort-by'));
+    $('input[name=sortdir]').val($(this).data('sort-dir'));
+    setTimeout(function() {
+      $('[data-sort-by]').not(this).toggleClass('button-sort-asc').text(sortUpText);
+      ths.data('sort-dir') == 'asc' ? ths.data('sort-dir', 'desc').text(sortDownText) : ths.data('sort-dir', 'asc').text(sortUpText);
+      $(this).toggleClass('button-sort-asc');
+    }, fadeSpeed);
+    ajaxMainFunction();
+  });
+
+});
+</code></pre>
+
+<ul>
+  <li><strong>Строки 5-13:</strong> определение переменных для CSS селекторов Ajax фильтра. Не меняем, если используем стандартные значения, как на рисунке выше;</li>
+  <li><strong>Строки 15-22:</strong> скрипт счетчика ресурсов в результатах фильтрации;</li>
+  <li><strong>Строки 24-35:</strong> основная функция Ajax фильтрации;</li>
+  <li><strong>Строки 37-49:</strong> обработчик события по клику на кнопку "Загрузить еще";</li>
+  <li><strong>Строки 51-54:</strong> обработчик события по клику на кнопке "фильтровать". Данная кнопка может отсутствовать, так как фильтрация происходит автоматически. Автоматическая фильтрация может быть отключена путем удаления строк 68-70;</li>
+  <li><strong>Строки 56-66:</strong> обработчик события очистки формы и сброса фильтра. Строки 59-63 отвечают за сброс параметров сортировки;</li>
+  <li><strong>Строки 68-70:</strong> функция автоматической сортировки при изменении полей формы фильтра;</li>
+  <li><strong>Строки 72-82:</strong> универсальная функция сортировки по tv параметру.</li>
+</ul>
+
+<p>Я постарался сделать данный скрипт максимально универсальным, поэтому если вы используете стандартные селекторы элементов Ajax фильтра, то редактировать ни чего не нужно.</p>
+
+<h2>Подключение PHP сниппета в MODx Revolution</h2>
+
+<p>Создайте новый сниппет в панели управления MODx <strong>catalogFilter</strong> и заполните его следующим содержимым:</p>
+
+<pre class="language-php"><code>&lt;&#63;php
+//Filter Fields Settings
+$filter = array();
+
+//Radio, Select &amp; Text Fields Type
+if($_GET['floor']) {
+  $filter[] = 'floor='.$_GET['floor'];
+}
+
+//Two Text Fields From To
+if($_GET['area_from']) {
+  $filter[] = 'area>='.$_GET['area_from'];
+}
+if($_GET['area_to']) {
+  $filter[] = 'area&lt;='.$_GET['area_to'];
+}
+
+//Checkbox Type
+if($_GET['garage']) {
+  $filter[] = 'garage=1';
+}
+
+//End Settings
+
+//Sort
+if($_GET['sortby']) {
+  $sortby = $_GET['sortby'];
+} else {
+  $sortby = 'pagetitle';
+}
+if($_GET['sortdir']) {
+  $sortdir = $_GET['sortdir'];
+} else {
+  $sortdir = 'asc';
+}
+//End Sort
+
+//Offset
+$offset = 0;
+if($_GET['offset']){
+  $offset = $_GET['offset'];
+}
+
+if($filter) {
+  $where = $modx->toJSON(array($filter));
+} else {
+  $where = '';
+}
+
+$params_count = array(
+  'parents' => $parents,
+  'limit' => 0,
+  'tpl' => '@INLINE ,',
+  'select' => 'id',
+  'includeTVs' => $fields,
+  'showHidden' => '1',
+  'where' => $where
+);
+
+$count = $modx->runSnippet('pdoResources',$params_count);
+$count = count(explode(',',$count))-1;
+$modx->setPlaceholder('count',$count);
+
+$params = array(
+  'parents' => $parents,
+  'limit' => $limit,
+  'offset' => $offset,
+  'tpl' => $tpl,
+  'select' => 'id,pagetitle,introtext,content',
+  'includeTVs' => $fields,
+  'showHidden' => '1',
+  'sortby' => $sortby,
+  'sortdir' => $sortdir,
+  'where' => $where
+);
+
+$more = $count - $offset - $limit;
+$lim = $more > $limit ? $limit : $more;
+
+$button = '';
+if($more > 0){
+  $button = '&lt;div class="ajax-filter-count" data-count="'.$count.'"&gt;&lt;a href="#" class="ajax-more"&gt;Загрузить еще '.$lim.' из '.$more.'&lt;/a&gt;&lt;/div&gt;';
+}
+
+return $modx->runSnippet('pdoResources',$params).$button;
+</code></pre>
+
+<p>Между комментариями <strong>//Filter Fields Settings</strong> и <strong>//End Settings</strong> находятся параметры, которые вам необходимо отредактировать под свой проект. Тут ни чего сложного, просто прописываете name полей input и проверяете их условием if. Для полей типа Radio, Select и Text используем пример из строк 5-8. Для определения промежуточного значения от и до можно воспользоваться примером из строк 11-16. Для чекбоксов подойдет пример из строк 19-21.</p>
+
+<p>В строке 74 сниппета вы можете задать свои классы, но не удаляйте текущюю разметку, так как она учавствует в скриптах для подгрузки контента.</p>
+
+<p>Пример возможных значений в панели управления MODx для радиокнопок: <strong>Первый==1||Второй==2||Третий==3</strong></p>
+
+<img src="../../public/images/blog/cms/modx-ajax-filter/modx-field-radio-values.png" alt="Возможные значения радиокнопок MODx">
+
+<p>Пример вывода радиокнопок во фронтенд:</p>
+
+<pre class="language-html"><code>&lt;input name="floor" value="0" type="radio" checked&gt;
+&lt;input name="floor" value="1" type="radio"&gt;
+&lt;input name="floor" value="2" type="radio"&gt;
+&lt;input name="floor" value="3" type="radio"&gt;
+</code></pre>
+
+<p>Здесь именование <strong>name="floor"</strong> соответствует строкам 6-8 нашего сниппета <strong>catalogFilter</strong>. Аналогично реализована обработка других полей формы. Я думаю, это понятно и создание своих собственных полей не будет для вас проблемой.</p>
+
+<p>Вывод сниппета осуществляется в шаблоне каталога следующим образом:</p>
+
+<pre class="language-php"><code>[[!catalogFilter?
+  &amp;tpl=`tplCatItem`
+  &amp;limit=`3`
+  &amp;parents=`5`
+  &amp;fields=`image,area,floor,garage,price`]]
+</code></pre>
+
+<ul>
+  <li><strong>tpl=`tplCatItem`</strong> - чанк айтема в списке каталога;</li>
+  <li><strong>limit=`3`</strong> - Сколько записей выводить и по сколько записей подгружать при клике на кнопке "Загрузить еще";</li>
+  <li><strong>parents=`5`</strong> - указываем id роительского документа для каталога ресурсов;</li>
+  <li><strong>fields=`image,area,floor,garage,price`</strong> - перечисляем TV's, которые необходимо показать в чанке tplCatItem и которые необходимо обрабатывать при фильтрации.</li>
+</ul>
+
+<p>Пример чанка <strong>tplCatItem</strong></p>
+
+<pre class="language-html"><code>&lt;div class="ajax-item"&gt;
+  &lt;img src="[[+tv.image]]" alt="[[+pagetitle]]"&gt;
+  &lt;h4&gt;[[+pagetitle]]&lt;/h4&gt;
+  &lt;table&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Этаж&lt;/td&gt;
+      &lt;td&gt;[[+tv.floor]]&lt;/td&gt;
+    &lt;/tr&gt;
+    [[+tv.area:isnot=``:then=`
+    &lt;tr&gt;
+      &lt;td&gt;Площадь&lt;/td&gt;
+      &lt;td&gt;[[+tv.area]] кв.м.&lt;/td&gt;
+    &lt;/tr&gt;
+    `]]
+    &lt;tr&gt;
+      &lt;td&gt;Гараж&lt;/td&gt;
+      &lt;td&gt;[[+tv.garage:is=`1`:then=`Есть`:else=`Нет`]]&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Цена:&lt;/td&gt;
+      &lt;td&gt;[[+tv.price]]&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/table&gt; 
+&lt;/div&gt;
+</code></pre>
+
+<p>Комплексный пример вывода во фронтенд можете посмотреть в репозитории проекта на гитхабе в файле <strong>demo.html</strong>.</p>
+
+<h2>Ajax сортировка по TV</h2>
+
+<p>В нашем скрипте имеется готовое решение для сортировки результатов фильтрации по любому TV полю. В форму фильтра вставьте следующие скрытые поля и не меняйте их значение, они просто должны быть в форме фильтра:</p>
+
+<pre class="language-html"><code>&lt;!-- Sort Fields --&gt;
+&lt;input type="hidden" name="sortby" value="pagetitle"&gt;
+&lt;input type="hidden" name="sortdir" value="asc"&gt;
+&lt;!-- Sort End --&gt;
+</code></pre>
+
+<p>В любом месте вашего HTML шаблона сделайте вывод кнопки и в data атрибуте укажите поле, по которому хотите фильтровать выдачу:</p>
+
+<pre class="language-html"><code>Сортировать по цене: &lt;button data-sort-by="price"&gt;По возрастанию&lt;/button&gt;</code></pre>
+
+<p>При клике тогглится класс <strong>button-sort-asc</strong>, который можете использовать для оформления кнопки при смене направления сортировки, добавления стрелочек и т. д. в атрибут <strong>data-sort-by</strong> можно писать любой TV, учавствующий в фильтрации. С сортировкой все.</p>
+
+<p>Итак, мы рассмотрели создание несложного Ajax фильтра ресурсов в MODx с выводом результатов в сниппет <strong>pdoResources</strong>.</p>
+
+
+                <div class="premium">
+          <div class="row">
+
+            <div class="col-md-12">
+              <h4>Премиум уроки от WebDesign Master</h4>
+            </div>
+
+            <div class="col-md-4 col-sm-6">
+              <a href="../../courses/jekyll/index.html" class="premium-item">
+                <span class="premium-img-wrap"><img src="../../public/images/premium/jekyll.jpg" alt="Курс по созданию сайта от А до Я на Jekyll" class="img-responsive"></span>
+                <p>Создание сайта от А до Я. Комплексный курс</p>
+              </a>
+            </div>
+
+            <div class="col-md-4 col-sm-6">
+              <a href="../../courses/webdesign/index.html" class="premium-item">
+                <span class="premium-img-wrap"><img src="../../public/images/premium/webdesign.jpg" alt="Большой комплексный курс по современному веб-дизайну" class="img-responsive"></span>
+                <p>Веб-дизайн с нейросетями для начинающих</p>
+              </a>
+            </div>
+
+            <div class="col-md-4 col-sm-6">
+              <a href="../../courses/freelance/index.html" class="premium-item">
+                <span class="premium-img-wrap"><img src="../../public/images/premium/freelance.jpg" alt="Фриланс для начинающих" class="img-responsive"></span>
+                <p>Я - фрилансер! Базовый курс для начинающих</p>
+              </a>
+            </div>
+
+          </div>
+        </div>
+
+
+        <div class="read-more">
+          <h4>Другие уроки по теме «CMS/Framework»</h4>
+          <ul>
+            
+            
+            
+              
+              <li><a href="../../blog/cms/576.html">Как создать тему для WordPress. Грамотная посадка верстки на WordPress (Right Way)</a></li>
+              
+            
+              
+              <li><a href="../../blog/cms/570.html">Быстрое создание красивых сайтов на WordPress. Layers Style Kit на реальном примере</a></li>
+              
+            
+              
+              <li><a href="../../blog/cms/568.html">Руководство по созданию тем на WordPress и StyleKit's с использованием Layers Framework</a></li>
+              
+            
+              
+              <li><a href="../../blog/cms/523.html">Layers. Быстрая разработка сайтов на WordPress #1. Знакомство с Layers WP</a></li>
+              
+            
+              
+              <li><a href="../../blog/cms/16.html">Создание лендинга на WordPress с нуля</a></li>
+              
+            
+              
+              <li><a href="../../blog/cms/modx-migx-landing-page-section.html">Посадка типовой секции Landing Page на MODx с использованием MIGX (добавляемые поля)</a></li>
+              
+            
+          </ul>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</article>
+
+
+        </div>
+
+        <div class="col-md-4 col-aside">
+
+  <aside class="site-aside">
+
+
+
+<div class="box box-search">
+
+<form class="search" action="https://www.google.com/search" target="_blank">
+  <div>
+    <input type="text" name="q" size="55" placeholder="Поиск по сайту..." required>
+    <input type="hidden" name="sitesearch" value="https://webdesign-masteru.github.io">
+    <button type="submit">
+      <i class="fa fa-search"></i>
+    </button>
+  </div>
+</form>
+
+
+    </div>
+
+    <nav class="box box-mnu">
+      <p class="mnu-header">Разделы сайта:</p>
+      <ul class="list-unstyled box-dashed main-menu">
+
+  <li class="d-lg-none">
+    <a href="../../courses/index.html"><i class="fa fa-diamond"></i> Курсы</a>
+  </li>
+
+  <li>
+    <a href="../../blog/html-css/index.html"><i class="fa fa-code"></i> Веб-разработка</a>
+  </li>
+
+  <li>
+    <a href="../../blog/web-design/index.html"><i class="fa fa-paint-brush"></i> Веб-дизайн</a>
+  </li>
+
+  <li>
+    <a href="../../blog/tools/index.html"><i class="fa fa-cogs"></i> Инструменты</a>
+  </li>
+
+  <li>
+    <a href="../../blog/cms/index.html"><i class="fa fa-folder-open-o"></i> CMS/Framework</a>
+  </li>
+
+</ul>
+
+    </nav>
+
+    <nav class="box box-mnu services-mnu">
+      <p class="mnu-header">Полезные ресурсы:</p>
+      <ul class="list-unstyled">
+
+  <li>
+    <a href="../../blog/tools/wsl-nodejs-new.html"><i class="fa fa-cogs"></i> Установка WSL и окружения</a>
+  </li>
+
+  <li>
+    <a href="../../blog/docs/webdev-without-wsl.html"><i class="fa fa-cogs"></i> Настройка окружения без WSL</a>
+  </li>
+
+  <li>
+    <a href="../../blog/tools/hosting-lesson.html"><i class="fa fa-server"></i> Работа с хостингом от А до Я</a>
+  </li>
+
+  <li>
+    <a href="../../blog/tools/vscode.html"><i class="fa custom-vscode-3"></i> Настройка VS Code</a>
+  </li>
+
+  <li>
+    <a href="../../blog/tools/cubic-bezier/index.html"><i class="fa custom-bezier"></i> Cubic-Bezier Generator</a>
+  </li>
+
+  <li>
+    <a href="../../blog/tools/lazy-load/index.html"><i class="fa fa-image"></i> Lazy Load Placeholder</a>
+  </li>
+
+  <li>
+    <a href="../../blog/docs/gulp-documentation.html"><i class="fa fa-file-text-o"></i> Документация Gulp</a>
+  </li>
+
+</ul>
+
+    </nav>
+
+    <div class="box box-sidebar">
+      <div id="vk_groups"></div>
+    </div>
+
+  </aside>
+
+
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <footer class="main-foot">
+    <div class="container-fluid">
+
+      <span class="year"></span> © WebDesign Master
+
+    </div>
+    <div class="top" title="Наверх"><i class="fa fa-angle-double-up"></i></div>
+  </footer>
+
+  <script>(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return}}k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window,document,"script","https://mc.yandex.ru/metrika/tag.js","ym");ym(100695574,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true,webvisor:true});</script><noscript><div><img src="https://mc.yandex.ru/watch/100695574" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+
+
+</body>
+</html>
+

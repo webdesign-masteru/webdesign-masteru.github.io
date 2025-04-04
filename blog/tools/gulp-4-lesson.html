@@ -1,0 +1,1042 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="canonical" href="https://webdesign-masteru.github.io/blog/tools/gulp-4-lesson.html">
+  <meta name="generator" content="Jekyll v">
+
+  <title>Gulp - Актуальное и исчерпывающее руководство для самых маленьких</title>
+  <meta name="description" content="Подробный урок Gulp с обучением по документации Gulp на русском для начинающих">
+
+  <link rel="icon" href="https://webdesign-masteru.github.io/favicon.ico?v=15" type="image/x-icon">
+  <meta property="og:image" content="../../public/images/thumbs/tools/gulp-4-lesson/gulp-4-lesson-cover.jpg">
+
+  <link rel="stylesheet" href="../../styles/index.css?v=15">
+  
+  <script src="../../scripts/dist/main.js?v=15" defer></script>
+  
+  <script>/* no flicker */document.documentElement.classList.add(localStorage.getItem('mode') === 'auto' ? (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : localStorage.getItem('mode'))</script>
+
+</head>
+
+<body>
+
+  <header class="main-head">
+
+    <div class="container-fluid">
+
+      <div class="row">
+
+        <div class="col-md-6">
+          <div class="mobile-pannel d-xl-none d-lg-none d-md-none">
+            <div class="toggler"><button title="Переключить тему"></button></div>
+            <div class="toggle-mnu"><span></span></div>
+          </div>
+        
+          <a href="../../index.html" class="logo"><img src="../../assets/images/logo-site.svg" alt="WebDesign Master"></a>
+        
+        </div>
+
+        <div class="col-md-6 d-none d-md-block d-lg-block d-xl-block">
+          <div class="toggler"><button title="Переключить тему"></button></div>
+                    <div class="social">
+            <a title="ВКонтакте" href="https://vk.com/jediweb" target="_blank"><i class="fa fa-vk"></i></a>
+            <a title="Телеграм" href="https://t.me/jediweb" target="_blank"><i class="fa custom-tg"></i></a>
+            <a title="YouTube" href="https://youtube.com/@wdm" target="_blank"><i class="fa fa-youtube-play"></i></a>
+            <a title="GitHub" href="https://github.com/webdesign-masteru" target="_blank"><i class="fa fa-github"></i></a>
+            <a title="Дзен" href="https://dzen.ru/jediweb" target="_blank"><i class="fa custom-dzen"></i></a>
+          </div>
+
+          <div class="courses-link">
+            <a href="../../courses/index.html"><i class="fa fa-diamond"></i>Курсы</a>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="mobile-menu"></div>
+
+    </div>
+
+  </header>
+
+
+  <div class="content">
+    <div class="container-fluid">
+
+      <div class="row">
+
+        <div class="col-md-8">
+
+          <article class="list-item single-page">
+  <div class="item-link">
+
+    
+    <div class="item-img-wrap post-img">
+      <img class="img-responsive" src="../../public/images/thumbs/tools/gulp-4-lesson/gulp-4-lesson.jpg" alt="Gulp - Актуальное и исчерпывающее руководство для самых маленьких">
+    </div>
+    
+
+    <div class="item-content">
+
+    <div class="td">
+        <a href="../../blog/tools/index.html" class="item-icon hidden-xs" title="Категория: Инструменты"><i class="fa fa-cogs"></i></a>
+      </div>
+      <div class="td article-title"><h1>Gulp - Актуальное и исчерпывающее руководство для самых маленьких</h1></div>
+    
+
+      <div class="article-content">
+
+        <p>Подробный урок по Gulp, в котором мы детально разберем работу с Gulp, ознакомимся с новыми методами построения задач (тасков), вы узнаете, какими способами можно установить, настроить Gulp и как с его помощью автоматизировать и ускорить процесс веб-разработки. По традиции, мы будем знакомиться с возможностями инструмента на реальном примере и создадим удобное рабочее окружение для веб-разработки.</p>
+
+<div class="likely-scroll">
+  <div class="likely">
+    <button class="vkontakte">Поделиться</button>
+    <button class="telegram">Отправить</button>
+    <button class="pinterest" data-media="https://webdesign-masteru.github.io/public/images/thumbs/tools/gulp-4-lesson/gulp-4-lesson-cover.jpg">Запинить</button>
+    <button class="odnoklassniki">Класснуть</button>
+  </div>
+</div>
+
+
+<div class="video-wrap">
+  <div class="table">
+    <div class="tr">
+      <div class="td">
+        <div class="videowrapper" title="Смотреть урок «Gulp - Актуальное и исчерпывающее руководство для самых маленьких» на YouTube">
+          <img class="img-responsive" src="../../public/images/thumbs/tools/gulp-4-lesson/gulp-4-lesson-cover.jpg" alt="Gulp - Актуальное и исчерпывающее руководство для самых маленьких - Видеоурок">
+        </div>
+        <a href="https://youtu.be/n-N1BnloIVE" class="button button-youtube" target="_blank"><i class="fa fa-youtube-play"></i>Смотреть <span class="d-none d-lg-inline">урок </span>на YouTube</a>
+      </div>
+      <div class="td">
+        <a href="../../courses/bundle/index.html" class="premium-banner">
+          <img src="../../public/images/premium/bundle-b.jpg" alt="Все курсы канала WebDesign Master">
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<p>Для более углубленного понимания Gulp, в рамках подготовки данного урока, мною была полностью переведена <a href="../../blog/docs/gulp-documentation.html" target="_blank">документация Gulp</a>, к которой мы будем возвращаться по мере обучения. Рекомендую ознакомиться с документацией, там вы найдете для себя много нового, полезного и интересного.</p>
+
+<h3>Полезные материалы урока:</h3>
+
+<ol>
+  <li><a href="../../blog/docs/gulp-documentation.html" target="_blank">Документация Gulp</a></li>
+  <li><a href="https://github.com/webdesign-masteru/gulp-4-lesson" target="_blank">Проект-пример данного урока на GitHub</a></li>
+  <li><a href="../../blog/tools/wsl-nodejs-new.html" target="_blank">Установка рабочего окружения в Windows</a></li>
+  <li><a href="https://nodejs.org" target="_blank">Node.js</a></li>
+  <li><a href="https://browsersync.io/docs" target="_blank">Browsersync Documentation</a></li>
+  <li><a href="../../blog/tools/optimizedhtml-5.html" target="_blank">Стартер OptimizedHTML 5 на основе Gulp</a></li>
+</ol>
+
+<p>В данном руководстве мы рассмотрим Gulp именно в контексте автоматизации верстки - минификации, конкатенации, оптимизации изображений, шаблонизации и сборки. Поняв основы, вы сможете применять инструмент и в других областях. Gulp является крутым модульным инструментом, завоевавшим признание огромного количества пользователей в разных областях программирования, как лучший таск-раннер из всех ныне существующих. Gulp предоставляет лаконичный и простой синтаксис для построения любых задач.</p>
+
+<p>С выходом новой версии Gulp инструмент претерпел значительные изменения, по сравнению с предыдущей версией, по которой я делал урок в свое время. Код стал максимально простым и лаконичным, значительно уменьшилось количество зависимостей пакетов, увеличилась скорость установки модулей и скорость работы в целом. Также у нас есть урок, в котором я рассказывал о том, как можно максимально быстро и без боли перевести любой проект, написанный с использование предыдущей версии. Сегодня-же мы научимся писать задачи с использованием только актуальных и рекомендуемых разработчиками Gulp методами и API. Данный урок будет актуальным до тех пор, пока в закрепленном комментарии к <a href="https://youtu.be/n-N1BnloIVE" target="_blank">видео на YouTube</a> не появится информация о том, что вышел новый урок по данному инструменту. Данное правило применимо и для других уроков на канале. Чекните актуальность, а заодно, можете поставить лайк и что-нибудь написать или спросить, буду рад ответить на ваш вопрос.</p>
+
+<blockquote><strong>Gulp</strong> - это таск-раннер, инструмент, который позволяет автоматизировать любой ручной труд в любой области. Его используют не только в веб-разработке, но и в других областях, где требуется автоматизация рабочего процесса посредством построения задач - сборка, билд, копирование и другая работа с файлами и файловой системой.</blockquote>
+
+<h3>Установка Gulp и настройка</h3>
+
+<p>Для начал необходимо установить окружение. Если вы пользователь macOS или Windows, вы можете загрузить Node.js версии LTS с сайта Nodejs.org или воспользоваться <a href="../../blog/tools/wsl-nodejs-new.html" target="_blank">актуальным способом установки окружения</a>, который я предлагаю для работы.</p>
+
+<p>После установки окружения можно приступать к работе. Откроем терминал в папке проекта: создадим папку «html» на вашем компьютере и откроем в ней терминал.</p>
+
+<blockquote>Если вы пользователь Windows, для того, чтобы открыть терминал bash или командную строку в нужной папке, просто зажмите клавишу Shift и нажать правую кнопку мыши.</blockquote>
+
+<blockquote>Внимание! Лучше не создавать русскоязычные папки. Избегайте кириллицы в путях вашего проекта, папка вашего пользователя должна быть написана также латиницей для корректной работы.</blockquote>
+
+<p>Выполним инициализацию проекта командой <code>npm init</code> и укажем название нашего проекта <code>myproject</code>:</p>
+
+<img src="../../public/images/blog/tools/gulp-4-lesson/npm-init.jpg" alt="Инициализация проекта npm init">
+
+<p>Если у вас нет желания заполнять остальные поля, можно оставить их пустыми, нажимая «Enter» или заполнить на свое усмотрение. По окончании заполнения полей, введите <code>yes</code> и нажмите «Enter».</p>
+
+<img src="../../public/images/blog/tools/gulp-4-lesson/npm-init-yes.jpg" alt="Завершение инициализации проекта Gulp в npm init">
+
+<p>Проект создан. У нас появился файл «package.json». Это файл манифеста нашего нового проекта, который, помимо той информации, что мы указали в терминале, содержит также информацию о используемых в нашем проекте пакетах и их версиях. Если в дальнейшем нам необходимо будет заново установить все используемые в проекте пакеты, можно будет сделать это всего одной командой <code>npm i</code>. В проект будут автоматически установлены модули соответствующих версий.</p>
+
+<img src="../../public/images/blog/tools/gulp-4-lesson/gulp-package-json.jpg" alt="Файл package.json нашего проекта">
+
+<p>Для начала установим Gulp локально в наш проект командой:</p>
+
+<pre class="language-bash"><code>npm i gulp --save-dev</code></pre>
+
+<blockquote>Если вы хотите, чтобы ваши зависимости были отражены в секции <code>devDependencies</code> манифеста, нужно обязательно указывать ключ <code>--save-dev</code>.</blockquote>
+
+<p>Теперь в файле package.json, в секции <code>devDependencies</code> появился <code>gulp</code> и информация о его текущей версии. После установки других пакетов таким-же образом, информация о них также будет отражена в «package.json».</p>
+
+<pre class="language-javascript"><code>{
+  "name": "myproject",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^4.0.2"
+  }
+}
+</code></pre>
+
+<p>Кроме того, в папке нашего проекта появилась папка «node_modules», которая теперь содержит все зависимости пакета «gulp».</p>
+
+<img src="../../public/images/blog/tools/gulp-4-lesson/node_modules-folder.jpg" alt="Папка node_modules">
+
+<p>Именно в эту папку будут автоматически установлены все модули и зависимости, которые мы будем использовать в нашем проекте. Папок с зависимостями может быть очень много, не смотря на то, что пока что мы установили только один пакет. Все дополнительные модули необходимы для корректной работы основных пакетов.</p>
+
+<p>В папке проекта таже можно заметить файл «package-lock.json». Это служебный файл, на который можно не обращать внимание. Его, конечно, можно удалить, однако после повторной установки модулей, он появится вновь.</p>
+
+<p>Для файлов нашего проекта я предлагаю создать папку «app/», в которой будут храниться все исходные файлы.</p>
+
+<img src="../../public/images/blog/tools/gulp-4-lesson/gulp-project-app-folder.jpg" alt="Папка app проекта Gulp">
+
+<p>Создадим папку «dist/», в которую будет выгружен готовый билд проекта. Если вы работаете с какой-либо CMS или фреймворком, папка «dist/» вам, в принципе и не нужна. В своих проектах я не делаю сборку, потому, что все, что нужно для посадки, как правило, уже собрано в папке «app/» и готово к дальнейшей работе. В стартере OptimizedHTML 5 мы не используем возможности билда проекта, в этом нет необходимости. В данном уроке сборка проекта, все-таки будет показана для наглядного примера, чтобы вы понимали как это происходит в других проектах. Итак, папка «app/» - это исходники, «dist/» - это готовый, собранный проект.</p>
+
+<img src="../../public/images/blog/tools/gulp-4-lesson/gulp-project-dist-folder.jpg" alt="Папка dist проекта Gulp">
+
+<p>Давайте создадим самый главный файл проекта. Это, конечно-же, «gulpfile.js».</p>
+
+<h3>Работа с gulpfile.js</h3>
+
+<blockquote>Внимание! Все куски кода с примерами будут объединены в один полноценный пример «gulpfile.js» со всеми комментариями в конце данного урока.</blockquote>
+
+<p>Для начала определим константы Gulp в «gulpfile.js»:</p>
+
+<pre class="language-javascript"><code>// Определяем константы Gulp
+const { src, dest, parallel, series, watch } = require('gulp');
+</code></pre>
+
+<p>Именно с помощью <code>require()</code> мы подключаем модули из папки «node_modules» и присваиваем их переменной или, как в нашем случае, константам.</p>
+
+<p>Установим Live Server, который позволит нам использовать возможности локального сервера и автоматически обновлять страницы при изменениях в файлах. Лучшее решение - Browsersync. Давайте его установим командой:</p>
+
+<pre class="language-bash"><code>npm i browser-sync --save-dev</code></pre>
+
+<p>Подключим Browsersync в проект:</p>
+
+<pre class="language-javascript"><code>// Определяем константы Gulp
+const { src, dest, parallel, series, watch } = require('gulp');
+
+// Подключаем Browsersync
+const browserSync = require('browser-sync').create();
+</code></pre>
+
+<p>Здесь необходимо указать <code>.create()</code> для создания нового подключения.</p>
+
+<p>Далее напишем функцию, которая определит логику работы «Browsersync». В отличие от предыдущей версии, логика работы в комбайне сейчас не является таском. Это просто функция, которую можно экспортировать в таск или добавить в набор экспорта.</p>
+
+<pre class="language-javascript"><code>// Определяем логику работы Browsersync
+function browsersync() {
+  browserSync.init({ // Инициализация Browsersync
+    server: { baseDir: 'app/' }, // Указываем папку сервера
+    notify: false, // Отключаем уведомления
+    online: true // Режим работы: true или false
+  })
+}
+</code></pre>
+
+<blockquote>Обратите внимание, что название функции не должно совпадать с названием переменной или константы, в которую мы подключаем пакет. Поэтмоу, в данном случае, название функции <code>browsersync()</code> будет содержать только строчные буквы.</blockquote>
+
+<blockquote>При использовании какого-либо модуля, рекомендую всегда читать его документацию на официальном сайте или на сайта npmjs.org. Как правило, разницы большой нет, где смотреть инструкцию, однако лучше отдавать предпочтение оф. сайту, так как информация на сайте npmjs.org может обновляться не сразу или иметь не полные инструкции.</blockquote>
+
+<p>Если в терминале выполнить команду <code>gulp browsersync</code>, мы получим ошибку «Task never defined: browsersync», так как функция <code>browsersync()</code> - это не таск, готовый к запуску.</p>
+
+<p>Для того, чтобы получить готовый к запуску таск, функцию или комбинацию функций необходимо экспортировать.</p>
+
+<p>Допишем далее в gulpfile.js:</p>
+
+<pre class="language-javascript"><code>// Экспортируем функцию browsersync() как таск browsersync. Значение после знака = это имеющаяся функция.
+exports.browsersync = browsersync;
+</code></pre>
+
+<p>Запускаем новый таск командой:</p>
+
+<pre class="language-bash"><code>gulp browsersync</code></pre>
+
+<p>После запуска мы увидим в браузере белую страницу с надписью «Cannot GET /». Это говорит о том, что в папке проекта «app/» нет индексного файла.</p>
+
+<p>Если мы создадим в папке «app/» индексный файл «index.html», напишем в него что-нибудь и сохраним файл, то, после обновления страницы, мы сможем узреть в браузере результат нашего творчества.</p>
+
+<blockquote>Параметр <code>online</code> отвечает за режим работы. Укажите <code>online: false</code>, если хотите работать без подключения к интернету.</blockquote>
+
+<h3>Работа со скриптами</h3>
+
+<p>Создадим функцию <code>scripts()</code> до экспорта задач. Данная функция будет обрабатывать скрипты нашего проекта:</p>
+
+<pre class="language-javascript"><code>function scripts() {
+  return src([ // Берем файлы из источников
+    'node_modules/jquery/dist/jquery.min.js', // Пример подключения библиотеки
+    'app/js/app.js', // Пользовательские скрипты, использующие библиотеку, должны быть подключены в конце
+    ])
+  .pipe(concat('app.min.js')) // Конкатенируем в один файл
+  .pipe(uglify()) // Сжимаем JavaScript
+  .pipe(dest('app/js/')) // Выгружаем готовый файл в папку назначения
+  .pipe(browserSync.stream()) // Триггерим Browsersync для обновления страницы
+}
+</code></pre>
+
+<p>Для работы данной функции нам понадобятся модули «gulp-concat» и «gulp-uglify-es». Установим их в наш проект. Устанавливать несколько пакетов можно простым перечислением без каких-либо разделяющих символов одной командой:</p>
+
+<pre class="language-bash"><code>npm i gulp-concat gulp-uglify-es --save-dev</code></pre>
+
+<p>И подключим данные модули к проекту в верхней части «gulpfile.js»:</p>
+
+<pre class="language-javascript"><code>// Определяем константы Gulp
+const { src, dest, parallel, series, watch } = require('gulp');
+
+// Подключаем Browsersync
+const browserSync = require('browser-sync').create();
+
+// Подключаем gulp-concat
+const concat = require('gulp-concat');
+
+// Подключаем gulp-uglify-es
+const uglify = require('gulp-uglify-es').default;
+</code></pre>
+
+<p>Создадим в папке «app/» новую папку «js/» и в ней уже создадим новый файл «app.js». Для примера можно разместить следующий код в файле «app.js»:</p>
+
+<pre class="language-javascript"><code>$(document).ready(function() {
+  // $('body').hide()
+})
+</code></pre>
+
+<p>Давайте разберемся, что происходит в функции <code>scripts()</code> нашего «gulpfile.js». Я буду указывать соответствующую строку кода из примера выше и объяснять, что мы делаем.</p>
+
+<ul>
+  <li>Строка 1: Создаем функцию <code>scripts()</code></li>
+  <li>Строка 2: Возвращаем через return и тут-же открываем источник посредством <code>src</code> для <a href="../../blog/docs/gulp-documentation.html#vinyl" target="_blank">объекта Vinyl</a>.</li>
+  <li>
+    <p>Строки 3 и 4: Перечисление нескольких файлов в качестве источника.</p>
+    <p>Внимание! В строке 3 мы подключаем jQuery из модулей. Его, соответственно, также нужно установить командой <code>npm i jquery --save-dev</code></p>
+    <p>Имейте ввиду, что подключение пользовательских скриптов, в которых могут быть использованы какие-либо JS библиотеки, нужно размещать после подключения библиотек в потоке, так как в процессе конкатенации файлы сливаются именно в той последовательности, в которой перечисляются пути до файлов в <code>src</code>, а подключение API библиотеки должно предшествовать использованию.</p>
+  </li>
+  <li>
+    <p>Строка 6: Конкатенация (слияние) содержимого перечисленных выше файлов в один виртуальный. Здесь мы должны указать название результирующего файла, в нашем случае это «app.min.js». Для удобства каждый новый вызов <code>.pipe()</code> рекомендую писать с новой строки.</p>
+    <p>Так как <code>concat</code> не является частью Gulp, его можно установить дополнительно, как и другие дополнительные модули командой <code>npm i gulp-concat --save-dev</code> и подключить к проекту в верхней части «gulpfile.js» (мы это уже сделали выше).</p>
+  </li>
+  <li>Строка 7: Сжатие скриптов посредством модуля «gulp-uglify-es», который мы установили и подключили ранее, вместе с «gulp-concat». Обратите внимание, что данный модуль необходимо подключать с параметром <code>.default</code> в конце: <pre class="language-javascript"><code>const uglify = require('gulp-uglify-es').default;</code></pre></li>
+  <li>Строка 8: Выгрузка результирующего файла в указанную директорию посредством <code>dest()</code>.</li>
+  <li>Строка 9: Вызываем Browsersync для перезагрузки страницы. <code>.stream()</code> используется для инъекции в код, без hard reload, однако в данном случае произойдет именно перезагрузка страницы, так как Browsersync знает, что это лучший вариант для работы со скриптами. Если мы работаем со стилями, например, жесткая перезагрузка не обязательна и Browsersync просо подставит новый код в браузере, без перезагрузки страницы. Это мы рассмотрим далее в уроке.</li>
+</ul>
+
+<p>Далее экспортируем функцию <code>scripts()</code> в таск. В нижней части «gulpfile.js», где у нас размещен предыдущий экспорт, добавляем экспорт таска <code>scripts</code>:</p>
+
+<pre class="language-javascript"><code>// Экспортируем функцию browsersync() как таск browsersync. Значение после знака = это имеющаяся функция.
+exports.browsersync = browsersync;
+
+// Экспортируем функцию scripts() в таск scripts
+exports.scripts = scripts;
+</code></pre>
+
+<p>Поначалу может показаться, что система экспорта функций в таски не совсем удобна, ведь раньше, в Gulp версии 3, мы сразу писали таски, которые уже были готовы к использованию без экспорта. Но здесь фишка в том, что именно с помощью <code>exports</code> можно комбинировать любым способом любые функции. Это намного круче, намного удобнее и работает все намного быстрее. По мере изучения данного урока вы в этом убедитесь.</p>
+
+<p>Запустим <code>gulp scripts</code> и проверим в терминале, как работает наш таск:</p>
+
+<img src="../../public/images/blog/tools/gulp-4-lesson/gulp-scripts-task.jpg" alt="Таск scripts">
+
+<p>Таск работает отлично. Если перейти в папку «app/js/», можно узреть вновь созданный минифицированный файл «app.min.js» со скриптами проекта. Открыв этот файл, мы увидим, что там находится скрипт библиотеки jQuery, а в конце строки наш пример кода из «app/js/app.js».</p>
+
+<p>Добавим разметку-пример в файл «app/index.html» с подключенным скриптом, стилями и изображением:</p>
+
+<pre class="language-html"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+
+&lt;head&gt;
+
+  &lt;meta charset="UTF-8"&gt;
+  &lt;title>Document&lt;/title&gt;
+
+  &lt;!-- Подключаем стили проекта --&gt;
+  &lt;link rel="stylesheet" href="css/app.min.css"&gt;
+
+&lt;/head&gt;
+
+&lt;body&gt;
+
+  &lt;p&gt;Далеко-далеко за словесными горами в стране, гласных и согласных...&lt;/p&gt;
+
+  &lt;!-- Подключаем оптимизированное изображение --&gt;
+  &lt;img src="images/dest/image.jpg" alt="Alt"&gt;
+
+  &lt;!-- Подключаем скрипты проекта --&gt;
+  &lt;script src="js/app.min.js"&gt;&lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<p>Со стилями и изображениями поработаем чуть позже. Нужные ресурсы можно взять с GitHub, ссылка указана в начале статьи, в разделе полезных ресурсов урока.</p>
+
+<blockquote>Рекомендую держать файл «index.html» на виду, так как в дальнейшем мы к нему еще обратимся при работе со стилями и изображениями. Сейчас следует обратить внимание именно на строчку подключения скрипта: <br><code>&lt;script src="js/app.min.js"&gt;&lt;/script&gt;</code>.</blockquote>
+
+<blockquote>Обратите внимание, что в путях до файлов скриптов, стилей и изображений мы не указываем папку «app/», так как эта папка является корнем для сервера и уже учтена в настройках Browsersync.</blockquote>
+
+<p>Давайте сделаем так, чтобы при сохранении скриптов, происходило автоматическое обновление страницы в браузере. Для этого создадим новую функцию <code>startwatch()</code>, которая запустит наблюдение за изменениями файлов. Данную функию позже мы добавим в дефолтный экспорт для запуска вотчинга при старте.</p>
+
+<pre class="language-javascript"><code>function startwatch() {
+
+  // Выбираем все файлы JS в проекте, а затем исключим с суффиксом .min.js
+  watch(['app/**/*.js', '!app/**/*.min.js'], scripts);
+
+}
+</code></pre>
+
+<p>Использование константы <code>watch</code>, которую мы определили в начале документа, в качестве Gulp-функции, позволит нам выбрать нужные файлы для наблюдения - <code>'app/**/*.js'</code>, а затем отфильтровать те, которые заканчиваются на .min.js. В результате, для вотчинга у нас будут выбраны все файлы JS, кроме .min.js.</p>
+
+<blockquote>Для более глубокого понимания работы Globs рекомендую ознакомиться с <a href="../../blog/docs/gulp-documentation.html#explaining-globs" target="_blank">соответствующим разделом документации Gulp</a>.</blockquote>
+
+<p>Обратите внимание, друзья, что у нас может случиться рекурсивная перезагрузка страницы и рекурсивная (бесконечная) сборка файлов, если не установить негативный фильтр на файлы .min.js. Дело в том, что после сохранения файла «app.js» инициализируется сборка JS файлов, через определенное время создается собранный файл «app.min.js», который заново триггерит вотчер и все начинается заново. Именно поэтому есть замечательная возможность исключить нежелательные файлы из выборки, указав восклицательный знак «!» в начале строки Glob. Строка с восклицательным знаком должна следовать после того, как мы указали все JS файлы, так как она является фильтром для предыдущей строки Glob.</p>
+
+<p>Для того, чтобы наша функция <code>startwatch()</code> заработала и начала выполнять полезную работу, ее необходимо добавить в дефолтный экспорт. Перейдем в секцию экспортов (в gulpfile.js внизу, где мы размещаем экспорты) и добавим дефолтный таск, в котором и запустим вотчер:</p>
+
+<pre class="language-javascript"><code>// Экспортируем функцию browsersync() как таск browsersync. Значение после знака = это имеющаяся функция.
+exports.browsersync = browsersync;
+
+// Экспортируем функцию scripts() в таск scripts
+exports.scripts = scripts;
+
+// Экспортируем дефолтный таск с нужным набором функций
+exports.default = parallel(scripts, browsersync, startwatch);
+</code></pre>
+
+<blockquote>Дефолтный таск <code>exports.default</code> позволяет запускать проект одной командой <code>gulp</code> в терминале.</blockquote>
+
+<blockquote><code>parallel()</code> - параллельное выполнение всех перечисленных в скобках функций. В нашем случае, параллельно будут собраны скрипты (<code>scripts</code>), запущен сервер (<code>browsersync</code>) и запущен вотчер (<code>startwatch</code>).</blockquote>
+
+<p>Теперь можно запустить команду <code>gulp</code> в терминале. Если внести какие-либо изменения в файле «app/js/app.js», страница будет автоматически перезагружена.</p>
+
+<h3>Работа со стилями</h3>
+
+<p>Аналогичным образом можно поработать и со стилями. В папке «app/» создадим две папки - «sass» и «less». В папке «sass» создадим новый файл «main.sass», а в папке «less» создадим файл «main.less». Для примера их можно наполнить следующим содержимым:</p>
+
+<pre class="language-sass"><code>// Содержимое файла main.sass
+body
+  // display: none
+  display: grid
+</code></pre>
+
+<pre class="language-sass"><code>// Содержимое файла main.less
+body {
+  display: none;
+}
+</code></pre>
+
+<p>Ориентируясь на предыдущий опыт, установим одной командой модули «gulp-sass», «sass», «gulp-less», «gulp-autoprefixer» и «gulp-clean-css»:</p>
+
+<pre class="language-bash"><code>npm i --save-dev gulp-sass sass gulp-less gulp-autoprefixer@8 gulp-clean-css</code></pre>
+
+<p>И подключим их в проект:</p>
+
+<pre class="language-javascript"><code>// Определяем константы Gulp
+const { src, dest, parallel, series, watch } = require('gulp');
+
+// Подключаем Browsersync
+const browserSync = require('browser-sync').create();
+
+// Подключаем gulp-concat
+const concat = require('gulp-concat');
+
+// Подключаем gulp-uglify-es
+const uglify = require('gulp-uglify-es').default;
+
+// Подключаем модули gulp-sass и gulp-less
+const sass = require('gulp-sass')(require('sass'));
+const less = require('gulp-less');
+
+// Подключаем Autoprefixer
+const autoprefixer = require('gulp-autoprefixer');
+
+// Подключаем модуль gulp-clean-css
+const cleancss = require('gulp-clean-css');
+</code></pre>
+
+<p>Создадим переменную <code>preprocessor</code> в самом начале «gulpfile.js»:</p>
+
+<pre class="language-javascript"><code>// Определяем переменную "preprocessor"
+let preprocessor = 'sass'; // Выбор препроцессора в проекте - sass или less
+
+// Определяем константы Gulp
+const { src, dest, parallel, series, watch } = require('gulp');
+
+// ...
+</code></pre>
+
+<p>Теперь создадим функцию <code>styles()</code>, которая будет обрабатывать стили проекта, конкатенировать и сжимать. Обратите внимание, что мы используем наименование функции <code>styles()</code>, а не <code>sass()</code>, так как помимо Sass, у нас в проекте будет использоваться и Less. В качестве академического примера мы реализуем и такую возможность.</p>
+
+<p>Давайте ознакомимся с полной функцией и будем разбираться, что здесь происходит:</p>
+
+<pre class="language-javascript"><code>function styles() {
+  return src('app/' + preprocessor + '/main.' + preprocessor + '') // Выбираем источник: "app/sass/main.sass" или "app/less/main.less"
+  .pipe(eval(preprocessor)()) // Преобразуем значение переменной "preprocessor" в функцию
+  .pipe(concat('app.min.css')) // Конкатенируем в файл app.min.js
+  .pipe(autoprefixer({ overrideBrowserslist: ['last 10 versions'], grid: true })) // Создадим префиксы с помощью Autoprefixer
+  .pipe(cleancss( { level: { 1: { specialComments: 0 } }/* , format: 'beautify' */ } )) // Минифицируем стили
+  .pipe(dest('app/css/')) // Выгрузим результат в папку "app/css/"
+  .pipe(browserSync.stream()) // Сделаем инъекцию в браузер
+}
+</code></pre>
+
+<ul>
+  <li>Строка 2: Выбираем источники. Обратите внимание, что здесь используется переменная, которую мы определили в начале файла «gulpfile.js» - <code>preprocessor</code>. В зависимости от значения этой переменной, мы будем брать либой файл «app/sass/main.sass», либо файл «app/less/main.less». Очень удобно, если нужно расширить возможности выбора источника, в зависимости от значения переменной.</li>
+  <li>Строка 3: С помощью функции <code>eval()</code> преобразуем значение переменной <code>preprocessor</code> в наименование функции. Если <code>preprocessor = 'sass'</code>, будет работать функция <code>sass()</code>, если <code>preprocessor = 'less'</code>, будет работать функция <code>less()</code>.</li>
+  <li>Строка 4: Выгрузим содержимое в новый виртуальный файл с именем «app.min.css». Обратите внмиание, что «gulp-concat» можно использовать не только для того, чтобы собирать несколько файлов в один, но и для того, чтобы просто задать имя результирующего файла, как это происходит в данном случае.</li>
+  <li>
+    <p>Строка 5: Создание префиксов для лучшей совместимости со старыми браузерами. Здесь мы используем установленный и подключенный ранее модуль «gulp-autoprefixer».</p>
+    <p>Параметр <code>overrideBrowserslist</code> задается для определения глубины версий от текущей. В нашем случае, префиксы будут раздаваться старым браузерам последних 10-ти версий. Параметр <code>grid: true</code> отвечает за создание префиксов CSS Grid для браузеров Internet Explorer.</p></li>
+    <li>Строка 6: Форматирование или максимальное сжатие результирующего CSS файла. Параметр <code>level: { 1: { specialComments: 0 } }</code> позволяет максимально сжать CSS код в одну строку. Также мы видим закомментированный параметр <code>format: 'beautify'</code>. Если мы его раскомментируем, на выходе мы получим не максимально сжатый CSS код, а наоборот, развернутый и читаемый.</li>
+    <li>Строка 7: Выгружаем результирующий файл «app.min.css» в папку «app/css/».</li>
+    <li>Строка 8: Триггерим Browsersync на инъекцию «app.min.css» в браузер. Обратите внимание, что перезагрузки страницы при сохранении исходных файлов препроцессора не происходит, новые CSS файлы просто подставляются вместо старых с помощью механизма Browsersync. Этого достаточно для того, чтобы новые стили были применены на странице.</li>
+</ul>
+
+<p>Экспортируем функцию <code>styles()</code> в задачу. Для этого добавим перед дефолтным экспортом <code>exports.styles</code>:</p>
+
+<pre class="language-javascript"><code>// Экспортируем функцию browsersync() как таск browsersync. Значение после знака = это имеющаяся функция.
+exports.browsersync = browsersync;
+
+// Экспортируем функцию scripts() в таск scripts
+exports.scripts = scripts;
+
+// Экспортируем функцию styles() в таск styles
+exports.styles = styles;
+ 
+// Экспортируем дефолтный таск с нужным набором функций
+exports.default = parallel(scripts, browsersync, startwatch);
+</code></pre>
+
+<p>После выполнения в терминале команды <code>gulp styles</code> будет создан файл стилей проекта «app/css/app.min.css». Если мы поменяем значение переменной <code>preprocessor</code> на <code>less</code> и перезапустим <strong>gulp</strong> в терминале, то в качестве источника выступит файл «app/less/main.less» и файл будет обработан уже препроцессором Less.</p>
+
+<p>Далее, как вы уже догадались, нам необходимо настроить слежение за изменениями в исходных файлах препроцессора. Для этого создадим еще один <code>watch()</code> для стилей:</p>
+
+<pre class="language-javascript"><code>function startwatch() {
+
+  // Выбираем все файлы JS в проекте, а затем исключим с суффиксом .min.js
+  watch(['app/**/*.js', '!app/**/*.min.js'], scripts);
+
+  // Мониторим файлы препроцессора на изменения
+  watch('app/**/' + preprocessor + '/**/*', styles);
+
+}
+</code></pre>
+
+<p>Здесь переменная <code>preprocessor</code> позволяет мониторить папку выбранного препроцессора - sass или less, в зависимости от значения. После запятой указывается функция (без скобок), которую необходимо вызвать в том случае, если файлы были изменены. В данном случае, мы вызываем функцию <code>styles()</code>.</p>
+
+<p>Все, что нам остается сделать, это добавить функцию <code>styles()</code> в дефолтный экспорт:</p>
+
+<pre class="language-javascript"><code>// ...
+
+// Экспортируем дефолтный таск с нужным набором функций
+exports.default = parallel(styles, scripts, browsersync, startwatch);
+</code></pre>
+
+<p>Теперь при запуске в терминале <code>gulp</code>, стили также будут мониториться и собираться автоматически. Так как в «index.html» мы изначально подключили стили и скрипты, все изменения будут применяться автоматически.</p>
+
+<p>Внимательный читатель заметит, что мы обработали стили, обработали JavaScript, но абсолютно оставили без внимания HTML файлы. Давайте добавим наблюдение за HTML файлами проекта в функцию <code>startwatch()</code>:</p>
+
+<pre class="language-javascript"><code>function startwatch() {
+
+  // Выбираем все файлы JS в проекте, а затем исключим с суффиксом .min.js
+  watch(['app/**/*.js', '!app/**/*.min.js'], scripts);
+
+  // Мониторим файлы препроцессора на изменения
+  watch('app/**/' + preprocessor + '/**/*', styles);
+
+  // Мониторим файлы HTML на изменения
+  watch('app/**/*.html').on('change', browserSync.reload);
+
+}
+</code></pre>
+
+<p>Здесь мы отслеживаем событие посредством <code>.on('change', ...)</code> и выполняем hard reload страницы <code>browserSync.reload</code>.</p>
+
+<p>Теперь, после перезапуска <code>gulp</code>, при сохранении HTML файлов страница будет автоматически обновляться.</p>
+
+<h3>Работа с изображениями</h3>
+
+<p>Следующая возможность, которую хотелось бы реализовать в нашем учебном проекте - это работа с изображениями. Для этого создадим папку для изображений «images» в папке «app». В ней создадим две папки - «src» (для исходников) и «dest» (для оптимизированных изображений). Скачайте любое изображение или несколько изображений из интернета в формате jpg или png и поместите их в папку источников «app/images/src/». Или вы можете взять изображение-пример с GitHub, ссылка есть в начале статьи.</p>
+
+<p>Для того, чтобы работать с изображениями, нам необходим соответствующий модуль. Рекомендую использовать «compress-images». Это один из самых популярных модулей для работы с изображениями. Давайте установим «compress-images», а также вспомогательные модули:</p>
+
+<pre class="language-bash"><code>npm i --save-dev compress-images gifsicle@5.3.0 pngquant-bin@6.0.0 gulp-clean</code></pre>
+
+<blockquote>Внимание! В настоящее время для стабильной работы рекомендую устанавливать pngquant-bin версии 6.0.0 и gifsicle версии 5.3.0.</blockquote>
+
+<p>Подключим их к нашему проекту. В результате секция с подключением необходимых модулей будет выглядеть следующим образом:</p>
+
+<pre class="language-javascript"><code>// Определяем константы Gulp
+const { src, dest, parallel, series, watch } = require('gulp');
+
+// Подключаем Browsersync
+const browserSync = require('browser-sync').create();
+
+// Подключаем gulp-concat
+const concat = require('gulp-concat');
+
+// Подключаем gulp-uglify-es
+const uglify = require('gulp-uglify-es').default;
+
+// Подключаем модули gulp-sass и gulp-less
+const sass = require('gulp-sass')(require('sass'));
+const less = require('gulp-less');
+
+// Подключаем Autoprefixer
+const autoprefixer = require('gulp-autoprefixer');
+
+// Подключаем модуль gulp-clean-css
+const cleancss = require('gulp-clean-css');
+
+// Подключаем compress-images для работы с изображениями
+const imagecomp = require('compress-images');
+
+// Подключаем модуль gulp-clean (вместо del)
+const clean = require('gulp-clean');
+</code></pre>
+
+<p>Назначение вспомогательного модуля «gulp-clean» я объясню немного позже, а пока ознакомимся с новой функцией и разберемся, что здесь происходит. Добавим новую функцию <code>images()</code> после функции <code>styles()</code>:</p>
+
+<pre class="language-javascript"><code>async function images() {
+  imagecomp(
+    "app/images/src/**/*", // Берём все изображения из папки источника
+    "app/images/dest/", // Выгружаем оптимизированные изображения в папку назначения
+    { compress_force: false, statistic: true, autoupdate: true }, false, // Настраиваем основные параметры
+    { jpg: { engine: "mozjpeg", command: ["-quality", "75"] } }, // Сжимаем и оптимизируем изображеня
+    { png: { engine: "pngquant", command: ["--quality=75-100", "-o"] } },
+    { svg: { engine: "svgo", command: "--multipass" } },
+    { gif: { engine: "gifsicle", command: ["--colors", "64", "--use-col=web"] } },
+    function (err, completed) { // Обновляем страницу по завершению
+      if (completed === true) {
+        browserSync.reload()
+      }
+    }
+  )
+}
+</code></pre>
+
+<ul>
+  <li>Строка 3: Выбираем все файлы из источника.</li>
+  <li>Строка 4: Определяем папку назначения (выгрузки сжатых изображений).</li>
+  <li>Строка 5: Основные опции модуля сжатия изображений.</li>
+  <li>Строки 6-9: Сжатие различных типов файлов разными движками.</li>
+  <li>Строка 10: По завершении обновляем страницу браузера.</li>
+</ul>
+
+<p>Для того, чтобы новый таск заработал, функцию необходимо экспортировать. Добавим после <code>exports.styles = styles;</code> следующую строку:</p>
+
+<pre class="language-javascript"><code>// Экспорт функции images() в таск images
+exports.images = images;
+</code></pre>
+
+<p>Кроме того при работе с изображениями иногда необходимо очистить всю папку «app/images/dest/» с готовыми картинками. Для этого отлично подойдет модуль <code>gulp-clean</code>. Напишем новую функцию после функции <code>images()</code> с наименованием <code>cleanimg()</code>:</p>
+
+<pre class="language-javascript"><code>function cleanimg() {
+  return src('app/images/dest/', {allowEmpty: true}).pipe(clean()) // Удаляем папку "app/images/dest/"
+}
+</code></pre>
+
+<p>Экспортируем для автономного использования в секции с экспортами в «gulpfile.js»:</p>
+
+<pre class="language-javascript"><code>// Экспортируем функцию cleanimg() как таск cleanimg
+exports.cleanimg = cleanimg;
+</code></pre>
+
+<p>Проверить работу таска довольно просто, введем команду в консоли:</p>
+
+<pre class="language-bash"><code>gulp cleanimg</code></pre>
+
+<p>Далее можно добавить мониторинг изображений в вотчер. В результате функция <code>startwatch()</code> будет иметь следующий вид:</p>
+
+<pre class="language-javascript"><code>function startwatch() {
+
+  // Выбираем все файлы JS в проекте, а затем исключим с суффиксом .min.js
+  watch(['app/**/*.js', '!app/**/*.min.js'], scripts);
+
+  // Мониторим файлы препроцессора на изменения
+  watch('app/**/' + preprocessor + '/**/*', styles);
+
+  // Мониторим файлы HTML на изменения
+  watch('app/**/*.html').on('change', browserSync.reload);
+
+  // Мониторим папку-источник изображений и выполняем images(), если есть изменения
+  watch('app/images/src/**/*', images);
+
+}
+</code></pre>
+
+<p>Можно запустить проект командой <code>gulp</code> и проверить, как все работает. Ознакомьтесь с файлом «index.html», чтобы разобраться, как мы подключили в этот файл стили, изображения и скрипты.</p>
+
+<h3>Сборка проекта (<code>build</code>)</h3>
+
+<p>И последнее, что хотелось бы сегодня реализовать - это сборка проекта или <code>build</code>. Создадим в корне проекта (рядом с папкой «app/») папку «dist/», в которую будем собирать наш проект. Обратите внимание, что у нас уже все собрано изначально (стили, скрипты, сжаты изображения) и <code>build</code> я покажу только для академического примера, в реально работе данным подходом я пользуюсь редко. Все, что нам нужно сделать - это собрать заново стили, скрипты, сжать изображения во избежании билда старой информации и скопировать нужные файлы в папку «dist/».</p>
+
+<p>Добавим новую функцию <code>buildcopy()</code>:</p>
+
+<pre class="language-javascript"><code>function buildcopy() {
+  return src([ // Выбираем нужные файлы
+    'app/css/**/*.min.css',
+    'app/js/**/*.min.js',
+    'app/images/dest/**/*',
+    'app/**/*.html',
+    ], { base: 'app' }) // Параметр "base" сохраняет структуру проекта при копировании
+  .pipe(dest('dist')) // Выгружаем в папку с финальной сборкой
+}
+</code></pre>
+
+<blockquote>Обратите внимание, что мы выбираем здесь только минифицированные и готовые к продакшену файлы. Файлы нужно выбирать, исходя из задач и особенностей каждого отдельного проекта, это лишь простой и наглядный пример.</blockquote>
+
+<p>Данную функцию экспортировать не обязательно, так как она будет являться частью таска <code>build</code> и автономно использоваться не будет. Создадим таск <code>build</code> и выполним нужные функции последовательно друг за другом с помощью <code>series()</code>:</p>
+
+<pre class="language-javascript"><code>// Создаем новый таск "build", который последовательно выполняет нужные операции
+exports.build = series(styles, scripts, images, buildcopy);
+</code></pre>
+
+<p>Здесь мы используем последовательное выполнение функций, так как нам нужен строгий порядок при сборке проекта и параллельно выполнять никакие задачи не требуется.</p>
+
+<p>Соберем наш проект, выполнив в терминале:</p>
+
+<pre class="language-bash"><code>gulp build</code></pre>
+
+<p>Для очистки папки «dist/» можно создать дополнительную функцию <code>cleandist()</code> по аналогии с <code>cleanimg()</code> и добавить ее в таск <code>build</code> для предварительной очистки целевой папки:</p>
+
+<pre class="language-javascript"><code>function cleandist() {
+  return src('dist', {allowEmpty: true}).pipe(clean()) // Удаляем папку "dist/"
+}
+</code></pre>
+
+<pre class="language-javascript"><code>// Создаем новый таск "build", который последовательно выполняет нужные операции
+exports.build = series(cleandist, styles, scripts, images, buildcopy);
+</code></pre>
+
+<h3>Результат</h3>
+
+<p>В результате у нас получился такой замечательный «gulpfile.js», который мы создали на реальном примере простого окружения для верстки:</p>
+
+<pre class="language-javascript"><code>// Определяем переменную "preprocessor"
+let preprocessor = 'sass'; 
+
+// Определяем константы Gulp
+const { src, dest, parallel, series, watch } = require('gulp');
+
+// Подключаем Browsersync
+const browserSync = require('browser-sync').create();
+
+// Подключаем gulp-concat
+const concat = require('gulp-concat');
+
+// Подключаем gulp-uglify-es
+const uglify = require('gulp-uglify-es').default;
+
+// Подключаем модули gulp-sass и gulp-less
+const sass = require('gulp-sass')(require('sass'));
+const less = require('gulp-less');
+
+// Подключаем Autoprefixer
+const autoprefixer = require('gulp-autoprefixer');
+
+// Подключаем модуль gulp-clean-css
+const cleancss = require('gulp-clean-css');
+
+// Подключаем compress-images для работы с изображениями
+const imagecomp = require('compress-images');
+
+// Подключаем модуль gulp-clean (вместо del)
+const clean = require('gulp-clean');
+
+// Определяем логику работы Browsersync
+function browsersync() {
+  browserSync.init({ // Инициализация Browsersync
+    server: { baseDir: 'app/' }, // Указываем папку сервера
+    notify: false, // Отключаем уведомления
+    online: true // Режим работы: true или false
+  })
+}
+
+function scripts() {
+  return src([ // Берем файлы из источников
+    'node_modules/jquery/dist/jquery.min.js', // Пример подключения библиотеки
+    'app/js/app.js', // Пользовательские скрипты, использующие библиотеку, должны быть подключены в конце
+    ])
+  .pipe(concat('app.min.js')) // Конкатенируем в один файл
+  .pipe(uglify()) // Сжимаем JavaScript
+  .pipe(dest('app/js/')) // Выгружаем готовый файл в папку назначения
+  .pipe(browserSync.stream()) // Триггерим Browsersync для обновления страницы
+}
+
+function styles() {
+  return src('app/' + preprocessor + '/main.' + preprocessor + '') // Выбираем источник: "app/sass/main.sass" или "app/less/main.less"
+  .pipe(eval(preprocessor)()) // Преобразуем значение переменной "preprocessor" в функцию
+  .pipe(concat('app.min.css')) // Конкатенируем в файл app.min.js
+  .pipe(autoprefixer({ overrideBrowserslist: ['last 10 versions'], grid: true })) // Создадим префиксы с помощью Autoprefixer
+  .pipe(cleancss( { level: { 1: { specialComments: 0 } }/* , format: 'beautify' */ } )) // Минифицируем стили
+  .pipe(dest('app/css/')) // Выгрузим результат в папку "app/css/"
+  .pipe(browserSync.stream()) // Сделаем инъекцию в браузер
+}
+
+async function images() {
+  imagecomp(
+    "app/images/src/**/*", // Берём все изображения из папки источника
+    "app/images/dest/", // Выгружаем оптимизированные изображения в папку назначения
+    { compress_force: false, statistic: true, autoupdate: true }, false, // Настраиваем основные параметры
+    { jpg: { engine: "mozjpeg", command: ["-quality", "75"] } }, // Сжимаем и оптимизируем изображеня
+    { png: { engine: "pngquant", command: ["--quality=75-100", "-o"] } },
+    { svg: { engine: "svgo", command: "--multipass" } },
+    { gif: { engine: "gifsicle", command: ["--colors", "64", "--use-col=web"] } },
+    function (err, completed) { // Обновляем страницу по завершению
+      if (completed === true) {
+        browserSync.reload()
+      }
+    }
+  )
+}
+
+function cleanimg() {
+  return src('app/images/dest/', {allowEmpty: true}).pipe(clean()) // Удаляем папку "app/images/dest/"
+}
+
+function buildcopy() {
+  return src([ // Выбираем нужные файлы
+    'app/css/**/*.min.css',
+    'app/js/**/*.min.js',
+    'app/images/dest/**/*',
+    'app/**/*.html',
+    ], { base: 'app' }) // Параметр "base" сохраняет структуру проекта при копировании
+  .pipe(dest('dist')) // Выгружаем в папку с финальной сборкой
+}
+
+function cleandist() {
+  return src('dist', {allowEmpty: true}).pipe(clean()) // Удаляем папку "dist/"
+}
+
+function startwatch() {
+
+  // Выбираем все файлы JS в проекте, а затем исключим с суффиксом .min.js
+  watch(['app/**/*.js', '!app/**/*.min.js'], scripts);
+
+  // Мониторим файлы препроцессора на изменения
+  watch('app/**/' + preprocessor + '/**/*', styles);
+
+  // Мониторим файлы HTML на изменения
+  watch('app/**/*.html').on('change', browserSync.reload);
+
+  // Мониторим папку-источник изображений и выполняем images(), если есть изменения
+  watch('app/images/src/**/*', images);
+
+}
+
+// Экспортируем функцию browsersync() как таск browsersync. Значение после знака = это имеющаяся функция.
+exports.browsersync = browsersync;
+
+// Экспортируем функцию scripts() в таск scripts
+exports.scripts = scripts;
+
+// Экспортируем функцию styles() в таск styles
+exports.styles = styles;
+
+// Экспорт функции images() в таск images
+exports.images = images;
+
+// Экспортируем функцию cleanimg() как таск cleanimg
+exports.cleanimg = cleanimg;
+
+// Создаем новый таск "build", который последовательно выполняет нужные операции
+exports.build = series(cleandist, styles, scripts, images, buildcopy);
+
+// Экспортируем дефолтный таск с нужным набором функций
+exports.default = parallel(styles, scripts, browsersync, startwatch);
+</code></pre>
+
+
+                <div class="premium">
+          <div class="row">
+
+            <div class="col-md-12">
+              <h4>Премиум уроки от WebDesign Master</h4>
+            </div>
+
+            <div class="col-md-4 col-sm-6">
+              <a href="../../courses/jekyll/index.html" class="premium-item">
+                <span class="premium-img-wrap"><img src="../../public/images/premium/jekyll.jpg" alt="Курс по созданию сайта от А до Я на Jekyll" class="img-responsive"></span>
+                <p>Создание сайта от А до Я. Комплексный курс</p>
+              </a>
+            </div>
+
+            <div class="col-md-4 col-sm-6">
+              <a href="../../courses/webdesign/index.html" class="premium-item">
+                <span class="premium-img-wrap"><img src="../../public/images/premium/webdesign.jpg" alt="Большой комплексный курс по современному веб-дизайну" class="img-responsive"></span>
+                <p>Веб-дизайн с нейросетями для начинающих</p>
+              </a>
+            </div>
+
+            <div class="col-md-4 col-sm-6">
+              <a href="../../courses/freelance/index.html" class="premium-item">
+                <span class="premium-img-wrap"><img src="../../public/images/premium/freelance.jpg" alt="Фриланс для начинающих" class="img-responsive"></span>
+                <p>Я - фрилансер! Базовый курс для начинающих</p>
+              </a>
+            </div>
+
+          </div>
+        </div>
+
+
+        <div class="read-more">
+          <h4>Другие уроки по теме «Инструменты»</h4>
+          <ul>
+            
+            
+            
+              
+              <li><a href="../../blog/tools/parcel.html">Настройка Parcel для веб-разработки</a></li>
+              
+            
+              
+              <li><a href="../../blog/tools/tailwind-lesson.html">Tailwind CSS для начинающих. Подробный урок по подключению, настройке и использованию</a></li>
+              
+            
+              
+              <li><a href="../../blog/tools/vscode.html">Настройка VS Code для веб-разработки</a></li>
+              
+            
+              
+              <li><a href="../../blog/tools/starter.html">Starter - Простой стартер для веб-разработки</a></li>
+              
+            
+              
+              <li><a href="../../blog/tools/hosting-lesson.html">Урок по хостингу от А до Я. Сайты, базы, домены, SSL, SSH, sFTP</a></li>
+              
+            
+              
+            
+          </ul>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</article>
+
+
+        </div>
+
+        <div class="col-md-4 col-aside">
+
+  <aside class="site-aside">
+
+
+
+<div class="box box-search">
+
+<form class="search" action="https://www.google.com/search" target="_blank">
+  <div>
+    <input type="text" name="q" size="55" placeholder="Поиск по сайту..." required>
+    <input type="hidden" name="sitesearch" value="https://webdesign-masteru.github.io">
+    <button type="submit">
+      <i class="fa fa-search"></i>
+    </button>
+  </div>
+</form>
+
+
+    </div>
+
+    <nav class="box box-mnu">
+      <p class="mnu-header">Разделы сайта:</p>
+      <ul class="list-unstyled box-dashed main-menu">
+
+  <li class="d-lg-none">
+    <a href="../../courses/index.html"><i class="fa fa-diamond"></i> Курсы</a>
+  </li>
+
+  <li>
+    <a href="../../blog/html-css/index.html"><i class="fa fa-code"></i> Веб-разработка</a>
+  </li>
+
+  <li>
+    <a href="../../blog/web-design/index.html"><i class="fa fa-paint-brush"></i> Веб-дизайн</a>
+  </li>
+
+  <li>
+    <a href="../../blog/tools/index.html"><i class="fa fa-cogs"></i> Инструменты</a>
+  </li>
+
+  <li>
+    <a href="../../blog/cms/index.html"><i class="fa fa-folder-open-o"></i> CMS/Framework</a>
+  </li>
+
+</ul>
+
+    </nav>
+
+    <nav class="box box-mnu services-mnu">
+      <p class="mnu-header">Полезные ресурсы:</p>
+      <ul class="list-unstyled">
+
+  <li>
+    <a href="../../blog/tools/wsl-nodejs-new.html"><i class="fa fa-cogs"></i> Установка WSL и окружения</a>
+  </li>
+
+  <li>
+    <a href="../../blog/docs/webdev-without-wsl.html"><i class="fa fa-cogs"></i> Настройка окружения без WSL</a>
+  </li>
+
+  <li>
+    <a href="../../blog/tools/hosting-lesson.html"><i class="fa fa-server"></i> Работа с хостингом от А до Я</a>
+  </li>
+
+  <li>
+    <a href="../../blog/tools/vscode.html"><i class="fa custom-vscode-3"></i> Настройка VS Code</a>
+  </li>
+
+  <li>
+    <a href="../../blog/tools/cubic-bezier/index.html"><i class="fa custom-bezier"></i> Cubic-Bezier Generator</a>
+  </li>
+
+  <li>
+    <a href="../../blog/tools/lazy-load/index.html"><i class="fa fa-image"></i> Lazy Load Placeholder</a>
+  </li>
+
+  <li>
+    <a href="../../blog/docs/gulp-documentation.html"><i class="fa fa-file-text-o"></i> Документация Gulp</a>
+  </li>
+
+</ul>
+
+    </nav>
+
+    <div class="box box-sidebar">
+      <div id="vk_groups"></div>
+    </div>
+
+  </aside>
+
+
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <footer class="main-foot">
+    <div class="container-fluid">
+
+      <span class="year"></span> © WebDesign Master
+
+    </div>
+    <div class="top" title="Наверх"><i class="fa fa-angle-double-up"></i></div>
+  </footer>
+
+  <script>(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return}}k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window,document,"script","https://mc.yandex.ru/metrika/tag.js","ym");ym(100695574,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true,webvisor:true});</script><noscript><div><img src="https://mc.yandex.ru/watch/100695574" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+
+
+</body>
+</html>
+

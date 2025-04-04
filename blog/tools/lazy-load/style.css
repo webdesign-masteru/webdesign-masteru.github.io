@@ -1,0 +1,194 @@
+.lazy-page {
+  border: none;
+}
+
+.lazy-page .box {
+  padding-top: calc(var(--gutter) / 4);
+}
+
+.lazy-page h1 {
+  margin: 0;
+}
+
+.lazy-page h1 + p {
+  margin-bottom: calc(var(--gutter) * 1.5);
+}
+
+.lazy-page h3,
+.lazy-page h4 {
+  border-top: 1px solid var(--color-ln);
+  padding-top: calc(var(--gutter) / 2);
+}
+
+.lazy-page h4 {
+  margin: calc(var(--gutter) / 1.5) 0 calc(var(--gutter) / 4);
+}
+
+.lazy-page h5 {
+  margin: var(--gutter) 0 calc(var(--gutter) / 2);
+}
+
+.lazy-page label {
+  font-size: 12px;
+  margin-bottom: 0;
+}
+
+.lazy-page input[type=text],
+.lazy-page input[type=number] {
+  width: 100%;
+  border-radius: var(--border-radius);
+  border-color: var(--color-border);
+}
+
+.lazy-page input[type=text]:focus,
+.lazy-page input[type=text]:active,
+.lazy-page input[type=number]:focus,
+.lazy-page input[type=number]:active {
+  border-color: var(--color-accent);
+}
+
+.lazy-page input[type=file] {
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius);
+  width: 100%;
+}
+
+.lazy-dummy-result, #lazy-pattern-base, .lazy-result-code {
+  word-wrap: break-word;
+  line-height: 1.2;
+}
+
+.lazy-pattern-result {
+  width: 100%;
+  height: 102px;
+  margin-bottom: var(--gutter);
+  border: 5px solid var(--color-ln);
+  border-radius: var(--border-radius);
+}
+
+.lazy-page .service-h3 {
+  border-top: 0;
+  margin-bottom: 10px;
+}
+
+.service-h3 + small {
+  margin-bottom: calc(var(--gutter) / 1.5);
+  display: block;
+}
+
+.lazy-aspect {
+  background-color: var(--color-accent);
+  border-radius: var(--border-radius);
+  color: #fff;
+  padding: 0 7px;
+}
+
+.disable-aspect, .save-base {
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+  border-radius: var(--border-radius);
+  color: var(--color-accent);
+  font-style: normal;
+  border: 2px solid var(--color-accent);
+  padding: 0 10px;
+  float: right;
+  cursor: pointer;
+  font-weight: normal;
+}
+
+.disable-aspect b,
+.save-base b {
+  display: none;
+  font-weight: normal;
+}
+
+.disable-aspect b:first-child,
+.save-base b:first-child {
+  display: inline-block;
+}
+
+.disable-aspect.active,
+.save-base.active {
+  background-color: var(--color-accent);
+  color: #fff;
+}
+
+.disable-aspect.active b,
+.save-base.active b {
+  display: none;
+}
+
+.disable-aspect.active b:last-child,
+.save-base.active b:last-child {
+  display: inline-block;
+}
+
+.save-base {
+  color: var(--color-green);
+  border-color: var(--color-green);
+}
+
+.click-to-copy, .lazy-function {
+  font-size: 14px;
+  padding: calc(var(--gutter) / 2);
+  background-color: var(--color-lighten-middle);
+  border-radius: var(--border-radius);
+}
+
+.lazy-page .premium h4 {
+  border: none;
+  margin-top: calc(var(--gutter) / 2);
+  margin-bottom: 0;
+}
+
+.lazy-page p {
+  margin-bottom: calc(var(--gutter) / 4);
+}
+
+.lazy-page .item-content .button {
+  margin: calc(var(--gutter) / 4) calc(var(--gutter) / 4) calc(var(--gutter) / 4);
+  font-size: 14px;
+  border: none;
+  background-color: var(--color-button);
+  padding: 8px 16px;
+  display: inline-block;
+  text-align: center;
+  cursor: pointer;
+  color: var(--color-line-hover);
+}
+
+.lazy-page .item-content .button:hover {
+  color: var(--color-line-hover);
+}
+
+.lazy-page .button i {
+  margin-right: 2px;
+  font-size: .875rem;
+}
+
+.lazy-page .button:last-child {
+  margin-bottom: var(--gutter);
+}
+
+.lazy-page .button:hover {
+  color: var(--color-middle);
+}
+
+.lazy-function h4 {
+  margin: 0 0 5px;
+  padding: 0;
+  border: none;
+}
+
+.click-to-copy {
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.nowrap {
+  white-space: nowrap;
+}
+
+.date-content {
+  display: none;
+}

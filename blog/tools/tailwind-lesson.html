@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="canonical" href="https://webdesign-masteru.github.io/blog/tools/tailwind-lesson.html">
+  <meta name="generator" content="Jekyll v">
+
+  <title>Tailwind CSS для начинающих. Подробный урок по подключению, настройке и использованию</title>
+  <meta name="description" content="Подробный урок по Tailwind CSS и стартер для веб-разработки, который я подготовил для работы с CSS фреймворком Tailwind">
+
+  <link rel="icon" href="https://webdesign-masteru.github.io/favicon.ico?v=15" type="image/x-icon">
+  <meta property="og:image" content="../../public/images/thumbs/tools/tailwind-lesson/tailwind-lesson-cover.jpg">
+
+  <link rel="stylesheet" href="../../styles/index.css?v=15">
+  
+  <script src="../../scripts/dist/main.js?v=15" defer></script>
+  
+  <script>/* no flicker */document.documentElement.classList.add(localStorage.getItem('mode') === 'auto' ? (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : localStorage.getItem('mode'))</script>
+
+</head>
+
+<body>
+
+  <header class="main-head">
+
+    <div class="container-fluid">
+
+      <div class="row">
+
+        <div class="col-md-6">
+          <div class="mobile-pannel d-xl-none d-lg-none d-md-none">
+            <div class="toggler"><button title="Переключить тему"></button></div>
+            <div class="toggle-mnu"><span></span></div>
+          </div>
+        
+          <a href="../../index.html" class="logo"><img src="../../assets/images/logo-site.svg" alt="WebDesign Master"></a>
+        
+        </div>
+
+        <div class="col-md-6 d-none d-md-block d-lg-block d-xl-block">
+          <div class="toggler"><button title="Переключить тему"></button></div>
+                    <div class="social">
+            <a title="ВКонтакте" href="https://vk.com/jediweb" target="_blank"><i class="fa fa-vk"></i></a>
+            <a title="Телеграм" href="https://t.me/jediweb" target="_blank"><i class="fa custom-tg"></i></a>
+            <a title="YouTube" href="https://youtube.com/@wdm" target="_blank"><i class="fa fa-youtube-play"></i></a>
+            <a title="GitHub" href="https://github.com/webdesign-masteru" target="_blank"><i class="fa fa-github"></i></a>
+            <a title="Дзен" href="https://dzen.ru/jediweb" target="_blank"><i class="fa custom-dzen"></i></a>
+          </div>
+
+          <div class="courses-link">
+            <a href="../../courses/index.html"><i class="fa fa-diamond"></i>Курсы</a>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="mobile-menu"></div>
+
+    </div>
+
+  </header>
+
+
+  <div class="content">
+    <div class="container-fluid">
+
+      <div class="row">
+
+        <div class="col-md-8">
+
+          <article class="list-item single-page">
+  <div class="item-link">
+
+    
+    <div class="item-img-wrap post-img">
+      <img class="img-responsive" src="../../public/images/thumbs/tools/tailwind-lesson/tailwind-lesson.jpg" alt="Tailwind CSS для начинающих. Подробный урок по подключению, настройке и использованию">
+    </div>
+    
+
+    <div class="item-content">
+
+    <div class="td">
+        <a href="../../blog/tools/index.html" class="item-icon hidden-xs" title="Категория: Инструменты"><i class="fa fa-cogs custom-tailwind"></i></a>
+      </div>
+      <div class="td article-title"><h1>Tailwind CSS для начинающих. Подробный урок по подключению, настройке и использованию</h1></div>
+    
+
+      <div class="article-content">
+
+        <p>Это подробный урок по Tailwind CSS для начинающих. Мы подключим и настроим Tailwind, создадим стартер для веб-разработки с универсальной конфигурацией и научимся работать с light-dark режимами в проектах.</p>
+
+<div class="likely-scroll">
+  <div class="likely">
+    <button class="vkontakte">Поделиться</button>
+    <button class="telegram">Отправить</button>
+    <button class="pinterest" data-media="https://webdesign-masteru.github.io/public/images/thumbs/tools/tailwind-lesson/tailwind-lesson-cover.jpg">Запинить</button>
+    <button class="odnoklassniki">Класснуть</button>
+  </div>
+</div>
+
+
+<div class="video-wrap">
+  <div class="table">
+    <div class="tr">
+      <div class="td">
+        <div class="videowrapper" title="Смотреть урок «Tailwind CSS для начинающих. Подробный урок по подключению, настройке и использованию» на YouTube">
+          <img class="img-responsive" src="../../public/images/thumbs/tools/tailwind-lesson/tailwind-lesson-cover.jpg" alt="Tailwind CSS для начинающих. Подробный урок по подключению, настройке и использованию - Видеоурок">
+        </div>
+        <a href="https://youtu.be/2_qnTa3oNio" class="button button-youtube" target="_blank"><i class="fa fa-youtube-play"></i>Смотреть <span class="d-none d-lg-inline">урок </span>на YouTube</a>
+      </div>
+      <div class="td">
+        <a href="../../courses/bundle/index.html" class="premium-banner">
+          <img src="../../public/images/premium/bundle-b.jpg" alt="Все курсы канала WebDesign Master">
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<h3>Полезные ресурсы урока:</h3>
+
+<ul>
+  <li>Tailwind-Starter (готовый результат): <a href="https://github.com/webdesign-masteru/Tailwind-Starter" target="_blank">На Github</a></li>
+  <li>Документация: <a href="https://tailwindcss.com/docs/installation/tailwind-cli" target="_blank">tailwindcss.com</a></li>
+  <li>Настройка окружения: <a href="../../blog/tools/wsl-nodejs-new.html" target="_blank">WSL</a> / <a href="../../blog/docs/webdev-without-wsl.html" target="_blank">Git Bash</a></li>
+  <li>Настройка VS Code: <a href="../../blog/tools/vscode.html" target="_blank">Ознакомиться с уроком</a></li>
+  <li>Обновление Tailwind CSS: <a href="https://tailwindcss.com/docs/upgrade-guide" target="_blank">Upgrade guide</a></li>
+</ul>
+
+<h3>Плагины для VS Code:</h3>
+
+<ul>
+  <li>Tailwind CSS IntelliSense</li>
+  <li>Live Server</li>
+</ul>
+
+<h3>Разработка стартера Tailwind с поддержкой темной темы</h3>
+
+<p>Давайте настроим стартер для веб-разработки на Tailwind CSS с универсальной конфигурацией, переключением тем и стилизацией через CSS.</p>
+
+<h4>Требования</h4>
+
+<ul>
+  <li>Node.js (рекомендуется последняя LTS-версия).</li>
+  <li>Редактор кода (например, <a href="../../blog/tools/vscode.html" target="_blank">VS Code</a>).</li>
+</ul>
+
+<h4>Шаг 1: Инициализация проекта</h4>
+
+<p>Создайте папку проекта и инициализируйте проект:</p>
+
+<pre class="language-bash"><code>mkdir tailwind-starter
+cd tailwind-starter
+npm init
+</code></pre>
+
+<pre><code>package name: (tailwind-starter)
+version: (1.0.0)
+description: Startup Tailwind Template
+entry point: (index.js)
+test command:
+git repository:
+keywords:
+author: WebDesign Master
+license: (ISC)
+</code></pre>
+
+<h4>Шаг 2: Установка Tailwind CSS</h4>
+
+<p>Установите Tailwind CSS:</p>
+
+<pre class="language-bash"><code>npm i -D @tailwindcss/cli</code></pre>
+
+<h4>Шаг 3: Настройка package.json</h4>
+
+<p>Обновите созданный в процессе инициализации <code>package.json</code>. <br>Установим скрипт для запуска и билда проекта в секции <code>"scripts"</code>:</p>
+
+<pre class="language-javascript"><code>{
+  "name": "tailwind-starter",
+  "version": "1.0.0",
+  "description": "Startup Tailwind Template",
+  "main": "index.js",
+  "scripts": {
+    "dev": "npx tailwindcss -i ./input.css -o ./css/main.css --minify --watch",
+    "build": "npx tailwindcss -i ./input.css -o ./css/main.css --minify"
+  },
+  "author": "WebDesign Master",
+  "license": "ISC",
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.0.16"
+  }
+}
+</code></pre>
+
+<ul>
+  <li><code>dev</code>: Компилирует <code>input.css</code> в <code>css/main.css</code> с минификацией и отслеживанием изменений в реальном времени.</li>
+  <li><code>build</code>: Создает финальный минифицированный CSS-файл без отслеживания.</li>
+</ul>
+
+<h4>Шаг 4: Создание структуры проекта</h4>
+
+<p>Создайте следующую структуру:</p>
+
+<pre class="language-properties"><code>├─ tailwind-starter/
+  ├─ css/
+  │  └─ main.css (будет сгенерирован)
+  ├─ js/
+  │  └─ app.js
+  ├─ img/
+  │  ├─ example.jpg (добавьте свое изображение для OG-метатега)
+  │  └─ favicon.png (добавьте свое изображение)
+  ├─ index.html
+  ├─ input.css
+  └─ package.json
+</code></pre>
+
+<p>Поместите в папку <code>img</code> ваши изображения, например, <code>favicon.png</code> и <code>example.jpg</code></p>
+
+<h4>Шаг 5: Настройка стилей</h4>
+
+<p>Создайте <code>input.css</code> со следующей конфигурацией Tailwind:</p>
+
+<pre class="language-sass"><code>@import "tailwindcss";
+@variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-accent: orange;
+}
+
+[data-mode].active {
+  @apply bg-accent text-amber-50;
+}
+</code></pre>
+
+<ul>
+  <li><code>@import "tailwindcss"</code>: Подключаем Tailwind CSS.</li>
+  <li><code>@variant dark</code>: Определяет поведение темной темы (применяется к элементам с классом <code>.dark</code> и их потомкам).</li>
+  <li><code>@theme</code>: Задает кастомные переменные (например, <code>--color-accent</code>).</li>
+  <li><code>[data-mode].active</code>: Стили для активного переключателя темы.</li>
+</ul>
+
+<h4>Шаг 6: Настройка HTML</h4>
+
+<p>Создайте <code>index.html</code>:</p>
+
+<pre class="language-html"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+
+&lt;head&gt;
+
+  &lt;meta charset="utf-8"&gt;
+
+  &lt;title&gt;Tailwind Starter&lt;/title&gt;
+  &lt;meta name="description" content="Startup Tailwind Template"&gt;
+
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+
+  &lt;link rel="icon" href="img/favicon.png"&gt;
+  &lt;meta property="og:image" content="img/example.jpg"&gt;
+
+  &lt;link rel="stylesheet" href="css/main.css"&gt;
+  &lt;script src="js/app.js" defer&gt;&lt;/script&gt;
+
+&lt;/head&gt;
+
+&lt;body class="dark:bg-slate-900"&gt;
+
+  &lt;div class="text-center mt-5"&gt;
+    &lt;div data-mode="light" class="dark:text-slate-200 cursor-pointer inline-block rounded-sm p-1.5"&gt;Light&lt;/div&gt;
+    &lt;div data-mode="dark" class="dark:text-slate-200 cursor-pointer inline-block rounded-sm p-1.5"&gt;Dark&lt;/div&gt;
+    &lt;div data-mode="auto" class="dark:text-slate-200 cursor-pointer inline-block rounded-sm p-1.5"&gt;Auto&lt;/div&gt;
+  &lt;/div&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<ul>
+  <li>Классы <code>dark:text-slate-200</code> активируются в темной теме.</li>
+  <li>Атрибуты <code>data-mode</code> используются для переключения режимов.</li>
+</ul>
+
+<h4>Шаг 7: Настройка переключения тем</h4>
+
+<p>Создайте <code>js/app.js</code>:</p>
+
+<pre class="language-javascript"><code>// Custom Scripts
+
+
+
+// Tailwind Theme Mode Switch with localStorage
+
+const html = document.documentElement, mode = localStorage.getItem('mode') || 'auto'
+const getPreferredMode = () => matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+const switchMode = mode => {
+  const newMode = mode === 'auto' ? getPreferredMode() : mode
+  html.style.colorScheme = mode === 'auto' ? 'light dark' : newMode
+  html.classList.remove('light', 'dark')
+  html.classList.add(`${newMode}`)
+  localStorage.setItem('mode', mode)
+  document.querySelectorAll('[data-mode]').forEach(el => el.classList.toggle('active', el.dataset.mode === mode))
+}
+matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+  if (localStorage.getItem('mode') === 'auto') switchMode('auto')
+})
+document.addEventListener('click', e => e.target.dataset.mode && switchMode(e.target.dataset.mode))
+switchMode(mode)
+</code></pre>
+
+<ul>
+  <li>Скрипт переключает классы <code>.light</code> или <code>.dark</code> на <code>&lt;html&gt;</code> в зависимости от выбора пользователя или системных настроек.</li>
+  <li>Класс <code>.active</code> подсвечивает активный пункт для текущего режима.</li>
+</ul>
+
+<h4>Шаг 8: Компиляция стилей</h4>
+
+<p>Запустите разработку:</p>
+
+<pre class="language-bash"><code>npm run dev</code></pre>
+
+<blockquote>Tailwind скомпилирует <code>input.css</code> в <code>main.css</code> с минификацией и будет обновлять файл при изменениях.</blockquote>
+
+<p>Для финальной сборки:</p>
+
+<pre class="language-bash"><code>npm run build</code></pre>
+
+<blockquote>Проект готов к использованию и расширению: добавляйте новые стили и функциональность по мере необходимости.</blockquote>
+
+<h2>Что нового в Tailwind CSS</h2>
+
+<p>Новая версия Tailwind была полностью переписана разработчиками с нуля и получила самые значительные обновления за всю историю развития фреймворка. Для начала давайте рассмотрим ключевые особенности и отличия от предыдущей версии, а потом перейдём к практической части урока, в которой установим, настроим Tailwind, рассмотрим, как работать с темной и светлой темой, создадим свой стартер для разработки интерфейсов на Tailwind и затронем другие важные моменты.</p>
+
+<p>Итак, важные изменения в новой версии Tailwind.</p>
+
+<h3>1. Новый высокопроизводительный движок</h3>
+
+<p>Одним из главных обновлений Tailwind CSS стало повышение скорости сборки. Благодаря полной переработке движка, сборка CSS стала:</p>
+
+<ul>
+  <li>В 5 раз быстрее для полного билда. Это критически важно для крупных проектов, где файлы стилей достигают значительных размеров.</li>
+  <li>В 100 раз быстрее для инкрементальных изменений. Tailwind очень быстро обновляет стили при изменении файлов, что делает разработку более плавной и продуктивной.</li>
+</ul>
+
+<p>Эти улучшения заметны даже на небольших проектах, а для крупных команд это станет настоящим спасением.</p>
+
+<blockquote>Пример: вы работаете с проектом, содержащим тысячи файлов HTML. Tailwind CSS теперь обрабатывает изменения за миллисекунды, что особенно полезно для проектов с процессами с непрерывной интеграцией.</blockquote>
+
+<h3>2. Современные возможности CSS</h3>
+
+<p>Новый Tailwind активно использует современные возможности CSS, делая фреймворк мощнее и гибче. Рассмотрим ключевые из них:</p>
+
+<h3>2.1 Каскадные слои (cascade layers)</h3>
+
+<p>Эта функция позволяет более точно управлять порядком применения стилей и избавляет от необходимости излишнего использования специфичности.</p>
+
+<pre class="language-css"><code>@layer base {
+  body {
+    font-family: 'Inter', sans-serif;
+  }
+}
+
+@layer components {
+  .button {
+    background-color: #3490dc;
+    color: white;
+  }
+}
+</code></pre>
+
+<p>Теперь стили становятся более предсказуемыми, что упрощает поддержку кода.</p>
+
+<h3>2.2 @property: пользовательские свойства</h3>
+
+<p>Tailwind добавляет поддержку регистрации пользовательских свойств, что делает возможным, например, анимацию сложных градиентов и упрощает их настройку.</p>
+
+<pre class="language-css"><code>@property --angle {
+  syntax: '&lt;angle&gt;';
+  inherits: false;
+  initial-value: 0deg;
+}
+
+.gradient {
+  --angle: 45deg;
+  background: linear-gradient(var(--angle), #ff7eb3, #ff758c);
+}
+</code></pre>
+
+<h3>2.3 Функция color-mix()</h3>
+
+<p>Эта функция упрощает создание промежуточных цветов, что полезно для динамического интерфейса.</p>
+
+<pre class="language-css"><code>.button {
+  background-color: color-mix(in srgb, #ff7eb3, #3490dc 50%);
+}</code></pre>
+
+<h3>2.4 Логические свойства</h3>
+
+<p>Теперь логические свойства, такие как <code>margin-inline</code>, <code>padding-block</code>, поддерживаются напрямую.</p>
+
+<pre class="language-css"><code>.card {
+  padding-inline: 1rem;
+  margin-block: 2rem;
+}</code></pre>
+
+<h3>3. CSS-first конфигурация</h3>
+
+<p>Одним из самых революционных изменений стала возможность настройки Tailwind CSS непосредственно через CSS файлы. Вместо JavaScript-конфигурации теперь используется директива <code>@theme</code> в самом CSS файле:</p>
+
+<pre class="language-css"><code>@import "tailwindcss";
+
+@theme {
+  --font-primary: 'Roboto', sans-serif;
+  --color-primary: #3490dc;
+  --spacing-lg: 32px;
+}</code></pre>
+
+<p>Такой подход делает настройку более интуитивной и снижает сложность для разработчиков и дизайнеров.</p>
+
+<h3>4. Упрощенная установка и автоматическое обнаружение контента</h3>
+
+<p>Теперь для начала работы с Tailwind CSS достаточно минимальной настройки. Новая версия автоматически сканирует проект и обнаруживает файлы с шаблонами, избавляя от необходимости вручную прописывать пути в конфигурации.</p>
+
+<p>Раньше в файле tailwind.config.js необходимо было вручную прописывать пути ко всем файлам проекта, чтобы Tailwind мог найти используемые классы. Например:</p>
+
+<pre class="language-javascript"><code>module.exports = {
+  content: [
+    "./src/**/*.{html,js,jsx,ts,tsx}", // Указываем пути ко всем шаблонам
+    "./components/**/*.{html,js}",
+  ]
+};</code></pre>
+
+<p>Если вы забыли указать какой-то путь, классы из этих файлов просто не работали.</p>
+
+<p>Теперь в новой версии Tailwind CSS система сама сканирует проект и автоматически находит файлы с шаблонами. То есть прописывать вручную ничего нигде не надо.</p>
+
+<p>Это также включает автоматическое игнорирование ненужных файлов и папок, таких как <code>node_modules</code>. Кстати, файл .gitignore теперь также работает и для исключений файлов и папок в Tailwind.</p>
+
+<blockquote>Кроме того, Tailwind теперь учитывает содержимое файла .gitignore для настройки исключений файлов и папок из обработчика.</blockquote>
+
+<h3>5. Улучшенная поддержка импорта</h3>
+
+<p>Больше не нужно устанавливать дополнительные плагины для поддержки импорта CSS. Tailwind теперь поддерживает это из коробки:</p>
+
+<pre class="language-css"><code>@import "components/buttons.css";
+@import "utilities/grid.css";
+</code></pre>
+
+<h3>6. Меньше модулей</h3>
+
+<p>Теперь ваша папка <code>node_modules</code> не такая монструозно раздутая и весит гораздо меньше.</p>
+
+<h3>7. Новая цветовая палитра P3</h3>
+
+<p>Tailwind CSS добавил поддержку цветовой палитры P3, которая предоставляет доступ к более ярким и насыщенным цветам для современных экранов с расширенным цветовым охватом.</p>
+
+<pre class="language-css"><code>.bg-p3 {
+  background-color: color(display-p3 0.8 0.1 0.6);
+}</code></pre>
+
+<p>Эта возможность открывает новые перспективы для дизайнеров, создающих интерфейсы для современных дисплеев.</p>
+
+<h3>8. Дополнительные плюшки</h3>
+
+<blockquote>
+  <p><strong>8.1 Собственный плагин Vite</strong> - тесная интеграция для максимальной производительности и минимальной конфигурации.</p>
+  <p><strong>8.2 Переменные тем CSS</strong> - все токены вашего дизайна отображаются как нативные переменные CSS, чтобы вы могли получить к ним доступ из любого места.</p>
+  <p><strong>8.3 Контейнерные запросы</strong> - первоклассные API для стилизации элементов в зависимости от размера контейнера, плагины не требуются.</p>
+  <p><strong>8.4 Новые утилиты 3D трансформаций</strong> - преобразуйте элементы в 3D-пространстве прямо в вашем HTML.</p>
+  <p><strong>8.5 Расширенные API градиентов</strong> - радиальные и конические градиенты, режимы интерполяции и многое другое.</p>
+  <p><strong>8.6 Поддержка <code>@starting-style</code></strong> - новый вариант, который вы можете использовать для создания переходов входа и выхода без необходимости использования JavaScript.</p>
+  <p><strong>8.7 <code>not-*</code> вариант</strong> - стилизуйте элемент, только если он не соответствует другому варианту, пользовательскому селектору, медиа или запросу функции.</p>
+  <p><strong>8.8 Еще больше новых утилит и вариантов</strong>, включая поддержку <code>color-scheme</code>, <code>field-sizing</code>, сложных теней, <code>inert</code> и многого другого.</p>
+</blockquote>
+
+<p>Для существующих проектов разработчики опубликовали <a href="https://tailwindcss.com/docs/upgrade-guide" target="_blank">подробное руководство</a> по обновлению и создали инструмент автоматического обновления, чтобы вы могли как можно быстрее и безболезненно перейти на последнюю версию.</p>
+
+
+                <div class="premium">
+          <div class="row">
+
+            <div class="col-md-12">
+              <h4>Премиум уроки от WebDesign Master</h4>
+            </div>
+
+            <div class="col-md-4 col-sm-6">
+              <a href="../../courses/jekyll/index.html" class="premium-item">
+                <span class="premium-img-wrap"><img src="../../public/images/premium/jekyll.jpg" alt="Курс по созданию сайта от А до Я на Jekyll" class="img-responsive"></span>
+                <p>Создание сайта от А до Я. Комплексный курс</p>
+              </a>
+            </div>
+
+            <div class="col-md-4 col-sm-6">
+              <a href="../../courses/webdesign/index.html" class="premium-item">
+                <span class="premium-img-wrap"><img src="../../public/images/premium/webdesign.jpg" alt="Большой комплексный курс по современному веб-дизайну" class="img-responsive"></span>
+                <p>Веб-дизайн с нейросетями для начинающих</p>
+              </a>
+            </div>
+
+            <div class="col-md-4 col-sm-6">
+              <a href="../../courses/freelance/index.html" class="premium-item">
+                <span class="premium-img-wrap"><img src="../../public/images/premium/freelance.jpg" alt="Фриланс для начинающих" class="img-responsive"></span>
+                <p>Я - фрилансер! Базовый курс для начинающих</p>
+              </a>
+            </div>
+
+          </div>
+        </div>
+
+
+        <div class="read-more">
+          <h4>Другие уроки по теме «Инструменты»</h4>
+          <ul>
+            
+            
+            
+              
+              <li><a href="../../blog/tools/parcel.html">Настройка Parcel для веб-разработки</a></li>
+              
+            
+              
+            
+              
+              <li><a href="../../blog/tools/vscode.html">Настройка VS Code для веб-разработки</a></li>
+              
+            
+              
+              <li><a href="../../blog/tools/starter.html">Starter - Простой стартер для веб-разработки</a></li>
+              
+            
+              
+              <li><a href="../../blog/tools/hosting-lesson.html">Урок по хостингу от А до Я. Сайты, базы, домены, SSL, SSH, sFTP</a></li>
+              
+            
+              
+              <li><a href="../../blog/tools/gulp-4-lesson.html">Gulp - Актуальное и исчерпывающее руководство для самых маленьких</a></li>
+              
+            
+          </ul>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</article>
+
+
+        </div>
+
+        <div class="col-md-4 col-aside">
+
+  <aside class="site-aside">
+
+
+
+<div class="box box-search">
+
+<form class="search" action="https://www.google.com/search" target="_blank">
+  <div>
+    <input type="text" name="q" size="55" placeholder="Поиск по сайту..." required>
+    <input type="hidden" name="sitesearch" value="https://webdesign-masteru.github.io">
+    <button type="submit">
+      <i class="fa fa-search"></i>
+    </button>
+  </div>
+</form>
+
+
+    </div>
+
+    <nav class="box box-mnu">
+      <p class="mnu-header">Разделы сайта:</p>
+      <ul class="list-unstyled box-dashed main-menu">
+
+  <li class="d-lg-none">
+    <a href="../../courses/index.html"><i class="fa fa-diamond"></i> Курсы</a>
+  </li>
+
+  <li>
+    <a href="../../blog/html-css/index.html"><i class="fa fa-code"></i> Веб-разработка</a>
+  </li>
+
+  <li>
+    <a href="../../blog/web-design/index.html"><i class="fa fa-paint-brush"></i> Веб-дизайн</a>
+  </li>
+
+  <li>
+    <a href="../../blog/tools/index.html"><i class="fa fa-cogs"></i> Инструменты</a>
+  </li>
+
+  <li>
+    <a href="../../blog/cms/index.html"><i class="fa fa-folder-open-o"></i> CMS/Framework</a>
+  </li>
+
+</ul>
+
+    </nav>
+
+    <nav class="box box-mnu services-mnu">
+      <p class="mnu-header">Полезные ресурсы:</p>
+      <ul class="list-unstyled">
+
+  <li>
+    <a href="../../blog/tools/wsl-nodejs-new.html"><i class="fa fa-cogs"></i> Установка WSL и окружения</a>
+  </li>
+
+  <li>
+    <a href="../../blog/docs/webdev-without-wsl.html"><i class="fa fa-cogs"></i> Настройка окружения без WSL</a>
+  </li>
+
+  <li>
+    <a href="../../blog/tools/hosting-lesson.html"><i class="fa fa-server"></i> Работа с хостингом от А до Я</a>
+  </li>
+
+  <li>
+    <a href="../../blog/tools/vscode.html"><i class="fa custom-vscode-3"></i> Настройка VS Code</a>
+  </li>
+
+  <li>
+    <a href="../../blog/tools/cubic-bezier/index.html"><i class="fa custom-bezier"></i> Cubic-Bezier Generator</a>
+  </li>
+
+  <li>
+    <a href="../../blog/tools/lazy-load/index.html"><i class="fa fa-image"></i> Lazy Load Placeholder</a>
+  </li>
+
+  <li>
+    <a href="../../blog/docs/gulp-documentation.html"><i class="fa fa-file-text-o"></i> Документация Gulp</a>
+  </li>
+
+</ul>
+
+    </nav>
+
+    <div class="box box-sidebar">
+      <div id="vk_groups"></div>
+    </div>
+
+  </aside>
+
+
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <footer class="main-foot">
+    <div class="container-fluid">
+
+      <span class="year"></span> © WebDesign Master
+
+    </div>
+    <div class="top" title="Наверх"><i class="fa fa-angle-double-up"></i></div>
+  </footer>
+
+  <script>(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return}}k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window,document,"script","https://mc.yandex.ru/metrika/tag.js","ym");ym(100695574,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true,webvisor:true});</script><noscript><div><img src="https://mc.yandex.ru/watch/100695574" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+
+
+</body>
+</html>
+

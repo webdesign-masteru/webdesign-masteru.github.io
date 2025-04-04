@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="canonical" href="https://webdesign-masteru.github.io/blog/html-css/css-rukovodstvo.html">
+  <meta name="generator" content="Jekyll v">
+
+  <title>Основы CSS - Руководство для самых маленьких</title>
+  <meta name="description" content="Урок по основам CSS - каскадным таблицам стилей, которые применяются для CSS стилизации страниц с HTML разметкой.">
+
+  <link rel="icon" href="https://webdesign-masteru.github.io/favicon.ico?v=15" type="image/x-icon">
+  <meta property="og:image" content="../../public/images/thumbs/html-css/css-rukovodstvo/css-rukovodstvo-cover.jpg">
+
+  <link rel="stylesheet" href="../../styles/index.css?v=15">
+  
+  <script src="../../scripts/dist/main.js?v=15" defer></script>
+  
+  <script>/* no flicker */document.documentElement.classList.add(localStorage.getItem('mode') === 'auto' ? (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : localStorage.getItem('mode'))</script>
+
+</head>
+
+<body>
+
+  <header class="main-head">
+
+    <div class="container-fluid">
+
+      <div class="row">
+
+        <div class="col-md-6">
+          <div class="mobile-pannel d-xl-none d-lg-none d-md-none">
+            <div class="toggler"><button title="Переключить тему"></button></div>
+            <div class="toggle-mnu"><span></span></div>
+          </div>
+        
+          <a href="../../index.html" class="logo"><img src="../../assets/images/logo-site.svg" alt="WebDesign Master"></a>
+        
+        </div>
+
+        <div class="col-md-6 d-none d-md-block d-lg-block d-xl-block">
+          <div class="toggler"><button title="Переключить тему"></button></div>
+                    <div class="social">
+            <a title="ВКонтакте" href="https://vk.com/jediweb" target="_blank"><i class="fa fa-vk"></i></a>
+            <a title="Телеграм" href="https://t.me/jediweb" target="_blank"><i class="fa custom-tg"></i></a>
+            <a title="YouTube" href="https://youtube.com/@wdm" target="_blank"><i class="fa fa-youtube-play"></i></a>
+            <a title="GitHub" href="https://github.com/webdesign-masteru" target="_blank"><i class="fa fa-github"></i></a>
+            <a title="Дзен" href="https://dzen.ru/jediweb" target="_blank"><i class="fa custom-dzen"></i></a>
+          </div>
+
+          <div class="courses-link">
+            <a href="../../courses/index.html"><i class="fa fa-diamond"></i>Курсы</a>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="mobile-menu"></div>
+
+    </div>
+
+  </header>
+
+
+  <div class="content">
+    <div class="container-fluid">
+
+      <div class="row">
+
+        <div class="col-md-8">
+
+          <article class="list-item single-page">
+  <div class="item-link">
+
+    
+    <div class="item-img-wrap post-img">
+      <img class="img-responsive" src="../../public/images/thumbs/html-css/css-rukovodstvo/css-rukovodstvo.jpg" alt="Основы CSS - Руководство для самых маленьких">
+    </div>
+    
+
+    <div class="item-content">
+
+    <div class="td">
+        <a href="../../blog/html-css/index.html" class="item-icon hidden-xs" title="Категория: Веб-разработка"><i class="fa fa-code"></i></a>
+      </div>
+      <div class="td article-title"><h1>Основы CSS - Руководство для самых маленьких</h1></div>
+    
+
+      <div class="article-content">
+
+        <p>В этом уроке вы узнаете что такое <strong>CSS</strong>, для чего нужен и как его правильно использовать. Это базовый урок из серии "Для самых маленьких", в котором я постараюсь объяснить наиболее понятным языком основы стилизации документов посредством CSS - Каскадных таблиц стилей (<strong>C</strong>ascading <strong>S</strong>tyle <strong>S</strong>heets).</p>
+
+<div class="likely-scroll">
+  <div class="likely">
+    <button class="vkontakte">Поделиться</button>
+    <button class="telegram">Отправить</button>
+    <button class="pinterest" data-media="https://webdesign-masteru.github.io/public/images/thumbs/html-css/css-rukovodstvo/css-rukovodstvo-cover.jpg">Запинить</button>
+    <button class="odnoklassniki">Класснуть</button>
+  </div>
+</div>
+
+
+<div class="video-wrap">
+  <div class="table">
+    <div class="tr">
+      <div class="td">
+        <div class="videowrapper" title="Смотреть урок «Основы CSS - Руководство для самых маленьких» на YouTube">
+          <img class="img-responsive" src="../../public/images/thumbs/html-css/css-rukovodstvo/css-rukovodstvo-cover.jpg" alt="Основы CSS - Руководство для самых маленьких - Видеоурок">
+        </div>
+        <a href="https://youtu.be/_nrQbO3iXgI" class="button button-youtube" target="_blank"><i class="fa fa-youtube-play"></i>Смотреть <span class="d-none d-lg-inline">урок </span>на YouTube</a>
+      </div>
+      <div class="td">
+        <a href="../../courses/bundle/index.html" class="premium-banner">
+          <img src="../../public/images/premium/bundle-b.jpg" alt="Все курсы канала WebDesign Master">
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<h2>Часть 1. Основы CSS</h2>
+
+<p>В данном уроке мы затронем стилизацию документа, созданного с использованием языка разметки, т.е. придание определенной формы, определенного цвета, последовательности, размеров различных элементов и текста на странице, рассмотрим наиболее эффективные приемы работы с каскадными таблицами стилей. Поняв основы, вы сможете самостоятельно правильно и эффективно стилизовать HTML документы.</p>
+
+<blockquote>Обращаю ваше внимание, что в данном руководстве мы будем рассматривать CSS только в контексте использования с HTML документами в веб-браузере. С помощью CSS можно стилизовать и другие документы, использующие различные языки разметки. Например, стилизовать XML в Android приложениях, SVG или различные Desktop Environment в Unix-подобных операционных системах.</blockquote>
+
+<p>Вообще, CSS довольно элементарный формальный язык, который придумали для описания внешнего вида документов. Это говорит о том, что он довольно прост и состоит из самобытных примитивных конструкций, которые не так сложны для изучения. Самое сложное не синтаксис, не правила написания конструкций, а огромное количество CSS свойств для запоминания, которые выполняют различные задачи. Благо, все правила англоязычные с соответствующей смысловой нагрузкой. Простой перевод на наш язык дает понятие о том, что это правило делает и наоборот - при переводе того, что мы хотим добиться определенным свойством на английский язык, велика вероятность того, что мы получим правильное свойство. Это значительно упрощает запоминание CSS правил на интуитивном уровне. Например, если нужно задать <strong>фоновый цвет</strong> достаточно сделать перевод на английский, в результате чего получаем <strong>background-color</strong> (отдельные слова в CSS пишутся через дефис).</p>
+
+<img class="li-full-width" src="../../public/images/blog/html-css/css-rukovodstvo/slide-1.png" alt="Как запомнить CSS свойства">
+
+<h3>1.1 Использование CSS в HTML документах</h3>
+
+<p>CSS довольно просто использовать в HTML документах. Его можно:</p>
+
+<ol>
+  <li>
+  <p>Подключить как внешний CSS файл к документу. Для этого достаточно прописать тег <code>&lt;link rel="stylesheet" href="путь/до/файла.css"&gt;</code> в теге <code>&lt;head&gt;</code>. Это наиболее распространенный способ подключения таблиц стилей к документу, когда внешнее оформление страниц выносится в отдельный внешний CSS файл.</p>
+  <img class="li-full-width" src="../../public/images/blog/html-css/css-rukovodstvo/slide-2.png" alt="Внешнее подключение CSS файла"></li>
+  <li><p>Прописать стили в самом документе, используя тег &lt;style&gt;.</p>
+  <img class="li-full-width" src="../../public/images/blog/html-css/css-rukovodstvo/slide-3.png" alt="Подключение CSS через тег style">
+  <p>Это менее популярный способ внутренней стилизации, который применяется в особых случаях, когда: А. Базовые стили должны быть моментально интерпретированы браузером до загрузки основных CSS файлов; Б. Когда стили должны быть опционально изменены в процессе работы над веб-сайтом, например, опциональный размер шрифта и другие опции оформления при работе сайта на какой-либо CMS, поддерживающей создание параметров в админ. панели или в других случаях, когда это действительно необходимо.</p>
+  <p>Пример вывода опции из админки в тело документа:</p>
+<pre class="language-php"><code>&lt;style&gt;
+  .class {
+    background-color: &lt;?php echo $bgc_option; ?&gt;
+  }
+&lt;/style&gt;
+</code></pre>
+</li>
+  <li><p>Инлайновое использование CSS свойств в конкретных тегах с помощью атрибута <strong>style</strong>.</p>
+  <img class="li-full-width" src="../../public/images/blog/html-css/css-rukovodstvo/slide-4.png" alt="Инлайновое подключение CSS через атрибут style">
+  <p>Такой способ внутренней стилизации используется очень редко в особых случаях, когда необходимо: А. Вывести из админ. панели сайта параметры для конкретных тегов; Б. Сделать динамическую стилизацию элементов посредством JavaScript.</p>
+  <p>Пример инлайнового вывода фонового изображения секции из админ. панели сайта:</p>
+  <blockquote>
+<pre class="language-html"><code>&lt;section style="background-image: url(&lt;?php echo $bgi_option; ?&gt;)"&gt;</code></pre>
+  <p>Вывод $bgi_option - простой пример, показывающий что значение свойства задается в админке сайта.</p>
+  </blockquote>Это довольно топорный способ стилизации элементов на странице, который не стоит использовать в повседневной работе. Только в исключительных случаях, когда это действительно необходимо. Инлайновая стилизация (от слова <strong>inline</strong> - встроенный) работает только в том элементе, в котором она прописана. Инлайновые стили имеют наибольший приоритет. То-есть если во внешнем файле у вас указана одна картинка для фона, а в инлайновых стилях другая - сработает вторая.
+  </li>
+</ol>
+
+<h3>1.2 CSS синтаксис</h3>
+
+<p>Как я уже говорил ранее, CSS имеет довольно простой синтаксис. Давайте разберем его.</p>
+
+<img src="../../public/images/blog/html-css/css-rukovodstvo/slide-5.png" alt="CSS синтаксис">
+
+<p>Правила объявлений настолько просты, что их можно описать в одном предложении. Сначала пишется <strong>селектор</strong>, который выбирает конкретный элемент на странице, после <strong>фигурных скобок</strong> пишутся <strong>свойства</strong> со <strong>значениями</strong> после двоеточия, а сами свойства отделяются друг от друга <strong>точкой с запятой</strong>. Это все.</p>
+
+<p>Просто, не правда ли?</p>
+
+<p>Самое сложное в CSS объявлении - селектор. Подробнее узнать о том, как формируются и как используются селекторы вы можете в уроке <a href="../../blog/html-css/586.html" target="_blank">Все CSS селекторы в одном уроке</a> - это очень важная тема, так как здесь раскрывается вся магия выборки элементов на странице, рекомендую посмотреть этот урок в обязательном порядке всем новичкам.</p>
+
+<p>Вкратце <strong>CSS селектор</strong> - (от слова <strong>select</strong> - выбирать) - это конструкция, с которой начинается каждый блок объявлений и которая служит для выборки элемента или однотипных элементов на странице для дальнейшей стилизации. Чаще всего в качестве селектора используется определенный <strong>класс</strong> тега, например:</p>
+
+<pre class="language-html"><code>&lt;!-- HTML: --&gt;
+&lt;div class="my-class"&gt;&lt;/div&gt;
+</code></pre>
+
+<pre class="language-css"><code>/* CSS: */
+.my-class {
+  background-color: #999;
+}
+</code></pre>
+
+<p>Здесь селектором выступает класс my-class тега div, который получает необходимое оформление в CSS файле. В данном случае фоновый цвет - серый. Соответственно, если на странице есть несколько тегов (не только div) с классом <strong>my-class</strong>, все эти элементы получат одинаковое оформление - серый фон цвета #999.</p>
+
+<h3>1.3 Каскадирование, наследование и приоритет</h3>
+
+<p>Понять принцип каскадирования несложно. Давайте взглянем на пример:</p>
+
+<pre class="language-html"><code>&lt;!-- HTML: --&gt;
+&lt;div class="parent"&gt;
+  Далеко-далеко за словесными горами в стране.
+  &lt;div class="children"&gt;
+    Далеко-далеко за словесными горами.
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+
+<pre class="language-css"><code>/* CSS: */
+.parent .children {
+  color: #666;
+}
+.parent {
+  padding: 10px;
+  color: #999;
+}
+</code></pre>
+
+<p>Из примера мы видим, что в CSS написан каскад, в котором класс <strong>.parent</strong> стоит на первом месте, после него через пробел указан дочерний класс <strong>.children</strong>, который отвечает уже за стилизацию только дочернего элемента. Дочерний тег обязательно должен быть вложен в тег с классом <strong>.parent</strong>. Если в HTML документе мы вынесем тег <strong>.children</strong> из тега div с классом <strong>.parent</strong>, он потеряет свое оформление, так как каскад уже не будет работать, структура нарушена.</p>
+
+<p>Что мы получим в результате нашего примера. Тег с классом .children получит цвет текста #666, так как имеет более длинный каскад, а .parent покрасится в цвет #999. Родительский класс будет иметь внутренние отступы 10px, в то время, как дочерний этих отступов иметь не будет, так как свойство padding не распространяется на дочерние элементы. Однако если мы уберем <strong>color: #666;</strong> у селектора <strong>.parent .children</strong>, то его текст покрасится в цвет родителя <strong>color: #999;</strong></p>
+
+<img src="../../public/images/blog/html-css/css-rukovodstvo/slide-6.png" alt="CSS каскад">
+
+<p>Каскадирование и наследование позволяют стилизовать конкретные элементы на странице и определять приоритет применяемых стилей. Давайте рассмотрим иерархию приоритетов.</p>
+
+<ol>
+  <li>Самым высоким приоритетом обладают свойства, в конце объявления которых указана конструкция <strong>!important</strong>. Не важно, какую вложенность имеет селектор, каким образом используются стили - инлайново или подключением внешнего файла, у них будет наибольший приоритет. Я крайне не рекомендую использовать <strong>!important</strong> при стилизации, так как в процессе поддержки или даже в процессе разработки в дальнейшем обязательно возникнет путаница, которую спасет только рефакторинг стилей. Как показывает практика, <strong>всегда есть способ не использовать !important</strong>. <br>
+  Пример использования !important:
+<pre class="language-css"><code>.my-class {
+  background-color: #999!important;
+}
+</code></pre>
+  </li>
+  <li>Следующим по значимости приоритетом обладают инлайновые стили, прописанные в самом теге через атрибут <strong>style</strong>, которые мы рассмотрели ранее: &lt;section style="background-color: #eee;"&gt;</li>
+  <li>Стили, заданные в теге style в самом документе имеют меньший приоритет;</li>
+  <li>Еще меньшим приоритетом обладают стили, подключенные к документу как внешний CSS файл посредством тега &lt;link&gt;</li>
+  <li>Самый низкий приоритет, окромя стандартных стилей браузера имеют стили родительских селекторов перед дочерними, например: <br>
+
+<pre class="language-html"><code>&lt;!-- HTML: --&gt;
+&lt;div class="my-class"&gt;
+  &lt;p&gt;Далеко-далеко за словесными горами.&lt;/p&gt;
+&lt;/div&gt;
+</code></pre>
+
+<pre class="language-css"><code>/* CSS: */
+.my-class {
+  margin: 10px;
+} /* будет иметь меньший приоритет для дочернего <strong>p</strong>, чем: */
+.my-class p {
+  margin: 15px;
+}
+</code></pre>
+    В результате тег <code>&lt;p&gt;</code>, находящийся в теге с классом .my-class получит значение свойства margin: 15px.
+  </li>
+</ol>
+
+<p>Стоит также отметить, что количество классов или идентификаторов, а также наличие дополнительных псевдоклассов и конструкций в селекторе повышают приоритет для стилизации:</p>
+
+<pre class="language-css"><code>.my-class.class-2 {
+  margin: 10px;
+} /* будет иметь больший приоритет, чем: */
+.my-class {
+  margin: 15px;
+}
+</code></pre>
+
+<p>И т.д. по логической цепочке.</p>
+
+<p>И в завершение по приоритетам важно отметить, что стили, идущие в последующих объявлениях ниже по документу также имеют наибольший приоритет. Например:</p>
+
+<pre class="language-css"><code>.my-class {
+  margin: 10px;
+} /* будет иметь меньший приоритет, чем идущий после него такой-же селектор: */
+.my-class {
+  margin: 15px;
+}
+</code></pre>
+
+<p>В результате последний селектор в потоке документа получит значение свойства margin: 15px, так как является наиболее приоритетным. Однако если бы селектор первого объявления был длиннее, значния его свойств несомненно бы превалировали.</p>
+
+<p>Что касается наследования, здесь все просто. Все дочерние элементы наследуют некоторые свойства родителя. Какие именно свойства наследуются предстоит выяснить вам в процессе изучения различных свойств и применении их на практике. Например, цвет текста всегда наследуется потомками, а отступы - нет.</p>
+
+<h2>Часть 2. CSS свойства</h2>
+
+<p>Я думаю нет смысла перечислять все CSS свойства, так как их очень много и практичней обратиться к справочнику всех CSS свойств. Я рекомендую изучить CSS свойства в <a href="http://htmlbook.ru/css" target="_blank">справочнике на HTMLBook</a>.</p>
+
+<p>Однако рассмотрим 10 самых используемых CSS свойств в верстке. Я взял 10 больших CSS файлов из своих проектов и отсортировал свойства по частоте использования.</p>
+
+<table class="nofixed">
+
+  <thead>
+    <tr>
+      <td><h4>CSS Свойство</h4></td>
+      <td><h4>Частота использования</h4></td>
+      <td><h4>Описание</h4></td>
+    </tr>
+  </thead>
+
+  <tr><td>color</td> <td>960 раз</td> <td>Цвет текста элемента: <img src="../../public/images/blog/html-css/css-rukovodstvo/code-illustration-1.png" alt="CSS свойство color"></td></tr>
+  <tr><td>background-color</td> <td>755 раз</td> <td>Цвет фона элемента: <img src="../../public/images/blog/html-css/css-rukovodstvo/code-illustration-2.png" alt="CSS свойство background-color"></td></tr>
+  <tr><td>font-size</td> <td>524 раза</td> <td>Размер шрифта: <img src="../../public/images/blog/html-css/css-rukovodstvo/code-illustration-3.png" alt="CSS свойство font-size"></td></tr>
+  <tr><td>opacity</td> <td>435 раз</td> <td>Уровень прозрачности элемента: <img src="../../public/images/blog/html-css/css-rukovodstvo/code-illustration-4.png" alt="CSS свойство opacity"></td></tr>
+  <tr><td>padding</td> <td>372 раза</td> <td>Размер полей внутри элемента: <img src="../../public/images/blog/html-css/css-rukovodstvo/code-illustration-5.png" alt="CSS свойство padding"></td></tr>
+  <tr><td>width</td> <td>356 раз</td> <td>Ширина блочного элемента, не включая размеры границ и полей: <img src="../../public/images/blog/html-css/css-rukovodstvo/code-illustration-6.png" alt="CSS свойство width"></td></tr>
+  <tr><td>margin</td> <td>311 раз</td> <td>Внешние отступы элемента: <img src="../../public/images/blog/html-css/css-rukovodstvo/code-illustration-7.png" alt="CSS свойство margin"></td></tr>
+  <tr><td>height</td> <td>305 раз</td> <td>Высота блочного элемента, не включая размеры границ и полей: <img src="../../public/images/blog/html-css/css-rukovodstvo/code-illustration-8.png" alt="CSS свойство height"></td></tr>
+  <tr><td>font-weight</td> <td>280 раз</td> <td>Насыщенность шрифта: <img src="../../public/images/blog/html-css/css-rukovodstvo/code-illustration-9.png" alt="CSS свойство font-weight"></td></tr>
+  <tr><td>text-align</td> <td>245 раз</td> <td>Горизонтальное выравнивание текста: <img src="../../public/images/blog/html-css/css-rukovodstvo/code-illustration-10.png" alt="CSS свойство text-align"></td></tr>
+
+</table>
+
+<h2>Часть 3. Медиа-запросы</h2>
+
+<p><strong>Медиа-запросы в CSS</strong> - это база для создания отзывчивой верстки, позволяющая стилизовать элементы в зависимости от размера экрана или устройства, на котором отображается веб-сайт. Технически <strong>Медиа-запрос</strong> - это простое логическое выражение, которое может быть или истинным или ложным. Условиями для такого выражения являются либо параметры устройства, на котором отображается веб-страница, либо размер экрана в пикселах.</p>
+
+<p>В данном руководстве мы рассмотрим базовые возможности медиа-запросов, которые необходимы для адаптивной верстки сайтов и практически полезны.</p>
+
+<p>Медиа-запрос пишется в самом файле стилей или в теле документа (тег style) и начинается с объявления правила <strong>@media</strong>. Структура медиа запроса довольно проста:</p>
+
+<img src="../../public/images/blog/html-css/css-rukovodstvo/slide-17.png" alt="Медиа-запросы">
+
+<p>Условием может выступать либо устройство - all (все устройства), screen, print, tv и т.д., либо медиа-функции, которые задают параметры устройства или разрешение экрана, на котором отображается документ.</p>
+
+<p>Наиболее часто используемые медиа-функции определяют именно максимальное и минимальное разрешение экрана устройства:</p>
+
+<img src="../../public/images/blog/html-css/css-rukovodstvo/slide-18.png" alt="Пример Медиа-запроса в CSS">
+
+<p>Здесь устройства с максимальным разрешением экрана 480px <strong>или</strong> минимальным разрешением 320px будут отображать текст тега с классом .my-class серым. Данное условие я привел для примера, практически оно бесполезно. Чаще всего требуется указать либо только максимальное разрешение, либо только минимальное, в пределах которого будет прменяться свойство.<p>
+
+<p>Кроме всего прочего, как мы видим из примера, функции могут содержать условия <strong>and (И)</strong>, <strong>not (НЕ)</strong> и <strong>only (Для старых браузеров, не поддерживающих медиа-запросы)</strong>. Нет логического оператора <strong>or (ИЛИ)</strong>, его роль выполняет запятая. Медиа-функции, как мы видим заключают в обычные круглые скобки.</p>
+
+<p>Размещение свойств в медиа-запросе не дает никакого приоритета, поэтому логичней размещать медиа-запросы в конце CSS документа, либо загружать тегом <strong>link</strong> внешний CSS файл с медиа-запросами после загрузки основных стилей сайта для правильного переопределения последних на разных разрешениях или на различных устройствах.</p>
+
+<h2>Часть 4. Рекомендации</h2>
+
+<p>Ну и конечно-же мои рекомендации. За всю практику верстки у меня накопились некоторые правила, которыми я с радостью поделюсь.</p>
+
+<ol>
+  <li>Старайтесь использовать <strong>только внешние подключаемые CSS файлы</strong>. Внутреннюю стилизацию применяйте только если это необходимо для корректного функционирования веб-сайта;</li>
+  <li>Старайтесь стилизовать <strong>только классы</strong>. Не стилизуйте идентификаторы (задаются через id="решетку" и пишутся через #решетку). Старайтесь меньше стилизовать теги без классов. Например, если вы стилизуете тег h3, а в дальнейшем SEO специалист решит, что заголовок здесь не уместен, обычный div должен иметь такие-же свойства с классом заголовка и отображаться также. Как вариант можно сделать дубликаты HTML тегов в классы, например, .h1, .h2, .h3, .footer, .header, .aside и стилизовать их соответствующим образом;</li>
+  <li>Старайтесь стилизовать элементы максимально автономно, сокращайте цепочку каскада до одного блока, чтобы было меньше зависимостей от родительских элементов. Это необходимо для максимально эффективного повторного использования блоков на странице и их модификации в других местах верстки. Но без фанатизма. Не стоит задавать отдельные классы каждому тегу в блоке, если не предполагается его автономное использование. Если вы перенесете блок в другое место страницы, он должен отображаться также и не зависеть от родителя. В этом вам поможет использование какой-либо методологии именования классов. Не важно, будет это БЭМ, методология, либо разработанная на основе вашего личного опыта или простые правила, предложенные мной - это лучше, чем называть классы как попало и строить нелогичные и длинные цепочки классов;</li>
+  <li>Старайтесь называть классы тегов в зависимости от того, какую функцию выполняет блок, а не от того, какое в нем будет содержание. Например, если у вас есть секция с отзывами в виде карусели, не стоит называть селекторы, используя слова <strong>reviews</strong>, <strong>otzivy</strong> и т.д. Лучше назвать <strong>carousel-once</strong>, если планируется выводит по одному пункту карусели на странице. В дальнейшем, возможно вы будете использовать эту карусель не только для оформления отзывов, а задействуете этот код например, для вывода списка коллег компании. В таком случае наименование класса <strong>reviews</strong> будет несколько неуместным;</li>
+  <li>Используйте CSS препроцессоры, в этом нет ничего сложного. Мой выбор пал на препроцессор Sass уже довольно давно и я его рекомендую к использованию. У нас есть неплохой урок, в котором я рассказываю как легко пользоваться препроцессором и как он упрощает жизнь: <a href="../../blog/tools/sass.html" target="_blank">Sass для самых маленьких - подробное руководство</a>;</li>
+  <li>Используйте сброс стандартных стилей браузера или нормализацию, которая приводит стандартные стили к общему для всех браузеров знаменателю. Я использую в своих проектах <strong>Normalize.css</strong>, который входит в состав CSS фреймворка Bootstrap;</li>
+  <li>Когда почувствуете, что выполняете слишком много однообразной работы в процессе верстки - переходите к использованию какого-либо CSS фреймворка или разработайте свой с наиболее часто используемыми элементами, это ускорит вашу работу. Я использую в работе только <strong>сетку Bootstrap</strong> без стилистического оформления кнопок, панелей и прочих элементов. Этого вполне достаточно для эффективной работы. Хорошая адаптивность Bootstrap сетки по умолчанию также радует;</li>
+  <li>Самостоятельно экспериментируйте со свойствами. Открывайте CSS справочник и пробуйте. Только так можно наработать опыт, запомнить какое свойство что делает и довести написание стилей документа до автоматизма.</li>
+</ol>
+
+
+                <div class="premium">
+          <div class="row">
+
+            <div class="col-md-12">
+              <h4>Премиум уроки от WebDesign Master</h4>
+            </div>
+
+            <div class="col-md-4 col-sm-6">
+              <a href="../../courses/jekyll/index.html" class="premium-item">
+                <span class="premium-img-wrap"><img src="../../public/images/premium/jekyll.jpg" alt="Курс по созданию сайта от А до Я на Jekyll" class="img-responsive"></span>
+                <p>Создание сайта от А до Я. Комплексный курс</p>
+              </a>
+            </div>
+
+            <div class="col-md-4 col-sm-6">
+              <a href="../../courses/webdesign/index.html" class="premium-item">
+                <span class="premium-img-wrap"><img src="../../public/images/premium/webdesign.jpg" alt="Большой комплексный курс по современному веб-дизайну" class="img-responsive"></span>
+                <p>Веб-дизайн с нейросетями для начинающих</p>
+              </a>
+            </div>
+
+            <div class="col-md-4 col-sm-6">
+              <a href="../../courses/freelance/index.html" class="premium-item">
+                <span class="premium-img-wrap"><img src="../../public/images/premium/freelance.jpg" alt="Фриланс для начинающих" class="img-responsive"></span>
+                <p>Я - фрилансер! Базовый курс для начинающих</p>
+              </a>
+            </div>
+
+          </div>
+        </div>
+
+
+        <div class="read-more">
+          <h4>Другие уроки по теме «Веб-разработка»</h4>
+          <ul>
+            
+            
+            
+              
+              <li><a href="../../blog/html-css/css-masonry.html">Создание адаптивных плиток Masonry на чистом CSS. Материалы урока</a></li>
+              
+            
+              
+              <li><a href="../../blog/html-css/floating-image-lesson.html">Создание красивого сайта с Parallax эффектом при движении мыши. Материалы урока</a></li>
+              
+            
+              
+              <li><a href="../../blog/html-css/grow-lesson.html">Создание красивого сайта с Parallax эффектом и анимацией заголовка. Материалы урока</a></li>
+              
+            
+              
+              <li><a href="../../blog/html-css/image-gallery-lesson.html">Создание красивой галереи на сайте. Материалы урока</a></li>
+              
+            
+              
+              <li><a href="../../blog/html-css/background-animation-website.html">Создание сайта с красивой анимацией фона. Материалы урока</a></li>
+              
+            
+              
+              <li><a href="../../blog/html-css/scrolling-3d-scene-website.html">Создание красивого сайта с 3D эффектом глубины при скролле. Материалы урока</a></li>
+              
+            
+          </ul>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</article>
+
+
+        </div>
+
+        <div class="col-md-4 col-aside">
+
+  <aside class="site-aside">
+
+
+
+<div class="box box-search">
+
+<form class="search" action="https://www.google.com/search" target="_blank">
+  <div>
+    <input type="text" name="q" size="55" placeholder="Поиск по сайту..." required>
+    <input type="hidden" name="sitesearch" value="https://webdesign-masteru.github.io">
+    <button type="submit">
+      <i class="fa fa-search"></i>
+    </button>
+  </div>
+</form>
+
+
+    </div>
+
+    <nav class="box box-mnu">
+      <p class="mnu-header">Разделы сайта:</p>
+      <ul class="list-unstyled box-dashed main-menu">
+
+  <li class="d-lg-none">
+    <a href="../../courses/index.html"><i class="fa fa-diamond"></i> Курсы</a>
+  </li>
+
+  <li>
+    <a href="../../blog/html-css/index.html"><i class="fa fa-code"></i> Веб-разработка</a>
+  </li>
+
+  <li>
+    <a href="../../blog/web-design/index.html"><i class="fa fa-paint-brush"></i> Веб-дизайн</a>
+  </li>
+
+  <li>
+    <a href="../../blog/tools/index.html"><i class="fa fa-cogs"></i> Инструменты</a>
+  </li>
+
+  <li>
+    <a href="../../blog/cms/index.html"><i class="fa fa-folder-open-o"></i> CMS/Framework</a>
+  </li>
+
+</ul>
+
+    </nav>
+
+    <nav class="box box-mnu services-mnu">
+      <p class="mnu-header">Полезные ресурсы:</p>
+      <ul class="list-unstyled">
+
+  <li>
+    <a href="../../blog/tools/wsl-nodejs-new.html"><i class="fa fa-cogs"></i> Установка WSL и окружения</a>
+  </li>
+
+  <li>
+    <a href="../../blog/docs/webdev-without-wsl.html"><i class="fa fa-cogs"></i> Настройка окружения без WSL</a>
+  </li>
+
+  <li>
+    <a href="../../blog/tools/hosting-lesson.html"><i class="fa fa-server"></i> Работа с хостингом от А до Я</a>
+  </li>
+
+  <li>
+    <a href="../../blog/tools/vscode.html"><i class="fa custom-vscode-3"></i> Настройка VS Code</a>
+  </li>
+
+  <li>
+    <a href="../../blog/tools/cubic-bezier/index.html"><i class="fa custom-bezier"></i> Cubic-Bezier Generator</a>
+  </li>
+
+  <li>
+    <a href="../../blog/tools/lazy-load/index.html"><i class="fa fa-image"></i> Lazy Load Placeholder</a>
+  </li>
+
+  <li>
+    <a href="../../blog/docs/gulp-documentation.html"><i class="fa fa-file-text-o"></i> Документация Gulp</a>
+  </li>
+
+</ul>
+
+    </nav>
+
+    <div class="box box-sidebar">
+      <div id="vk_groups"></div>
+    </div>
+
+  </aside>
+
+
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <footer class="main-foot">
+    <div class="container-fluid">
+
+      <span class="year"></span> © WebDesign Master
+
+    </div>
+    <div class="top" title="Наверх"><i class="fa fa-angle-double-up"></i></div>
+  </footer>
+
+  <script>(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return}}k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window,document,"script","https://mc.yandex.ru/metrika/tag.js","ym");ym(100695574,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true,webvisor:true});</script><noscript><div><img src="https://mc.yandex.ru/watch/100695574" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+
+
+</body>
+</html>
+

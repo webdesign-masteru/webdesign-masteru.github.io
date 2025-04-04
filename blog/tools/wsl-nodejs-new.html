@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="canonical" href="https://webdesign-masteru.github.io/blog/tools/wsl-nodejs-new.html">
+  <meta name="generator" content="Jekyll v">
+
+  <title>Актуальный способ установки и настройки окружения Windows WSL для веб-разработки</title>
+  <meta name="description" content="В данной статье рассмотрен новый способ установки WSL, Ubuntu, Node.js, Jekyll в Windows">
+
+  <link rel="icon" href="https://webdesign-masteru.github.io/favicon.ico?v=15" type="image/x-icon">
+  <meta property="og:image" content="../../public/images/thumbs/tools/wsl-nodejs-new/wsl-nodejs-new-cover.jpg">
+
+  <link rel="stylesheet" href="../../styles/index.css?v=15">
+  
+  <script src="../../scripts/dist/main.js?v=15" defer></script>
+  
+  <script>/* no flicker */document.documentElement.classList.add(localStorage.getItem('mode') === 'auto' ? (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : localStorage.getItem('mode'))</script>
+
+</head>
+
+<body>
+
+  <header class="main-head">
+
+    <div class="container-fluid">
+
+      <div class="row">
+
+        <div class="col-md-6">
+          <div class="mobile-pannel d-xl-none d-lg-none d-md-none">
+            <div class="toggler"><button title="Переключить тему"></button></div>
+            <div class="toggle-mnu"><span></span></div>
+          </div>
+        
+          <a href="../../index.html" class="logo"><img src="../../assets/images/logo-site.svg" alt="WebDesign Master"></a>
+        
+        </div>
+
+        <div class="col-md-6 d-none d-md-block d-lg-block d-xl-block">
+          <div class="toggler"><button title="Переключить тему"></button></div>
+                    <div class="social">
+            <a title="ВКонтакте" href="https://vk.com/jediweb" target="_blank"><i class="fa fa-vk"></i></a>
+            <a title="Телеграм" href="https://t.me/jediweb" target="_blank"><i class="fa custom-tg"></i></a>
+            <a title="YouTube" href="https://youtube.com/@wdm" target="_blank"><i class="fa fa-youtube-play"></i></a>
+            <a title="GitHub" href="https://github.com/webdesign-masteru" target="_blank"><i class="fa fa-github"></i></a>
+            <a title="Дзен" href="https://dzen.ru/jediweb" target="_blank"><i class="fa custom-dzen"></i></a>
+          </div>
+
+          <div class="courses-link">
+            <a href="../../courses/index.html"><i class="fa fa-diamond"></i>Курсы</a>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="mobile-menu"></div>
+
+    </div>
+
+  </header>
+
+
+  <div class="content">
+    <div class="container-fluid">
+
+      <div class="row">
+
+        <div class="col-md-8">
+
+          <article class="list-item single-page">
+  <div class="item-link">
+
+    
+    <div class="item-img-wrap post-img">
+      <img class="img-responsive" src="../../public/images/thumbs/tools/wsl-nodejs-new/wsl-nodejs-new.jpg" alt="Актуальный способ установки и настройки окружения Windows WSL для веб-разработки">
+    </div>
+    
+
+    <div class="item-content">
+
+    <div class="td">
+        <a href="../../blog/tools/index.html" class="item-icon hidden-xs" title="Категория: Инструменты"><i class="fa fa-cogs"></i></a>
+      </div>
+      <div class="td article-title"><h1>Актуальный способ установки и настройки окружения Windows WSL для веб-разработки</h1></div>
+    
+
+      <div class="article-content">
+
+        <p>Это актуальная инструкция по установке и настройке окружения Windows WSL (Подсистемы Windows для Linux), Node.js и других полезных инструментов для веб-разработки в родной среде Unix shell.</p>
+
+<div class="likely-scroll">
+  <div class="likely">
+    <button class="vkontakte">Поделиться</button>
+    <button class="telegram">Отправить</button>
+    <button class="pinterest" data-media="https://webdesign-masteru.github.io/public/images/thumbs/tools/wsl-nodejs-new/wsl-nodejs-new-cover.jpg">Запинить</button>
+    <button class="odnoklassniki">Класснуть</button>
+  </div>
+</div>
+
+
+<div class="video-wrap">
+  <div class="table">
+    <div class="tr">
+      <div class="td">
+        <div class="videowrapper" title="Смотреть урок «Актуальный способ установки и настройки окружения Windows WSL для веб-разработки» на YouTube">
+          <img class="img-responsive" src="../../public/images/thumbs/tools/wsl-nodejs-new/wsl-nodejs-new-cover.jpg" alt="Актуальный способ установки и настройки окружения Windows WSL для веб-разработки - Видеоурок">
+        </div>
+        <a href="https://youtu.be/HYuFw-YldjU" class="button button-youtube" target="_blank"><i class="fa fa-youtube-play"></i>Смотреть <span class="d-none d-lg-inline">урок </span>на YouTube</a>
+      </div>
+      <div class="td">
+        <a href="../../courses/bundle/index.html" class="premium-banner">
+          <img src="../../public/images/premium/bundle-b.jpg" alt="Все курсы канала WebDesign Master">
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<h3>Предварительная установка</h3>
+
+<p>1. Активируем возможность использования подсистемы. Для этого откроем панель управления - <code>Win+R</code>, выполняем команду <code>control</code>, переходим в раздел "Программы и компоненты", слева кликаем "Включение или отключение компонентов Windows", находим пункт "Подсистема Windows для Linux" и активируем чекбокс, нажимаем OK. Компьютер будет перезагружен.</p>
+
+<p>2. <a href="https://github.com/microsoft/WSL/releases/latest" target="_blank">Скачиваем</a> и устанавливаем WSL ..x64.msi</p>
+
+<p>3. Выбираем WSL 1 в качестве версии по умолчанию. Выполняем в PowerShell:</p>
+
+<pre class="language-bash"><code>wsl --set-default-version 1</code></pre>
+
+<blockquote>Внимание! WSL 2 в настоящее время работает медленно на большинстве систем. Рекомендую использовать именно WSL 1.</blockquote>
+
+<p>4. Устанавливаем неномерной дистрибутив Ubuntu из магазина Windows. Задаем имя пользователя и пароль.</p>
+
+<blockquote>Если доступа к магазину Windows нет, можно установить командой: <br><code>wsl --install Ubuntu</code></blockquote>
+
+<h3>Установка окружения</h3>
+
+<p>Сразу после создания пользователя можно установить окружение одной командой:</p>
+
+<pre class="language-bash wrap"><code>sudo apt update; sudo apt -y install ruby ruby-dev gcc make g++ curl p7zip; curl -sL https://deb.nodesource.com/setup_lts.x | sudo -E bash -; sudo apt -y install nodejs; sudo npm i -g gulp rimraf npm-check-updates browser-sync esbuild; npm config set package-lock false; sudo gem i bundler jekyll jekyll-paginate-v2</code></pre>
+
+<p>Данной командой мы установим Node.js, npm, gulp, rimraf, npm-check-updates, jekyll, ruby и другие вспомогательные инструменты.</p>
+
+<blockquote>Обратите внимание, если вам не требуется jekyll или другие инструменты, вы можете не включать их в составную команду или наоборот, добавить необходимые через пробел в нужной секции. В секции <code>sudo apt -y install</code> можно добавить программы Linux к установке, в секции <code>sudo npm i -g</code> можно добавить необходимые npm-модули к установке, в секции <code>sudo gem i</code> можно добавить необходимые ruby-модули и т.д.</blockquote>
+
+<p>Отлично! Теперь можно запустить WSL в любой папке и настроить отображаемую длинну пути. По умолчанию, в терминале отображается полный адрес до текущей папки, что может быть не совсем удобно в работе.</p>
+
+<p>Открываем в консольном редакторе файл с настройками bash:</p>
+
+<pre class="language-bash wrap"><code>sudo nano ~/.bashrc</code></pre>
+
+<p>Управляя курсором на клавиатуре, перейдем в самый низ файла и добавим строку (для отображения только текущей папки в пути терминала):</p>
+
+<pre class="language-bash wrap"><code>PROMPT_DIRTRIM=1</code></pre>
+
+<p>Выходим из редактора <code>Ctrl+X</code>, вводим <code>Y</code> и нажимаем <code>Enter</code>, чтобы подтвердить сохранение файла. Перезапускаем WSL, можно работать.</p>
+
+<h3>WSL2 для Docker</h3>
+
+<p>Если вам нужен WSL2 для работы Docker, можно просто установить дополнительную номерную версию Ubuntu в WSL2. Узнать текущую стабильную номерную версию Ubuntu LTS вы можете выполнив в PowerShell:</p>
+
+<pre class="language-bash"><code>wsl -l -o</code></pre>
+
+<p>Итак, на данный момент последняя LTS версия Ubuntu - 24.04. Выполняем в PowerShell:</p>
+
+<pre class="language-bash"><code>wsl --install Ubuntu-24.04 --version 2</code></pre>
+
+<p>Заходим в дистрибутив и выполняем настройку пользователя. Выполняем в PowerShell:</p>
+
+<pre class="language-bash"><code>wsl -d Ubuntu-24.04</code></pre>
+
+<p>Если вы НЕ используете Docker Desktop для Windows, а работаете с Docker непосредственно в WSL2, можете просто установить Docker cli в самой системе Ubuntu-24.04, внутри WSL2:</p>
+
+<pre class="wrap language-bash"><code>grep -q "\[automount\]" /etc/wsl.conf || echo -e "\n[automount]\noptions=\"metadata,umask=0022\"" | sudo tee -a /etc/wsl.conf && sudo apt update && sudo apt install -y docker.io docker-compose && sudo usermod -aG docker $USER && logout</code></pre>
+
+<p>После установки окно WSL закроется. Его следует перезапустить.</p>
+
+<p>Если вы используете Docker Desktop для Windows, в настройках устанавливаем следующие параметры:</p>
+
+<img src="../../public/images/blog/tools/wsl-nodejs-new/docker-wsl2.png" alt="Docker WSL2 Settings">
+
+<p>И выполняем команду внутри Ubuntu-24.04:</p>
+
+<pre class="wrap language-bash"><code>grep -q "\[automount\]" /etc/wsl.conf || echo -e "\n[automount]\noptions=\"metadata,umask=0022\"" | sudo tee -a /etc/wsl.conf</code></pre>
+
+<blockquote>Если в процессе работы с интерфейсом Docker вы получаете предупреждение <span class="nowrap">"Docker Desktop - Ubuntu"</span>, просто нажмите в диалоговом окне <span class="nowrap">"Restart the WSL integration"</span>, снимите галочку "Enable integration with my default WSL distro", нажмите кнопку <span class="nowrap">"Apply & Restart"</span> и предупреждение вас больше не побеспокоит.</blockquote>
+
+
+                <div class="premium">
+          <div class="row">
+
+            <div class="col-md-12">
+              <h4>Премиум уроки от WebDesign Master</h4>
+            </div>
+
+            <div class="col-md-4 col-sm-6">
+              <a href="../../courses/jekyll/index.html" class="premium-item">
+                <span class="premium-img-wrap"><img src="../../public/images/premium/jekyll.jpg" alt="Курс по созданию сайта от А до Я на Jekyll" class="img-responsive"></span>
+                <p>Создание сайта от А до Я. Комплексный курс</p>
+              </a>
+            </div>
+
+            <div class="col-md-4 col-sm-6">
+              <a href="../../courses/webdesign/index.html" class="premium-item">
+                <span class="premium-img-wrap"><img src="../../public/images/premium/webdesign.jpg" alt="Большой комплексный курс по современному веб-дизайну" class="img-responsive"></span>
+                <p>Веб-дизайн с нейросетями для начинающих</p>
+              </a>
+            </div>
+
+            <div class="col-md-4 col-sm-6">
+              <a href="../../courses/freelance/index.html" class="premium-item">
+                <span class="premium-img-wrap"><img src="../../public/images/premium/freelance.jpg" alt="Фриланс для начинающих" class="img-responsive"></span>
+                <p>Я - фрилансер! Базовый курс для начинающих</p>
+              </a>
+            </div>
+
+          </div>
+        </div>
+
+
+        <div class="read-more">
+          <h4>Другие уроки по теме «Инструменты»</h4>
+          <ul>
+            
+            
+            
+              
+              <li><a href="../../blog/tools/parcel.html">Настройка Parcel для веб-разработки</a></li>
+              
+            
+              
+              <li><a href="../../blog/tools/tailwind-lesson.html">Tailwind CSS для начинающих. Подробный урок по подключению, настройке и использованию</a></li>
+              
+            
+              
+              <li><a href="../../blog/tools/vscode.html">Настройка VS Code для веб-разработки</a></li>
+              
+            
+              
+              <li><a href="../../blog/tools/starter.html">Starter - Простой стартер для веб-разработки</a></li>
+              
+            
+              
+              <li><a href="../../blog/tools/hosting-lesson.html">Урок по хостингу от А до Я. Сайты, базы, домены, SSL, SSH, sFTP</a></li>
+              
+            
+              
+              <li><a href="../../blog/tools/gulp-4-lesson.html">Gulp - Актуальное и исчерпывающее руководство для самых маленьких</a></li>
+              
+            
+          </ul>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</article>
+
+
+        </div>
+
+        <div class="col-md-4 col-aside">
+
+  <aside class="site-aside">
+
+
+
+<div class="box box-search">
+
+<form class="search" action="https://www.google.com/search" target="_blank">
+  <div>
+    <input type="text" name="q" size="55" placeholder="Поиск по сайту..." required>
+    <input type="hidden" name="sitesearch" value="https://webdesign-masteru.github.io">
+    <button type="submit">
+      <i class="fa fa-search"></i>
+    </button>
+  </div>
+</form>
+
+
+    </div>
+
+    <nav class="box box-mnu">
+      <p class="mnu-header">Разделы сайта:</p>
+      <ul class="list-unstyled box-dashed main-menu">
+
+  <li class="d-lg-none">
+    <a href="../../courses/index.html"><i class="fa fa-diamond"></i> Курсы</a>
+  </li>
+
+  <li>
+    <a href="../../blog/html-css/index.html"><i class="fa fa-code"></i> Веб-разработка</a>
+  </li>
+
+  <li>
+    <a href="../../blog/web-design/index.html"><i class="fa fa-paint-brush"></i> Веб-дизайн</a>
+  </li>
+
+  <li>
+    <a href="../../blog/tools/index.html"><i class="fa fa-cogs"></i> Инструменты</a>
+  </li>
+
+  <li>
+    <a href="../../blog/cms/index.html"><i class="fa fa-folder-open-o"></i> CMS/Framework</a>
+  </li>
+
+</ul>
+
+    </nav>
+
+    <nav class="box box-mnu services-mnu">
+      <p class="mnu-header">Полезные ресурсы:</p>
+      <ul class="list-unstyled">
+
+  <li>
+    <span><i class="fa fa-cogs"></i> Установка WSL и окружения</span>
+    
+  </li>
+
+  <li>
+    <a href="../../blog/docs/webdev-without-wsl.html"><i class="fa fa-cogs"></i> Настройка окружения без WSL</a>
+  </li>
+
+  <li>
+    <a href="../../blog/tools/hosting-lesson.html"><i class="fa fa-server"></i> Работа с хостингом от А до Я</a>
+  </li>
+
+  <li>
+    <a href="../../blog/tools/vscode.html"><i class="fa custom-vscode-3"></i> Настройка VS Code</a>
+  </li>
+
+  <li>
+    <a href="../../blog/tools/cubic-bezier/index.html"><i class="fa custom-bezier"></i> Cubic-Bezier Generator</a>
+  </li>
+
+  <li>
+    <a href="../../blog/tools/lazy-load/index.html"><i class="fa fa-image"></i> Lazy Load Placeholder</a>
+  </li>
+
+  <li>
+    <a href="../../blog/docs/gulp-documentation.html"><i class="fa fa-file-text-o"></i> Документация Gulp</a>
+  </li>
+
+</ul>
+
+    </nav>
+
+    <div class="box box-sidebar">
+      <div id="vk_groups"></div>
+    </div>
+
+  </aside>
+
+
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <footer class="main-foot">
+    <div class="container-fluid">
+
+      <span class="year"></span> © WebDesign Master
+
+    </div>
+    <div class="top" title="Наверх"><i class="fa fa-angle-double-up"></i></div>
+  </footer>
+
+  <script>(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return}}k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window,document,"script","https://mc.yandex.ru/metrika/tag.js","ym");ym(100695574,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true,webvisor:true});</script><noscript><div><img src="https://mc.yandex.ru/watch/100695574" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+
+
+</body>
+</html>
+

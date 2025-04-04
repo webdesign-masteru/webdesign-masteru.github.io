@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="canonical" href="https://webdesign-masteru.github.io/blog/docs/webdev-without-wsl.html">
+  <meta name="generator" content="Jekyll v">
+
+  <title>Настройка окружения без WSL</title>
+  <meta name="description" content="Сегодня мы рассмотрим установку и настройку окружения без подсистемы Linux WSL">
+
+  <link rel="icon" href="https://webdesign-masteru.github.io/favicon.ico?v=15" type="image/x-icon">
+  <meta property="og:image" content="../../public/images/thumbs/docs/webdev-without-wsl/webdev-without-wsl-cover.jpg">
+
+  <link rel="stylesheet" href="../../styles/index.css?v=15">
+  
+  <script src="../../scripts/dist/main.js?v=15" defer></script>
+  
+  <script>/* no flicker */document.documentElement.classList.add(localStorage.getItem('mode') === 'auto' ? (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : localStorage.getItem('mode'))</script>
+
+</head>
+
+<body>
+
+  <header class="main-head">
+
+    <div class="container-fluid">
+
+      <div class="row">
+
+        <div class="col-md-6">
+          <div class="mobile-pannel d-xl-none d-lg-none d-md-none">
+            <div class="toggler"><button title="Переключить тему"></button></div>
+            <div class="toggle-mnu"><span></span></div>
+          </div>
+        
+          <a href="../../index.html" class="logo"><img src="../../assets/images/logo-site.svg" alt="WebDesign Master"></a>
+        
+        </div>
+
+        <div class="col-md-6 d-none d-md-block d-lg-block d-xl-block">
+          <div class="toggler"><button title="Переключить тему"></button></div>
+                    <div class="social">
+            <a title="ВКонтакте" href="https://vk.com/jediweb" target="_blank"><i class="fa fa-vk"></i></a>
+            <a title="Телеграм" href="https://t.me/jediweb" target="_blank"><i class="fa custom-tg"></i></a>
+            <a title="YouTube" href="https://youtube.com/@wdm" target="_blank"><i class="fa fa-youtube-play"></i></a>
+            <a title="GitHub" href="https://github.com/webdesign-masteru" target="_blank"><i class="fa fa-github"></i></a>
+            <a title="Дзен" href="https://dzen.ru/jediweb" target="_blank"><i class="fa custom-dzen"></i></a>
+          </div>
+
+          <div class="courses-link">
+            <a href="../../courses/index.html"><i class="fa fa-diamond"></i>Курсы</a>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="mobile-menu"></div>
+
+    </div>
+
+  </header>
+
+
+  <div class="content">
+    <div class="container-fluid">
+
+      <div class="row">
+
+        <div class="col-md-8 order-last">
+
+          <article class="list-item single-page page-documentation">
+  <div class="item-link">
+
+    
+
+    <div class="item-content">
+
+    
+      <h1>Настройка окружения без WSL</h1>
+    
+
+      <div class="article-content">
+
+        <blockquote>В этом руководстве мы рассмотрим установку и настройку окружения для веб-разработки без использования подсистемы WSL. Инстукции руководства протестированы во всех версиях Windows, включая последнюю. Рекомендации основаны на методичном тестировании окружения и софта в условиях реального рабочего процесса.</blockquote>
+
+<h2>1. Установка окружения</h2>
+
+<p>Это базовый раздел руководства, в котором мы настроим окружение Node.js, установим и настроим Git (длинна пути, сохранение истории и т. д.).</p>
+
+<h3 id="node">1.1. Установка Node.js</h3>
+
+<p><a href="https://nodejs.org" target="_blank">Скачиваем</a> LTS версию Node.js с официального сайта. В процессе установки никакие параметры установщика не меняем. Все опции - по умолчанию.</p>
+
+<h3 id="git">1.2. Установка Git</h3>
+
+<p><a href="https://git-scm.com/downloads/win" target="_blank">Скачиваем</a> Git for Windows с официального сайта - 64 или 32 битную, в зависимости от разрядности вашей ОС. Если не знаете, что это, скачивайте 64 битную версию. Если будут проблемы, то 32-bit. В процессе установки оставляем все опции по умолчанию, кроме "Git GUI Here" и выбора дефолтной консоли:</p>
+
+<img src="../../public/images/blog/docs/webdev-without-wsl/disable-git-gui-here.png" alt="Отменить добавление GUI Here в контекстное меню">
+
+<img src="../../public/images/blog/docs/webdev-without-wsl/default-console-window.png" alt="Выбор консоли Git window по умолчанию">
+
+<blockquote>Отмена "Git GUI Here" необязательна, однако эта опция используется мной редко и является лишней в контекстном меню. Если данный пункт вам нужен, оставьте.</blockquote>
+
+<blockquote>Выбор консоли Git является обязательным, так как нам нужна тесная интеграция именно с дефолтным терминалом Windows cmd. Рекомендую устанавливать данную опцию, если вы планируете работать с PHP, Python, Ruby и другими инструментами, которые интегрируются в командную оболочку Windows, а это 98% всех кейсов использования консоли. Чуть позже мы рассмотрим и настройку самого терминала, чтобы можно было приемлемо в нем работать.</blockquote>
+
+<p>В любой папке или на рабочем столе кликните правой кнопкой мыши и выберите "Git Bash Here". Давайте настроим длину пути и сохранение истории команд, отображаемую в терминале. Обычно я ограничиваю ее тремя уровнями. Выполняем команду:</p>
+
+<pre class="language-bash"><code>nano ~/.bash_profile</code></pre>
+
+<p>Замем вставим в редактор nano, который откроется в терминале данные строки:</p>
+
+<pre class="language-bash"><code>PROMPT_COMMAND='history -a'
+PROMPT_DIRTRIM=3
+</code></pre>
+
+<blockquote>Для того, чтобы вставить в терминале скопированный текст, достаточно кликнуть в окне правой кнопкой мыши. Текст вставится.</blockquote>
+
+<p>После чего можно нажать сочетание клавиш Ctrl+X, вводим Y и нажимаем Enter.</p>
+
+<h3 id="cmd">1.3. Настройка терминала</h3>
+
+<p>При настройке терминала Windows я выбираю следующие параметры:</p>
+
+<p>Открыть настройки терминала Windows:</p>
+<img src="../../public/images/blog/docs/webdev-without-wsl/cmd-settings.png" alt="Настройка терминала Windows cmd">
+
+<p>Настройка вставки правым кликом мыши в Windows cmd:</p>
+<img src="../../public/images/blog/docs/webdev-without-wsl/cmd-settings-mouse.png" alt="Настройка вставки мышью Windows cmd">
+
+<p>Настройка шрифта консоли:</p>
+<img src="../../public/images/blog/docs/webdev-without-wsl/cmd-settings-font.png" alt="Настройка шрифта Windows cmd">
+
+<p>Настройка размера окна терминала (по желанию):</p>
+<img src="../../public/images/blog/docs/webdev-without-wsl/cmd-settings-window.png" alt="Настройка размера Windows cmd">
+
+<p>Настройка непрозрачности окна терминала:</p>
+<img src="../../public/images/blog/docs/webdev-without-wsl/cmd-settings-color.png" alt="Настройка размера Windows cmd">
+
+<h3 id="npm">1.4. Установка модулей Node.js</h3>
+
+<p>В любой папке или на рабочем столе кликните правой кнопкой мыши и выберите "Git Bash Here". Давайте установим необходимые модули одной командой (ненужное удалить из строки):</p>
+
+<pre class="language-bash"><code>npm i -g gulp rimraf npm-check-updates browser-sync esbuild</code></pre>
+
+<p>Сразу можно отключить создание файлов package-lock.json в npm:</p>
+
+<pre class="language-bash"><code>npm config set package-lock false</code></pre>
+
+<p>А также задать Git Bash как терминал по умолчанию в настройках Visual Studio Code, добавив или заменив строку параметра <code class="break">terminal.integrated.defaultProfile.windows</code>:</p>
+
+<pre class="language-javascript"><code>"terminal.integrated.defaultProfile.windows": "Git Bash", // Git Bash by Default</code></pre>
+
+<blockquote>С уроком по настройке Visual Studio Code можно ознакомиться <a href="../../blog/tools/vscode.html" target="_blank">здесь</a>.</blockquote>
+
+<h3 id="ruby">1.5. Установка Ruby и Jekyll (опционально)</h3>
+
+<p>Данный пункт необязетелен и предназначен для тех, кто использует в своей работе Jekyll или программирует на Ruby.</p>
+
+<p>Скачиваем <a href="https://rubyinstaller.org/downloads/archives/" class="download" target="_blank">Ruby+Devkit 3.3.7-1 (x64)</a> или 32 битную, в зависимости от разрядности вашей ОС. Если не знаете, что это, скачивайте 64 битную версию. Если будут проблемы, то 32-bit. Нужна именно версия с Devkit для сборки gem.</p>
+
+<blockquote>Внимание! Здесь важно установить именно версию <code>Ruby+Devkit 3.3.7-1</code>, а не последнюю, так как на данный момент она работает наиболее стабильно. Ее можно найти через поиск в браузере (Ctrl + F) на <a href="https://rubyinstaller.org/downloads/archives/" target="_blank">этой странице</a>.</blockquote>
+
+<blockquote>В процессе установки рекомендую выбрать папку для инсталляции не в корне диска C:\, как предлагает установщик по умолчанию, а в папке вашего пользователя, например: "C:\Users\alex\Ruby30-x64". Все опции при установке - по умолчанию, ничего не трогаем.</blockquote>
+
+<p>После установки откроется терминал Windows с настройкой MSYS2, в котором нам предложат сделать выбор. Просто жмем Enter, ничего не выбираем. В конце также нажимаем Enter:</p>
+
+<img src="../../public/images/blog/docs/webdev-without-wsl/ruby-cmd-enter.png" alt="Установка Ruby в Windows">
+
+<p>Перезагружаем терминал. Теперь можно установить Jekyll и необходимые модули:</p>
+
+<pre class="language-bash wrap"><code>gem install bundler jekyll jekyll-paginate-v2</code></pre>
+
+<h2>2. Интеграция rsync for Windows и настройка SSH</h2>
+
+<p>Данный пункт предназначен для тех, кто использует rsync для деплоя и бэкапа.</p>
+
+<h3 id="rsync">2.1. Установка rsync и 7z в Git Bash</h3>
+
+<p>Полностью скопируйте и выполните команду в терминале Git Bash:</p>
+
+<pre class="language-bash wrap"><code>mkdir -p ~/bin && curl -o ~/bin/rsync.exe https://raw.githubusercontent.com/webdesign-masteru/rsync-windows/main/rsync.exe && curl -o ~/bin/7z.exe https://raw.githubusercontent.com/webdesign-masteru/7zr/main/7zr.exe</code></pre>
+
+<p>После выполнения команды rsync и 7z уже работают в Git Bash.</p>
+
+<blockquote>Внимание! Не все хостинги поддерживают rsync. Если у вас еще нет хостинга для сайтов или ваш сервер не поддерживает какой-то функционал, рекомендую <a href="https://sweb.ru/?utm_term=axukwaaf" target="_blank">SpaceWeb</a>. Поддерживает все нужные технологии, в том числе и rsync.</blockquote>
+
+<h3 id="ssh">2.2. Настройка SSH ключа для автоматической авторизации</h3>
+
+<p>Давайте настроим SSH и синхронизацию с сервером. Если настройка синхронизации вам не требуется, пропускайте данные инструкции. Кликом правой кнопки мыши на рабочем столе или в любой папке откройте Git Bash. Создадим папку "/.ssh" в директории пользователя, установим необходимые права и сгенерируем SSH-ключ:</p>
+
+<pre class="language-bash wrap"><code>rm -r ~/.ssh; mkdir -p ~/.ssh; chmod 700 ~/.ssh; cd ~/.ssh; ssh-keygen -f id_rsa</code></pre>
+
+<p>Скопируем файл с ключом на ваш рабочий сервер (с вводом пароля, предварительно пишем "yes" на вопрос "Are you sure you want to continue connecting"):</p>
+
+<pre class="language-bash"><code>scp -p id_rsa.pub user@site.ru:~</code></pre>
+
+<p>Где <code>user@site.ru</code> - пользователь и хост вашего сервера.</p>
+
+<p>Подключимся к вашему серверу по SSH (с вводом пароля):</p>
+
+<pre class="language-bash"><code>ssh user@site.ru</code></pre>
+
+<p>Разместим ключ на сервере (с перманентным удалением ~/.ssh) и завершим сессию:</p>
+
+<pre class="language-bash wrap"><code>rm -r ~/.ssh; mkdir -p ~/.ssh; chmod 700 ~/.ssh; cat id_rsa.pub >> ~/.ssh/authorized_keys; chmod 600 ~/.ssh/authorized_keys; rm -f ~/id_rsa.pub; logout</code></pre>
+
+<p>Добавим ssh-add:</p>
+
+<pre class="language-bash"><code>eval `ssh-agent -s`; ssh-add</code></pre>
+
+<p>Отлично! Теперь авторизация на сервере будет происходить автоматически, например при использовании rsync или других иснтрументов деплоя.</p>
+
+<h2 id="backup">3. Бэкап с помощью rsync (бонус)</h2>
+
+<p>Вы можете настроить бэкап рабочей папки в другое место, например, в папку облака или в папку на внешнем диске с настройкой исключений. Мой пример скрипта .bat для бэкапа:</p>
+
+<pre class="language-bash wrap"><code>"%PROGRAMFILES%\Git\bin\sh.exe" -c "rsync -aP --delete --delete-excluded --exclude=Thumbs.db --exclude=.DS_Store --exclude=node_modules ~/Work/ /d/Work/"
+pause</code></pre>
+
+<p>Здесь мы выполняем rsync, добавляем в исключения Thumbs.db, .DS_Store, node_modules, package-lock.json - мусорные файлы и огромные массивы модулей, которые бекапить не нужно. Из папки Work, которая находится у меня в папке пользователя, файлы синхронизируются с директорией, которая находится на внешнем диске D. Папку назначения можно настроить на выгрузку в облако. Теперь достаточно запустить файл бэкапа .bat и начнется синхронизация.</p>
+
+<p>Синхронизация происходит за считанные секунды и бэкапятся только те файлы, которые были изменены в процессе работы. После бэкапа мы ставим скрипт на паузу (строка 2), чтобы ознакомиться с файлами, которые были отправлены в бэкап. Вы можете создать свой файл с расширением .bat и настроить свой скрипт с нужными исключениями и параметрами источника и назначения по примеру, приведенному выше.</p>
+
+
+                <div class="premium">
+          <div class="row">
+
+            <div class="col-md-12">
+              <h4>Премиум уроки от WebDesign Master</h4>
+            </div>
+
+            <div class="col-md-4 col-sm-6">
+              <a href="../../courses/jekyll/index.html" class="premium-item">
+                <span class="premium-img-wrap"><img src="../../public/images/premium/jekyll.jpg" alt="Курс по созданию сайта от А до Я на Jekyll" class="img-responsive"></span>
+                <p>Создание сайта от А до Я. Комплексный курс</p>
+              </a>
+            </div>
+
+            <div class="col-md-4 col-sm-6">
+              <a href="../../courses/webdesign/index.html" class="premium-item">
+                <span class="premium-img-wrap"><img src="../../public/images/premium/webdesign.jpg" alt="Большой комплексный курс по современному веб-дизайну" class="img-responsive"></span>
+                <p>Веб-дизайн с нейросетями для начинающих</p>
+              </a>
+            </div>
+
+            <div class="col-md-4 col-sm-6">
+              <a href="../../courses/freelance/index.html" class="premium-item">
+                <span class="premium-img-wrap"><img src="../../public/images/premium/freelance.jpg" alt="Фриланс для начинающих" class="img-responsive"></span>
+                <p>Я - фрилансер! Базовый курс для начинающих</p>
+              </a>
+            </div>
+
+          </div>
+        </div>
+
+
+        
+
+      </div>
+
+    </div>
+
+  </div>
+</article>
+
+
+        </div>
+
+        <div class="col-md-4 col-aside">
+
+  <aside class="site-aside">
+
+
+    <div class="box box-docs">
+      <p class="mnu-header">Разделы руководства:</p>
+      <nav class="docs-menu">
+        <ul>
+        
+          
+          <li><i class="fa fa-hashtag"></i><a href="#node">1.1. Установка Node.js</a></li>
+          
+        
+          
+          <li><i class="fa fa-hashtag"></i><a href="#git">1.2 Установка Git</a></li>
+          
+        
+          
+          <li><i class="fa fa-hashtag"></i><a href="#cmd">1.3. Настройка терминала</a></li>
+          
+        
+          
+          <li><i class="fa fa-hashtag"></i><a href="#npm">1.4. Установка модулей Node.js</a></li>
+          
+        
+          
+          <li><i class="fa fa-hashtag"></i><a href="#ruby">1.5. Установка Ruby и Jekyll</a></li>
+          
+        
+          
+          <li><i class="fa fa-hashtag"></i><a href="#rsync">2.1. Установка rsync в Git Bash</a></li>
+          
+        
+          
+          <li><i class="fa fa-hashtag"></i><a href="#ssh">2.2. Настройка SSH ключа</a></li>
+          
+        
+          
+          <li><i class="fa fa-hashtag"></i><a href="#backup">3. Настройка бэкапа</a></li>
+          
+        
+        </ul>
+      </nav>
+    </div>
+
+
+
+
+    <nav class="box box-mnu">
+      <p class="mnu-header">Разделы сайта:</p>
+      <ul class="list-unstyled box-dashed main-menu">
+
+  <li class="d-lg-none">
+    <a href="../../courses/index.html"><i class="fa fa-diamond"></i> Курсы</a>
+  </li>
+
+  <li>
+    <a href="../../blog/html-css/index.html"><i class="fa fa-code"></i> Веб-разработка</a>
+  </li>
+
+  <li>
+    <a href="../../blog/web-design/index.html"><i class="fa fa-paint-brush"></i> Веб-дизайн</a>
+  </li>
+
+  <li>
+    <a href="../../blog/tools/index.html"><i class="fa fa-cogs"></i> Инструменты</a>
+  </li>
+
+  <li>
+    <a href="../../blog/cms/index.html"><i class="fa fa-folder-open-o"></i> CMS/Framework</a>
+  </li>
+
+</ul>
+
+    </nav>
+
+    <nav class="box box-mnu services-mnu">
+      <p class="mnu-header">Полезные ресурсы:</p>
+      <ul class="list-unstyled">
+
+  <li>
+    <a href="../../blog/tools/wsl-nodejs-new.html"><i class="fa fa-cogs"></i> Установка WSL и окружения</a>
+  </li>
+
+  <li>
+    <span><i class="fa fa-cogs"></i> Настройка окружения без WSL</span>
+    
+  </li>
+
+  <li>
+    <a href="../../blog/tools/hosting-lesson.html"><i class="fa fa-server"></i> Работа с хостингом от А до Я</a>
+  </li>
+
+  <li>
+    <a href="../../blog/tools/vscode.html"><i class="fa custom-vscode-3"></i> Настройка VS Code</a>
+  </li>
+
+  <li>
+    <a href="../../blog/tools/cubic-bezier/index.html"><i class="fa custom-bezier"></i> Cubic-Bezier Generator</a>
+  </li>
+
+  <li>
+    <a href="../../blog/tools/lazy-load/index.html"><i class="fa fa-image"></i> Lazy Load Placeholder</a>
+  </li>
+
+  <li>
+    <a href="../../blog/docs/gulp-documentation.html"><i class="fa fa-file-text-o"></i> Документация Gulp</a>
+  </li>
+
+</ul>
+
+    </nav>
+
+    
+
+  </aside>
+
+
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <footer class="main-foot">
+    <div class="container-fluid">
+
+      <span class="year"></span> © WebDesign Master
+
+    </div>
+    <div class="top" title="Наверх"><i class="fa fa-angle-double-up"></i></div>
+  </footer>
+
+  <script>(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return}}k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window,document,"script","https://mc.yandex.ru/metrika/tag.js","ym");ym(100695574,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true,webvisor:true});</script><noscript><div><img src="https://mc.yandex.ru/watch/100695574" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+
+
+</body>
+</html>
+

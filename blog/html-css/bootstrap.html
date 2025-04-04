@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="canonical" href="https://webdesign-masteru.github.io/blog/html-css/bootstrap.html">
+  <meta name="generator" content="Jekyll v">
+
+  <title>Bootstrap сетка. Подробное руководство</title>
+  <meta name="description" content="Сегодня мы познакомимся с Bootstrap сеткой, рассмотрим новые правила верстки, новыми классами нового фреймворка. Bootstrap - это новая версия фреймворка Bootstrap, основанная на Flexbox">
+
+  <link rel="icon" href="https://webdesign-masteru.github.io/favicon.ico?v=15" type="image/x-icon">
+  <meta property="og:image" content="../../public/images/thumbs/html-css/bootstrap/bootstrap-cover.jpg">
+
+  <link rel="stylesheet" href="../../styles/index.css?v=15">
+  
+  <script src="../../scripts/dist/main.js?v=15" defer></script>
+  
+  <script>/* no flicker */document.documentElement.classList.add(localStorage.getItem('mode') === 'auto' ? (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : localStorage.getItem('mode'))</script>
+
+</head>
+
+<body>
+
+  <header class="main-head">
+
+    <div class="container-fluid">
+
+      <div class="row">
+
+        <div class="col-md-6">
+          <div class="mobile-pannel d-xl-none d-lg-none d-md-none">
+            <div class="toggler"><button title="Переключить тему"></button></div>
+            <div class="toggle-mnu"><span></span></div>
+          </div>
+        
+          <a href="../../index.html" class="logo"><img src="../../assets/images/logo-site.svg" alt="WebDesign Master"></a>
+        
+        </div>
+
+        <div class="col-md-6 d-none d-md-block d-lg-block d-xl-block">
+          <div class="toggler"><button title="Переключить тему"></button></div>
+                    <div class="social">
+            <a title="ВКонтакте" href="https://vk.com/jediweb" target="_blank"><i class="fa fa-vk"></i></a>
+            <a title="Телеграм" href="https://t.me/jediweb" target="_blank"><i class="fa custom-tg"></i></a>
+            <a title="YouTube" href="https://youtube.com/@wdm" target="_blank"><i class="fa fa-youtube-play"></i></a>
+            <a title="GitHub" href="https://github.com/webdesign-masteru" target="_blank"><i class="fa fa-github"></i></a>
+            <a title="Дзен" href="https://dzen.ru/jediweb" target="_blank"><i class="fa custom-dzen"></i></a>
+          </div>
+
+          <div class="courses-link">
+            <a href="../../courses/index.html"><i class="fa fa-diamond"></i>Курсы</a>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="mobile-menu"></div>
+
+    </div>
+
+  </header>
+
+
+  <div class="content">
+    <div class="container-fluid">
+
+      <div class="row">
+
+        <div class="col-md-8">
+
+          <article class="list-item single-page">
+  <div class="item-link">
+
+    
+    <div class="item-img-wrap post-img">
+      <img class="img-responsive" src="../../public/images/thumbs/html-css/bootstrap/bootstrap.jpg" alt="Bootstrap сетка. Подробное руководство">
+    </div>
+    
+
+    <div class="item-content">
+
+    <div class="td">
+        <a href="../../blog/html-css/index.html" class="item-icon hidden-xs" title="Категория: Веб-разработка"><i class="fa fa-code"></i></a>
+      </div>
+      <div class="td article-title"><h1>Bootstrap сетка. Подробное руководство</h1></div>
+    
+
+      <div class="article-content">
+
+        <p>Bootstrap неплохо зарекомендовал себя как удобный, расширяемый CSS каркас для быстрого создания адаптивных макетов. Миллионы сайтов успешно используют этот фреймворк в средних, малых и крупных проектах. Bootstrap важен тем, что имеет поддержку всех современных браузеров и дает более удобную, управляемую и гибкую систему для разработчиков, нежели классическая модель разметки без использования фреймворка.</p>
+
+<div class="likely-scroll">
+  <div class="likely">
+    <button class="vkontakte">Поделиться</button>
+    <button class="telegram">Отправить</button>
+    <button class="pinterest" data-media="https://webdesign-masteru.github.io/public/images/thumbs/html-css/bootstrap/bootstrap-cover.jpg">Запинить</button>
+    <button class="odnoklassniki">Класснуть</button>
+  </div>
+</div>
+
+
+<div class="video-wrap">
+  <div class="table">
+    <div class="tr">
+      <div class="td">
+        <div class="videowrapper" title="Смотреть урок «Bootstrap сетка. Подробное руководство» на YouTube">
+          <img class="img-responsive" src="../../public/images/thumbs/html-css/bootstrap/bootstrap-cover.jpg" alt="Bootstrap сетка. Подробное руководство - Видеоурок">
+        </div>
+        <a href="https://youtu.be/2JMMnNOhDoc" class="button button-youtube" target="_blank"><i class="fa fa-youtube-play"></i>Смотреть <span class="d-none d-lg-inline">урок </span>на YouTube</a>
+      </div>
+      <div class="td">
+        <a href="../../courses/bundle/index.html" class="premium-banner">
+          <img src="../../public/images/premium/bundle-b.jpg" alt="Все курсы канала WebDesign Master">
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<h2>Дополнительные материалы урока Bootstrap</h2>
+
+<ol>
+  <li>Все примеры урока вы можете потестировать самостоятельно: <a href="https://archive.org/download/bootstrap-grid-examples/bootstrap-grid-examples.zip">Скачать</a></li>
+  <li>Ознакомиться с документацией Bootstrap можно <a href="https://getbootstrap.com/docs/4.6/layout/grid/" target="_blank">на сайте Bootstrap</a></li>
+  <li>Последняя версия стартера с Bootstrap: <a href="https://github.com/webdesign-masteru/OptimizedHTML-5" target="_blank">OptimizedHTML 5</a></li>
+</ol>
+
+<img src="../../public/images/blog/html-css/bootstrap/1-0-flexbox-caniuse.jpg" alt="Bootstrap - Can I Use">
+
+<p>Сегодня мы подробно разберем работу с сеткой Bootstrap, по ходу дела сравнивая ее со старой версией. Данный урок будет полезен вам не только если вы новичок и знакомитесь с Bootstrap, но и в том случае, если вы опытный разработчик и хотите изучить все правила и нюансы верстки с использованием сетки Bootstrap и Flexbox инструментов, входящих в ее состав.</p>
+
+<h2>1. Основные параметры сетки по умолчанию</h2>
+
+<p>По умолчанию сетка Bootstrap очень похожа на сетку третьей версии, однако появились некоторые важные отличия.</p>
+
+<img src="../../public/images/blog/html-css/bootstrap/1-1-grid-options.jpg" alt="Bootstrap - Options">
+
+<p>Из таблицы основных опций мы можем заметить явные отличия от сетки третьей версии. Теперь отсутствует префикс класса «.col-xs-», отвечающий за самые маленькие разрешения, вместо него указывается упрощенный префикс «.col-». Можно ошибочно подумать, что префикс «.col-» отвечает за минимальные разрешения мобильных устройств, однако это не совсем так. Помимо всего прочего, префикс «.col-» - это одно из важнейших новшеств Bootstrap. Это класс, который отвечает за автоматическую разметку колонок на любом разрешении. Но об этом позже.</p>
+
+<p>За малые разрешения (small) отвечает префикс «.col-sm-» с медиа-запросом от 576 пикс. Ширина контейнера составляет 540 пикс.
+Средние разрешения отрабатываются от 768 пикс. Ширина контейнера - 720 пикс.
+Большие разрешения работают с разрешения устройств от 992 пикс. Ширина контейнера - 960 пикс.
+И самые большие - от 1200 пикс. Ширина контейнера фиксируется на значении 1140 пикс.</p>
+
+<p>Обратите внимание, что максимальные значения медиа-запросов имеют неточные значения с дробной частью «.98» в пикселях. Это заметно при выборе Desktop First метода верстки, где максимальная ширина медиа-запроса ограничена. Например, при компиляции Sass «+media-breakpoint-down(lg)» мы получим «@media (max-width: 1199.98px)». Здесь 0.02 пикселя освобождаются для старта следующего медиа-запроса. Имейте это ввиду. В следующих выпусках «Джедай верстки 8» мы рассмотрим этот и множество других моментов из этого урока на реальном примере.</p>
+
+<h2>2. Автоматическая разметка колонок</h2>
+
+<h3>2.1 Колонки одинаковой ширины</h3>
+
+<p>С помощью нового универсального класса «.col» можно указать до 12 колонок в ряду (родитель «.row»), ширина которых будет автоматически вычислена в зависимости от количества элементов и будет равна.</p>
+
+<p>Например:</p>
+
+<img src="../../public/images/blog/html-css/bootstrap/2-1-kolonki-odinakovoy-shiriny.jpg" alt="Bootstrap - Колонки одинаковой ширины">
+
+<h3>2.2 Установка ширины одной колонки</h3>
+
+<p>Вы также можете явно установить ширину одной колонки, а остальные оставить автоматическими.</p>
+
+<pre class="language-html"><code>&lt;div class=&quot;row&quot;&gt;
+  &lt;div class=&quot;col&quot;&gt;1 из 3&lt;/div&gt;
+  &lt;div class=&quot;col-6&quot;&gt;2 из 3 (широкое)&lt;/div&gt;
+  &lt;div class=&quot;col&quot;&gt;3 из 3&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;row&quot;&gt;
+  &lt;div class=&quot;col&quot;&gt;1 из 3&lt;/div&gt;
+  &lt;div class=&quot;col-5&quot;&gt;2 из 3 (широкое)&lt;/div&gt;
+  &lt;div class=&quot;col&quot;&gt;3 из 3&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+
+<img src="../../public/images/blog/html-css/bootstrap/2-2-ustanovka-shiriny-odnoy-kolonki.jpg" alt="Bootstrap - Установка ширины одной колонки">
+
+<p>В данном примере второй элемент в третьем ряду имеет класс «.col-6» и второй элемент во втором ряду имеет класс «.col-5», которые занимают соответствующее количество колонок на всех разрешениях экрана. Ширина остальных колонок является отзывчивой и вычисляется автоматически, занимая все оставшееся пространство.</p>
+
+<h3>2.3 Контент переменной ширины</h3>
+
+<p>Можно использовать класс «col-{breakpoint}-auto», чтобы определить контент с переменной шириной, в зависимости от занимаемого пространства содержимым колонки. Где breakpoint - размер экрана (xl, lg, md или sm).</p>
+
+<pre class="language-html"><code>&lt;div class=&quot;row justify-content-sm-center&quot;&gt;
+  &lt;div class=&quot;col col-md-2&quot;&gt;1 из 3&lt;/div&gt;
+  &lt;div class=&quot;col-sm-auto&quot;&gt;Контент переменной ширины&lt;/div&gt;
+  &lt;div class=&quot;col col-md-2&quot;&gt;3 из 3&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;row&quot;&gt;
+  &lt;div class=&quot;col&quot;&gt;1 из 3&lt;/div&gt;
+  &lt;div class=&quot;col-sm-auto&quot;&gt;Контент переменной ширины номер два&lt;/div&gt;
+  &lt;div class=&quot;col col-md-2&quot;&gt;3 из 3&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+
+<img src="../../public/images/blog/html-css/bootstrap/2-3-kontent-peremennoy-shiriny.jpg" alt="Bootstrap - Контент переменной ширины">
+
+<p>Здесь мы видим, что две центральные колонки занимают ширину, соответствующую ширине содержимого, однако в первом ряду благодаря классу «.justify-content-sm-center» у «.row» весь ряд центрируется и общая ширина зависит только от ширины центральной колонки, в то время, как второй ряд растягивается на всю доступную ширину, но вторая колонка остается фиксированной по ширине содержимого.</p>
+
+<h3>2.4 Мульти-ряд</h3>
+
+<p>Благодаря Bootstrap вы можете сделать в одном ряду несколько строк (переносов). Реализовать это можно с помощью класса «.w-100», который очень похож на тег «br» и по-сути просто делает перенос колонок на новую строку.</p>
+
+<pre class="language-html"><code>&lt;div class=&quot;row&quot;&gt;
+  &lt;div class=&quot;col&quot;&gt;col&lt;/div&gt;
+  &lt;div class=&quot;col&quot;&gt;col&lt;/div&gt;
+  &lt;div class=&quot;w-100&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;col&quot;&gt;col&lt;/div&gt;
+  &lt;div class=&quot;col&quot;&gt;col&lt;/div&gt;
+  &lt;div class=&quot;col&quot;&gt;col&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+
+<img src="../../public/images/blog/html-css/bootstrap/2-4-multi-ryad.jpg" alt="Bootstrap - Мульти-ряд">
+
+<blockquote>Обратите внимание, что данный класс является частью дополнительных возможностей Bootstrap, которые подключаются к проекту отдельно в случае использования Sass версии проекта Bootstrap и находятся в папке «scss/utilities». Вы также можете подключить другие плагины из этой папки к вашему проекту по необходимости.</blockquote>
+
+<h2>3. Адаптивные классы</h2>
+
+<h3>3.1 Брейкпоинты</h3>
+
+<p>Очень интересная возможность Bootstrap - возможность задавать универсальные колонки, которые будут отображаться на всех разрешениях. Это упомянутый ранее класс «.col». Кроме того, можно определить класс, указывающий конкретное количество колонок, занимаемое содержимым - это классы с префиксом «.col-{число колонок}», например «.col-6» говорит нам о том, что содержимое займет 6 колонок из 12. В случае, когда конкретное количество задавать не обязательно, можно смело использовать универсальный класс «.col».</p>
+
+<pre class="language-html"><code>&lt;div class=&quot;row&quot;&gt;
+  &lt;div class=&quot;col&quot;&gt;col&lt;/div&gt;
+  &lt;div class=&quot;col&quot;&gt;col&lt;/div&gt;
+  &lt;div class=&quot;col&quot;&gt;col&lt;/div&gt;
+  &lt;div class=&quot;col&quot;&gt;col&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;row&quot;&gt;
+  &lt;div class=&quot;col-8&quot;&gt;col-8&lt;/div&gt;
+  &lt;div class=&quot;col-4&quot;&gt;col-4&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+
+<img src="../../public/images/blog/html-css/bootstrap/3-1-breakpoints.jpg" alt="Bootstrap - Брейкпоинты">
+
+<h3>3.2 На мобильных устройствах</h3>
+
+<p>Вы можете использовать префикс класса «.col-sm-{количество занимаемых колонок}» для того, чтобы задать базовую сетку на всех разрешениях, кроме самых маленьких. На небольших экранах колонки такой сетки будут складываться друг под друга. На разрешениях больше - будут занимать столько места, сколько вы определили в классах.</p>
+
+<pre class="language-html"><code>&lt;div class=&quot;row&quot;&gt;
+  &lt;div class=&quot;col-sm-8&quot;&gt;col-sm-8&lt;/div&gt;
+  &lt;div class=&quot;col-sm-4&quot;&gt;col-sm-4&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;row&quot;&gt;
+  &lt;div class=&quot;col-sm&quot;&gt;col-sm&lt;/div&gt;
+  &lt;div class=&quot;col-sm&quot;&gt;col-sm&lt;/div&gt;
+  &lt;div class=&quot;col-sm&quot;&gt;col-sm&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+
+<img src="../../public/images/blog/html-css/bootstrap/3-2-na-mobilnyh.jpg" alt="Bootstrap - На мобильных устройствах">
+
+<p>Здесь мы видим, что первый ряд на устройствах с разрешением более «sm», то-есть больше, чем 576 пикс. разбивается на 2 колонки - шириной 8 и 4 из 12-ти соответственно. Ширина колонок во втором ряду вычисляется автоматически, но на самых малых разрешениях эти колонки также складываются друг под друга, благодаря классу «.col-sm».</p>
+
+<h3>3.3 Создание сложной комбинированной сетки</h3>
+
+<p>С помощью Bootstrap вы можете создавать любые комбинации колонок при создании сетки. Для каждой колонки можно задать любое поведение на различных разрешениях с помощью адаптивных классов. Здесь отличия от третьей версии - только в наименованиях классов.</p>
+
+<pre class="language-html"><code>&lt;!-- На мобильных устройствах: Первая колонка - на полную ширину, вторая на половину --&gt;
+&lt;div class=&quot;row&quot;&gt;
+  &lt;div class=&quot;col-12 col-md-8&quot;&gt;.col-12 .col-md-8&lt;/div&gt;
+  &lt;div class=&quot;col-6 col-md-4&quot;&gt;.col-6 .col-md-4&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- На десктопе: 3 колонки по 4 в каждой. На мобильных: все колонки вполовину контейнера --&gt;
+&lt;div class=&quot;row&quot;&gt;
+  &lt;div class=&quot;col-6 col-md-4&quot;&gt;.col-6 .col-md-4&lt;/div&gt;
+  &lt;div class=&quot;col-6 col-md-4&quot;&gt;.col-6 .col-md-4&lt;/div&gt;
+  &lt;div class=&quot;col-6 col-md-4&quot;&gt;.col-6 .col-md-4&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Колонки занимают 6 из 12 колонок на любом разрешении --&gt;
+&lt;div class=&quot;row&quot;&gt;
+  &lt;div class=&quot;col-6&quot;&gt;.col-6&lt;/div&gt;
+  &lt;div class=&quot;col-6&quot;&gt;.col-6&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+
+<img src="../../public/images/blog/html-css/bootstrap/3-3-sozdaniye-slozhnoy-setki-na-bootstrap.jpg" alt="Bootstrap - Создание сложной комбинированной сетки">
+
+<h2>4. Выравнивание</h2>
+
+<p>Bootstrap основан на «флексах» и дарит нам все возможности данной модели, которые доступны в простых готовых классах. В числе возможностей - вертикальное и горизонтальное выравнивание.</p>
+
+<h3>4.1 Вертикальное выравнивание</h3>
+
+<pre class="language-html"><code>&lt;div class=&quot;row align-items-start&quot;&gt;
+  &lt;div class=&quot;col&quot;&gt;Верх&lt;/div&gt;
+  &lt;div class=&quot;col&quot;&gt;Верх&lt;/div&gt;
+  &lt;div class=&quot;col&quot;&gt;Верх&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;row align-items-center&quot;&gt;
+  &lt;div class=&quot;col&quot;&gt;Середина&lt;/div&gt;
+  &lt;div class=&quot;col&quot;&gt;Середина&lt;/div&gt;
+  &lt;div class=&quot;col&quot;&gt;Середина&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;row align-items-end&quot;&gt;
+  &lt;div class=&quot;col&quot;&gt;Низ&lt;/div&gt;
+  &lt;div class=&quot;col&quot;&gt;Низ&lt;/div&gt;
+  &lt;div class=&quot;col&quot;&gt;Низ&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+
+<img src="../../public/images/blog/html-css/bootstrap/4-1-0-bootstrap-4-vertikalnoye-vyravnivaniye.jpg" alt="Bootstrap - Вертикальное выравнивание">
+
+<p>Помимо управления выравниванием через родительский «.row», можно выравнивать колонки, задавая им соответствующие классы:</p>
+
+<pre class="language-html"><code>&lt;div class=&quot;row&quot;&gt;
+  &lt;div class=&quot;col align-self-start&quot;&gt;Верх&lt;/div&gt;
+  &lt;div class=&quot;col align-self-center&quot;&gt;Середина&lt;/div&gt;
+  &lt;div class=&quot;col align-self-end&quot;&gt;Низ&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+
+<img src="../../public/images/blog/html-css/bootstrap/4-1-1-bootstrap-4-vertikalnoye-vyravnivaniye-2.jpg" alt="Bootstrap - Вертикальное выравнивание у колонок">
+
+<h3>4.2 Горизонтальное выравнивание</h3>
+
+<p>Кроме того, Bootstrap имеет в своем арсенале инструменты для горизонтального выравнивания колонок при помощи префикса «.justify-content-» у «.row».</p>
+
+<pre class="language-html"><code>&lt;div class=&quot;row justify-content-start&quot;&gt;
+  &lt;div class=&quot;col-4&quot;&gt;row justify-content-start&lt;/div&gt;
+  &lt;div class=&quot;col-4&quot;&gt;row justify-content-start&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;row justify-content-center&quot;&gt;
+  &lt;div class=&quot;col-4&quot;&gt;row justify-content-center&lt;/div&gt;
+  &lt;div class=&quot;col-4&quot;&gt;row justify-content-center&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;row justify-content-end&quot;&gt;
+  &lt;div class=&quot;col-4&quot;&gt;justify-content-end&lt;/div&gt;
+  &lt;div class=&quot;col-4&quot;&gt;justify-content-end&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;row justify-content-around&quot;&gt;
+  &lt;div class=&quot;col-4&quot;&gt;justify-content-around&lt;/div&gt;
+  &lt;div class=&quot;col-4&quot;&gt;justify-content-around&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;row justify-content-between&quot;&gt;
+  &lt;div class=&quot;col-4&quot;&gt;justify-content-between&lt;/div&gt;
+  &lt;div class=&quot;col-4&quot;&gt;justify-content-between&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+
+<img src="../../public/images/blog/html-css/bootstrap/4-2-bootstrap-4-gorizontalnoye-viravnivaniye.jpg" alt="Bootstrap - Горизонтальное выравнивание">
+
+<h3>4.3 Удаление полей между колонками</h3>
+
+<p>Очень часто встречаются ситуации, когда необходимо убрать поля между колонками. Например, если вы создаете галерею и элементы должны быть расположены вплотную, например так:</p>
+
+<img src="../../public/images/blog/html-css/bootstrap/4-3-0-primer-no-gutters.jpg" alt="Bootstrap - Удаление полей между колонками - no-gutters">
+
+<p>Для этого достаточно у элемента «.row» задать дополнительный класс «.no-gutters».</p>
+
+<pre class="language-html"><code>&lt;div class=&quot;row no-gutters&quot;&gt;
+  &lt;div class=&quot;col-6 col-sm-4 col-md-4&quot;&gt;&lt;div&gt;col-6 col-sm-4 col-md-4&lt;/div&gt;&lt;/div&gt;
+  &lt;div class=&quot;col-6 col-sm-4 col-md-4&quot;&gt;&lt;div&gt;col-6 col-sm-4 col-md-4&lt;/div&gt;&lt;/div&gt;
+  &lt;div class=&quot;col-6 col-sm-4 col-md-4&quot;&gt;&lt;div&gt;col-6 col-sm-4 col-md-4&lt;/div&gt;&lt;/div&gt;
+  &lt;div class=&quot;col-6 col-sm-4 col-md-4&quot;&gt;&lt;div&gt;col-6 col-sm-4 col-md-4&lt;/div&gt;&lt;/div&gt;
+  &lt;div class=&quot;col-6 col-sm-4 col-md-4&quot;&gt;&lt;div&gt;col-6 col-sm-4 col-md-4&lt;/div&gt;&lt;/div&gt;
+  &lt;div class=&quot;col-6 col-sm-4 col-md-4&quot;&gt;&lt;div&gt;col-6 col-sm-4 col-md-4&lt;/div&gt;&lt;/div&gt;
+  &lt;div class=&quot;col-6 col-sm-4 col-md-4&quot;&gt;&lt;div&gt;col-6 col-sm-4 col-md-4&lt;/div&gt;&lt;/div&gt;
+  &lt;div class=&quot;col-6 col-sm-4 col-md-4&quot;&gt;&lt;div&gt;col-6 col-sm-4 col-md-4&lt;/div&gt;&lt;/div&gt;
+  &lt;div class=&quot;col-6 col-sm-4 col-md-4&quot;&gt;&lt;div&gt;col-6 col-sm-4 col-md-4&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+
+<img src="../../public/images/blog/html-css/bootstrap/4-3-1-udaleniye-poley-mezhdu-kolonkami.jpg" alt="Bootstrap - Удаление полей между колонками - пример">
+
+<h3>4.4 Перенос колонок на новую строку</h3>
+
+<p>Если ряд (.row) заполняется суммарным количеством колонок более 12-ти, последующая колонка переносится на новую строку.</p>
+
+<pre class="language-html"><code>&lt;div class=&quot;row&quot;&gt;
+  &lt;div class=&quot;col-9&quot;&gt;.col-9&lt;/div&gt;
+  &lt;div class=&quot;col-4&quot;&gt;.col-4&lt;br&gt;9 + 4 = 13 колонок - это больше 12. Данный элемент шириной в 4 колонки будет перенесен на новую строку.&lt;/div&gt;
+  &lt;div class=&quot;col-6&quot;&gt;.col-6&lt;br&gt;Следующие колонки расположатся вдоль строки.&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+
+<img src="../../public/images/blog/html-css/bootstrap/4-4-perenos-kolonok.jpg" alt="Bootstrap - Перенос колонок на новую строку">
+
+<blockquote>Здесь все также, как в 3-й версии Bootstrap.</blockquote>
+
+<h2>5. Порядок элементов</h2>
+
+<h3>5.1 Классы порядка элементов</h3>
+
+<p>Можно использовать специальные классы с префиксом «.order-» для определения порядка элементов. Если вы знакомы с Flex-версткой, данные правила будут вам знакомы. Bootstrap дает возможность задавать порядок элементов с помощью классов. Можно задавать порядок напрямую (.order-1.order-md-2):</p>
+
+<pre class="language-html"><code>&lt;div class=&quot;row&quot;&gt;
+  &lt;div class=&quot;col&quot;&gt;Первый неупорядоченный элемент&lt;/div&gt;
+  &lt;div class=&quot;col order-12&quot;&gt;Второй, упорядоченный как последний&lt;/div&gt;
+  &lt;div class=&quot;col order-1&quot;&gt;Третий, упорядоченный как первый&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+
+<img src="../../public/images/blog/html-css/bootstrap/5-1-0-reordering.jpg" alt="Bootstrap - Классы порядка элементов">
+
+<p>Или можно использовать специальные классы, которые определяют порядок первого и последнего элементов (.order-first, .order-last):</p>
+
+<pre class="language-html"><code>&lt;div class=&quot;row&quot;&gt;
+  &lt;div class=&quot;col&quot;&gt;Первый неупорядоченный&lt;/div&gt;
+  &lt;div class=&quot;col order-last&quot;&gt;Второй, упорядоченный как последний&lt;/div&gt;
+  &lt;div class=&quot;col order-first&quot;&gt;Третий, упорядоченный как первый&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+
+<img src="../../public/images/blog/html-css/bootstrap/5-1-1-reordering-2.jpg" alt="Bootstrap - Порядок колонок">
+
+<h3>5.2 Смещение колонок</h3>
+
+<p>По аналогии с Bootstrap 3, в 4-й версии также есть возможность горизонтального смещения колонок, однако реализовано это несколько иначе и для этого есть специальные классы с префиксом «.offset-».</p>
+
+<h4>5.2.1 Классы смещения</h4>
+
+<p>Сдвигать колонку вправо можно, используя классы «.offset-md-*», которые увеличивают левый отступ на * количество элементов. Из примера ниже, класс «.offset-md-2» сдвинет колонку «.col-md-4» на 2 колонки вправо, остальные примеры работают по аналогии:</p>
+
+<pre class="language-html"><code>&lt;div class=&quot;row&quot;&gt;
+  &lt;div class=&quot;col-md-4&quot;&gt;.col-md-4&lt;/div&gt;
+  &lt;div class=&quot;col-md-4 offset-md-4&quot;&gt;.col-md-4 .offset-md-4&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;row&quot;&gt;
+  &lt;div class=&quot;col-md-3 offset-md-3&quot;&gt;.col-md-3 .offset-md-3&lt;/div&gt;
+  &lt;div class=&quot;col-md-3 offset-md-3&quot;&gt;.col-md-3 .offset-md-3&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;row&quot;&gt;
+  &lt;div class=&quot;col-md-6 offset-md-3&quot;&gt;.col-md-6 .offset-md-3&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+
+<img src="../../public/images/blog/html-css/bootstrap/5-2-1-offset.jpg" alt="Bootstrap - Классы смещения">
+
+<blockquote>Можно сбрасывать отступ на всех разрешениях благодаря классу «.offset-*-0», где * - это sm, md, lg или xl.</blockquote>
+
+<h2>6. Вложенность</h2>
+
+<p>Весьма ожидаемо, что Bootstrap поддерживает вложенность элементов. Работает здесь все также, как в третьей версии - чтобы вложить колонки в другие, необходимо создать дочерний класс «.row» и уже в него вкладывать колонки.</p>
+
+<pre class="language-html"><code>&lt;div class=&quot;row&quot;&gt;
+  &lt;div class=&quot;col-sm-9&quot;&gt;Уровень 1: &laquo;.col-sm-9&raquo;
+    &lt;div class=&quot;row&quot;&gt;
+      &lt;div class=&quot;col-8 col-sm-6&quot;&gt;Уровень 2: &laquo;.col-8 .col-sm-6&raquo;&lt;/div&gt;
+      &lt;div class=&quot;col-4 col-sm-6&quot;&gt;Уровень 2: &laquo;.col-4 .col-sm-6&raquo;&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+
+<img src="../../public/images/blog/html-css/bootstrap/6-vlozhennost.jpg" alt="Bootstrap - Вложенность">
+
+<p>Мы рассмотрели основные особенности работы с сеткой Bootstrap. Если у вас есть желание более подробно ознакомиться со всеми возможностями фреймворка, рекомендую изучить документацию на официальном сайте.</p>
+
+<p>В следующем уроке мы рассмотрим настройку Bootstrap сетки под ваш конкретный проект на примере использования в стартовом шаблоне OptimizedHTML 4. А именно настройку, работу с переменными отступов, брейкпоинтов, количества колонок и прочего.</p>
+
+
+                <div class="premium">
+          <div class="row">
+
+            <div class="col-md-12">
+              <h4>Премиум уроки от WebDesign Master</h4>
+            </div>
+
+            <div class="col-md-4 col-sm-6">
+              <a href="../../courses/jekyll/index.html" class="premium-item">
+                <span class="premium-img-wrap"><img src="../../public/images/premium/jekyll.jpg" alt="Курс по созданию сайта от А до Я на Jekyll" class="img-responsive"></span>
+                <p>Создание сайта от А до Я. Комплексный курс</p>
+              </a>
+            </div>
+
+            <div class="col-md-4 col-sm-6">
+              <a href="../../courses/webdesign/index.html" class="premium-item">
+                <span class="premium-img-wrap"><img src="../../public/images/premium/webdesign.jpg" alt="Большой комплексный курс по современному веб-дизайну" class="img-responsive"></span>
+                <p>Веб-дизайн с нейросетями для начинающих</p>
+              </a>
+            </div>
+
+            <div class="col-md-4 col-sm-6">
+              <a href="../../courses/freelance/index.html" class="premium-item">
+                <span class="premium-img-wrap"><img src="../../public/images/premium/freelance.jpg" alt="Фриланс для начинающих" class="img-responsive"></span>
+                <p>Я - фрилансер! Базовый курс для начинающих</p>
+              </a>
+            </div>
+
+          </div>
+        </div>
+
+
+        <div class="read-more">
+          <h4>Другие уроки по теме «Веб-разработка»</h4>
+          <ul>
+            
+            
+            
+              
+              <li><a href="../../blog/html-css/css-masonry.html">Создание адаптивных плиток Masonry на чистом CSS. Материалы урока</a></li>
+              
+            
+              
+              <li><a href="../../blog/html-css/floating-image-lesson.html">Создание красивого сайта с Parallax эффектом при движении мыши. Материалы урока</a></li>
+              
+            
+              
+              <li><a href="../../blog/html-css/grow-lesson.html">Создание красивого сайта с Parallax эффектом и анимацией заголовка. Материалы урока</a></li>
+              
+            
+              
+              <li><a href="../../blog/html-css/image-gallery-lesson.html">Создание красивой галереи на сайте. Материалы урока</a></li>
+              
+            
+              
+              <li><a href="../../blog/html-css/background-animation-website.html">Создание сайта с красивой анимацией фона. Материалы урока</a></li>
+              
+            
+              
+              <li><a href="../../blog/html-css/scrolling-3d-scene-website.html">Создание красивого сайта с 3D эффектом глубины при скролле. Материалы урока</a></li>
+              
+            
+          </ul>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</article>
+
+
+        </div>
+
+        <div class="col-md-4 col-aside">
+
+  <aside class="site-aside">
+
+
+
+<div class="box box-search">
+
+<form class="search" action="https://www.google.com/search" target="_blank">
+  <div>
+    <input type="text" name="q" size="55" placeholder="Поиск по сайту..." required>
+    <input type="hidden" name="sitesearch" value="https://webdesign-masteru.github.io">
+    <button type="submit">
+      <i class="fa fa-search"></i>
+    </button>
+  </div>
+</form>
+
+
+    </div>
+
+    <nav class="box box-mnu">
+      <p class="mnu-header">Разделы сайта:</p>
+      <ul class="list-unstyled box-dashed main-menu">
+
+  <li class="d-lg-none">
+    <a href="../../courses/index.html"><i class="fa fa-diamond"></i> Курсы</a>
+  </li>
+
+  <li>
+    <a href="../../blog/html-css/index.html"><i class="fa fa-code"></i> Веб-разработка</a>
+  </li>
+
+  <li>
+    <a href="../../blog/web-design/index.html"><i class="fa fa-paint-brush"></i> Веб-дизайн</a>
+  </li>
+
+  <li>
+    <a href="../../blog/tools/index.html"><i class="fa fa-cogs"></i> Инструменты</a>
+  </li>
+
+  <li>
+    <a href="../../blog/cms/index.html"><i class="fa fa-folder-open-o"></i> CMS/Framework</a>
+  </li>
+
+</ul>
+
+    </nav>
+
+    <nav class="box box-mnu services-mnu">
+      <p class="mnu-header">Полезные ресурсы:</p>
+      <ul class="list-unstyled">
+
+  <li>
+    <a href="../../blog/tools/wsl-nodejs-new.html"><i class="fa fa-cogs"></i> Установка WSL и окружения</a>
+  </li>
+
+  <li>
+    <a href="../../blog/docs/webdev-without-wsl.html"><i class="fa fa-cogs"></i> Настройка окружения без WSL</a>
+  </li>
+
+  <li>
+    <a href="../../blog/tools/hosting-lesson.html"><i class="fa fa-server"></i> Работа с хостингом от А до Я</a>
+  </li>
+
+  <li>
+    <a href="../../blog/tools/vscode.html"><i class="fa custom-vscode-3"></i> Настройка VS Code</a>
+  </li>
+
+  <li>
+    <a href="../../blog/tools/cubic-bezier/index.html"><i class="fa custom-bezier"></i> Cubic-Bezier Generator</a>
+  </li>
+
+  <li>
+    <a href="../../blog/tools/lazy-load/index.html"><i class="fa fa-image"></i> Lazy Load Placeholder</a>
+  </li>
+
+  <li>
+    <a href="../../blog/docs/gulp-documentation.html"><i class="fa fa-file-text-o"></i> Документация Gulp</a>
+  </li>
+
+</ul>
+
+    </nav>
+
+    <div class="box box-sidebar">
+      <div id="vk_groups"></div>
+    </div>
+
+  </aside>
+
+
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <footer class="main-foot">
+    <div class="container-fluid">
+
+      <span class="year"></span> © WebDesign Master
+
+    </div>
+    <div class="top" title="Наверх"><i class="fa fa-angle-double-up"></i></div>
+  </footer>
+
+  <script>(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return}}k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window,document,"script","https://mc.yandex.ru/metrika/tag.js","ym");ym(100695574,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true,webvisor:true});</script><noscript><div><img src="https://mc.yandex.ru/watch/100695574" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+
+
+</body>
+</html>
+

@@ -1,0 +1,3215 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="canonical" href="https://webdesign-masteru.github.io/blog/docs/gulp-documentation.html">
+  <meta name="generator" content="Jekyll v">
+
+  <title>Документация Gulp на русском</title>
+  <meta name="description" content="Полная документация Gulp на русском языке">
+
+  <link rel="icon" href="https://webdesign-masteru.github.io/favicon.ico?v=15" type="image/x-icon">
+  <meta property="og:image" content="../../public/images/thumbs/docs/gulp-documentation/gulp-documentation-cover.jpg">
+
+  <link rel="stylesheet" href="../../styles/index.css?v=15">
+  
+  <script src="../../scripts/dist/main.js?v=15" defer></script>
+  
+  <script>/* no flicker */document.documentElement.classList.add(localStorage.getItem('mode') === 'auto' ? (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : localStorage.getItem('mode'))</script>
+
+</head>
+
+<body>
+
+  <header class="main-head">
+
+    <div class="container-fluid">
+
+      <div class="row">
+
+        <div class="col-md-6">
+          <div class="mobile-pannel d-xl-none d-lg-none d-md-none">
+            <div class="toggler"><button title="Переключить тему"></button></div>
+            <div class="toggle-mnu"><span></span></div>
+          </div>
+        
+          <a href="../../index.html" class="logo"><img src="../../assets/images/logo-site.svg" alt="WebDesign Master"></a>
+        
+        </div>
+
+        <div class="col-md-6 d-none d-md-block d-lg-block d-xl-block">
+          <div class="toggler"><button title="Переключить тему"></button></div>
+                    <div class="social">
+            <a title="ВКонтакте" href="https://vk.com/jediweb" target="_blank"><i class="fa fa-vk"></i></a>
+            <a title="Телеграм" href="https://t.me/jediweb" target="_blank"><i class="fa custom-tg"></i></a>
+            <a title="YouTube" href="https://youtube.com/@wdm" target="_blank"><i class="fa fa-youtube-play"></i></a>
+            <a title="GitHub" href="https://github.com/webdesign-masteru" target="_blank"><i class="fa fa-github"></i></a>
+            <a title="Дзен" href="https://dzen.ru/jediweb" target="_blank"><i class="fa custom-dzen"></i></a>
+          </div>
+
+          <div class="courses-link">
+            <a href="../../courses/index.html"><i class="fa fa-diamond"></i>Курсы</a>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="mobile-menu"></div>
+
+    </div>
+
+  </header>
+
+
+  <div class="content">
+    <div class="container-fluid">
+
+      <div class="row">
+
+        <div class="col-md-8 order-last">
+
+          <article class="list-item single-page page-documentation">
+  <div class="item-link">
+
+    
+
+    <div class="item-content">
+
+    
+      <h1>Документация Gulp на русском</h1>
+    
+
+      <div class="article-content">
+
+        <blockquote>Представленная документация на русском языке является полным адаптированным переводом официальной документации Gulp. Информация регулярно обновляется.</blockquote>
+
+<h3 id="quick-start">Быстрый старт</h3>
+
+<p>Если ранее вы устанавливали Gulp глобально, запустите <code>npm rm --global gulp</code> перед тем, как выполнять какие-либо инструкции документации.</p>
+
+<h4>Проверьте наличие и версии node, npm и npx</h4>
+
+<pre class="language-bash"><code>node --version</code></pre>
+<pre class="language-bash"><code>npm --version</code></pre>
+<pre class="language-bash"><code>npx --version</code></pre>
+
+<p>Если они не установлены, следуйте <a href="https://nodejs.org" target="_blank">инструкциям</a> на сайте Node.js® для их установки.</p>
+
+<h4>Установите утилиту командной строки Gulp</h4>
+
+<pre class="language-bash"><code>npm install --global gulp-cli</code></pre>
+
+<h4>Создайте каталог проекта и перейдите в него</h4>
+
+<pre class="language-bash"><code>npx mkdirp my-project</code></pre>
+
+<pre class="language-bash"><code>cd my-project</code></pre>
+
+<h4>Создайте файл package.json в каталоге вашего проекта</h4>
+
+<pre class="language-bash"><code>npm init</code></pre>
+
+<p>Это поможет вам задать имя, версию, описание проекта и другую информацию.</p>
+
+<h4>Установите пакет gulp в ваши зависимости devDependencies</h4>
+
+<pre class="language-bash"><code>npm install --save-dev gulp</code></pre>
+
+<h4>Проверьте версию Gulp</h4>
+
+<pre class="language-bash"><code>gulp --version</code></pre>
+
+<p>Убедитесь, что вывод соответствует или похож на тот, что показан ниже. Если это не так, повторите шаги, описанные в этом руководстве ранее.</p>
+
+<pre class="language-bash"><code>~/gulp/docs
+$ gulp --version
+[14:45:59] CLI version 2.0.1
+[14:45:59] Local version 4.0.0
+</code></pre>
+
+<h4>Создайте gulpfile</h4>
+
+<p>Используя редактор кода, создайте файл с именем gulpfile.js в корневом каталоге вашего проекта со следующим содержимым:</p>
+
+<pre class="language-javascript"><code>function defaultTask(cb) {
+  // Разместите здесь код дефолтного таска
+  cb();
+}
+
+exports.default = defaultTask
+</code></pre>
+
+<h4>Тест</h4>
+
+<p>Запустите команду gulp в каталоге вашего проекта:</p>
+
+<pre class="language-bash"><code>gulp</code></pre>
+
+<p>Для запуска нескольких задач вы можете использовать <code>gulp &lt;task&gt; &lt;othertask&gt;</code>.</p>
+
+<h4>Результат</h4>
+
+<p>Дефолтный таск запущен:</p>
+
+<pre class="language-bash"><code>~/gulp/docs
+$ gulp
+[14:45:59] Using gulpfile ~/gulp/docs/gulpfile.js
+[14:45:59] Starting 'default'
+[14:45:59] Finished 'default' after 1.22 ms
+</code></pre>
+
+<h3 id="javascript-and-gulpfiles">JavaScript и Gulpfiles</h3>
+
+<p>Gulp позволяет использовать ваши знания JavaScript для написания gulpfiles. Для упрощения работы с файловой системой и командной строкой предусмотрено несколько утилит, однако все остальное, что вы пишете - это чистый JavaScript.</p>
+
+<h4>Основы Gulpfile</h4>
+
+<p>Gulpfile - это файл в каталоге вашего проекта с именем gulpfile.js (или с заглавной буквы - Gulpfile.js), который автоматически загружается при запуске команды gulp. Чаще всего в данном файле используется API Gulp, например, src(), dest(), series() или parallel(), однако можно использовать любые модули JavaScript или Node. Все функции можно экспортированть и зарегистрировать в системе задач gulp.</p>
+
+<h4>Транспиляция</h4>
+
+<p>Вы можете писать gulpfile, используя язык, который требует транспиляции, такой как TypeScript или Babel. Измените расширение вашего gulpfile.js, чтобы указать язык и установите соответствующий модуль транспилятора.</p>
+
+<blockquote>Транспиляция - преобразование программы, при котором используется исходный код программы, написанной на одном языке программирования в качестве исходных данных, и производится эквивалентный исходный код на другом языке программирования. Википедия.</blockquote>
+
+<ul>
+  <li>Для TypeScript переименуйте его в <code>gulpfile.ts</code> и установите модуль <a href="https://www.npmjs.com/package/ts-node" target="_blank">ts-node</a>.</li>
+  <li>Для Babel, переименуйте в <code>gulpfile.babel.js</code> и установите модуль <a href="https://www.npmjs.com/package/@babel/register" target="_blank">@babel/register</a>.</li>
+</ul>
+
+<p>Большинство новых версий node поддерживают большинство функций, предоставляемых TypeScript или Babel, за исключением синтаксиса импорта/экспорта. Если требуется только этот синтаксис, переименуйте его в <code>gulpfile.esm.js</code> и установите модуль <a href="https://www.npmjs.com/package/esm" target="_blank">esm</a>.</p>
+
+<h4>Разделение gulpfile</h4>
+
+<p>Многие пишут всю логику в gulpfile. Если он станет слишком большим, он может быть разбит на отдельные файлы.</p>
+
+<p>Каждый таск можно вынести в отдельный файл, а затем импортировать в свой gulpfile. Это не только позволяет упорядочить проект, но и позволит вам тестировать каждую задачу отдельно, в зависимости от того, что требуется в каждом конкретном случае.</p>
+
+<p>Также можно заменить файл <code>gulpfile.js</code> на каталог с именем <code>gulpfile.js</code>, который содержит файл <code>index.js</code>. Он будет обрабатываться как <code>gulpfile.js</code>. Этот каталог может содержать ваши отдельные модули для тасков. Если вы используете транспиллер, назовите папку и файл соответствующим образом.</p>
+
+<h3 id="creating-tasks">Создание задач (Тасков)</h3>
+
+<p>Каждая задача gulp представляет собой асинхронную функцию JavaScript, которая принимает колбэк с первым аргументом-ошибкой или возвращает поток, промис, источник событий, дочерний процесс или наблюдаемый тип (<a href="#async-completion">подробнее об этом позже</a>). Из-за некоторых ограничений платформы синхронные задачи не поддерживаются, однако есть довольно изящная альтернатива (см. Использование async/await).</p>
+
+<h4>Экспорт</h4>
+
+<p>Задачи (таски) бывают <strong>общедоступными</strong> или <strong>частными</strong>.</p>
+
+<ul>
+  <li><strong>Общедоступные задачи</strong> экспортируются из вашего gulpfile, что позволяет запускать их командой <code>gulp</code>.</li>
+  <li><strong>Частные задачи</strong> создаются для внутреннего использования, как часть <code>series()</code> или <code>parallel()</code>.</li>
+</ul>
+
+<p>Частная задача выглядит и действует как любая другая задача, но конечный пользователь не может выполнить ее отдельно. Чтобы сделать задачу публичной, экспортируйте ее из своего файла gulpfile.</p>
+
+<pre class="language-javascript"><code>const { series } = require('gulp');
+
+// Функция `clean` не экспортируется, поэтому ее можно считать частной задачей.
+// Она все еще может быть использована в составе `series()`.
+
+function clean(cb) {
+  // тело функции
+  cb();
+}
+
+// Функция `build` экспортирована, поэтому она общедоступна и может быть запущена командой `gulp`.
+// Она также может быть использована в составе `series()`.
+
+function build(cb) {
+  // тело функции
+  cb();
+}
+
+exports.build = build;
+exports.default = series(clean, build);
+</code></pre>
+
+<pre class="language-bash"><code>~/gulp/docs
+$ gulp --tasks
+[11:14:59] Tasks for ~/gulp/docs/gulpfile.js
+[11:14:59] ├── build
+[11:14:59] └─┬ default
+[11:14:59]   └─┬ &lt;series&gt;
+[11:14:59]     ├── clean
+[11:14:59]     └── build
+</code></pre>
+
+<blockquote>Раньше функция <code>task()</code> использовалась для регистрации ваших функций в качестве тасков. Хоть этот API все еще доступен, экспорт должен быть основным механизмом регистрации, за исключением крайних случаев, когда экспорт не будет работать.</blockquote>
+
+<h4>Составление тасков</h4>
+
+<p>Gulp предоставляет два мощных метода для создания тасков - <code>series()</code> и <code>parallel()</code>, позволяющие объединять отдельные задачи в более крупные операции. Оба метода принимают любое количество функций или составных операций. <code>series()</code> и <code>parallel()</code> могут быть вложены сами в себя или друг в друга на любую глубину.</p>
+
+<p>Чтобы ваши задачи выполнялись по порядку, используйте метод <code>series()</code>.</p>
+
+<pre class="language-javascript"><code>const { series } = require('gulp');
+
+function transpile(cb) {
+  // тело функции
+  cb();
+}
+
+function bundle(cb) {
+  // тело функции
+  cb();
+}
+
+exports.build = series(transpile, bundle);
+</code></pre>
+
+<p>Чтобы задачи выполнялись параллельно, объедините их методом <code>parallel()</code>.</p>
+
+<pre class="language-javascript"><code>const { parallel } = require('gulp');
+
+function javascript(cb) {
+  // тело функции
+  cb();
+}
+
+function css(cb) {
+  // тело функции
+  cb();
+}
+
+exports.build = parallel(javascript, css);
+</code></pre>
+
+<p>Таски выполняются сразу при вызове series() или parallel(). Это позволяет варьировать состав тасков, в зависимости от условий.</p>
+
+<pre class="language-javascript"><code>const { series } = require('gulp');
+
+function minify(cb) {
+  // тело функции
+  cb();
+}
+
+
+function transpile(cb) {
+  // тело функции
+  cb();
+}
+
+function livereload(cb) {
+  // тело функции
+  cb();
+}
+
+if (process.env.NODE_ENV === 'production') {
+  exports.build = series(transpile, minify);
+} else {
+  exports.build = series(transpile, livereload);
+}
+</code></pre>
+
+<p>series() и parallel() могут быть вложены на любую глубину.</p>
+
+<pre class="language-javascript"><code>const { series, parallel } = require('gulp');
+
+function clean(cb) {
+  // тело функции
+  cb();
+}
+
+function cssTranspile(cb) {
+  // тело функции
+  cb();
+}
+
+function cssMinify(cb) {
+  // тело функции
+  cb();
+}
+
+function jsTranspile(cb) {
+  // тело функции
+  cb();
+}
+
+function jsBundle(cb) {
+  // тело функции
+  cb();
+}
+
+function jsMinify(cb) {
+  // тело функции
+  cb();
+}
+
+function publish(cb) {
+  // тело функции
+  cb();
+}
+
+exports.build = series(
+  clean,
+  parallel(
+    cssTranspile,
+    series(jsTranspile, jsBundle)
+  ),
+  parallel(cssMinify, jsMinify),
+  publish
+);
+</code></pre>
+
+<p>Когда выполняется составная операция, каждая задача будет выполняться каждый раз, когда на нее ссылаются. Например, таск <code>clean</code>, на который ссылаются в двух разных задачах, будет запущен дважды и приведет к нежелательным результатам. Вместо этого проведите рефакторинг таска <code>clean</code>, который будет указан в окончательном составе.</p>
+
+<p>Если у вас такой код:</p>
+
+<pre class="language-javascript"><code>// Так делать НЕЛЬЗЯ
+
+const { series, parallel } = require('gulp');
+
+const clean = function(cb) {
+  // тело функции
+  cb();
+};
+
+const css = series(clean, function(cb) {
+  // тело функции
+  cb();
+});
+
+const javascript = series(clean, function(cb) {
+  // тело функции
+  cb();
+});
+
+exports.build = parallel(css, javascript);
+</code></pre>
+
+<p>Лучше сделать так:</p>
+
+<pre class="language-javascript"><code>const { series, parallel } = require('gulp');
+
+function clean(cb) {
+  // тело функции
+  cb();
+}
+
+function css(cb) {
+  // тело функции
+  cb();
+}
+
+function javascript(cb) {
+  // тело функции
+  cb();
+}
+
+exports.build = series(clean, parallel(css, javascript));
+</code></pre>
+
+<h3 id="async-completion">Асинхронное выполнение</h3>
+
+<p>Библиотеки Node работают с асинхронностью различными способами. Самым распространенным является <a href="https://nodejs.org/api/errors.html#errors_error_first_callbacks" target="_blank">колбэк с первым аргументом-ошибкой</a>, где первый аргумент зарезервирован для ошибки. Вы также можете столкнуться с <a href="https://nodejs.org/api/stream.html#stream_stream" target="_blank">потоками</a>, <a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Guide/Ispolzovanie_promisov" target="_blank">промисами</a>, <a href="https://nodejs.org/api/events.html#events_events" target="_blank">источниками событий</a>, <a href="https://nodejs.org/api/child_process.html#child_process_child_process" target="_blank">дочерними процессами</a> или <a href="https://github.com/tc39/proposal-observable/blob/master/README.md" target="_blank">наблюдаемыми типами</a>. Gulp-таски нормализуют все эти типы асинхронности.</p>
+
+<h4>Сигнал выполнения задачи</h4>
+
+<p>Когда поток, промис, источник событий, дочерний процесс или наблюдаемый тип возвращают результат выполнения таска, об успехе или ошибке они информируют Gulp для дальнейшего продолжения или завершения. Если задание выполнено с ошибкой, Gulp немедленно прекратит работу и покажет эту ошибку.</p>
+
+<p>При составлении задач с помощью <strong>series()</strong> ошибка завершит всю структуру, и дальнейшие задачи выполняться не будут. При компоновке задач с использованием функции <strong>parallel()</strong> ошибка приведет к завершению текущей компоновки, но другие параллельные задачи могут завершиться (или не завершиться, в зависимости от условий).</p>
+
+<h4>Возвращение потока</h4>
+
+<pre class="language-javascript"><code>const { src, dest } = require('gulp');
+
+function streamTask() {
+  return src('*.js')
+    .pipe(dest('output'));
+}
+
+exports.default = streamTask;
+</code></pre>
+
+<h4>Возвращение промиса</h4>
+
+<pre class="language-javascript"><code>function promiseTask() {
+  return Promise.resolve('значение игнорируется');
+}
+
+exports.default = promiseTask;
+</code></pre>
+
+<h4>Возвращение источника событий</h4>
+
+<pre class="language-javascript"><code>const { EventEmitter } = require('events');
+
+function eventEmitterTask() {
+  const emitter = new EventEmitter();
+  // Эмит должен выполняться асинхронно, иначе Gulp его не сможет прослушать
+  setTimeout(() => emitter.emit('finish'), 250);
+  return emitter;
+}
+
+exports.default = eventEmitterTask;
+</code></pre>
+
+<h4>Возвращение дочернего процесса</h4>
+
+<pre class="language-javascript"><code>const { exec } = require('child_process');
+
+function childProcessTask() {
+  return exec('date');
+}
+
+exports.default = childProcessTask;
+</code></pre>
+
+<h4>Возвращение наблюдаемого типа</h4>
+
+<pre class="language-javascript"><code>const { Observable } = require('rxjs');
+
+function observableTask() {
+  return Observable.of(1, 2, 3);
+}
+
+exports.default = observableTask;
+</code></pre>
+
+<h4>Использование первого агрумента с ошибкой</h4>
+
+<p>Если из вашей задачи ничего не возвращается, вы должны использовать колбек с ошибкой, чтобы сообщить о завершении. Колбек будет передан вашей задаче в качестве единственного аргумента с именем <code>cb()</code>.</p>
+
+<pre class="language-javascript"><code>function callbackTask(cb) {
+  // `cb()` вызывается как пример выполнения какой-то работы 
+  cb();
+}
+
+exports.default = callbackTask;
+</code></pre>
+
+<p>Чтобы указать Gulp, что ошибка произошла в задаче, использующей колбек первого агрумента с ошибкой, вызовите ее с <code>Error</code> в качестве единственного аргумента.</p>
+
+<pre class="language-javascript"><code>function callbackError(cb) {
+  // `cb()` вызывается как пример выполнения какой-то работы
+  cb(new Error('kaboom'));
+}
+
+exports.default = callbackError;
+</code></pre>
+
+<p>Однако, чаще всего вы будете передавать этот колбек другому API, а не вызывать его самостоятельно.</p>
+
+<pre class="language-javascript"><code>const fs = require('fs');
+
+function passingCallback(cb) {
+  fs.access('gulpfile.js', cb);
+}
+
+exports.default = passingCallback;
+</code></pre>
+
+<h4>Скажем «НЕТ» синхронным задачам</h4>
+
+<p>Синхронные задачи больше не поддерживаются. Они часто приводили к тонким ошибкам, которые трудно было отладить, например, могли забыть возвратить потоки из задачи.</p>
+
+<p>Если вы видите предупреждение «Did you forget to signal async completion?», значит ни один из методов, упомянутых выше не использовался. Вам нужно будет использовать колбек первого агрумента с ошибкой или вернуть поток, промис, источник событий, дочерний процесс или наблюдаемый тип для решения проблемы.</p>
+
+<h4>Использование async/await</h4>
+
+<p>Если вы не используете ни одну из упомянутых опций, вы можете определить свою задачу как <code>asyn</code> функцию, которая оборачивает вашу задачу в промис. Это позволяет вам работать с промисами синхронно, используя await и использовать другой синхронный код.</p>
+
+<pre class="language-javascript"><code>const fs = require('fs');
+
+async function asyncAwaitTask() {
+  const { version } = fs.readFileSync('package.json');
+  console.log(version);
+  await Promise.resolve('some result');
+}
+
+exports.default = asyncAwaitTask;
+</code></pre>
+
+<h3 id="working-with-files">Работа с файлами</h3>
+
+<p>Методы <code>src()</code> и <code>dest()</code> используются для взаимодействия с файлами на вашем компьютере.</p>
+
+<p><code>src()</code> использует <a href="#explaining-globs"></a>glob для чтения файловой системы и создания <a href="https://nodejs.org/api/stream.html" target="_blank">потока Node</a>. Он находит все подходящие файлы и считывает их в память для прохождения через поток.</p>
+
+<blockquote>Glob - Шаблон поиска с использованием метасимволов, например <code>**/*.js</code>.</blockquote>
+
+<p>Поток, созданный <code>src()</code>, должен быть возвращен из задачи, чтобы сигнализировать об асинхронном завершении, как указано в разделе <a href="#creating-tasks">Создание задач</a>.</p>
+
+<pre class="language-javascript"><code>const { src, dest } = require('gulp');
+
+exports.default = function() {
+  return src('src/*.js')
+    .pipe(dest('output/'));
+}
+</code></pre>
+
+<p>Основным API потока является метод <code>.pipe()</code> для объединения потоков Transform или Writable.</p>
+
+<pre class="language-javascript"><code>const { src, dest } = require('gulp');
+const babel = require('gulp-babel');
+
+exports.default = function() {
+  return src('src/*.js')
+    .pipe(babel())
+    .pipe(dest('output/'));
+}
+</code></pre>
+
+<p><code>dest()</code> получает строку пути выходного каталога, а также создает поток Node. Когда метод получает файл, переданный через конвейер, он записывает содержимое и другие детали в файловую систему в данном каталоге. Метод <code>symlink()</code> также доступен и работает как <code>dest()</code>, но создает ссылки вместо файлов (подробности см. в symlink() API).</p>
+
+<p>Чаще всего плагины размещаются между <code>src()</code> и <code>dest()</code> с помощью метода <code>.pipe()</code> и преобразуют файлы в потоке.</p>
+
+<h4>Добавление файлов в поток</h4>
+
+<p><code>src()</code> также может быть размещен в середине конвейера для добавления файлов в поток на основе Globs (Шаблонов поиска). Дополнительные файлы будут доступны только для преобразований в потоке позже. Если Globs перекрываются, файлы будут добавлены снова.</p>
+
+<blockquote>Два или более globs, которые намеренно или не намеренно совпадают с одним и тем же файлом, считаются перекрывающимися. Когда перекрывающиеся Globs используются внутри одного <code>src()</code>, gulp делает все возможное, чтобы удалить дубликаты.</blockquote>
+
+<p>Это может быть полезно для переноса некоторых файлов перед добавлением простых файлов JavaScript в конвейер или удалением всего.</p>
+
+<pre class="language-javascript"><code>const { src, dest } = require('gulp');
+const babel = require('gulp-babel');
+const uglify = require('gulp-uglify');
+
+exports.default = function() {
+  return src('src/*.js')
+    .pipe(babel())
+    .pipe(src('vendor/*.js'))
+    .pipe(uglify())
+    .pipe(dest('output/'));
+}
+</code></pre>
+
+<h4>Выход по фазам (поэтапный)</h4>
+
+<p><code>dest()</code> может использоваться в середине конвейера для записи промежуточных состояний в файловую систему. Когда файл получен, текущее состояние записывается в файловую систему, путь обновляется для представления нового местоположения выходного файла, затем этот файл продолжает движение по конвейеру.</p>
+
+<p>Эта функция может быть полезна, например, для создания минимизированных и неминимизированных файлов с одним и тем же конвейером.</p>
+
+<pre class="language-javascript"><code>const { src, dest } = require('gulp');
+const babel = require('gulp-babel');
+const uglify = require('gulp-uglify');
+const rename = require('gulp-rename');
+
+exports.default = function() {
+  return src('src/*.js')
+    .pipe(babel())
+    .pipe(src('vendor/*.js'))
+    .pipe(dest('output/'))
+    .pipe(uglify())
+    .pipe(rename({ extname: '.min.js' }))
+    .pipe(dest('output/'));
+}
+</code></pre>
+
+<h4>Режимы: потоковый, буферизованный и пустой</h4>
+
+<p><code>src()</code> может работать в трех режимах: буферизация, поток и пустой (empty). Это настраивается опциями <code>bufer</code> и <code>read</code> в <code>src()</code>.</p>
+
+<ul>
+  <li>Режим буферизации используется по умолчанию и загружает содержимое файла в память. Плагины обычно работают в режиме буферизации. Многие из них не поддерживают потоковый режим.</li>
+  <li>Режим потоковой передачи предназначен в основном для работы с большими файлами, которые не помещаются в памяти, такими как гигантские изображения или фильмы. Содержимое передается из файловой системы небольшими порциями, а не загружается сразу. Если вам нужно использовать потоковый режим, найдите плагин, который его поддерживает или напишите свой собственный.</li>
+  <li>Режим empty полезен при работе только с метаданными файла. Он ничего не содержит.</li>
+</ul>
+
+<h3 id="explaining-globs">Шаблоны Globs</h3>
+
+<p>Глобирование (Globbing) - это поиск файлов в файловой системе с использованием одного или нескольких шаблонов поиска.</p>
+
+<p>Метод <code>src()</code> принимает glob строку или массив для определения файлов, с которыми будет работать конвейер. Для вашего glob(s) должно быть найдено хотя бы одно совпадение, иначе <code>src()</code> выдаст ошибку. Когда используется массив globs, элементы обрабатываются по порядку, что особенно полезно для определения негативных globs.</p>
+
+<h4>Сегменты и разделители</h4>
+
+<p>Сегмент - это все, что находится между разделителями. Разделителем в glob всегда является символ <code>/</code>, независимо от операционной системы, даже в Windows, где разделителем пути является <code>\\</code>. В glob <code>\\</code> зарезервирован как символ экранирования.</p>
+
+<p>Здесь <code>*</code> экранируется, поэтому он рассматривается как литерал, а не как символ шаблона.</p>
+
+<pre class="language-javascript"><code>'glob_with_uncommon_\\*_character.js'</code></pre>
+
+<p>Избегайте использования методов <code>path</code> Node, таких, как <code>path.join</code>, для создания globs. В Windows он создает недопустимый glob потому, что Node использует <code>\\</code> в качестве разделителя. Также избегайте использования <code>__dirname</code> global, <code>__filename</code> global или <code>process.cwd()</code> по тем же причинам.</p>
+
+<pre class="language-javascript"><code>const invalidGlob = path.join(__dirname, 'src/*.js');</code></pre>
+
+<h4>Специальный символ: * (одиночная звезда)</h4>
+
+<p>Соответствует любому количеству (включая ни одного) символов в пределах одного сегмента. Полезно для выборки файлов в одном каталоге.</p>
+
+<p>Этот glob будет соответствовать файлам вроде <code>index.js</code>, но не файлам в подкаталоге <code>scripts/index.js</code> или <code>scripts/nested/index.js</code></p>
+
+<pre class="language-javascript"><code>'*.js'</code></pre>
+
+<h4>Специальный символ: ** (двойная звезда)</h4>
+
+<p>Соответствует любому количеству (включая ни одного) символов в сегментах. Полезно для выборки файлов во вложенных каталогах. Убедитесь, что вы правильно ограничили двойные звездочки, чтобы избежать ненужного сопоставления больших каталогов.</p>
+
+<p>Здесь glob ограничен каталогом <code>scripts/</code>. Будут выбраны все .js файлы во всех вложенных каталогах, такие, как <code>scripts/index.js</code>, <code>scripts/nested/index.js</code> и <code>scripts/nested/twice/index.js</code>.</p>
+
+<pre class="language-javascript"><code>'scripts/**/*.js'</code></pre>
+
+<blockquote>В данном примере, если бы не было префикса <code>scripts/</code>, все зависимости в node_modules или других каталогах также были бы включены в обработку.</blockquote>
+
+<h4>Специальный символ: ! (негативный, отрицательный)</h4>
+
+<p>Если globs перечисляются в порядке массива, отрицательный glob должен следовать по крайней мере за одним неотрицательным glob в массиве. Первый находит набор совпадений, затем отрицательный glob удаляет часть этих результатов. При исключении всех файлов в подкаталоге необходимо добавить <code>/**</code> после имени каталога.</p>
+
+<pre class="language-javascript"><code>['scripts/**/*.js', '!scripts/vendor/**']</code></pre>
+
+<p>Если за отрицательным glob следуют неотрицательные globs, из более позднего набора совпадений ничего не будет удалено.</p>
+
+<pre class="language-javascript"><code>['scripts/**/*.js', '!scripts/vendor/**', 'scripts/vendor/react.js']</code></pre>
+
+<p>Отрицательные globs могут быть использованы в качестве альтернативы для ограничения globs с двойными звездами.</p>
+
+<pre class="language-javascript"><code>['**/*.js', '!node_modules/**']</code></pre>
+
+<blockquote>В данном примере, если бы отрицательный glob был с расширением .js <code>!node_modules/**/*.js</code>, globbing-библиотека не оптимизировала бы отрицание, и каждое совпадение пришлось бы сравнивать с отрицательным glob, который работал бы чрезвычайно медленно. Чтобы игнорировать все файлы в каталоге, лучше добавить только <code>/**</code> после имени каталога.</blockquote>
+
+<h4>Перекрывающиеся globs</h4>
+
+<p>Два или более globs, которые намеренно или не намеренно совпадают с одним и тем же файлом, считаются перекрывающимися. Когда перекрывающиеся Globs используются внутри одного <code>src()</code>, gulp делает все возможное, чтобы удалить дубликаты.</p>
+
+<h4>Дополнительные ресурсы</h4>
+
+<p>Большая часть того, что вам нужно для работы с globs в gulp, описана в дополнительных ресурсах данного раздела. Если вы хотите получить более подробную информацию, вот несколько ресурсов:</p>
+
+<ul>
+  <li><a href="https://github.com/micromatch/micromatch" target="_blank">Документация Micromatch</a></li>
+  <li><a href="https://github.com/isaacs/node-glob#glob-primer" target="_blank">node-glob's Glob Primer</a></li>
+  <li><a href="https://github.com/begin/globbing#what-is-globbing" target="_blank">Globbing - Базовая документация</a></li>
+  <li><a href="https://en.wikipedia.org/wiki/Glob_(programming)" target="_blank">Страница Glob на Википедии</a></li>
+</ul>
+
+<h3 id="using-plugins">Использование плагинов</h3>
+
+<p>Плагины Gulp - это преобразующие Node потоки, которые инкапсулируют обычное поведение для преобразования файлов в конвейер. В большинстве случаев размещаются между <code>src()</code> и <code>dest()</code> с помощью метода <code>.pipe()</code>. Они могут изменить имя файла, метаданные или содержимое каждого файла, который проходит через поток.</p>
+
+<p>Плагины из npm, с использованием ключевых слов "gulpplugin" и "gulpfriendly" можно просматривать и искать <a href="https://gulpjs.com/plugins/" target="_blank">на странице поиска плагинов</a>.</p>
+
+<p>Каждый плагин обычно выполняет какую-то небольшую часть работы, их следует использовать как строительные блоки. Возможно, вам придется использовать несколько плагинов, чтобы получить желаемый результат.</p>
+
+<pre class="language-javascript"><code>const { src, dest } = require('gulp');
+const uglify = require('gulp-uglify');
+const rename = require('gulp-rename');
+
+exports.default = function() {
+  return src('src/*.js')
+    // Плагин gulp-uglify не будет обновлять имя файла
+    .pipe(uglify())
+    // Поэтому используйте gulp-rename, чтобы изменить его
+    .pipe(rename({ extname: '.min.js' }))
+    .pipe(dest('output/'));
+}
+</code></pre>
+
+<h4>Нужен ли вам плагин?</h4>
+
+<p>Не всегда в gulp нужно использовать плагины. Это, конечно достаточно быстрый способ начать работу, однако многие операции выглядят лучше благодаря использованию модуля или библиотеки.</p>
+
+<pre class="language-javascript"><code>const { rollup } = require('rollup');
+
+// Rollup's промис отлично работает в асинхронных задачах
+exports.default = async function() {
+  const bundle = await rollup.rollup({
+    input: 'src/index.js'
+  });
+
+  return bundle.write({
+    file: 'output/bundle.js',
+    format: 'iife'
+  });
+}
+</code></pre>
+
+<p>Плагины всегда преобразовывают файлы. Используйте (не подключаемый) Node-модуль или библиотеку для любых других операций.</p>
+
+<pre class="language-javascript"><code>const del = require('delete');
+
+exports.default = function(cb) {
+  // Используйте модуль `delete` напрямую, вместо использования плагина gulp-rimraf
+  del(['output/*.js'], cb);
+}
+</code></pre>
+
+<h4>Условные плагины</h4>
+
+<p>Так как операции с плагином не учитывают тип файла, вам может понадобиться плагин типа gulp-if для преобразования подмножеств файлов.</p>
+
+<pre class="language-javascript"><code>const { src, dest } = require('gulp');
+const gulpif = require('gulp-if');
+const uglify = require('gulp-uglify');
+
+function isJavaScript(file) {
+  // Проверка, является ли расширение файла '.js'
+  return file.extname === '.js';
+}
+
+exports.default = function() {
+  // Включить файлы JavaScript и CSS в один конвейер
+  return src(['src/*.js', 'src/*.css'])
+    // Применить плагин gulp-uglify только к файлам JavaScript
+    .pipe(gulpif(isJavaScript, uglify()))
+    .pipe(dest('output/'));
+}
+</code></pre>
+
+<h4>Встроенные плагины</h4>
+
+<p>Встроенные плагины - это одноразовые Transform потоки, которые вы определяете внутри своего gulpfile, записывая желаемое поведение.</p>
+
+<p>Есть две ситуации, в которых полезно создание встроенного плагина:</p>
+
+<ul>
+  <li>Вместо того, чтобы создавать и поддерживать свой собственный плагин.</li>
+  <li>Вместо того, чтобы создавать плагин, предназначенный для того, чтобы добавить желаемую функцию.</li>
+</ul>
+
+<pre class="language-javascript"><code>const { src, dest } = require('gulp');
+const uglify = require('uglify-js');
+const through2 = require('through2');
+
+exports.default = function() {
+  return src('src/*.js')
+    // Вместо использования gulp-uglify вы можете создать встроенный плагин
+    .pipe(through2.obj(function(file, _, cb) {
+      if (file.isBuffer()) {
+        const code = uglify.minify(file.contents.toString())
+        file.contents = Buffer.from(code)
+      }
+      cb(null, file);
+    }))
+    .pipe(dest('output/'));
+}
+</code></pre>
+
+<h3 id="watching-files">Наблюдение за файлами</h3>
+
+<p>API <code>watch()</code> связывает <a href="#explaining-globs">globs</a> с <a href="#creating-tasks">тасками</a> используя вотчер файловой системы. Он отслеживает изменения в файлах, соответствующих шаблону или шаблонам Glob и выполняет задачу, если происходит изменение. Если задача не сигнализирует об асинхронном выполнении, она никогда не будет запущена второй раз.</p>
+
+<p>Этот API-интерфейс обеспечивает встроенную задержку и организацию очереди на основе наиболее распространенных значений по умолчанию.</p>
+
+<pre class="language-javascript"><code>const { watch, series } = require('gulp');
+
+function clean(cb) {
+  // тело функции
+  cb();
+}
+
+function javascript(cb) {
+  // тело функции
+  cb();
+}
+
+function css(cb) {
+  // тело функции
+  cb();
+}
+
+exports.default = function() {
+  // Вы можете использовать одну задачу
+  watch('src/*.css', css);
+  // Или композицию тасков
+  watch('src/*.js', series(clean, javascript));
+};
+</code></pre>
+
+<h4>Предупреждение: избегайте синхронности</h4>
+
+<p>Таск вотчера не может быть синхронным. Если вы создаете синхронную задачу, выполнение не будет корректным, задача не запустится снова, так как предполагается, что она все еще выполняется.</p>
+
+<p>Вы не получите сообщения об ошибке или предупреждения, потому что средство отслеживания файлов поддерживает ваш процесс Node. Поскольку процесс не завершается, невозможно определить, выполнена ли задача или для ее выполнения просто требуется много времени.</p>
+
+<h4>Наблюдаемые события</h4>
+
+<p>По умолчанию вотчер выполняет задачи всякий раз, когда файл создается, изменяется или удаляется. Если вам нужно использовать разные события, вы можете использовать опцию <code>events</code> при вызове <code>watch()</code>. Доступны следующие события: <code>'add'</code>, <code>'addDir'</code>, <code>'change'</code>, <code>'unlink'</code>, <code>'unlinkDir'</code>, <code>'ready'</code>, <code>'error'</code>. Дополнительно доступно <code>'all'</code>, которое представляет все события, кроме <code>'ready'</code> и <code>'error'</code>.</p>
+
+<pre class="language-javascript"><code>const { watch } = require('gulp');
+
+exports.default = function() {
+  // Все события будут отслеживаться
+  watch('src/*.js', { events: 'all' }, function(cb) {
+    // тело функции
+    cb();
+  });
+};</code></pre>
+
+<h4>Начало исполнения</h4>
+
+<p>После вызова <code>watch()</code> задачи не будут выполнены, вместо этого они будут ждать первого изменения файла.</p>
+
+<p>Чтобы выполнить задачи перед первым изменением файла, установите для параметра <code>ignoreInitial</code> значение <code>false</code>.</p>
+
+<pre class="language-javascript"><code>const { watch } = require('gulp');
+
+exports.default = function() {
+  // Задача будет выполнена при запуске
+  watch('src/*.js', { ignoreInitial: false }, function(cb) {
+    // тело функции
+    cb();
+  });
+};
+</code></pre>
+
+<h4>Очередь</h4>
+
+<p>Каждый <code>watch()</code> гарантирует, что выполняемая в данный момент задача не будет выполнена снова. Если изменение файла происходит во время выполнения задачи вотчера, другое выполнение будет поставлено в очередь и запущено после завершения задачи. Только один запуск может быть поставлен в очередь за раз.</p>
+
+<p>Чтобы отключить очередь, установите для параметра <code>queue</code> значение <code>false</code>.</p>
+
+<pre class="language-javascript"><code>const { watch } = require('gulp');
+
+exports.default = function() {
+  // Задача будет выполняться (одновременно) для каждого внесенного изменения
+  watch('src/*.js', { queue: false }, function(cb) {
+    // тело функции
+    cb();
+  });
+};
+</code></pre>
+
+<h4>Задержка</h4>
+
+<p>После изменения файла задача наблюдателя не будет запущена, пока не истечет задержка в 200 мс. Это сделано для того, чтобы избежать слишком раннего запуска задачи, когда множество файлов изменяется одновременно. Например, поиск и замена.</p>
+
+<p>Чтобы настроить длительность задержки, установите для параметра задержки положительное целое число.</p>
+
+<pre class="language-javascript"><code>const { watch } = require('gulp');
+
+exports.default = function() {
+  // Задача не будет запущена, пока не пройдет 500 мс. с момента первого изменения
+  watch('src/*.js', { delay: 500 }, function(cb) {
+    // тело функции
+    cb();
+  });
+};
+</code></pre>
+
+<h4>Использование экземпляра вотчера</h4>
+
+<p>Скорее всего, вы не будете использовать эту функцию. Если вам нужен полный контроль над измененными файлами - например, доступ к путям или метаданным, используйте экземпляр <a href="https://www.npmjs.com/package/chokidar" target="_blank">chokidar</a>, возвращенный из <code>watch()</code>.</p>
+
+<p>Будьте внимательны: возвращенный экземпляр chokidar не имеет функций очереди, задержки или асинхронного завершения.</p>
+
+<h4>Необязательная зависимость</h4>
+
+<p>Gulp имеет необязательную зависимость, называемую <a href="https://www.npmjs.com/package/fsevents" target="_blank">fsevents</a>, которая является средством вотчинга файлов на Mac. Если вы видите предупреждение об установке для fsevents - «npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents» - это не проблема. Если установка fsevents пропущена, будет использован резервный вотчер и любые ошибки, возникающие в вашем gulpfile, не будут связаны с этим предупреждением.</p>
+
+<h3 id="concepts">Концепции API</h3>
+
+<p>Следующие понятия являются базовыми для понимания документации API.</p>
+
+<h4>Vinyl</h4>
+
+<p>Vinyl - это объект метаданных, который описывает файл. Основными свойствами экземпляра Vinyl являются <code>path</code> и <code>contents</code> - основные аспекты файла в вашей файловой системе. Объекты Vinyl могут использоваться для описания файлов из многих источников - в локальной файловой системе или в любом другом удаленном хранилище.</p>
+
+<h4>Адаптеры Vinyl</h4>
+
+<p>Хотя Vinyl предоставляет способ описания файла, необходим способ доступа к этим файлам. Доступ к каждому источнику файлов осуществляется с помощью адаптера Vinyl.</p>
+
+<p>Адаптер предоставляет:</p>
+
+<ul>
+  <li>Метод с ключом <code>src(globs, [options])</code> и возвращает поток, который создает объекты Vinyl.</li>
+  <li>Метод с ключом <code>dest(папка, [options])</code> и возвращает поток, который использует объекты Vinyl.</li>
+  <li>Любые дополнительные методы, специфичные для их среды ввода/вывода, такие как метод <code>symlink</code>, обеспечивающий vinyl-fs. Они всегда должны возвращать потоки, которые производят и/или потребляют объекты Vinyl.</li>
+</ul>
+
+<h4>Задачи (Tasks)</h4>
+
+<p>Каждая задача gulp представляет собой асинхронную функцию JavaScript, которая либо принимает колбек с ошибкой, либо возвращает поток, промис, источник событий, дочерний процесс или наблюдаемый тип. Из-за некоторых ограничений платформы синхронные задачи не поддерживаются.</p>
+
+<p>Для более подробного объяснения см. <a href="#creating-tasks"></a>Создание задач.</p>
+
+<h4>Globs</h4>
+
+<p>Glob - это строка литеральных и/или шаблонных символов, таких как <code>*</code>, <code>**</code> или <code>!</code>, используемая для определения путей к файлам. Globbing - это поиск файлов в файловой системе с использованием одного или нескольких шаблонов поиска.</p>
+
+<p>Если у вас нет опыта работы с globs, см. <a href="#explaining-globs">Шаблоны Globs</a>.</p>
+
+<h4>Основа Glob</h4>
+
+<p>Основа glob - это сегмент пути перед любыми специальными символами в строке glob. Таким образом, основа glob <code>/src/js/**.js</code> - это <code>/src/js/</code>. Все пути, которые соответствуют glob, гарантированно используют основу glob - этот сегмент пути не может быть переменным.</p>
+
+<p>Экземпляры Vinyl, сгенерированные <code>src()</code>, создаются с базовым свойством <code>base</code>. При записи в файловую систему с помощью <code>dest()</code>, <code>base</code> будет удален из выходного пути для сохранения структуры каталогов.</p>
+
+<p>Для получения более подробной информации см. <a href="https://github.com/gulpjs/glob-parent" target="_blank">репозиторий glob-parent</a>.</p>
+
+<h4>Статистика файловой системы</h4>
+
+<p>Файловые метаданные предоставляются в качестве экземпляра Node <code><a href="https://nodejs.org/api/fs.html#fs_class_fs_stats" target="_blank">fs.Stats</a></code>. Он доступен как свойство <code>stat</code> в ваших экземплярах Vinyl и используется внутри, чтобы определить, представляет ли объект Vinyl каталог или символическую ссылку. При записи в файловую систему разрешения и значения времени синхронизируются из свойства <code>stat</code> объекта Vinyl.</p>
+
+<h4>Режимы файловой системы</h4>
+
+<p>Режимы файловой системы определяют, какие разрешения существуют для файла. Большинство файлов и каталогов в вашей файловой системе будут иметь доступный режим, позволяющий gulp читать/записывать/обновлять файлы от вашего имени. По умолчанию gulp создает файлы с теми же разрешениями, что и у запущенного процесса, но вы можете настроить режимы с помощью параметров в <code>src()</code>, <code>dest()</code> и т. д. Если у вас возникают проблемы с разрешениями (EPERM), проверьте текущие разрешения ваших файлов.</p>
+
+<h4>Модули</h4>
+
+<p>Gulp состоит из множества небольших модулей, которые объединены для совместной работы. Используя <a href="https://semver.org/lang/ru/" target="_blank">semver</a> в небольших модулях, мы можем выпускать исправления ошибок и функции без публикации новых версий gulp. Часто, когда вы не видите прогресса в основном хранилище, работа выполняется в одном из этих модулей.</p>
+
+<p>Если у вас возникли проблемы, убедитесь, что ваши текущие модули обновлены с помощью команды <code>npm update</code>. Если проблема не устранена, изучите проблему в репозитории отдельных проектов.</p>
+
+<ul>
+  <li><a href="https://github.com/gulpjs/undertaker" target="_blank">undertaker</a> - система регистрации задач</li>
+  <li><a href="https://github.com/gulpjs/vinyl" target="_blank">vinyl</a> - виртуальные файловые объекты</li>
+  <li><a href="https://github.com/gulpjs/vinyl-fs" target="_blank">vinyl-fs</a> - адаптер для вашей локальной файловой системы</li>
+  <li><a href="https://github.com/gulpjs/glob-watcher" target="_blank">glob-watcher</a> - вотчер файлов</li>
+  <li><a href="https://github.com/gulpjs/bach" target="_blank">bach</a> - оркестровка задач с использованием <code>series()</code> и <code>parallel()</code></li>
+  <li><a href="https://github.com/gulpjs/last-run" target="_blank">last-run</a> - отслеживает время последнего выполнения задачи</li>
+  <li><a href="https://github.com/gulpjs/vinyl-sourcemap" target="_blank">vinyl-sourcemap</a> - встроенная поддержка sourcemap</li>
+  <li><a href="https://github.com/gulpjs/gulp-cli" target="_blank">gulp-cli</a> - интерфейс командной строки для взаимодействия с gulp</li>
+</ul>
+
+<h3 id="src">src()</h3>
+
+<p>Создает поток для чтения объектов <a href="#vinyl">Vinyl</a> из файловой системы.</p>
+
+<p>Примечание. BOMs (метки порядка байтов) не имеют смысла в UTF-8 и будут удалены из файлов UTF-8, считываемых с помощью <code>src()</code>, если только это не отключено с помощью опции <code>removeBOM</code>.</p>
+
+<h4>Использование</h4>
+
+<pre class="language-javascript"><code>const { src, dest } = require('gulp');
+
+function copy() {
+  return src('input/*.js')
+    .pipe(dest('output/'));
+}
+
+exports.copy = copy;
+</code></pre>
+
+<h4>Ключ</h4>
+
+<pre class="language-javascript"><code>src(globs, [options])</code></pre>
+
+<h4>Параметры</h4>
+
+<table>
+  <thead>
+    <tr>
+      <td>Параметр</td>
+      <td>Тип</td>
+      <td>Примечание</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>globs</td>
+      <td>строка, массив</td>
+      <td>Globs для просмотра в файловой системе.</td>
+    </tr>
+    <tr>
+      <td>option</td>
+      <td>объект</td>
+      <td>Подробнее в опциях ниже.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4>Возвращает</h4>
+
+<p>Поток, который можно использовать в начале или в середине конвейера для добавления файлов на основе заданных globs.</p>
+
+<h4>Ошибки</h4>
+
+<p>Если аргумент <code>globs</code> соответствует только одному файлу (например, <code>foo/bar.js</code>) и совпадение не найдено, выдается сообщение об ошибке «File not found with singular glob». Чтобы исправить эту ошибку, установите для параметра <code>allowEmpty</code> значение <code>true</code>.</p>
+
+<p>Когда в <code>globs</code> указан недопустимый glob, выдается сообщение об ошибке «Invalid glob argument».</p>
+
+<h4>Опции</h4>
+
+<p>Для опций, которые принимают функцию, переданная функция будет вызываться с каждым объектом Vinyl и должна возвращать значение другого из перечисленных типов.</p>
+
+<table>
+  <thead>
+    <tr>
+      <td>Опция</td>
+      <td>Тип</td>
+      <td>Дефолт.</td>
+      <td>Примечание</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>buffer</td>
+      <td>boolean, function</td>
+      <td>true</td>
+      <td>
+        Если true, содержимое файла буферизуется в памяти. Если false, свойство <code>contents</code> объекта Vinyl будет приостановлено потоком. Опция може не позволить буферизовать содержимое больших файлов. <br>Примечание: в плагинах может быть не реализована поддержка потокового содержимого.
+      </td>
+    </tr>
+    <tr>
+      <td>read</td>
+      <td>boolean, function</td>
+      <td>true</td>
+      <td>Если false, файлы не будут читаться, а их объекты Vinyl не будут записываться на диск через <code>.dest()</code>.</td>
+    </tr>
+    <tr>
+      <td>since</td>
+      <td>date, timestamp, function</td>
+      <td></td>
+      <td>Если установлено, создаются объекты Vinyl только для файлов, измененных с указанного времени.</td>
+    </tr>
+    <tr>
+      <td>removeBOM</td>
+      <td>boolean, function</td>
+      <td>true</td>
+      <td>Если true, BOM из файлов в кодировке UTF-8 будет удален. Если false, BOM игнорируется.</td>
+    </tr>
+    <tr>
+      <td>sourcemaps</td>
+      <td>boolean, function</td>
+      <td>false</td>
+      <td>Если true, поддержка sourcemaps на созданных объектах Vinyl будет включена. Загружает внутренние sourcemaps и разрешает внешние ссылки на sourcemaps.</td>
+    </tr>
+    <tr>
+      <td>resolveSymlinks</td>
+      <td>boolean, function</td>
+      <td>true</td>
+      <td>При значении true рекурсивно разрешаются символические ссылки. Если false, символические ссылки сохраняются и устанавливается свойство <code>symlink</code> объекта Vinyl к пути файла.</td>
+    </tr>
+    <tr>
+      <td>cwd</td>
+      <td>string</td>
+      <td>process.cwd()</td>
+      <td>Директория, которая должна быть объединена с любым относительным путем, чтобы сформировать абсолютный путь. Игнорируется для абсолютных путей. Используйте, чтобы избежать объединения <code>globs</code> с <code>path.join()</code>. <br><em>Эта опция передается напрямую в <a href="https://github.com/gulpjs/glob-stream" target="_blank">glob-stream</a>.</em></td>
+    </tr>
+    <tr>
+      <td>base</td>
+      <td>string</td>
+      <td></td>
+      <td>Явно устанавливает свойство <code>base</code> для созданных объектов Vinyl. Подробно в <a href="#concepts">API Concepts</a>. Эта опция передается напрямую в glob-stream.</td>
+    </tr>
+    <tr>
+      <td>cwdbase</td>
+      <td>boolean</td>
+      <td>false</td>
+      <td>Если true, опции <code>cwd</code> и <code>base</code> должны быть выровнены. Эта опция передается напрямую в glob-stream.</td>
+    </tr>
+    <tr>
+      <td>root</td>
+      <td>string</td>
+      <td></td>
+      <td>Корневой путь, для которого разрешены globs. Эта опция передается напрямую в glob-stream.</td>
+    </tr>
+    <tr>
+      <td>allowEmpty</td>
+      <td>boolean</td>
+      <td>false</td>
+      <td>Если false, <code>globs</code>, которые соответствуют только одному файлу (например, <code>foo/bar.js</code>), вызывают ошибку, если они не находят соответствия. Если true, соответствующие ошибки globs игнорируются. Эта опция передается напрямую в glob-stream.</td>
+    </tr>
+    <tr>
+      <td>uniqueBy</td>
+      <td>string, function</td>
+      <td>'path'</td>
+      <td>Удаляет дубликаты из потока, сравнивая имя свойства строки или результат функции. <br>Примечание. При использовании функции, функция получает потоковые данные (объекты, содержащие свойства <code>cwd</code>, <code>base</code>, <code>path</code>).</td>
+    </tr>
+    <tr>
+      <td>dot</td>
+      <td>boolean</td>
+      <td>false</td>
+      <td>Если true, сравнивает globs с .dot файлами, например .gitignore. Эта опция передается напрямую в node-glob.</td>
+    </tr>
+    <tr>
+      <td>silent</td>
+      <td>boolean</td>
+      <td>true</td>
+      <td>Если true, подавляет предупреждения от <code>stderr</code>. <br>Примечание. Эта опция передается напрямую в node-glob, но по умолчанию она имеет значение true, а не false.</td>
+    </tr>
+    <tr>
+      <td>mark</td>
+      <td>boolean</td>
+      <td>false</td>
+      <td>Если true, символ <code>/</code> будет добавлен к совпадениям директории. Обычно не требуется, потому что пути нормализуются внутри конвейера. Эта опция передается напрямую в node-glob.</td>
+    </tr>
+    <tr>
+      <td>nosort</td>
+      <td>boolean</td>
+      <td>false</td>
+      <td>Если true, отключает сортировку результатов globs. Эта опция передается напрямую в node-glob.</td>
+    </tr>
+    <tr>
+      <td>stat</td>
+      <td>boolean</td>
+      <td>false</td>
+      <td>Если true, <code>fs.stat()</code> вызывается для всех результатов. Это добавляет дополнительную нагрузку и, как правило, не должно использоваться. Эта опция передается напрямую в node-glob.</td>
+    </tr>
+    <tr>
+      <td>strict</td>
+      <td>boolean</td>
+      <td>false</td>
+      <td>Если true, будет выдано сообщение об ошибке, если при попытке чтения каталога возникнет непредвиденная проблема. Эта опция передается напрямую в node-glob.</td>
+    </tr>
+    <tr>
+      <td>nounique</td>
+      <td>boolean</td>
+      <td>false</td>
+      <td>При false предотвращает дублирование файлов в наборе результатов. Эта опция передается напрямую в node-glob.</td>
+    </tr>
+    <tr>
+      <td>debug</td>
+      <td>boolean</td>
+      <td>false</td>
+      <td>Если true, отладочная информация будет отражена в командной строке. Эта опция передается напрямую в node-glob.</td>
+    </tr>
+    <tr>
+      <td>nobrace</td>
+      <td>boolean</td>
+      <td>false</td>
+      <td>Если true, избегаются наборы скобок - например, {a, b} или {1..3}. Эта опция передается напрямую в node-glob.</td>
+    </tr>
+    <tr>
+      <td>noglobstar</td>
+      <td>boolean</td>
+      <td>false</td>
+      <td>Если true, обрабатывает двухзвездный glob как однозвездный. Эта опция передается напрямую в node-glob.</td>
+    </tr>
+    <tr>
+      <td>noext</td>
+      <td>boolean</td>
+      <td>false</td>
+      <td>Если true, игнорируются сопоставления шаблонов extglob - например, <code>+(Аb)</code>. Эта опция передается напрямую в node-glob.</td>
+    </tr>
+    <tr>
+      <td>nocase</td>
+      <td>boolean</td>
+      <td>false</td>
+      <td>Если true, выполняет сопоставление без учета регистра. <br>Примечание. В файловых системах без учета регистра шаблоны, не относящиеся к magic patterns, будут совпадать по умолчанию. Эта опция передается напрямую в node-glob.</td>
+    </tr>
+    <tr>
+      <td>matchBase</td>
+      <td>boolean</td>
+      <td>false</td>
+      <td>Если true и globs не содержат символов <code>/</code>, перебираются все каталоги и совпадения с этим glob - например, <code>*.js</code> будет рассматриваться как эквивалент <code>**/*.js</code>. Эта опция передается напрямую в node-glob.</td>
+    </tr>
+    <tr>
+      <td>nodir</td>
+      <td>boolean</td>
+      <td>false</td>
+      <td>Если true, обрабатываются только соответствия файлам, а не каталогам. <br>Примечание: чтобы обрабатывать только соответствия каталогам, завершите ваш glob знаком <code>/</code>. Эта опция передается напрямую в node-glob.</td>
+    </tr>
+    <tr>
+      <td>ignore</td>
+      <td>string, array</td>
+      <td></td>
+      <td>Исключение globs из совпадений. Эта опция сочетается с отрицательными <code>globs</code>. <br>Примечание. Эти globs всегда сопоставляются с файлами .dot, независимо от других настроек. Эта опция передается напрямую в node-glob.</td>
+    </tr>
+    <tr>
+      <td>follow</td>
+      <td>boolean</td>
+      <td>false</td>
+      <td>Если true, каталоги с символьными ссылками будут перемещаться при расширении <code>**</code> globs. <br>Примечание. Это может вызвать проблемы с циклическими ссылками. Эта опция передается напрямую в node-glob.</td>
+    </tr>
+    <tr>
+      <td>realpath</td>
+      <td>boolean</td>
+      <td>false</td>
+      <td>Если true, <code>fs.realpath()</code> вызывается для всех результатов. Это может привести к висячим указателям. Эта опция передается напрямую в node-glob.</td>
+    </tr>
+    <tr>
+      <td>cache</td>
+      <td>object</td>
+      <td></td>
+      <td>Ранее сгенерированный объект кэша - игнорирует некоторые вызовы файловой системы. Эта опция передается напрямую в node-glob.</td>
+    </tr>
+    <tr>
+      <td>statCache</td>
+      <td>object</td>
+      <td></td>
+      <td>Ранее сгенерированный кеш результатов <code>fs.Stat</code> - игнорирует некоторые вызовы файловой системы. Эта опция передается напрямую в node-glob.</td>
+    </tr>
+    <tr>
+      <td>symlinks</td>
+      <td>object</td>
+      <td></td>
+      <td>Ранее сгенерированный кеш символических ссылок - игнорирует некоторые вызововы файловой системы. Эта опция передается напрямую в node-glob.</td>
+    </tr>
+    <tr>
+      <td>nocomment</td>
+      <td>boolean</td>
+      <td>false</td>
+      <td>Если false, символ <code>#</code> в начале glob трактуется как комментарий. Эта опция передается напрямую в node-glob.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4>Sourcemaps</h4>
+
+<p>Поддержка Sourcemap встроена непосредственно в <code>src()</code> и <code>dest()</code>, но по умолчанию отключена. Включите поддержку для создания внутренних или внешних sourcemaps.</p>
+
+<p>Внутренние sourcemaps:</p>
+
+<pre class="language-javascript"><code>const { src, dest } = require('gulp');
+const uglify = require('gulp-uglify');
+
+src('input/**/*.js', { sourcemaps: true })
+  .pipe(uglify())
+  .pipe(dest('output/', { sourcemaps: true }));
+</code></pre>
+
+<p>External sourcemaps:</p>
+
+<pre class="language-javascript"><code>const { src, dest } = require('gulp');
+const uglify = require('gulp-uglify');
+
+src('input/**/*.js', { sourcemaps: true })
+  .pipe(uglify())
+  .pipe(dest('output/', { sourcemaps: '.' }));
+</code></pre>
+
+<h3 id="dest">dest()</h3>
+
+<p>Создает поток для записи объектов Vinyl в файловую систему.</p>
+
+<h4>Использование</h4>
+
+<pre class="language-javascript"><code>const { src, dest } = require('gulp');
+
+function copy() {
+  return src('input/*.js')
+    .pipe(dest('output/'));
+}
+
+exports.copy = copy;
+</code></pre>
+
+<h4>Ключ</h4>
+
+<pre class="language-javascript"><code>dest(directory, [options])</code></pre>
+
+<h4>Параметры</h4>
+
+<table>
+  <thead>
+    <tr>
+      <td>Параметр</td>
+      <td>Тип</td>
+      <td>Примечание</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>directory (обязательный)</td>
+      <td>string, function</td>
+      <td>Путь к выходному каталогу, в который будут записываться файлы. Если используется функция, функция будет вызываться с каждым объектом Vinyl и должна возвращать строку пути к каталогу.</td>
+    </tr>
+    <tr>
+      <td>options</td>
+      <td>object</td>
+      <td>Подробнее в опциях ниже.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4>Возвращает</h4>
+
+<p>Поток, который можно использовать в середине или в конце конвейера для создания файлов в файловой системе. Всякий раз, когда объект Vinyl передается через поток, он записывает содержимое и другие детали в файловую систему в указанном каталоге. Если объект Vinyl обладает свойством <code>symlink</code>, вместо записи содержимого будет создана символическая ссылка. После создания файла его метаданные будут обновлены, чтобы соответствовать объекту Vinyl.</p>
+
+<p>Всякий раз, когда файл создается в файловой системе, объект Vinyl будет изменен.</p>
+
+<ul>
+  <li>Свойства <code>cwd</code>, <code>base</code> и <code>path</code> будут обновлены в соответствии с созданным файлом.</li>
+  <li>Свойство <code>stat</code> будет обновлено в соответствии с файлом в файловой системе.</li>
+  <li>Если свойство <code>contents</code> является потоком, оно будет сброшено для того, чтобы его можно было снова прочитать.</li>
+</ul>
+
+<h4>Ошибки</h4>
+
+<p>Если <code>directory</code> представляет собой пустую строку, выдается сообщение об ошибке «Invalid dest() folder argument. Please specify a non-empty string or a function.».</p>
+
+<p>Если <code>directory</code> не является строкой или функцией, выдается сообщение об ошибке «Invalid dest() folder argument. Please specify a non-empty string or a function.».</p>
+
+<p>Если <code>directory</code> является функцией, которая возвращает пустую строку или не определена, выдается ошибка с сообщением «Invalid output folder».</p>
+
+<h4>Опции</h4>
+
+<p>Для опций, которые принимают функцию, переданная функция будет вызываться с каждым объектом Vinyl и должна возвращать значение другого из перечисленных типов.</p>
+
+<table>
+  <thead>
+    <tr>
+      <td>Опция</td>
+      <td>Тип</td>
+      <td>Дефолт.</td>
+      <td>Примечание</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>cwd</td>
+      <td>string, function</td>
+      <td><code>process.cwd()</code></td>
+      <td>Каталог будет объединен с любым относительным путем для того, чтобы сформировать абсолютный путь. Игнорируется для абсолютных путей. Используйте, чтобы избежать объединения <code>directory</code> с <code>path.join()</code>.</td>
+    </tr>
+    <tr>
+      <td>mode</td>
+      <td>number, function</td>
+      <td><code>stat.mode</code> объекта Vinyl</td>
+      <td>Режим, используемый при создании файлов. Если не установлено и <code>stat.mode</code> отсутствует, вместо него будет использован режим процесса.</td>
+    </tr>
+    <tr>
+      <td>dirMode</td>
+      <td>number, function</td>
+      <td></td>
+      <td>Режим, используемый при создании каталогов. Если не установлен, будет использован режим процесса.</td>
+    </tr>
+    <tr>
+      <td>overwrite</td>
+      <td>boolean, function</td>
+      <td>true</td>
+      <td>Если true, перезаписывает существующие файлы с тем же путем.</td>
+    </tr>
+    <tr>
+      <td>append</td>
+      <td>boolean, function</td>
+      <td>false</td>
+      <td>Если true, добавляет содержимое в конец файла вместо замены существующего содержимого.</td>
+    </tr>
+    <tr>
+      <td>sourcemaps</td>
+      <td>boolean, string, function</td>
+      <td>false</td>
+      <td>Если true, записывает внутренние sourcemaps в выходной файл. При указании пути к строке будут записаны внешние sourcemaps по заданному пути.</td>
+    </tr>
+    <tr>
+      <td>relativeSymlinks</td>
+      <td>boolean, function</td>
+      <td>false</td>
+      <td>Если false, любые созданные символические ссылки будут абсолютными. <br>Примечание. Игнорируется, если создается соединение, поскольку оно должно быть абсолютным.</td>
+    </tr>
+    <tr>
+      <td>useJunctions</td>
+      <td>boolean, function</td>
+      <td>true</td>
+      <td>Эта опция актуальна только в Windows и игнорируется в других местах. При значении true создается символьная ссылка на каталог как соединение. Подробнее в Символических ссылках на Windows ниже.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4>Обновления метаданных</h4>
+
+<p>Когда поток <code>dest()</code> создает файл, объекты Vinyl <code>mode</code> <code>mtime</code> и <code>atime</code> сравниваются с созданным файлом. Если они различаются, созданный файл будет обновлен в соответствии с метаданными объекта Vinyl. Если эти свойства одинаковы или gulp не имеет прав для внесения изменений, попытка пропускается без уведомления.</p>
+
+<p>Эта функциональность отключена в Windows или других операционных системах, которые не поддерживают методы Node's <code>process.getuid()</code> или <code>process.geteuid()</code>. Это связано с тем, что Windows дает неожиданные результаты при использовании <code>fs.fchmod()</code> и <code>fs.futimes()</code>.</p>
+
+<p>Примечание. Метод <code>fs.futimes()</code> внутренне преобразует метки времени <code>mtime</code> и <code>atime</code> в секунды. Это деление на 1000 может привести к некоторой потере точности в 32-битных операционных системах.</p>
+
+<h4>Sourcemaps</h4>
+
+<p>Поддержка sourcemaps встроена непосредственно в <code>src()</code> и <code>dest()</code>, но по умолчанию она отключена. Включите ее для создания внутренних или внешних sourcemaps.</p>
+
+<p>Внутренние sourcemaps:</p>
+
+<pre class="language-javascript"><code>const { src, dest } = require('gulp');
+const uglify = require('gulp-uglify');
+
+src('input/**/*.js', { sourcemaps: true })
+  .pipe(uglify())
+  .pipe(dest('output/', { sourcemaps: true }));
+</code></pre>
+
+<p>Внешние sourcemaps:</p>
+
+<pre class="language-javascript"><code>const { src, dest } = require('gulp');
+const uglify = require('gulp-uglify');
+
+src('input/**/*.js', { sourcemaps: true })
+  .pipe(uglify())
+  .pipe(dest('output/', { sourcemaps: '.' }));
+</code></pre>
+
+<h4>Символические ссылки в Windows</h4>
+
+<p>При создании символических ссылок в Windows аргумент <code>type</code> передается методу Node's <code>fs.symlink()</code>, который указывает тип цели. Тип ссылки установлен на:</p>
+
+<ul>
+  <li><code>'file'</code>, когда целью является обычный файл</li>
+  <li><code>'junction'</code>, когда целью является каталог</li>
+  <li><code>'dir'</code>, когда целью является каталог и пользователь отключает опцию useJunctions</li>
+</ul>
+
+<p>Если вы попытаетесь создать висячий (указывающий на несуществующую цель) указатель, тип указателя не может быть определен автоматически. В таких случаях поведение будет зависеть от того, создается ли такой указатель с помощью <code>symlink()</code> или <code>dest()</code>.</p>
+
+<p>Для висячих указателей, созданных с помощью <code>symlink()</code>, входящий объект Vinyl представляет цель, поэтому его статистика будет определять желаемый тип указателя. Если <code>isDirectory()</code> возвращает false, то создается указатель <code>'file'</code>, в противном случае создается указатель <code>'junction'</code> или <code>'dir'</code>, в зависимости от параметра <code>useJunctions</code>.</p>
+
+<p>Для висячих указателей, созданных с помощью <code>dest()</code>, входящий объект Vinyl представляет указатель, обычно загружаемый с диска через <code>src(..., {resolSymlinks: false})</code>. В этом случае тип указателя не может быть адекватно определен и по умолчанию используется «файл». Это может вызвать неожиданное поведение, если вы создаете висячий указатель на каталог. Избегайте этого сценария.</p>
+
+<h3 id="symlink">symlink()</h3>
+
+<p>Создает поток для связи объектов <a href="#vinyl">Vinyl</a> с файловой системой.</p>
+
+<h4>Использование</h4>
+
+<pre class="language-javascript"><code>const { src, symlink } = require('gulp');
+
+function link() {
+  return src('input/*.js')
+    .pipe(symlink('output/'));
+}
+
+exports.link = link;
+</code></pre>
+
+<h4>Ключ</h4>
+
+<pre class="language-javascript"><code>symlink(directory, [options])</code></pre>
+
+<h4>Параметры</h4>
+
+<table>
+  <thead>
+    <tr>
+      <td>Параметр</td>
+      <td>Тип</td>
+      <td>Примечание</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>directory (обязательный)</td>
+      <td>string, function</td>
+      <td>Путь к выходному каталогу, в котором будут созданы символические ссылки. Если используется функция, функция будет вызываться с каждым объектом Vinyl и должна возвращать строку пути к каталогу.</td>
+    </tr>
+    <tr>
+      <td>options</td>
+      <td>object</td>
+      <td>Подробно в опциях ниже.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4>Возвращает</h4>
+
+<p>Поток, который можно использовать в середине или в конце конвейера для создания символических ссылок в файловой системе. Всякий раз, когда объект Vinyl пропускается через поток, он создает символическую ссылку на исходный файл в файловой системе в текущем каталоге.</p>
+
+<p>Всякий раз, когда в файловой системе создается символическая ссылка, объект Vinyl будет изменен.</p>
+
+<ul>
+  <li>Свойства <code>cwd</code>, <code>base</code> и <code>path</code> будут обновлены в соответствии с созданной символической ссылкой.</li>
+  <li>Свойство <code>stat</code> будет обновлено, чтобы соответствовать символической ссылке в файловой системе.</li>
+  <li>Свойство <code>contents</code> будет установлено как <code>null</code>.</li>
+  <li>Свойство <code>symlink</code> будет добавлено или заменено на исходный путь.</li>
+</ul>
+
+<p>Примечание. В Windows ссылки на каталоги создаются с использованием соединений по умолчанию. Опция <code>useJunctions</code> отключает это поведение.</p>
+
+<h4>Ошибки</h4>
+
+<p>Если <code>directory</code> является пустой строкой, вы получите сообщение об ошибке «Invalid symlink() folder argument. Please specify a non-empty string or a function.».</p>
+
+<p>Если <code>directory</code> не является строкой или функцией, выдается сообщение об ошибке «Invalid symlink() folder argument. Please specify a non-empty string or a function.».</p>
+
+<p>Когда <code>directory</code> является функцией, которая возвращает пустую строку или <code>undefined</code>, выдает ошибку с сообщением «Invalid output folder».</p>
+
+<h4>Опции</h4>
+
+<p>Для опций, которые принимают функцию, переданная функция будет вызываться с каждым объектом Vinyl и должна возвращать значение другого из перечисленных типов.</p>
+
+<table>
+  <thead>
+    <tr>
+      <td>Опция</td>
+      <td>Тип</td>
+      <td>Дефолт.</td>
+      <td>Примечание</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>cwd</td>
+      <td>string, function</td>
+      <td><code>process.cwd()</code></td>
+      <td>Каталог будет объединен с любым относительным путем для того, чтобы сформировать абсолютный путь. Игнорируется для абсолютных путей. Используйте, чтобы избежать объединения <code>directory</code> с <code>path.join()</code>.</td>
+    </tr>
+    <tr>
+      <td>dirMode</td>
+      <td>number, function</td>
+      <td></td>
+      <td>Режим, используемый при создании каталогов. Если не установлен, будет использован режим процесса.</td>
+    </tr>
+    <tr>
+      <td>overwrite</td>
+      <td>boolean, function</td>
+      <td>true</td>
+      <td>При значении true перезаписывает существующие файлы с тем же путем.</td>
+    </tr>
+    <tr>
+      <td>relativeSymlinks</td>
+      <td>boolean, function</td>
+      <td>false</td>
+      <td>Если false, любые созданные символические ссылки будут абсолютными. <br>Примечание. Игнорируется, если создается соединение, поскольку оно должно быть абсолютным.</td>
+    </tr>
+    <tr>
+      <td>useJunctions</td>
+      <td>boolean, function</td>
+      <td>true</td>
+      <td>Эта опция актуальна только в Windows и игнорируется в других ОС. При значении true создает символьную ссылку на каталог как соединение. Подробнее в «Символических ссылках на Windows» ниже.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4>Символические ссылки в Windows</h4>
+
+<p>При создании символических ссылок в Windows аргумент <code>type</code> передается методу Node's <code>fs.symlink()</code>, который указывает тип цели. Тип ссылки установлен на:</p>
+
+<ul>
+  <li><code>'file'</code>, если целью является обычный файл</li>
+  <li><code>'junction'</code>, когда целью является каталог</li>
+  <li><code>'dir'</code>, если целью является каталог и пользователь отключает опцию useJunctions</li>
+</ul>
+
+<p>Если вы попытаетесь создать висячую (указывающую на несуществующую цель) ссылку (или висячий указатель), тип ссылки не может быть определен автоматически. В этих случаях поведение будет зависеть от того, создается ли висячая ссылка с помощью <code>symlink()</code> или <code>dest()</code>.</p>
+
+<p>Для висячих ссылок (указателей), созданных с помощью <code>symlink()</code>, входящий объект Vinyl представляет цель, поэтому его статистика будет определять желаемый тип ссылки. Если <code>isDirectory()</code> возвращает false, то создается ссылка <code>'file'</code>, в противном случае создается ссылка <code>'junction'</code> или <code>'dir'</code>, в зависимости от значения опции <code>useJunctions</code>.</p>
+
+<p>Для висячих ссылок (указателей), созданных с помощью <code>dest()</code>, входящий объект Vinyl представляет ссылку, обычно загружаемую с диска через <code>src(..., {resolSymlinks: false})</code>. В таком случае тип ссылки не может быть адекватно определен и по умолчанию используется <code>'file'</code>. Это может вызвать неожиданное поведение при создании висячей ссылки на каталог. Избегайте этого сценария.</p>
+
+<h3 id="lastrun">lastRun()</h3>
+
+<p>Получает отметку времени последнего раза, когда задача была успешно завершена во время текущего рабочего процесса. Наиболее полезно при выполнении последующих задач во время работы вотчера.</p>
+
+<p>В сочетании с <code>src()</code> включает инкрементные сборки для ускорения выполнения, пропуская файлы, которые не изменились с момента последнего успешного завершения задачи.</p>
+
+<h4>Использование</h4>
+
+<pre class="language-javascript"><code>const { src, dest, lastRun, watch } = require('gulp');
+const imagemin = require('gulp-imagemin');
+
+function images() {
+  return src('src/images/**/*.jpg', { since: lastRun(images) })
+    .pipe(imagemin())
+    .pipe(dest('build/img/'));
+}
+
+exports.default = function() {
+  watch('src/images/**/*.jpg', images);
+};
+</code></pre>
+
+<h4>Ключ</h4>
+
+<pre class="language-javascript"><code>lastRun(task, [precision])</code></pre>
+
+<h4>Параметры</h4>
+
+<table>
+  <thead>
+    <tr>
+      <td>Параметр</td>
+      <td>Тип</td>
+      <td>Примечание</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>task (обязательный)</td>
+      <td>function<br> string</td>
+      <td>Функция таска или псевдоним строки зарегистрированной задачи.</td>
+    </tr>
+    <tr>
+      <td>precision</td>
+      <td>number</td>
+      <td>По умолчанию: 1000 на Node v0.10 и 0 на Node v0.12+. Подробно в разделе «Точность временной метки» ниже.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4>Возвращает</h4>
+
+<p>Отметку времени (в миллисекундах), соответствующуя времени последнего выполнения задачи. Если задача не была выполнена или потерпела неудачу, возвращает <code>undefined</code>.</p>
+
+<p>Чтобы избежать кеширования недопустимого состояния, возвращаемое значение должно быть <code>undefined</code>, если задача будет выполнена с ошибкой.</p>
+
+<h4>Ошибки</h4>
+
+<p>При вызове со значением, отличным от строки или функции, выдается ошибка с сообщением «Only functions can check lastRun».</p>
+
+<p>Если вызывается для нерасширяемой функции, а в Node отсутствует WeakMap, выдается ошибка с сообщением: «Only extensible functions can check lastRun».</p>
+
+<h4>Точность временной метки</h4>
+
+<p>Хотя существуют точные значения по умолчанию для точности меток времени, они могут быть округлены с использованием параметра точности. Полезно, если ваша файловая система или версия Node имеют точность с потерями в атрибутах времени файла.</p>
+
+<ul>
+  <li><code>lastRun(someTask)</code> вернет 1426000001111</li>
+  <li><code>lastRun(someTask, 100)</code> вернет 1426000001100</li>
+  <li><code>lastRun(someTask, 1000)</code> вернет 1426000001000</li>
+</ul>
+
+<p>Точность <code>mtime stat</code> файла может варьироваться в зависимости от версии Node и/или используемой файловой системы.</p>
+
+<table>
+  <thead>
+    <tr>
+      <td>Платформа</td>
+      <td>Точность</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>Node v0.10</td><td>1000ms</td></tr>
+    <tr><td>Node v0.12+</td><td>1ms</td></tr>
+    <tr><td>Файловая система FAT32</td><td>2000ms</td></tr>
+    <tr><td>Файловая система HFS+ или Ext3</td><td>1000ms</td></tr>
+    <tr><td>NTFS с использованием Node v0.10</td><td>1s</td></tr>
+    <tr><td>NTFS с использованием Node 0.12+</td><td>100ms</td></tr>
+    <tr><td>Ext4 с использованием Node v0.10</td><td>1000ms</td></tr>
+    <tr><td>Ext4 с использованием Node 0.12+</td><td>1ms</td></tr>
+  </tbody>
+</table>
+
+<h3 id="series">series()</h3>
+
+<p>Объединяет функции задач и/или составные операции в более крупные, которые выполняются последовательно. Нет никаких ограничений на глубину вложенности составных операций с использованием <code>series()</code> и <code>parallel()</code>.</p>
+
+<h4>Использование</h4>
+
+<pre class="language-javascript"><code>const { series } = require('gulp');
+
+function javascript(cb) {
+  // тело функции
+  cb();
+}
+
+function css(cb) {
+  // тело функции
+  cb();
+}
+
+exports.build = series(javascript, css);
+</code></pre>
+
+<h4>Ключ</h4>
+
+<pre class="language-javascript"><code>series(...tasks)</code></pre>
+
+<h4>Параметры</h4>
+
+<table>
+  <thead>
+    <tr>
+      <td>Параметр</td>
+      <td>Тип</td>
+      <td>Примечание</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>tasks (обязательный)</td>
+      <td>function<br> string</td>
+      <td>В качестве отдельных аргументов может быть передано любое количество функций задач. Строки можно использовать, если вы уже зарегистрировали задачи, но так делать не рекомендуется.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4>Возвращает</h4>
+
+<p>Составную операцию, которая должна быть зарегистрирована как задача или вложена в другие композиции <code>series</code> и/или <code>parallel</code>.</p>
+
+<p>Когда выполняется составная операция, все задачи (таски) будут выполняться последовательно. Если ошибка возникает в одной задаче, никакие последующие задачи запущены не будут.</p>
+
+<h4>Ошибки</h4>
+
+<p>Если никакие задачи не передаются, выдается ошибка с сообщением «One or more tasks should be combined using series or parallel».</p>
+
+<p>Если передаются недопустимые или незарегистрированные задачи, выдается сообщение об ошибке «Task never defined».</p>
+
+<h4>Прямые ссылки</h4>
+
+<p>Прямая ссылка - это когда вы составляете задачи, используя строковые ссылки, которые еще не зарегистрированы. Это было обычной практикой в старых версиях, но данная функция была удалена для ускорения выполнения задач.</p>
+
+<p>В более новых версиях вы получите сообщение об ошибке «Task never defined», если попытаетесь использовать прямые ссылки. Это может возникнуть при попытке использовать <code>exports</code> для регистрации задач и составления задач по строке. В данной ситуации используйте именованные функции вместо строковых ссылок.</p>
+
+<p>Во время миграции вам может понадобиться использовать <a href="https://github.com/gulpjs/undertaker-forward-reference" target="_blank">реестр прямых ссылок</a>. Однако это значительно замедлит вашу сборку. Данный фикс не будет работать всегда, это лишь временное решение.</p>
+
+<h4>Избегайте дублирования задач</h4>
+
+<p>При выполнении составной операции каждая задача будет выполняться каждый раз, когда до нее доходит дело.</p>
+
+<p>Таск <code>clean</code>, указанный в двух разных композициях, будет выполнен дважды и приведет к нежелательным результатам. Вместо этого проведите рефакторинг таска <code>clean</code>, который будет указан в окончательном составе.</p>
+
+<p>Если у вас есть такой код:</p>
+
+<pre class="language-javascript"><code>// Пример НЕКОРРЕКТНЫЙ
+
+const { series, parallel } = require('gulp');
+
+const clean = function(cb) {
+  // тело функции
+  cb();
+};
+
+const css = series(clean, function(cb) {
+  // тело функции
+  cb();
+});
+
+const javascript = series(clean, function(cb) {
+  // тело функции
+  cb();
+});
+
+exports.build = parallel(css, javascript);
+</code></pre>
+
+<p>Лучше сделать так:</p>
+
+<pre class="language-javascript"><code>const { series, parallel } = require('gulp');
+
+function clean(cb) {
+  // тело функции
+  cb();
+}
+
+function css(cb) {
+  // тело функции
+  cb();
+}
+
+function javascript(cb) {
+  // тело функции
+  cb();
+}
+
+exports.build = series(clean, parallel(css, javascript));
+</code></pre>
+
+<h3 id="parallel">parallel()</h3>
+
+<p>Объединяет функции задач и/или составные операции в более крупные, которые выполняются одновременно (параллельно). Нет никаких ограничений на глубину вложенности составных операций с использованием <code>series()</code> и <code>parallel()</code>.</p>
+
+<h4>Использование</h4>
+
+<pre class="language-javascript"><code>const { parallel } = require('gulp');
+
+function javascript(cb) {
+  // тело функции
+  cb();
+}
+
+function css(cb) {
+  // тело функции
+  cb();
+}
+
+exports.build = parallel(javascript, css);
+</code></pre>
+
+<h4>Ключ</h4>
+
+<pre class="language-javascript"><code>parallel(...tasks)</code></pre>
+
+<h4>Параметры</h4>
+
+<table>
+  <thead>
+    <tr>
+      <td>Параметр</td>
+      <td>Тип</td>
+      <td>Примечание</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>tasks (обязательный)</td>
+      <td>function<br> string</td>
+      <td>В качестве отдельных аргументов может быть передано любое количество функций задач. Строки можно использовать, если вы уже зарегистрировали задачи, но так делать не рекомендуется.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4>Возвращает</h4>
+
+<p>Составную операцию, которая должна быть зарегистрирована как задача или вложена в другие композиции <code>series</code> и/или <code>parallel</code>.</p>
+
+<p>Когда выполняется составная операция, все задачи (таски) будут выполняться параллельно. Если ошибка возникает в одной задаче, другие задачи могут завершиться недетерминированно или не завершиться.</p>
+
+<h4>Ошибки</h4>
+
+<p>Когда никакие задачи не передаются, выдается ошибка с сообщением «One or more tasks should be combined using series or parallel».</p>
+
+<p>Когда передаются недопустимые или незарегистрированные задачи, выдается сообщение об ошибке «Task never defined».</p>
+
+<h4>Прямые ссылки</h4>
+
+<p>Прямая ссылка - это когда вы составляете задачи, используя строковые ссылки, которые еще не зарегистрированы. Это было обычной практикой в старых версиях, но данная функция была удалена для ускорения выполнения задач.</p>
+
+<p>В более новых версиях вы получите сообщение об ошибке «Task never defined», если попытаетесь использовать прямые ссылки. Это может возникнуть при попытке использовать <code>exports</code> для регистрации задач и составления задач по строке. В данной ситуации используйте именованные функции вместо строковых ссылок.</p>
+
+<p>Во время миграции вам может понадобиться использовать <a href="https://github.com/gulpjs/undertaker-forward-reference" target="_blank">реестр прямых ссылок</a>. Однако это значительно замедлит вашу сборку. Данный фикс не будет работать всегда, это лишь временное решение.</p>
+
+<h4>Избегайте дублирования задач</h4>
+
+<p>При выполнении составной операции каждая задача будет выполняться каждый раз, когда до нее доходит дело.</p>
+
+<p>Таск <code>clean</code>, указанный в двух разных композициях, будет выполнен дважды и приведет к нежелательным результатам. Вместо этого проведите рефакторинг таска <code>clean</code>, который будет указан в окончательном составе.</p>
+
+<p>Если у вас есть такой код:</p>
+
+<pre class="language-javascript"><code>// Пример НЕКОРРЕКТНЫЙ
+
+const { series, parallel } = require('gulp');
+
+const clean = function(cb) {
+  // тело функции
+  cb();
+};
+
+const css = series(clean, function(cb) {
+  // тело функции
+  cb();
+});
+
+const javascript = series(clean, function(cb) {
+  // тело функции
+  cb();
+});
+
+exports.build = parallel(css, javascript);
+</code></pre>
+
+<p>Лучше сделать так:</p>
+
+<pre class="language-javascript"><code>const { series, parallel } = require('gulp');
+
+function clean(cb) {
+  // тело функции
+  cb();
+}
+
+function css(cb) {
+  // тело функции
+  cb();
+}
+
+function javascript(cb) {
+  // тело функции
+  cb();
+}
+
+exports.build = series(clean, parallel(css, javascript));
+</code></pre>
+
+<h3 id="watch">watch()</h3>
+
+<p>Позволяет наблюдать за globs и запускать задачи при изменении. Задачи обрабатываются как обычно с остальной частью системы задач.</p>
+
+<h4>Использование</h4>
+
+<pre class="language-javascript"><code>const { watch } = require('gulp');
+
+watch(['input/*.js', '!input/something.js'], function(cb) {
+  // тело функции
+  cb();
+});
+</code></pre>
+
+<h4>Ключ</h4>
+
+<pre class="language-javascript"><code>watch(globs, [options], [task])</code></pre>
+
+<h4>Параметры</h4>
+
+<table>
+  <thead>
+    <tr>
+      <td>Параметр</td>
+      <td>Тип</td>
+      <td>Примечание</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>globs (обязательный)</td>
+      <td>string <br>array</td>
+      <td>Globs для вотчинга в файловой системе.</td>
+    </tr>
+    <tr>
+      <td>options</td>
+      <td>object</td>
+      <td>Подробно в опциях ниже.</td>
+    </tr>
+    <tr>
+      <td>task</td>
+      <td>function <br>string</td>
+      <td>Функция задачи или составная задача - генерируется с помощью <code>series()</code> и <code>parallel()</code>.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4>Возвращает</h4>
+
+<p>Экземпляр <code>chokidar</code> для детального контроля над настройками вотчинга.</p>
+
+<h4>Ошибки</h4>
+
+<p>Если non-string или массив с какими-либо non-strings's передается в виде globs, выдается ошибка с сообщением «Non-string provided as watch path».</p>
+
+<p>Если строка или массив передаются в качестве <code>task</code>, выдается сообщение об ошибке: «watch task has to be a function (optionally generated by using gulp.parallel or gulp.series)».</p>
+
+<h4>Опции</h4>
+
+<table>
+  <thead>
+    <tr>
+      <td>Опция</td>
+      <td>Тип</td>
+      <td>Дефолт.</td>
+      <td>Примечание</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>ignoreInitial</td>
+      <td>boolean</td>
+      <td>true</td>
+      <td>Если false, задача вызывается во время создания экземпляра, когда обнаруживаются пути к файлам. Используется для запуска задачи непосредственно во время запуска. <br>Примечание. Эта опция передается в chokidar, но по умолчанию имеет значение <code>true</code>, а не <code>false</code>.</td>
+    </tr>
+    <tr>
+      <td>delay</td>
+      <td>number</td>
+      <td>200</td>
+      <td>Задержка в миллисекундах между изменением файла и выполнением задачи. Позволяет ожидать множества изменений перед выполнением задачи, например, поиск и замена в большом количестве файлов.</td>
+    </tr>
+    <tr>
+      <td>queue</td>
+      <td>boolean</td>
+      <td>true</td>
+      <td>Если true и задача уже запущена, любые изменения файла будут поставлены в очередь выполнения одной задачи. Позволяет избежать наложения долго-выполняющихся задач.</td>
+    </tr>
+    <tr>
+      <td>events</td>
+      <td>string <br>array</td>
+      <td>[ 'add', 'change', 'unlink' ]</td>
+      <td>Наблюдаемые события запускают выполнение задачи. Это могут быть <code>'add'</code>, <code>'addDir'</code>, <code>'change'</code>, <code>'unlink'</code>, <code>'unlinkDir'</code>, <code>'ready'</code>, и/или <code>'error'</code>. Дополнительно доступно <code>'all'</code>, которое представляет все события, кроме <code>'ready'</code> и <code>'error'</code>. <br>Данная опция передается напрямую в chokidar.</td>
+    </tr>
+    <tr>
+      <td>persistent</td>
+      <td>boolean</td>
+      <td>true</td>
+      <td>Если false, вотчер не будет продолжать процесс Node. Отключение этой опции не рекомендуется. <br>Данная опция передается напрямую в chokidar.</td>
+    </tr>
+    <tr>
+      <td>ignored</td>
+      <td>array <br>string <br>RegExp <br>function</td>
+      <td></td>
+      <td>Определяет globs, которые будут игнорироваться. Если предоставляется функция, она будет вызываться дважды для каждого пути - один раз только с путем, затем с путем и объектом <code>fs.Stats</code> этого файла. <br>Данная опция передается напрямую в chokidar.</td>
+    </tr>
+    <tr>
+      <td>followSymlinks</td>
+      <td>boolean</td>
+      <td>true</td>
+      <td>Если true, изменения как символических ссылок, так и связанных файлов инициируют события. Если false, только изменения в символических ссылок инициируют события. <br>Данная опция передается напрямую в chokidar.</td>
+    </tr>
+    <tr>
+      <td>cwd</td>
+      <td>string</td>
+      <td></td>
+      <td>Каталог будет объединен с любым относительным путем, чтобы сформировать абсолютный путь. Игнорируется для абсолютных путей. Используйте, чтобы избежать объединения globs с <code>path.join()</code>. <br>Данная опция передается напрямую в chokidar.</td>
+    </tr>
+    <tr>
+      <td>disableGlobbing</td>
+      <td>boolean</td>
+      <td>false</td>
+      <td>Если true, все globs обрабатываются как буквенные имена путей, даже если они имеют специальные символы. <br>Данная опция передается напрямую в chokidar.</td>
+    </tr>
+    <tr>
+      <td>usePolling</td>
+      <td>boolean</td>
+      <td>false</td>
+      <td>Если false, вотчер будет использовать для просмотра функцию <code>fs.watch()</code> (или fsevents на Mac). Если true, используется <code>fs.watchFile()</code>. Это необходимо для успешного просмотра файлов по сети или в других нестандартных ситуациях. Переопределяет значение по умолчанию <code>useFsEvents</code>. <br>Данная опция передается напрямую в chokidar.</td>
+    </tr>
+    <tr>
+      <td>interval</td>
+      <td>number</td>
+      <td>100</td>
+      <td>В сочетании с <code>usePolling: true</code>. Интервал опроса файловой системы. <br>Данная опция передается напрямую в chokidar.</td>
+    </tr>
+    <tr>
+      <td>binaryInterval</td>
+      <td>number</td>
+      <td>300</td>
+      <td>В сочетании с <code>usePolling: true</code>. Интервал опроса файловой системы для двоичных файлов. <br>Данная опция передается напрямую в chokidar.</td>
+    </tr>
+    <tr>
+      <td>useFsEvents</td>
+      <td>boolean</td>
+      <td>true</td>
+      <td>Если true, использует fsevents для просмотра, если доступно. Если явно установлено значение true, заменяет параметр <code>usePolling</code>. Если установлено значение false, автоматически устанавливает <code>usePolling</code> значение в true. <br>Данная опция передается напрямую в chokidar.</td>
+    </tr>
+    <tr>
+      <td>alwaysStat</td>
+      <td>boolean</td>
+      <td>false</td>
+      <td>Если true, всегда вызывает <code>fs.stat()</code> для измененных файлов. Это замедлит вотчинг файлов. Объект <code>fs.Stat</code> доступен, только если вы используете экземпляр chokidar напрямую. <br>Данная опция передается напрямую в chokidar.</td>
+    </tr>
+    <tr>
+      <td>depth</td>
+      <td>number</td>
+      <td></td>
+      <td>Указывает, сколько вложенных уровней каталогов будет просмотрено. <br>Данная опция передается напрямую в chokidar.</td>
+    </tr>
+    <tr>
+      <td>awaitWriteFinish</td>
+      <td>boolean</td>
+      <td>false</td>
+      <td>Не используйте эту опцию, вместо этого используйте <code>delay</code>. <br>Данная опция передается напрямую в chokidar.</td>
+    </tr>
+    <tr>
+      <td>ignorePermissionErrors</td>
+      <td>boolean</td>
+      <td>false</td>
+      <td>Установите значение в true, чтобы просматривать файлы, не имеющие разрешений на чтение. Если просмотр не удастся из-за ошибок EPERM или EACCES, они будут пропущены без уведомления. <br>Данная опция передается напрямую в chokidar.</td>
+    </tr>
+    <tr>
+      <td>atomic</td>
+      <td>number</td>
+      <td>100</td>
+      <td>Работает, только если <code>useFsEvents</code> и <code>usePolling</code> имеют значение false. Автоматически отфильтровывает артефакты, возникающие при «атомарной записи» некоторыми редакторами. Если файл повторно добавляется в течение указанных миллисекунд после удаления, будет отправлено событие change вместо unlink.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4>Экземпляр chokidar</h4>
+
+<p>Метод <code>watch()</code> возвращает базовый экземпляр chokidar, предоставляя полный контроль над настройкой вотчинга. Чаще всего используется для регистрации отдельных обработчиков событий, которые предоставляют <code>path</code> или <code>stats</code> измененных файлов.</p>
+
+<p>При непосредственном использовании экземпляра chokidar у вас не будет доступа к интеграции системы задач, включая асинхронное завершение, организацию очереди и задержку.</p>
+
+<pre class="language-javascript"><code>const { watch } = require('gulp');
+
+const watcher = watch(['input/*.js']);
+
+watcher.on('change', function(path, stats) {
+  console.log(`Файл ${path} был изменен`);
+});
+
+watcher.on('add', function(path, stats) {
+  console.log(`Файл ${path} был добавлен`);
+});
+
+watcher.on('unlink', function(path, stats) {
+  console.log(`Файл ${path} был удален`);
+});
+
+watcher.close();
+</code></pre>
+
+<code>watcher.on(eventName, eventHandler)</code>
+
+<p>Регистрируются функции <code>eventHandler</code>, вызываемые при возникновении указанного события.</p>
+
+<table>
+  <thead>
+    <tr>
+      <td>Параметр</td>
+      <td>Тип</td>
+      <td>Примечание</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>eventName</td>
+      <td>string</td>
+      <td>Можно наблюдать следующие события:  <code>'add'</code>, <code>'addDir'</code>, <code>'change'</code>, <code>'unlink'</code>, <code>'unlinkDir'</code>, <code>'ready'</code>, <code>'error'</code>, или <code>'all'</code>.</td>
+    </tr>
+    <tr>
+      <td>eventHandler</td>
+      <td>function</td>
+      <td>Функция, вызываемая при возникновении указанного события. Аргументы подробно изложены в таблице ниже.</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <td>Аргумент</td>
+      <td>Тип</td>
+      <td>Примечание</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>path</td>
+      <td>string</td>
+      <td>Путь к файлу, который изменился. Если была установлена опция <code>cwd</code>, путь будет относительным путем удаления <code>cwd</code>.</td>
+    </tr>
+    <tr>
+      <td>stats</td>
+      <td>object</td>
+      <td>Объект <code>fs.Stat</code> (агрумент может быть неопределен). Если для параметра <code>alwaysStat</code> установлено значение <code>true</code>, <code>stats</code> будет предоставлен всегда.</td>
+    </tr>
+  </tbody>
+</table>
+
+<code>watcher.close()</code>
+
+<p>Выключает средство просмотра файлов. После выключения больше событий не будет.</p>
+
+<code>watcher.add(globs)</code>
+
+<p>Добавляет дополнительные globs к уже запущенному экземпляру вотчера.</p>
+
+<table>
+  <thead>
+    <tr>
+      <td>Параметр</td>
+      <td>Тип</td>
+      <td>Примечание</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>globs</td>
+      <td>string <br>array</td>
+      <td>Дополнительные globs для просмотра.</td>
+    </tr>
+  </tbody>
+</table>
+
+<code>watcher.unwatch(globs)</code>
+
+<p>Удаляет наблюдаемые globs, пока вотчер продолжает работу с оставшимися путями.</p>
+
+<table>
+  <thead>
+    <tr>
+      <td>Параметр</td>
+      <td>Тип</td>
+      <td>Примечание</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>globs</td>
+      <td>string <br>array</td>
+      <td>Globs к удалению.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="task">task()</h3>
+
+<blockquote>Внимание: использование данного API не рекомендуется в настоящее время. Экспортируйте ваши задачи.</blockquote>
+
+<p>Определяет задачу в системе задач. Затем к задаче можно получить доступ из командной строки или API-интерфейсов <code>series()</code>, <code>parallel()</code> и <code>lastRun()</code>.</p>
+
+<h4>Использование</h4>
+
+<p>Зарегистрируйте именованную функцию как задачу:</p>
+
+<pre class="language-javascript"><code>const { task } = require('gulp');
+
+function build(cb) {
+  // тело функции
+  cb();
+}
+
+task(build);
+</code></pre>
+
+<p>Зарегистрируйте анонимную функцию как задачу:</p>
+
+<pre class="language-javascript"><code>const { task } = require('gulp');
+
+task('build', function(cb) {
+  // тело функции
+  cb();
+});
+</code></pre>
+
+<p>Получить задачу, которая была зарегистрирована ранее:</p>
+
+<pre class="language-javascript"><code>const { task } = require('gulp');
+
+task('build', function(cb) {
+  // тело функции
+  cb();
+});
+
+const build = task('build');
+</code></pre>
+
+<h4>Ключ</h4>
+
+<pre class="language-javascript"><code>task([taskName], taskFunction)</code></pre>
+
+<h4>Параметры</h4>
+
+<p>Если <code>taskName</code> не указано, будет использовано свойство <code>name</code> именованной функции или пользовательское свойство <code>displayName</code>. Параметр <code>taskName</code> должен использоваться для анонимных функций, в которых отсутствует свойство <code>displayName</code>.</p>
+
+<p>Поскольку любая зарегистрированная задача может быть запущена из командной строки, избегайте использования пробелов при именовании задач.</p>
+
+<table>
+  <thead>
+    <tr>
+      <td>Параметр</td>
+      <td>Тип</td>
+      <td>Примечание</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>taskName</td>
+      <td>string</td>
+      <td>Псевдоним для функции задачи в системе задач. Не требуется при использовании именованных функций для <code>taskFunction</code>.</td>
+    </tr>
+    <tr>
+      <td>taskFunction (required)</td> 
+      <td>function</td>
+      <td>Функция задачи (таска) или составная задача - генерируется с помощью <code>series()</code> и <code>parallel()</code>. В идеале, именованная функция. Метаданные задачи могут быть прикреплены для предоставления дополнительной информации в командной строке.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4>Возвращает</h4>
+
+<p>При регистрации задачи ничего не возвращается.</p>
+
+<p>При получении задачи будет возвращена упакованная задача (не оригинальная функция), зарегистрированная как <code>taskName</code>. Обернутая задача имеет метод <code>unwrap()</code>, который возвращает исходную функцию.</p>
+
+<h4>Ошибки</h4>
+
+<p>При регистрации задачи, в которой <code>TaskName</code> отсутствует и функция <code>TaskFunction</code> является анонимной, выдается сообщение об ошибке «Task name must be specified».</p>
+
+<h4>Метаданные задачи</h4>
+
+<table>
+  <thead>
+    <tr>
+      <td>Свойство</td>
+      <td>Тип</td>
+      <td>Примечание</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>name</td>
+      <td>string</td>
+      <td>Особое свойство именованных функций. Используется для регистрации задачи. Примечание: <code>name</code> не доступно для записи, его нельзя установить или изменить.</td>
+    </tr>
+    <tr>
+      <td>displayName</td>
+      <td>string</td>
+      <td>При присоединении к <code>taskFunction</code> создается псевдоним задачи. В случаях, когда требуется использовать символы, которые не разрешены в именах функций, используйте это свойство.</td>
+    </tr>
+    <tr>
+      <td>description</td>
+      <td>string</td>
+      <td>При присоединении к <code>taskFunction</code> предоставляет описание, которое будет напечатано в командной строке при выводе списка задач.</td>
+    </tr>
+    <tr>
+      <td>flags</td>
+      <td>object</td>
+      <td>При присоединении к функции <code>taskFunction</code> предоставляет флаги, которые должны быть напечатаны в командной строке при перечислении задач. Ключи объекта представляют флаги, а значения - их описания.</td>
+    </tr>
+  </tbody>
+</table>
+
+<pre class="language-javascript"><code>const { task } = require('gulp');
+
+const clean = function(cb) {
+  // тело функции
+  cb();
+};
+clean.displayName = 'clean:all';
+
+task(clean);
+
+function build(cb) {
+  // тело функции
+  cb();
+}
+build.description = 'Билд проекта';
+build.flags = { '-e': 'Пример флага' };
+
+task(build);
+</code></pre>
+
+<h3 id="registry">registry()</h3>
+
+<p>Позволяет подключать пользовательские реестры к системе задач, которые предоставляют общие задачи или расширенную функциональность.</p>
+
+<p>Примечание. В пользовательский реестр будут включены только задачи, зарегистрированные с помощью <code>task()</code>. Функции задач, переданные непосредственно в <code>series()</code> или <code>parallel()</code> предоставляться не будут. Если вам нужно настроить поведение реестра, создавайте задачи со строковыми ссылками.</p>
+
+<p>При назначении нового реестра каждая задача из текущего реестра будет перенесена, а текущий реестр будет заменен новым. Это позволяет добавлять несколько пользовательских реестров в последовательном порядке.</p>
+
+<h4>Использование</h4>
+
+<pre class="language-javascript"><code>const { registry, task, series } = require('gulp');
+const FwdRef = require('undertaker-forward-reference');
+
+registry(FwdRef());
+
+task('default', series('forward-ref'));
+
+task('forward-ref', function(cb) {
+  // тело функции
+  cb();
+});
+</code></pre>
+
+<h4>Ключ</h4>
+
+<pre class="language-javascript"><code>registry([registryInstance])</code></pre>
+
+<h4>Параметры</h4>
+
+<table>
+  <thead>
+    <tr>
+      <td>Параметр</td>
+      <td>Тип</td>
+      <td>Примечание</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>registryInstance</td>
+      <td>object</td>
+      <td>Экземпляр (не класс) пользовательского реестра.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4>Возвращает</h4>
+
+<p>Если передан параметр <code>instanceInstance</code>, ничего не будет возвращено. Если аргументы не переданы, возвращает текущий экземпляр реестра.</p>
+
+<h4>Ошибки</h4>
+
+<p>Когда конструктор (вместо экземпляра) передается как <code>registryInstance</code>, выдает ошибку с сообщением: «Custom registries must be instantiated, but it looks like you passed a constructor».</p>
+
+<p>Когда реестр без метода <code>get</code> передается как <code>registryInstance</code>, выдает ошибку с сообщением «Custom registry must have <code>get</code> function».</p>
+
+<p>Когда реестр без метода <code>set</code> передается как <code>registryInstance</code>, выдает ошибку с сообщением «Custom registry must have <code>set</code> function».</p>
+
+<p>Когда реестр без метода <code>init</code> передается как <code>registryInstance</code>, выдает ошибку с сообщением «Custom registry must have <code>init</code> function».</p>
+
+<p>Когда реестр без метода <code>tasks</code> передается как <code>registryInstance</code>, выдает ошибку с сообщением «Custom registry must have <code>tasks</code> function».</p>
+
+<h3 id="tree">tree()</h3>
+
+<p>Выбирает текущее дерево зависимостей задач - в редких случаях, когда это необходимо.</p>
+
+<p>Скорее всего, вы не будете использовать <code>tree()</code>, однако не стоит забывать, что такая возможность есть и может пригодиться, когда необходимо в CLI отобразить дерево зависимости задач, определенных в gulpfile.</p>
+
+<h4>Использование</h4>
+
+<p>Пример gulpfile:</p>
+
+<pre class="language-javascript"><code>const { series, parallel } = require('gulp');
+
+function one(cb) {
+  // тело функции
+  cb();
+}
+
+function two(cb) {
+  // тело функции
+  cb();
+}
+
+function three(cb) {
+  // тело функции
+  cb();
+}
+
+const four = series(one, two);
+
+const five = series(four,
+  parallel(three, function(cb) {
+    // тело функции
+    cb();
+  })
+);
+
+module.exports = { one, two, three, four, five };
+</code></pre>
+
+<p>Вывод для <code>tree()</code>:</p>
+
+<pre class="language-javascript"><code>{
+  label: 'Tasks',
+  nodes: [ 'one', 'two', 'three', 'four', 'five' ]
+}
+</code></pre>
+
+<p>Вывод для <code>tree({ deep: true })</code>:</p>
+
+<pre class="language-javascript"><code>{
+  label: "Tasks",
+  nodes: [
+    {
+      label: "one",
+      type: "task",
+      nodes: []
+    },
+    {
+      label: "two",
+      type: "task",
+      nodes: []
+    },
+    {
+      label: "three",
+      type: "task",
+      nodes: []
+    },
+    {
+      label: "four",
+      type: "task",
+      nodes: [
+        {
+          label: "&lt;series&gt;",
+          type: "function",
+          branch: true,
+          nodes: [
+            {
+              label: "one",
+              type: "function",
+              nodes: []
+            },
+            {
+              label: "two",
+              type: "function",
+              nodes: []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      label: "five",
+      type: "task",
+      nodes: [
+        {
+          label: "&lt;series&gt;",
+          type: "function",
+          branch: true,
+          nodes: [
+            {
+              label: "&lt;series&gt;",
+              type: "function",
+              branch: true,
+              nodes: [
+                {
+                  label: "one",
+                  type: "function",
+                  nodes: []
+                },
+                {
+                  label: "two",
+                  type: "function",
+                  nodes: []
+                }
+              ]
+            },
+            {
+              label: "&lt;parallel&gt;",
+              type: "function",
+              branch: true,
+              nodes: [
+                {
+                  label: "three",
+                  type: "function",
+                  nodes: []
+                },
+                {
+                  label: "&lt;anonymous&gt;",
+                  type: "function",
+                  nodes: []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+</code></pre>
+
+<h4>Ключ</h4>
+
+<pre class="language-javascript"><code>tree([options])</code></pre>
+
+<h4>Параметры</h4>
+
+<table>
+  <thead>
+    <tr>
+      <td>Параметр</td>
+      <td>Тип</td>
+      <td>Примечание</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>options</td>
+      <td>object</td>
+      <td>Подробно в опциях ниже.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4>Возвращает</h4>
+
+<p>Объект, детализирующий дерево зарегистрированных задач, содержащий вложенные объекты со свойствами <code>'label'</code> и <code>'nodes'</code> (совместимые по <a href="https://www.npmjs.com/package/archy" target="_blank">archy</a>).</p>
+
+<p>Каждый объект может иметь свойство <code>type</code>, которое можно использовать для определения того, является ли  node <code>task</code> или <code>function</code>.</p>
+
+<p>Каждый объект может иметь свойство <code>branch</code>, которое, если оно <code>true</code>, указывает на то, что node был создан с помощью <code>series()</code> или <code>parallel()</code>.</p>
+
+<h4>Опции</h4>
+
+<table>
+  <thead>
+    <tr>
+      <td>Опция</td>
+      <td>Тип</td>
+      <td>Дефолт.</td>
+      <td>Примечание</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>deep</td>
+      <td>boolean</td>
+      <td>false</td>
+      <td>Если true, будет возвращено все дерево. Если false, будут возвращены только задачи верхнего уровня.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="vinyl">Vinyl</h3>
+
+<p>Виртуальный формат файла. Когда файл читается с помощью <code>src()</code>, генерируется объект Vinyl для его представления, включая путь, содержимое и другие метаданные.</p>
+
+<p>Объекты Vinyl могут быть преобразованы с помощью плагинов. Они также могут быть сохранены в файловой системе с помощью <code>dest()</code>.</p>
+
+<p>При создании ваших собственных объектов Vinyl, вместо генерации с помощью <code>src()</code> используйте внешний модуль <code>vinyl</code>, как показано в разделе «Использование» ниже.</p>
+
+<h4>Использование</h4>
+
+<pre class="language-javascript"><code>const Vinyl = require('vinyl');
+
+const file = new Vinyl({
+  cwd: '/',
+  base: '/test/',
+  path: '/test/file.js',
+  contents: new Buffer('var x = 123')
+});
+
+file.relative === 'file.js';
+
+file.dirname === '/test';
+file.dirname = '/specs';
+file.path === '/specs/file.js';
+
+file.basename === 'file.js';
+file.basename = 'file.txt';
+file.path === '/specs/file.txt';
+
+file.stem === 'file';
+file.stem = 'foo';
+file.path === '/specs/foo.txt';
+file.extname === '.txt';
+file.extname = '.js';
+file.path === '/specs/file.js';
+</code></pre>
+
+<h4>Ключ</h4>
+
+<pre class="language-javascript"><code>new Vinyl([options])</code></pre>
+
+<h4>Параметры</h4>
+
+<table>
+  <thead>
+    <tr>
+      <td>Параметр</td>
+      <td>Тип</td>
+      <td>Примечание</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>options</td>
+      <td>object</td>
+      <td>Подробнее в опциях ниже.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4>Возвращает</h4>
+
+<p>Экземпляр класса Vinyl, представляющий один виртуальный файл.</p>
+
+<h4>Ошибки</h4>
+
+<p>Если какие-либо переданные параметры не соответствуют определениям свойств экземпляра (например, если <code>path</code> задан как число), происходит выброс, как определено в таблице.</p>
+
+<h4>Опции</h4>
+
+<table>
+  <thead>
+    <tr>
+      <td>Опция</td>
+      <td>Тип</td>
+      <td>Дефолт.</td>
+      <td>Примечание</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>cwd</td>
+      <td>string</td>
+      <td><code>process.cwd()</code></td>
+      <td>Каталог, из которого будут получены относительные пути. Будет нормализовано и удалены конечные разделители.</td>
+    </tr>
+    <tr>
+      <td>base</td>
+      <td>string</td>
+      <td></td>
+      <td>Используется для вычисления свойства <code>relative</code> экземпляра. Фолбек к значению <code>cwd</code>, если не установлено. Обычно устанавливается на основание glob. Будет нормализовано и удалены конечные разделители.</td>
+    </tr>
+    <tr>
+      <td>path</td>
+      <td>string</td>
+      <td></td>
+      <td>Полный, абсолютный путь к файлу. Будет нормализовано и удалены конечные разделители.</td>
+    </tr>
+    <tr>
+      <td>history</td>
+      <td>array</td>
+      <td><code>[ ]</code></td>
+      <td>Массив путей для предварительного заполнения <code>history</code> экземпляра Vinyl. Обычно происходит при получении нового объекта Vinyl от предыдущего объекта Vinyl. Если <code>path</code> и <code>history</code> пройдены, <code>path</code> добавляется к <code>history</code>. Каждый элемент будет нормализован, разделители будут удалены.</td>
+    </tr>
+    <tr>
+      <td>stat</td>
+      <td>object</td>
+      <td></td>
+      <td>Экземпляр <code>fs.Stats</code>, обычно является результатом вызова <code>fs.stat()</code> файла. Используется для определения того, представляет ли объект Vinyl каталог или символическую ссылку.</td>
+    </tr>
+    <tr>
+      <td>contents</td>
+      <td>ReadableStream <br>Buffer <br><code>null</code></td>
+      <td><code>null</code></td>
+      <td>Содержимое файла. Если <code>contents</code> является <code>ReadableStream</code>, оно помещается в <a href="https://github.com/mcollina/cloneable-readable" target="_blank">клонируемо-читаемый</a> поток.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Любые другие свойства <code>options</code> будут напрямую назначены экземпляру Vinyl.</p>
+
+<pre class="language-javascript"><code>const Vinyl = require('vinyl');
+
+const file = new Vinyl({ foo: 'bar' });
+file.foo === 'bar';
+</code></pre>
+
+<h4>Экземпляр Vinyl</h4>
+
+<p>Каждый экземпляр объекта Vinyl будет иметь свойства и методы для доступа и/или изменения информации о виртуальном файле.</p>
+
+<h4>Свойства экземпляра</h4>
+
+<p>Все пути с внутренним управлением (любое свойство экземпляра, за исключением <code>contents</code> и <code>stat</code>) нормализуются и удаляются конечные разделители. См. «Нормализация и объединение» ниже, для получения дополнительной информации.</p>
+
+<table>
+  <thead>
+    <tr>
+      <td>Свойство</td>
+      <td>Тип</td>
+      <td>Описание</td>
+      <td>Сброс</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>contents</td>
+      <td>ReadableStream <br>Buffer <br><code>null</code></td>
+      <td>Получает и задает содержимое виртуального файла. Если установлено значение ReadableStream, оно помещается в клонируемо-читаемый поток.</td>
+      <td>Если установлено любое значение, отличное от ReadableStream, Buffer или <code>null</code>.</td>
+    </tr>
+    <tr>
+      <td>stat</td>
+      <td>object</td>
+      <td>Получает и задает экземпляр <code>fs.Stats</code>. Используется при определении того, представляет ли объект Vinyl каталог или символическую ссылку.</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cwd</td>
+      <td>string</td>
+      <td>Получает и устанавливает текущий рабочий каталог. Используется для определения относительных путей.</td>
+      <td>Если задана пустая строка или любое нестроковое значение.</td>
+    </tr>
+    <tr>
+      <td>base</td>
+      <td>string</td>
+      <td>Получает и устанавливает базовый каталог. Используется для вычисления свойства <code>relative</code> экземпляра. На объекте Vinyl, сгенерированном с помощью <code>src()</code>, будет установлено glob base. Если установлено значение <code>null</code> или <code>undefined</code>, сработает фолбек к значению свойства экземпляра <code>cwd</code>.</td>
+      <td>Если задана пустая строка или любое значение non-string (кроме <code>null</code> или <code>undefined</code>).</td>
+    </tr>
+    <tr>
+      <td>path</td>
+      <td>string</td>
+      <td>Получает и задает полный абсолютный путь к файлу. Установка значения, отличного от текущего <code>path</code>, добавляет новый путь к свойству экземпляра <code>history</code>.</td>
+      <td>Если установлено любое non-string значение.</td>
+    </tr>
+    <tr>
+      <td>history</td>
+      <td>array</td>
+      <td>Массив всех значений <code>path</code>, которым был назначен объект Vinyl. Первый элемент - это исходный путь, а последний элемент - текущий путь. Данное свойство и его элементы должны рассматриваться как доступные только для чтения и изменяться только косвенно, путем установки свойства экземпляра <code>path</code>.</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>relative</td>
+      <td>string</td>
+      <td>Получает относительный сегмент пути между свойствами экземпляра <code>base</code> и <code>path</code>.</td>
+      <td>Если установлено любое значение. Если есть доступ, когда <code>path</code> недоступен.</td>
+    </tr>
+    <tr>
+      <td>dirname</td>
+      <td>string</td>
+      <td>Получает и задает каталог свойства экземпляра <code>path</code>.</td>
+      <td>Если есть доступ, когда <code>path</code> недоступен.</td>
+    </tr>
+    <tr>
+      <td>stem</td>
+      <td>string</td>
+      <td>Получает и задает основу (имя файла без расширения) свойства экземпляра <code></code>.</td>
+      <td>Если есть доступ, когда <code>path</code> недоступен.</td>
+    </tr>
+    <tr>
+      <td>extname</td>
+      <td>string</td>
+      <td>Получает и задает расширение свойства экземпляра <code>path</code>.</td>
+      <td>Если есть доступ, когда <code>path</code> недоступен.</td>
+    </tr>
+    <tr>
+      <td>basename</td>
+      <td>string</td>
+      <td>Получает и задает имя файла (<code>stem</code> + <code>extname</code>) свойства экземпляра <code>path</code>.</td>
+      <td>Если есть доступ, когда <code>path</code> недоступен.</td>
+    </tr>
+    <tr>
+      <td>symlink</td>
+      <td>string</td>
+      <td>Получает и задает референсный путь символической ссылки.</td>
+      <td>Если установлено любое non-string значение.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4>Методы экземпляра</h4>
+
+<table>
+  <thead>
+    <tr>
+      <td>Метод</td>
+      <td>Возвращаемый тип</td>
+      <td>Возвращает</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>isBuffer()</code></td>
+      <td>boolean</td>
+      <td>Если свойством экземпляра <code>contents</code> является Buffer, возвращает true.</td>
+    </tr>
+    <tr>
+      <td><code>isStream()</code></td>
+      <td>boolean</td>
+      <td>Если свойством экземпляра <code>contents</code> является Stream, возвращает true.</td>
+    </tr>
+    <tr>
+      <td><code>isNull()</code></td>
+      <td>boolean</td>
+      <td>Если свойством экземпляра <code>contents</code> является <code>null</code>, возвращает true.</td>
+    </tr>
+    <tr>
+      <td><code>isDirectory()</code></td>
+      <td>boolean</td>
+      <td>Если экземпляр представляет каталог, возвращает true. Экземпляр считается каталогом, когда <code>isNull()</code> возвращает true, свойство экземпляра <code>stat</code> является объектом и <code>stat.isDirectory()</code> возвращает true. Это предполагает, что объект Vinyl был создан с допустимым (или правильно сказать смоделированным) объектом <code>fs.Stats</code>.</td>
+    </tr>
+    <tr>
+      <td><code>isSymbolic()</code></td>
+      <td>boolean</td>
+      <td>Если экземпляр представляет собой символическую ссылку, возвращает true. Экземпляр считается символическим, когда <code>isNull()</code> возвращает true, свойство экземпляра <code>stat</code> является объектом и <code>stat.isSymbolicLink()</code> возвращает true. Это предполагает, что объект Vinyl был создан с допустимым (или правильно сказать смоделированным) объектом <code>fs.Stats</code>.</td>
+    </tr>
+    <tr>
+      <td><code>clone([options])</code></td>
+      <td>object</td>
+      <td>Новый объект Vinyl со всеми клонированными свойствами. По умолчанию все пользовательские свойства клонированы. Если параметр <code>deep</code> имеет значение false, пользовательские атрибуты будут клонированы не глубоко. Если для параметра <code>contents</code> установлено значение false, а свойством экземпляра содержимого является Buffer, то Buffer будет использоваться повторно, а не клонироваться.</td>
+    </tr>
+    <tr>
+      <td><code>inspect()</code></td>
+      <td>string</td>
+      <td>Возвращает отформатированную интерпретацию объекта Vinyl. Автоматически вызывается по Node's console.log.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4>Нормализация и конкатенация</h4>
+
+<p>Все свойства пути нормализуются их сеттерами. Объедините пути с помощью <code>/</code>, вместо использования <code>path.join()</code> и нормализация будет происходить правильно на всех платформах. Никогда не стройте пути с <code>\</code> - это допустимый символ имени файла в системе POSIX.</p>
+
+<pre class="language-javascript"><code>const file = new File();
+file.path = '/' + 'test' + '/' + 'foo.bar';
+
+console.log(file.path);
+// posix => /test/foo.bar
+// win32 => \\test\\foo.bar
+</code></pre>
+
+<h3 id="vinyl-isvinyl">Vinyl.isVinyl()</h3>
+
+<p>Определяет, является ли объект экземпляром Vinyl. Используйте этот метод вместо <code>instanceof</code>.</p>
+
+<p>Примечание. В этом методе используется внутреннее свойство, которое не отображалось в некоторых старых версиях Vinyl, что приводит к ложному отрицанию (!) при использовании устаревшей версии.</p>
+
+<h4>Использование</h4>
+
+<pre class="language-javascript"><code>const Vinyl = require('vinyl');
+
+const file = new Vinyl();
+const notAFile = {};
+
+Vinyl.isVinyl(file) === true;
+Vinyl.isVinyl(notAFile) === false;
+</code></pre>
+
+<h4>Ключ</h4>
+
+<pre class="language-javascript"><code>Vinyl.isVinyl(file);</code></pre>
+
+<h4>Параметры</h4>
+
+<table>
+  <thead>
+    <tr>
+      <td>Параметр</td>
+      <td>Тип</td>
+      <td>Примечание</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>file</td>
+      <td>object</td>
+      <td>Объект для проверки.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4>Возвращает</h4>
+
+<p>true, если объект файла является экземпляром Vinyl.</p>
+
+<h3 id="vinyl-iscustomprop">Vinyl.isCustomProp()</h3>
+
+<p>Определяет, является ли свойство управляемым с помощью Vinyl. Используется экземпляром Vinyl при установке значений внутри конструктора или при копировании свойств в методе экземпляра <code>clone()</code>.</p>
+
+<p>Этот метод полезен при расширении класса Vinyl. Подробно в «Расширение Vinyl» ниже.</p>
+
+<h4>Использование</h4>
+
+<pre class="language-javascript"><code>const Vinyl = require('vinyl');
+
+Vinyl.isCustomProp('sourceMap') === true;
+Vinyl.isCustomProp('path') === false;
+</code></pre>
+
+<h4>Ключ</h4>
+
+<pre class="language-javascript"><code>Vinyl.isCustomProp(property)</code></pre>
+
+<h4>Параметры</h4>
+
+<table>
+  <thead>
+    <tr>
+      <td>Параметр</td>
+      <td>Тип</td>
+      <td>Примечание</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>property</td>
+      <td>string</td>
+      <td>Наименование свойства для проверки.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4>Возвращает</h4>
+
+<p>true, если свойство не управляется изнутри.</p>
+
+<h4>Расширение Vinyl</h4>
+
+<p>Когда пользовательские свойства управляются внутри, статический метод <code>isCustomProp</code> должен быть расширен и возвращать значение false, если запрашивается одно из пользовательских свойств.</p>
+
+<pre class="language-javascript"><code>const Vinyl = require('vinyl');
+
+const builtInProps = ['foo', '_foo'];
+
+class SuperFile extends Vinyl {
+  constructor(options) {
+    super(options);
+    this._foo = 'пример внутреннего значения только для чтения';
+  }
+
+  get foo() {
+    return this._foo;
+  }
+
+  static isCustomProp(name) {
+    return super.isCustomProp(name) && builtInProps.indexOf(name) === -1;
+  }
+}
+</code></pre>
+
+<p>В приведенном выше примере <code>foo</code> и <code>_foo</code> не будут назначены новому объекту при клонировании или переданы через <code>options</code> в <code>new SuperFile(options)</code>.</p>
+
+<p>Если ваши пользовательские свойства или логика требуют особой обработки во время клонирования, переопределите метод клонирования при расширении Vinyl.</p>
+
+
+                <div class="premium">
+          <div class="row">
+
+            <div class="col-md-12">
+              <h4>Премиум уроки от WebDesign Master</h4>
+            </div>
+
+            <div class="col-md-4 col-sm-6">
+              <a href="../../courses/jekyll/index.html" class="premium-item">
+                <span class="premium-img-wrap"><img src="../../public/images/premium/jekyll.jpg" alt="Курс по созданию сайта от А до Я на Jekyll" class="img-responsive"></span>
+                <p>Создание сайта от А до Я. Комплексный курс</p>
+              </a>
+            </div>
+
+            <div class="col-md-4 col-sm-6">
+              <a href="../../courses/webdesign/index.html" class="premium-item">
+                <span class="premium-img-wrap"><img src="../../public/images/premium/webdesign.jpg" alt="Большой комплексный курс по современному веб-дизайну" class="img-responsive"></span>
+                <p>Веб-дизайн с нейросетями для начинающих</p>
+              </a>
+            </div>
+
+            <div class="col-md-4 col-sm-6">
+              <a href="../../courses/freelance/index.html" class="premium-item">
+                <span class="premium-img-wrap"><img src="../../public/images/premium/freelance.jpg" alt="Фриланс для начинающих" class="img-responsive"></span>
+                <p>Я - фрилансер! Базовый курс для начинающих</p>
+              </a>
+            </div>
+
+          </div>
+        </div>
+
+
+        
+
+      </div>
+
+    </div>
+
+  </div>
+</article>
+
+
+        </div>
+
+        <div class="col-md-4 col-aside">
+
+  <aside class="site-aside">
+
+
+    <div class="box box-docs">
+      <p class="mnu-header">Разделы документации:</p>
+      <nav class="docs-menu">
+        <ul>
+        
+          
+          <li><i class="fa fa-hashtag"></i><a href="#quick-start">Быстрый старт</a></li>
+          
+        
+          
+          <li><i class="fa fa-hashtag"></i><a href="#javascript-and-gulpfiles">JavaScript и Gulpfiles</a></li>
+          
+        
+          
+          <li><i class="fa fa-hashtag"></i><a href="#creating-tasks">Создание задач (тасков)</a></li>
+          
+        
+          
+          <li><i class="fa fa-hashtag"></i><a href="#async-completion">Асинхронное выполнение</a></li>
+          
+        
+          
+          <li><i class="fa fa-hashtag"></i><a href="#working-with-files">Работа с файлами</a></li>
+          
+        
+          
+          <li><i class="fa fa-hashtag"></i><a href="#explaining-globs">Шаблоны Globs</a></li>
+          
+        
+          
+          <li><i class="fa fa-hashtag"></i><a href="#using-plugins">Использование плагинов</a></li>
+          
+        
+          
+          <li><i class="fa fa-hashtag"></i><a href="#watching-files">Наблюдение за файлами</a></li>
+          
+        
+          
+          <li><i class="fa fa-hashtag"></i><a href="#concepts">Концепции API</a></li>
+          
+        
+          
+          <li><i class="fa fa-hashtag"></i><a href="#src">src()</a></li>
+          
+        
+          
+          <li><i class="fa fa-hashtag"></i><a href="#dest">dest()</a></li>
+          
+        
+          
+          <li><i class="fa fa-hashtag"></i><a href="#symlink">symlink()</a></li>
+          
+        
+          
+          <li><i class="fa fa-hashtag"></i><a href="#lastrun">lastRun()</a></li>
+          
+        
+          
+          <li><i class="fa fa-hashtag"></i><a href="#series">series()</a></li>
+          
+        
+          
+          <li><i class="fa fa-hashtag"></i><a href="#parallel">parallel()</a></li>
+          
+        
+          
+          <li><i class="fa fa-hashtag"></i><a href="#watch">watch()</a></li>
+          
+        
+          
+          <li><i class="fa fa-hashtag"></i><a href="#task">task()</a></li>
+          
+        
+          
+          <li><i class="fa fa-hashtag"></i><a href="#registry">registry()</a></li>
+          
+        
+          
+          <li><i class="fa fa-hashtag"></i><a href="#tree">tree()</a></li>
+          
+        
+          
+          <li><i class="fa fa-hashtag"></i><a href="#vinyl">Vinyl</a></li>
+          
+        
+          
+          <li><i class="fa fa-hashtag"></i><a href="#vinyl-isvinyl">Vinyl.isVinyl()</a></li>
+          
+        
+          
+          <li><i class="fa fa-hashtag"></i><a href="#vinyl-iscustomprop">Vinyl.isCustomProp()</a></li>
+          
+        
+        </ul>
+      </nav>
+    </div>
+
+
+
+
+    <nav class="box box-mnu">
+      <p class="mnu-header">Разделы сайта:</p>
+      <ul class="list-unstyled box-dashed main-menu">
+
+  <li class="d-lg-none">
+    <a href="../../courses/index.html"><i class="fa fa-diamond"></i> Курсы</a>
+  </li>
+
+  <li>
+    <a href="../../blog/html-css/index.html"><i class="fa fa-code"></i> Веб-разработка</a>
+  </li>
+
+  <li>
+    <a href="../../blog/web-design/index.html"><i class="fa fa-paint-brush"></i> Веб-дизайн</a>
+  </li>
+
+  <li>
+    <a href="../../blog/tools/index.html"><i class="fa fa-cogs"></i> Инструменты</a>
+  </li>
+
+  <li>
+    <a href="../../blog/cms/index.html"><i class="fa fa-folder-open-o"></i> CMS/Framework</a>
+  </li>
+
+</ul>
+
+    </nav>
+
+    <nav class="box box-mnu services-mnu">
+      <p class="mnu-header">Полезные ресурсы:</p>
+      <ul class="list-unstyled">
+
+  <li>
+    <a href="../../blog/tools/wsl-nodejs-new.html"><i class="fa fa-cogs"></i> Установка WSL и окружения</a>
+  </li>
+
+  <li>
+    <a href="../../blog/docs/webdev-without-wsl.html"><i class="fa fa-cogs"></i> Настройка окружения без WSL</a>
+  </li>
+
+  <li>
+    <a href="../../blog/tools/hosting-lesson.html"><i class="fa fa-server"></i> Работа с хостингом от А до Я</a>
+  </li>
+
+  <li>
+    <a href="../../blog/tools/vscode.html"><i class="fa custom-vscode-3"></i> Настройка VS Code</a>
+  </li>
+
+  <li>
+    <a href="../../blog/tools/cubic-bezier/index.html"><i class="fa custom-bezier"></i> Cubic-Bezier Generator</a>
+  </li>
+
+  <li>
+    <a href="../../blog/tools/lazy-load/index.html"><i class="fa fa-image"></i> Lazy Load Placeholder</a>
+  </li>
+
+  <li>
+    <span><i class="fa fa-file-text-o"></i> Документация Gulp</span>
+    
+  </li>
+
+</ul>
+
+    </nav>
+
+    
+
+  </aside>
+
+
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <footer class="main-foot">
+    <div class="container-fluid">
+
+      <span class="year"></span> © WebDesign Master
+
+    </div>
+    <div class="top" title="Наверх"><i class="fa fa-angle-double-up"></i></div>
+  </footer>
+
+  <script>(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return}}k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window,document,"script","https://mc.yandex.ru/metrika/tag.js","ym");ym(100695574,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true,webvisor:true});</script><noscript><div><img src="https://mc.yandex.ru/watch/100695574" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+
+
+</body>
+</html>
+

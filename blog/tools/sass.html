@@ -1,0 +1,1266 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="canonical" href="https://webdesign-masteru.github.io/blog/tools/sass.html">
+  <meta name="generator" content="Jekyll v">
+
+  <title>Sass для самых маленьких. подробное руководство</title>
+  <meta name="description" content="Руководство Sass для начинающих">
+
+  <link rel="icon" href="https://webdesign-masteru.github.io/favicon.ico?v=15" type="image/x-icon">
+  <meta property="og:image" content="../../public/images/thumbs/tools/sass/sass-cover.jpg">
+
+  <link rel="stylesheet" href="../../styles/index.css?v=15">
+  
+  <script src="../../scripts/dist/main.js?v=15" defer></script>
+  
+  <script>/* no flicker */document.documentElement.classList.add(localStorage.getItem('mode') === 'auto' ? (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : localStorage.getItem('mode'))</script>
+
+</head>
+
+<body>
+
+  <header class="main-head">
+
+    <div class="container-fluid">
+
+      <div class="row">
+
+        <div class="col-md-6">
+          <div class="mobile-pannel d-xl-none d-lg-none d-md-none">
+            <div class="toggler"><button title="Переключить тему"></button></div>
+            <div class="toggle-mnu"><span></span></div>
+          </div>
+        
+          <a href="../../index.html" class="logo"><img src="../../assets/images/logo-site.svg" alt="WebDesign Master"></a>
+        
+        </div>
+
+        <div class="col-md-6 d-none d-md-block d-lg-block d-xl-block">
+          <div class="toggler"><button title="Переключить тему"></button></div>
+                    <div class="social">
+            <a title="ВКонтакте" href="https://vk.com/jediweb" target="_blank"><i class="fa fa-vk"></i></a>
+            <a title="Телеграм" href="https://t.me/jediweb" target="_blank"><i class="fa custom-tg"></i></a>
+            <a title="YouTube" href="https://youtube.com/@wdm" target="_blank"><i class="fa fa-youtube-play"></i></a>
+            <a title="GitHub" href="https://github.com/webdesign-masteru" target="_blank"><i class="fa fa-github"></i></a>
+            <a title="Дзен" href="https://dzen.ru/jediweb" target="_blank"><i class="fa custom-dzen"></i></a>
+          </div>
+
+          <div class="courses-link">
+            <a href="../../courses/index.html"><i class="fa fa-diamond"></i>Курсы</a>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="mobile-menu"></div>
+
+    </div>
+
+  </header>
+
+
+  <div class="content">
+    <div class="container-fluid">
+
+      <div class="row">
+
+        <div class="col-md-8">
+
+          <article class="list-item single-page">
+  <div class="item-link">
+
+    
+    <div class="item-img-wrap post-img">
+      <img class="img-responsive" src="../../public/images/thumbs/tools/sass/sass.jpg" alt="Sass для самых маленьких. подробное руководство">
+    </div>
+    
+
+    <div class="item-content">
+
+    <div class="td">
+        <a href="../../blog/tools/index.html" class="item-icon hidden-xs" title="Категория: Инструменты"><i class="fa fa-cogs"></i></a>
+      </div>
+      <div class="td article-title"><h1>Sass для самых маленьких. подробное руководство</h1></div>
+    
+
+      <div class="article-content">
+
+        <p>Это подробное руководство по препроцессору <strong>Sass</strong> для начинающих. Здесь мы познакомимся с препроцессором Sass, его преимуществами, синтаксисом и рассмотрим возможности использования на примерах.</p>
+
+<div class="likely-scroll">
+  <div class="likely">
+    <button class="vkontakte">Поделиться</button>
+    <button class="telegram">Отправить</button>
+    <button class="pinterest" data-media="https://webdesign-masteru.github.io/public/images/thumbs/tools/sass/sass-cover.jpg">Запинить</button>
+    <button class="odnoklassniki">Класснуть</button>
+  </div>
+</div>
+
+
+<div class="video-wrap">
+  <div class="table">
+    <div class="tr">
+      <div class="td">
+        <div class="videowrapper" title="Смотреть урок «Sass для самых маленьких. подробное руководство» на YouTube">
+          <img class="img-responsive" src="../../public/images/thumbs/tools/sass/sass-cover.jpg" alt="Sass для самых маленьких. подробное руководство - Видеоурок">
+        </div>
+        <a href="https://youtu.be/H4cG4tbc-xQ" class="button button-youtube" target="_blank"><i class="fa fa-youtube-play"></i>Смотреть <span class="d-none d-lg-inline">урок </span>на YouTube</a>
+      </div>
+      <div class="td">
+        <a href="../../courses/bundle/index.html" class="premium-banner">
+          <img src="../../public/images/premium/bundle-b.jpg" alt="Все курсы канала WebDesign Master">
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<p>Все примеры и настроенный проект данного урока вы можете <a href="https://archive.org/download/sass-lesson/sass.zip">Скачать</a></p>
+
+<blockquote><strong>Sass</strong> - это один из наиболее развитых и стабильных CSS препроцессоров, а также один из самых популярных препроцессоров у профессионалов.</blockquote>
+
+<h2>Преимущества Sass</h2>
+
+<ul>
+  <li>Совместимость с различными версиями CSS, благодаря которой вы можете использовать любые CSS библиотеки в вашем проекте;</li>
+  <li>Огромное количество разнообразных функций на любой случай жизни. Таким богатым функционалом могут похвастаться немногие CSS препроцессоры;</li>
+  <li>Sass - это один из самых старых CSS препроцессоров, вобравший большой опыт за долгие годы своего существования;</li>
+  <li>Замечательная возможность использовать Sass фреймворки, упрощающие жизнь разработчику. Один из таких фреймворков - Bourbon, который мы используем в некоторых выпусках Джедая верстки при написании Sass; </li>
+  <li>Синтаксис. Вы можете выбрать один из двух синтаксисов, который вам ближе - упрощенный (SASS) и развернутый CSS-подобный (SCSS).</li>
+</ul>
+
+<p>Когда я только знакомился с CSS препроцессорами, мне, как и многим другим начинающим веб-разработчикам, была не до конца понятна сама идея использования CSS препроцессоров. Зачем делать дополнительную прослойку, использовать какие-то инструменты, усложнять CSS, думал я. Но со временем начал понимать, что изо дня в день написание CSS становилось пыткой, серой рутиной, многие действия приходилось повторять, копировать селекторы, свойства и даже целые блоки CSS кода для достижения необходимого результата. Сегодня, на примерах, я покажу вам, как можно упростить работу, используя препроцессор Sass, разнообразить разработку и даже немного поразвлечься при написании каких-то более или менее сложных функций.</p>
+
+<h2>Настройка окружения</h2>
+
+<p>В качестве окружения для работы с Sass в этом уроке, как и в других наших уроках, мы будем использовать версию Sass для таск-менеджера Gulp (<strong>gulp-sass</strong>). Для использования оригинальной Ruby версии или компиляции Sass посредством специального ПО, вы можете <a href="https://sass-lang.com/install" target="_blank">ознакомиться с инструкциями на оф. сайте</a>. Данный урок носит преимущественно практический характер, поэтому останавливаться на возможных вариантах подключения к проекту не будем, подключим Sass наиболее популярным способом, используя Gulp.</p>
+
+<p>Убедитесь, что у вас установлена последняя версия Node.js и Gulp. Если Node.js не установлен, <a href="https://nodejs.org" target="_blank">скачайте его и установите</a>. После установки Node.js установите gulp командой <strong>"npm i -g gulp"</strong> (Windows) или <strong>"sudo npm i -g gulp"</strong> (Linux, OS X). Почитать: <a href="../../blog/tools/gulp-4-lesson.html" target="_blank">Подробное руководство Gulp</a>.</p>
+
+<p><strong>В папке вашего проекта</strong> выполните команду <strong>npm init</strong> и заполните пошагово информацию о вашем новом проекте. Пример, также, есть на странице <a href="../../blog/tools/gulp-4-lesson.html" target="_blank">руководства Gulp</a>.</p>
+
+<img src="../../public/images/blog/tools/sass/npm-init.jpg" alt="npm init в терминале">
+
+<p>Далее установим в проект пакеты <strong>gulp</strong>, <strong>sass</strong> и <strong>gulp-sass</strong> командой:</p>
+
+<pre class="language-bash"><code>npm i --save-dev gulp sass gulp-sass</code></pre>
+
+<p>Далее в папке проекта создадим <strong>gulpfile.js</strong> следующего содержания:</p>
+
+<pre class="language-javascript"><code>var gulp = require('gulp'), // Подключаем Gulp
+    sass = require('gulp-sass')(require('sass')); // Подключаем Sass пакет
+
+gulp.task('sass', function() { // Создаем таск "sass"
+  return gulp.src(['sass/**/*.sass', 'sass/**/*.scss']) // Берем источник
+    .pipe(sass({outputStyle: 'expanded'}).on('error', sass.logError)) // Преобразуем Sass в CSS посредством gulp-sass
+    .pipe(gulp.dest('css')) // Выгружаем результата в папку css
+  });
+
+gulp.task('watch', function() {
+  gulp.watch(['sass/**/*.sass', 'sass/**/*.scss'], ['sass']); // Наблюдение за sass файлами в папке sass
+});
+
+gulp.task('default', ['watch']);
+</code></pre>
+
+<blockquote>Обратите внимание на строку 6 - здесь мы используем один из стилей вывода в результирующий файл: <strong>nested</strong> - вложенный, по умолчанию; <strong>expanded</strong> - развернутый; <strong>compact</strong> - компактный, когда селектор и его свойства в фигурных скобках выводятся в одну строку; <strong>compressed</strong> - сжатый. Кроме того, благодаря обработке <strong>.on('error', sass.logError)</strong>, если возникнет ошибка, нам не придется перезагружать команду выполенния Gulpfile и мы будем видеть, в какой строке Sass файла у нас ошибка. В примерах я буду использовать стиль вывода <strong>expanded</strong> для наглядности.</blockquote>
+
+<p>У вас должна быть следующая структура проекта в вашей файловой системе:</p>
+
+<ul>
+  <li>
+    <i class="fa fa-folder"></i> <strong>myproject/</strong>
+    <ul>
+      <li>
+        <i class="fa fa-folder"></i> <strong>css/</strong>
+        <ul>
+          <li><i class="fa fa-file-text-o"></i> <strong>common.css</strong></li>
+        </ul>
+      </li>
+      <li>
+        <i class="fa fa-folder"></i> <strong>sass/</strong>
+        <ul>
+          <li><i class="fa fa-file-text-o"></i> <strong>common.sass</strong></li>
+        </ul>
+      </li>
+      <li>
+        <i class="fa fa-folder"></i> <strong>node_modules/</strong>
+      </li>
+      <li>
+        <i class="fa fa-file-text-o"></i> <strong>gulpfile.js</strong>
+      </li>
+      <li>
+        <i class="fa fa-file-text-o"></i> <strong>package.json</strong>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p>Запускаем выполнение Gulpfile командой <strong>gulp</strong> в терминале папки проекта.</p>
+
+<p>Здесь мы берем все Sass файлы из директории <strong>sass/</strong> вашего проекта и выгружаем готовый CSS результат в папку <strong>css/</strong>. Кроме того, здесь мы устанавливаем наблюдение <strong>watch</strong> за изменениями в Sass файлах и автоматическую компиляцию в CSS, если такие изменения имеют место быть. Результирующий css файл подключается в верстку.</p>
+
+<p>Если вам что-то не понятно по настройке Gulp пакетов в данном примере, прочтите <a href="../../blog/tools/gulp-4-lesson.html" target="_blank">руководство Gulp</a>.</p>
+
+<p>После того, как наше окружение настроено и Sass успешно преобразуется в CSS при сохнанении *.sass файлов в директории <strong>sass/</strong>, можно спокойно продолжать обучение и выполнять примеры, которые мы будем сегодня разбирать, на практике.</p>
+
+<h2>Синтаксис Sass</h2>
+
+<p>Есть 2 варианта написания Sass, 2 синтаксиса: SASS и SCSS. Самый старый вариант написания Sass - это <strong>синтаксис отступов</strong>. Именно этот вариант написания мы будем использовать в нашем уроке. Расширение файлов для такого синтаксиса - <strong>*.sass</strong>. Второй вариант - это синтаксис, <strong>расширяющий синтаксис CSS</strong>, Sassy CSS. SCSS пишется как обычный CSS, но расширен дополнительными возможностями Sass. Расширение файлов с SCSS синтаксисом - <strong>*.scss</strong>.</p>
+
+<blockquote>Очень важно! Синтаксис отступов требует очень четкого соблюдения отступов у вложенных свойств и если у вас возникают ошибки при запуске Gulp или неявные ошибки без указания строки в консоли - скорее всего, ошибка именно в неправильных отступах. Еще важная деталь - если у вас в качестве отступов используются табы, компилятор выдаст ошибку при попытке конвертировать Sass, в котором помимо табов, также, исвользуются пробелы в качестве отступов. Либо вы используете только табы, либо только пробелы.</blockquote>
+
+<h3>SASS и SCSS синтаксис:</h3>
+
+<table>
+  <thead>
+    <tr>
+      <td>SASS - синтаксис отступов</td>
+      <td>SCSS - синтаксис расширения</td>
+    </tr>
+  </thead>
+  <tr>
+    <td>
+<pre class="language-sass"><code>$font-stack:    Helvetica, sans-serif
+$primary-color: #333
+
+body
+  font: 100% $font-stack
+  color: $primary-color
+</code></pre>
+    </td>
+    <td>
+<pre class="language-sass"><code>$font-stack:    Helvetica, sans-serif;
+$primary-color: #333;
+
+body {
+  font: 100% $font-stack;
+  color: $primary-color; }
+</code></pre>
+    </td>
+  </tr>
+</table>
+
+<p>Кроме базовых правил написания (фигурные скобки, точка с запятой в конце строк), SASS и SCSS различаются также написанием некоторых функций. Так что будьте внимательны при использовании каких-либо примеров из интернета, проверяйте, какой именно синтаксис используется. Если довольно большой пример из интернета выполнен в SCSS стиле, а ваш проект написан в SASS, вы можете его импортировать в ваш основной файл, не меняя синтаксис и расширение файла посредством директивы <strong>@import</strong>, например, если вы скачали файл <strong>carousel.scss</strong>, то можете подключить его в ваш <strong>main.sass</strong> строкой <strong>@import "carousel"</strong>. Также можно поступить в обратной ситуации, когда необходимо импортировать *.sass файлы в файл main.scss. В нашем примере с Гитхаба, мы импортируем все <strong>_x.x.sass</strong> файлы в один <strong>common.sass</strong>, где x.x - это номер заголовка примера из данной статьи.</p>
+
+<p>Мы будем использовать синтаксис отступов.</p>
+
+<h2>1. Расширение возможностей CSS с помощью Sass</h2>
+
+<h3>1.1 Правила вложения</h3>
+
+<p>Sass дает разработчикам замечательную возможность использовать вложение одних CSS правил в другие, тем самым сокращая время на написание/копирование длинных селекторов и делая код более структурированным, с четкой иерархией.</p>
+
+<table>
+  <thead>
+    <tr>
+      <td><strong>Sass</strong></td>
+      <td><strong>CSS</strong> - готовый результат</td>
+    </tr>
+  </thead>
+  <tr>
+    <td>
+<pre class="language-sass"><code>#main p
+  color: #00ff00
+  width: 97%
+
+  .redbox
+    background-color: #ff0000
+    color: #000000
+</code></pre>
+    </td>
+    <td>
+<pre class="language-css"><code>#main p {
+  color: #00ff00;
+  width: 97%;
+}
+
+#main p .redbox {
+  background-color: #ff0000;
+  color: #000000;
+}
+</code></pre>
+    </td>
+  </tr>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <td><strong>Sass</strong></td>
+      <td><strong>CSS</strong> - готовый результат</td>
+    </tr>
+  </thead>
+  <tr>
+    <td>
+<pre class="language-sass"><code>#main
+  width: 97%
+
+  p, div 
+    font-size: 2em
+    a
+      font-weight: bold
+
+  pre
+    font-size: 3em
+</code></pre>
+    </td>
+    <td>
+<pre class="language-css"><code>#main {
+  width: 97%;
+}
+
+#main p, #main div {
+  font-size: 2em;
+}
+
+#main p a, #main div a {
+  font-weight: bold;
+}
+
+#main pre {
+  font-size: 3em;
+}
+</code></pre>
+    </td>
+  </tr>
+</table>
+
+<h3>1.2 Привязка к родительскому селектору</h3>
+
+<p>Если вы хотите расширить селектор, не создавая нового правила, вы можете привязать к готовому селектору дополнительные селекторы, используя знак <strong>&amp;</strong>. Внешне это выглядит как создание дочернего селектора в иерархии, но с использованием <strong>&amp;</strong>, мы расширяем именно родительский селектор, а не создаем дочерний.</p>
+
+<table>
+  <thead>
+    <tr>
+      <td><strong>Sass</strong></td>
+      <td><strong>CSS</strong> - готовый результат</td>
+    </tr>
+  </thead>
+  <tr>
+    <td>
+<pre class="language-sass"><code>#main
+  color: black
+
+  a
+    font-weight: bold
+
+    &amp;:hover
+      color: red
+</code></pre>
+    </td>
+    <td>
+<pre class="language-css"><code>#main {
+  color: black;
+}
+
+#main a {
+  font-weight: bold;
+}
+
+#main a:hover {
+  color: red;
+}
+</code></pre>
+    </td>
+  </tr>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <td><strong>Sass</strong></td>
+      <td><strong>CSS</strong> - готовый результат</td>
+    </tr>
+  </thead>
+  <tr>
+    <td>
+<pre class="language-sass"><code>a
+  font-weight: bold
+  text-decoration: none
+
+  &amp;:hover
+    text-decoration: underline
+
+  body.firefox &amp;
+    font-weight: normal
+</code></pre>
+    </td>
+    <td>
+<pre class="language-css"><code>a {
+  font-weight: bold;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+body.firefox a {
+  font-weight: normal;
+}
+</code></pre>
+    </td>
+  </tr>
+</table>
+
+<blockquote>Обратите внимание на правило <strong>body.firefox &amp;</strong>, которое позволяет нам получить новую цепочку от любого элемента до текущего, если установить в конце <strong>&amp;</strong>.</blockquote>
+
+<p>Кроме того, привязку к родителю можно использовать для создания составных селекторов:</p>
+
+<table>
+  <thead>
+    <tr>
+      <td><strong>Sass</strong></td>
+      <td><strong>CSS</strong> - готовый результат</td>
+    </tr>
+  </thead>
+  <tr>
+    <td>
+<pre class="language-sass"><code>#main
+  color: black
+
+  &amp;-sidebar
+    border: 1px solid
+</code></pre>
+    </td>
+    <td>
+<pre class="language-css"><code>#main {
+  color: black;
+}
+
+#main-sidebar {
+  border: 1px solid;
+}
+</code></pre>
+    </td>
+  </tr>
+</table>
+
+<h3>1.3 Вложенные свойства</h3>
+
+<p>Для удобства, вы можете разбивать суффикс пространства имен свойства на вложения. Например, <strong>margin</strong>-top, <strong>margin</strong>-bottom, <strong>margin</strong>-left, <strong>margin</strong>-right имеют общую основу <strong>margin</strong> и могут быть разбиты на вложения следующим образом:</p>
+
+<table>
+  <thead>
+    <tr>
+      <td><strong>Sass</strong></td>
+      <td><strong>CSS</strong> - готовый результат</td>
+    </tr>
+  </thead>
+  <tr>
+    <td>
+<pre class="language-sass"><code>.selector
+  margin:
+    top: 10px
+    bottom: 15px
+    left: 20px
+    right: 30px
+</code></pre>
+    </td>
+    <td>
+<pre class="language-css"><code>.selector {
+  margin-top: 10px;
+  margin-bottom: 15px;
+  margin-left: 20px;
+  margin-right: 30px;
+}
+</code></pre>
+    </td>
+  </tr>
+</table>
+
+<h3>1.4 Селекторы-шаблоны</h3>
+
+<p>Иногда возникает ситуация, когда несколько элементов на странице используют одинаковую CSS базу, одинаковый набор свойств, характерный только для них. Данные базовые CSS правила можно оформить в виде селектора-шаблона для использования в нескольких местах Sass. Селекторы-шаблоны выводятся посредством директивы <strong>@extend</strong>.</p>
+
+<table>
+  <thead>
+    <tr>
+      <td><strong>Sass</strong></td>
+      <td><strong>CSS</strong> - готовый результат</td>
+    </tr>
+  </thead>
+  <tr>
+    <td>
+<pre class="language-css"><code>%item-base
+  display: inline-block
+  transition: all .5s ease
+  max-width: 320px
+
+.item-type-one
+  @extend %item-base
+  margin-top: 20px
+
+.item-type-two
+  @extend %item-base
+  margin-top: 10px
+</code></pre>
+    </td>
+    <td>
+<pre class="language-sass"><code>.item-type-one, .item-type-two {
+  display: inline-block;
+  transition: all .5s ease;
+  max-width: 320px;
+}
+
+.item-type-one {
+  margin-top: 20px;
+}
+
+.item-type-two {
+  margin-top: 10px;
+}
+</code></pre>
+    </td>
+  </tr>
+</table>
+
+<h2>2. SassScript</h2>
+
+<p>SassScript позволяет значително расширить возможности Sass за счет использования пользовательских переменых, арифметических и прочих функций. SassScript может быть использован для автоматической генерации новых селекторов и свойств.</p>
+
+<h3>2.1 Переменные в Sass</h3>
+
+<p>Это действительно замечательная возможность - определять переменные, которые можно использовать в любом месте вашего Sass файла. Цвета, дефолтные значения, единицы, все это можно взять в переменную и использовать в дальнейшем. Переменная определяется так: <strong>$название: значение</strong>.</p>
+
+<table>
+  <thead>
+    <tr>
+      <td><strong>Sass</strong></td>
+      <td><strong>CSS</strong> - готовый результат</td>
+    </tr>
+  </thead>
+  <tr>
+    <td>
+<pre class="language-sass"><code>$accent: #FF9910
+
+.button
+  background-color: $accent
+  color: #fff
+</code></pre>
+    </td>
+    <td>
+<pre class="language-css"><code>.button {
+  background-color: #FF9910;
+  color: #fff;
+}
+</code></pre>
+    </td>
+  </tr>
+</table>
+
+<h3>2.2 Операции с числами и строками + интерполяция</h3>
+
+<blockquote>
+  Внимание! Деление в настоящее время следует выполнять функцией  math.div(), а не прямым слешем, как будет показано ниже. Например:
+<pre class="language-sass"><code>// Неправильно:
+$summ: 10 + 20 / 2
+
+// Правильно:
+$summ: 10 + math.div(20, 2)
+</code></pre>
+</blockquote>
+
+<blockquote>Обратите внимание, что для использования функции math.div() необходимо указать в самом начале sass-файла директиву подключения «@use 'sass:math'». Скачиваем и смотрим примеры из урока.</blockquote>
+
+<p>Sass дает возможность использовать стандартные арифметические операции над числами, такие как сложение (+), вычитание (-), деление (/) и остаток от деления по модулю (%). Операторы сравнения (&lt;, &gt;, &lt;=, &gt;=, ==, !=) также поддерживаются для чисел.</p>
+
+<p>Кроме того, в Sass есть возможность конкатенировать (соединять) строки.</p>
+
+<table>
+  <thead>
+    <tr>
+      <td><strong>Sass</strong></td>
+      <td><strong>CSS</strong> - готовый результат</td>
+    </tr>
+  </thead>
+  <tr>
+    <td>
+<pre class="language-sass"><code>$summ: 10 + math.div(20, 2)
+$cn: content
+
+.selector
+  margin:
+    top: $summ + px
+    bottom: 12px + 8px
+  background-color: trans + parent
+  #{$cn}: "con" + "tent"
+</code></pre>
+    </td>
+    <td>
+<pre class="language-css"><code>.selector {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  background-color: transparent;
+  content: "content";
+}
+</code></pre>
+    </td>
+  </tr>
+</table>
+
+<p>Как видим из примера <strong>$summ: 10 + math.div(20, 2)</strong>, соблюдается приоритет в выполнении арифметических операций - сначала деление, потом сложение. Для определения порядка действий, можно использовать круглые скобки, как в математике. Обратите внимание, что при сложении <strong>12px + 8px</strong>, мы получим <strong>20px</strong>.</p>
+
+<p>Обратите также внимание на строки 2 и 9, здесь мы используем интерполяцию для размещения динамических значений в любом месте Sass файла, в том числе и в месте, где у нас идет название свойства, название селектора или в любой строке.</p>
+
+<blockquote><strong>Интерполяция</strong> - это получение нового значения, используя другие.</blockquote>
+
+<p>Чаще всего интерполяция в Sass используется для получения нового значения переменной, благодаря "интегрированию" в значение другой переменной, посредством конструкции <strong>#{}</strong>, например:</p>
+
+<table>
+  <thead>
+    <tr>
+      <td><strong>Sass</strong></td>
+      <td><strong>CSS</strong> - готовый результат</td>
+    </tr>
+  </thead>
+  <tr>
+    <td>
+<pre class="language-sass"><code>$in: интер
+
+.interpol
+  content: "#{$in}поляция"
+</code></pre>
+    </td>
+    <td>
+<pre class="language-css"><code>.interpol {
+  content: "интерполяция";
+}
+</code></pre>
+    </td>
+  </tr>
+</table>
+
+<blockquote>Вы не можете просто взять и вставить в строку переменную, без использования интерполяции, как например, это можно сделать в PHP, в двойных кавычках. Обязательно используйте интерполяцию в переменные.</blockquote>
+
+<h3>2.3 Операции с цветами</h3>
+
+<blockquote>
+  Внимание! Сложение цветов теперь следует выполнять посредством функции color.mix(), а не «+»:
+<pre class="language-sass"><code>// Неправильно:
+#440203 + #550506
+
+// Правильно:
+color.mix(#440203, #550506)
+</code></pre>
+</blockquote>
+
+<p>Цвета в Sass можно складывать, вычетать, делить и умножать. Все арифметические операции выполняются для каждого цвета отдельно: красного, зеленого и синего.</p>
+
+<table>
+  <thead>
+    <tr>
+      <td><strong>Sass</strong></td>
+      <td><strong>CSS</strong> - готовый результат</td>
+    </tr>
+  </thead>
+  <tr>
+    <td>
+<pre class="language-sass"><code>$color1: color.mix(#440203, #550506)
+$color2: color.mix(rgba(180, 0, 0, .75), rgba(20, 255, 0, .75))
+
+body
+  background-color: $color1
+  color: $color2
+</code></pre>
+    </td>
+    <td>
+<pre class="language-css"><code>body {
+  background-color: #990709;
+  color: #020406;
+  border-color: rgba(200, 255, 0, 0.75);
+}
+</code></pre>
+    </td>
+  </tr>
+</table>
+
+<blockquote>Обратите внимание, что при сложении rgba цветов, последний параметр непрозрачности 0.75 не должен отличаться от других в выражении, иначе произойдет ошибка сложения. Вместо этого, можно регулировать альфа-канал rgba, используя <strong>opacify</strong> и <strong>transparentize</strong> или управлять непрозрачностью HEX цвета, посредством функции rgba.</blockquote>
+
+<table>
+  <thead>
+    <tr>
+      <td><strong>Sass</strong></td>
+      <td><strong>CSS</strong> - готовый результат</td>
+    </tr>
+  </thead>
+  <tr>
+    <td>
+<pre class="language-sass"><code>$translucent-red: rgba(255, 0, 0, 0.5);
+
+p
+  color: opacify($translucent-red, 0.3)
+  background-color: transparentize($translucent-red, 0.25)
+
+.selector
+  background-color: rgba(#333, 0.75)
+</code></pre>
+    </td>
+    <td>
+<pre class="language-css"><code>p {
+  color: rgba(255, 0, 0, 0.8);
+  background-color: rgba(255, 0, 0, 0.25);
+}
+
+.selector {
+  background-color: rgba(51, 51, 51, 0.75);
+}
+</code></pre>
+    </td>
+  </tr>
+</table>
+
+<h2>3. Директивы и правила</h2>
+
+<h3>3.1 @import</h3>
+
+<p>Вы можете импортировать в ваш Sass файл <strong>sass</strong>, <strong>scss</strong> и <strong>css</strong> файлы с помощью директивы <strong>@import</strong>, при этом все миксины и переменные будут работать в основном файле, в который происходит импорт.</p>
+
+<p>@import сработает как обычный CSS @import, если:
+
+<ul>
+  <li>в пути к файлу присутствует <strong>https://</strong>;</li>
+  <li>файл вызывается через <strong>url()</strong>;</li>
+  <li>или в импорте присутствуют медиапараметры.</li>
+</ul>
+
+<p>Для того, чтобы другой файл был полноценно импортирован в основной Sass файл, необходимо, чтобы расширение файла было <strong>*.sass</strong>, <strong>*.scss</strong> или <strong>*.css</strong>.</p>
+
+<p>Давайте рассмотрим некоторые примеры.</p>
+
+<p>Следующие файлы импортированы <strong>не будут</strong>:</p>
+
+<table>
+  <thead>
+    <tr>
+      <td><strong>Sass</strong></td>
+      <td><strong>CSS</strong> - готовый результат</td>
+    </tr>
+  </thead>
+  <tr>
+    <td>
+<pre class="language-sass"><code>@import "foo" screen;
+@import "https://foo.com/bar";
+@import url(foo);
+</code></pre>
+    </td>
+    <td>
+<pre class="language-css"><code>@import "foo" screen;
+@import "https://foo.com/bar";
+@import url(foo);
+</code></pre>
+    </td>
+  </tr>
+</table>
+
+<p>Следующие файлы <strong>будут</strong> импортированы:</p>
+
+<table>
+  <thead>
+    <tr>
+      <td><strong>Sass</strong></td>
+      <td><strong>CSS</strong> - готовый результат</td>
+    </tr>
+  </thead>
+  <tr>
+    <td>
+<pre class="language-sass"><code>@import "foo.css";
+@import "media.sass";
+@import "media.scss";
+@import "media"; // Если импортируем media.css или _media.sass / _media.scss
+</code></pre>
+    </td>
+    <td>
+<pre class="language-css"><code>/* Результат импорта */</code></pre>
+    </td>
+  </tr>
+</table>
+
+<blockquote>Внимание! В новых версиях <strong>gulp-sass</strong> для импорта CSS файлов в Sass необходимо указывать расширение .css</blockquote>
+
+<p>Возможен импорт нескольких файлов, через запятую: <strong>@import "header", "media"</strong>.</p>
+
+<p>Файлы, которые начинаются с нижнего подчеркивания, называются <strong>фрагменты</strong> и при импорте не требуют указания подчеркивания и расширения. Например, файл <strong>_header.sass</strong> можно импортировать так: <strong>@import "header"</strong>.</p>
+
+<blockquote>Обратите внимание, что импорт происходит в том месте, где вы указываете директиву <strong>@import</strong>. Соответственно, есть возможность делать вложенный импорт в том месте, где это необходимо:</blockquote>
+
+<pre class="language-sass"><code>#main
+  @import "example"
+</code></pre>
+
+<h3>3.2 @at-root</h3>
+
+<p>Директива <strong>@at-root</strong> поднимает содержимые в ней правила в корень, отменяя цепочку от родителя. Тут все просто:</p>
+
+<table>
+  <thead>
+    <tr>
+      <td><strong>Sass</strong></td>
+      <td><strong>CSS</strong> - готовый результат</td>
+    </tr>
+  </thead>
+  <tr>
+    <td>
+<pre class="language-sass"><code>.selector
+  margin-top: 10px
+
+  @at-root
+    .item
+      background-color: #ccc
+
+  .item
+    background-color: #fff
+</code></pre>
+    </td>
+    <td>
+<pre class="language-css"><code>.selector {
+  margin-top: 10px;
+}
+
+.item {
+  background-color: #ccc;
+}
+
+.selector .item {
+  background-color: #fff;
+}
+</code></pre>
+    </td>
+  </tr>
+</table>
+
+<p>Мы рассмотрели не все директивы, которые есть в Sass, а только самые используемые на практике. Если вас интересует более глубокое изучение Sass директив, <a href="https://sass-lang.com/documentation/" target="_blank">обратитесь к документации</a>.</p>
+
+<h2>4. Выражения</h2>
+
+<p>Sass поддерживает использование выражений и функций для различных условий, реализации циклов и т.д.</p>
+
+<h3>4.1 Директива @if()</h3>
+
+<p>Директива <strong>@if()</strong> позволяет осуществить выполнение SassScript с определенными условиями и имеет следующий синтаксис:</p>
+
+<table>
+  <thead>
+    <tr>
+      <td><strong>Sass</strong></td>
+      <td><strong>CSS</strong> - готовый результат</td>
+    </tr>
+  </thead>
+  <tr>
+    <td>
+<pre class="language-sass"><code>$var: 5
+
+.selector
+  @if $var &gt;= 5
+    content: '&gt;= 5'
+  @else if $var &lt;= 5
+    content: '&lt;= 5'
+  @else
+    content: ''
+</code></pre>
+    </td>
+    <td>
+<pre class="language-css"><code>.selector {
+  content: '&gt;= 5';
+}
+</code></pre>
+    </td>
+  </tr>
+</table>
+
+<h3>4.2 Директива @for</h3>
+
+<p><strong>@for</strong> выводит блок со стилями определенное количество раз. Во время выполнения можно задать переменную-счетчик.</p>
+
+<table>
+  <thead>
+    <tr>
+      <td><strong>Sass</strong></td>
+      <td><strong>CSS</strong> - готовый результат</td>
+    </tr>
+  </thead>
+  <tr>
+    <td>
+<pre class="language-sass"><code>@for $i from 1 to 11 //through вместо to, если требуется "включительно"
+  .item-#{$i}
+    background-image: url(img/#{$i}.jpg)
+</code></pre>
+    </td>
+    <td>
+<pre class="language-css"><code>.item-1 {
+  background-image: url(img/1.jpg);
+}
+
+.item-2 {
+  background-image: url(img/2.jpg);
+}
+
+.item-3 {
+  background-image: url(img/3.jpg);
+}
+
+.item-4 {
+  background-image: url(img/4.jpg);
+}
+
+.item-5 {
+  background-image: url(img/5.jpg);
+}
+
+.item-6 {
+  background-image: url(img/6.jpg);
+}
+
+.item-7 {
+  background-image: url(img/7.jpg);
+}
+
+.item-8 {
+  background-image: url(img/8.jpg);
+}
+
+.item-9 {
+  background-image: url(img/9.jpg);
+}
+
+.item-10 {
+  background-image: url(img/10.jpg);
+}
+</code></pre>
+    </td>
+  </tr>
+</table>
+
+<p>Вы можете указать <strong>through</strong> вместо to, если требуется пройтись от 1 до 11 включительно, а не только до 10, как в примере.</p>
+
+<h3>4.3 Директива @each</h3>
+
+<p>Если требуется пройтись по списку значений, а не просто чисел, можно использовать директиву <strong>@each</strong>:</p>
+
+<table>
+  <thead>
+    <tr>
+      <td><strong>Sass</strong></td>
+      <td><strong>CSS</strong> - готовый результат</td>
+    </tr>
+  </thead>
+  <tr>
+    <td>
+<pre class="language-sass"><code>@each $name in carousel, block, vertical, reviews, footer
+  .section-#{$name}
+    background-image: url(img/#{$name}.jpg)
+</code></pre>
+    </td>
+    <td>
+<pre class="language-css"><code>.section-carousel {
+  background-image: url(img/carousel.jpg);
+}
+
+.section-block {
+  background-image: url(img/block.jpg);
+}
+
+.section-vertical {
+  background-image: url(img/vertical.jpg);
+}
+
+.section-reviews {
+  background-image: url(img/reviews.jpg);
+}
+
+.section-footer {
+  background-image: url(img/footer.jpg);
+}
+</code></pre>
+    </td>
+  </tr>
+</table>
+
+<h3>4.4 Директива @while</h3>
+
+<p><strong>@while</strong> циклично выводит блоки стилей, пока выражение является <strong>true</strong>.</p>
+
+<table>
+  <thead>
+    <tr>
+      <td><strong>Sass</strong></td>
+      <td><strong>CSS</strong> - готовый результат</td>
+    </tr>
+  </thead>
+  <tr>
+    <td>
+<pre class="language-sass"><code>$i: 7
+@while $i > 0
+  .item-#{$i}
+    width: 1em * $i
+  $i: $i - 3
+</code></pre>
+    </td>
+    <td>
+<pre class="language-css"><code>.item-7 {
+  width: 7em;
+}
+
+.item-4 {
+  width: 4em;
+}
+
+.item-1 {
+  width: 1em;
+}
+</code></pre>
+    </td>
+  </tr>
+</table>
+
+<h2>5. Миксины</h2>
+
+<p><strong>Миксины</strong> - блоки Sass кода (или примеси-шаблоны), которые могут принимать аргументы (опционально) и позволяют значительно расширить возможности написания стилей и сократить затраты времени на применении однотипных правил и даже целых CSS блоков. Это что-то вроде функции, которая может принять аргумент, выполнить огромный объем работы и выдать результат в зависимости от входного параметра.</p>
+
+<p>Миксин объявляется директивой <strong>@mixin</strong>, после объявления должно быть указано <strong>имя</strong> миксина. Вызывается миксин директивой <strong>@include</strong>, которая принимает имя миксина и передаваемые аргументы, если такие имеют место быть.</p>
+
+<p>Примеры:</p>
+
+<table>
+  <thead>
+    <tr>
+      <td><strong>Sass</strong></td>
+      <td><strong>CSS</strong> - готовый результат</td>
+    </tr>
+  </thead>
+  <tr>
+    <td>
+<pre class="language-sass"><code>@mixin border($color)
+  border: $color 1px solid
+
+p
+  @include border(#333)
+
+
+@mixin transition($time)
+  -webkit-transition: all $time ease;
+  -moz-transition:    all $time ease;
+  -o-transition:      all $time ease;
+  transition:         all $time ease;
+
+p
+  @include transition(.25s)
+</code></pre>
+    </td>
+    <td>
+<pre class="language-css"><code>p {
+  border: #333 1px solid;
+}
+
+p {
+  -webkit-transition: all 0.25s ease;
+  -moz-transition: all 0.25s ease;
+  -o-transition: all 0.25s ease;
+  transition: all 0.25s ease;
+}
+</code></pre>
+    </td>
+  </tr>
+</table>
+
+<p>Друзья, мы рассмотрели основные возможности Sass, которых достаточно для плодотворной работы с CSS стилями сайта. Некоторые директивы и возмоности не вошли в данное руководство, но если вам интересно узнать обо всех возможностях Sass, <a href="https://sass-lang.com/documentation/" target="_blank">почитайте документацию</a>, будет полезно.</p>
+
+<blockquote>Сразу отвечу на вопрос - как работать с Sass стилями на готовом сайте, неужели нужно править готовый CSS и заливать на сервер? Нет, так делать нельзя. Вы должны иметь локальную копию ваших Sass стилей или даже целого сайта и после окончания работы деплоить (выгружать) по готовые стили. Для этого, вы можете использовать rsync. Или настроить Sass окружение на вашем сервере.</blockquote>
+
+
+                <div class="premium">
+          <div class="row">
+
+            <div class="col-md-12">
+              <h4>Премиум уроки от WebDesign Master</h4>
+            </div>
+
+            <div class="col-md-4 col-sm-6">
+              <a href="../../courses/jekyll/index.html" class="premium-item">
+                <span class="premium-img-wrap"><img src="../../public/images/premium/jekyll.jpg" alt="Курс по созданию сайта от А до Я на Jekyll" class="img-responsive"></span>
+                <p>Создание сайта от А до Я. Комплексный курс</p>
+              </a>
+            </div>
+
+            <div class="col-md-4 col-sm-6">
+              <a href="../../courses/webdesign/index.html" class="premium-item">
+                <span class="premium-img-wrap"><img src="../../public/images/premium/webdesign.jpg" alt="Большой комплексный курс по современному веб-дизайну" class="img-responsive"></span>
+                <p>Веб-дизайн с нейросетями для начинающих</p>
+              </a>
+            </div>
+
+            <div class="col-md-4 col-sm-6">
+              <a href="../../courses/freelance/index.html" class="premium-item">
+                <span class="premium-img-wrap"><img src="../../public/images/premium/freelance.jpg" alt="Фриланс для начинающих" class="img-responsive"></span>
+                <p>Я - фрилансер! Базовый курс для начинающих</p>
+              </a>
+            </div>
+
+          </div>
+        </div>
+
+
+        <div class="read-more">
+          <h4>Другие уроки по теме «Инструменты»</h4>
+          <ul>
+            
+            
+            
+              
+              <li><a href="../../blog/tools/parcel.html">Настройка Parcel для веб-разработки</a></li>
+              
+            
+              
+              <li><a href="../../blog/tools/tailwind-lesson.html">Tailwind CSS для начинающих. Подробный урок по подключению, настройке и использованию</a></li>
+              
+            
+              
+              <li><a href="../../blog/tools/vscode.html">Настройка VS Code для веб-разработки</a></li>
+              
+            
+              
+              <li><a href="../../blog/tools/starter.html">Starter - Простой стартер для веб-разработки</a></li>
+              
+            
+              
+              <li><a href="../../blog/tools/hosting-lesson.html">Урок по хостингу от А до Я. Сайты, базы, домены, SSL, SSH, sFTP</a></li>
+              
+            
+              
+              <li><a href="../../blog/tools/gulp-4-lesson.html">Gulp - Актуальное и исчерпывающее руководство для самых маленьких</a></li>
+              
+            
+          </ul>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</article>
+
+
+        </div>
+
+        <div class="col-md-4 col-aside">
+
+  <aside class="site-aside">
+
+
+
+<div class="box box-search">
+
+<form class="search" action="https://www.google.com/search" target="_blank">
+  <div>
+    <input type="text" name="q" size="55" placeholder="Поиск по сайту..." required>
+    <input type="hidden" name="sitesearch" value="https://webdesign-masteru.github.io">
+    <button type="submit">
+      <i class="fa fa-search"></i>
+    </button>
+  </div>
+</form>
+
+
+    </div>
+
+    <nav class="box box-mnu">
+      <p class="mnu-header">Разделы сайта:</p>
+      <ul class="list-unstyled box-dashed main-menu">
+
+  <li class="d-lg-none">
+    <a href="../../courses/index.html"><i class="fa fa-diamond"></i> Курсы</a>
+  </li>
+
+  <li>
+    <a href="../../blog/html-css/index.html"><i class="fa fa-code"></i> Веб-разработка</a>
+  </li>
+
+  <li>
+    <a href="../../blog/web-design/index.html"><i class="fa fa-paint-brush"></i> Веб-дизайн</a>
+  </li>
+
+  <li>
+    <a href="../../blog/tools/index.html"><i class="fa fa-cogs"></i> Инструменты</a>
+  </li>
+
+  <li>
+    <a href="../../blog/cms/index.html"><i class="fa fa-folder-open-o"></i> CMS/Framework</a>
+  </li>
+
+</ul>
+
+    </nav>
+
+    <nav class="box box-mnu services-mnu">
+      <p class="mnu-header">Полезные ресурсы:</p>
+      <ul class="list-unstyled">
+
+  <li>
+    <a href="../../blog/tools/wsl-nodejs-new.html"><i class="fa fa-cogs"></i> Установка WSL и окружения</a>
+  </li>
+
+  <li>
+    <a href="../../blog/docs/webdev-without-wsl.html"><i class="fa fa-cogs"></i> Настройка окружения без WSL</a>
+  </li>
+
+  <li>
+    <a href="../../blog/tools/hosting-lesson.html"><i class="fa fa-server"></i> Работа с хостингом от А до Я</a>
+  </li>
+
+  <li>
+    <a href="../../blog/tools/vscode.html"><i class="fa custom-vscode-3"></i> Настройка VS Code</a>
+  </li>
+
+  <li>
+    <a href="../../blog/tools/cubic-bezier/index.html"><i class="fa custom-bezier"></i> Cubic-Bezier Generator</a>
+  </li>
+
+  <li>
+    <a href="../../blog/tools/lazy-load/index.html"><i class="fa fa-image"></i> Lazy Load Placeholder</a>
+  </li>
+
+  <li>
+    <a href="../../blog/docs/gulp-documentation.html"><i class="fa fa-file-text-o"></i> Документация Gulp</a>
+  </li>
+
+</ul>
+
+    </nav>
+
+    <div class="box box-sidebar">
+      <div id="vk_groups"></div>
+    </div>
+
+  </aside>
+
+
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <footer class="main-foot">
+    <div class="container-fluid">
+
+      <span class="year"></span> © WebDesign Master
+
+    </div>
+    <div class="top" title="Наверх"><i class="fa fa-angle-double-up"></i></div>
+  </footer>
+
+  <script>(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return}}k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window,document,"script","https://mc.yandex.ru/metrika/tag.js","ym");ym(100695574,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true,webvisor:true});</script><noscript><div><img src="https://mc.yandex.ru/watch/100695574" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+
+
+</body>
+</html>
+

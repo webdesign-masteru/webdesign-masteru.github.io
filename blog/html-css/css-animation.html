@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="canonical" href="https://webdesign-masteru.github.io/blog/html-css/css-animation.html">
+  <meta name="generator" content="Jekyll v">
+
+  <title>Как создать красивую CSS анимацию. Подробный урок</title>
+  <meta name="description" content="Научимся создавать CSS анимацию и рассмотрим создание красивой анимации на реальном примере">
+
+  <link rel="icon" href="https://webdesign-masteru.github.io/favicon.ico?v=15" type="image/x-icon">
+  <meta property="og:image" content="../../public/images/thumbs/html-css/css-animation/css-animation-cover.jpg">
+
+  <link rel="stylesheet" href="../../styles/index.css?v=15">
+  
+  <script src="../../scripts/dist/main.js?v=15" defer></script>
+  
+  <script>/* no flicker */document.documentElement.classList.add(localStorage.getItem('mode') === 'auto' ? (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : localStorage.getItem('mode'))</script>
+
+</head>
+
+<body>
+
+  <header class="main-head">
+
+    <div class="container-fluid">
+
+      <div class="row">
+
+        <div class="col-md-6">
+          <div class="mobile-pannel d-xl-none d-lg-none d-md-none">
+            <div class="toggler"><button title="Переключить тему"></button></div>
+            <div class="toggle-mnu"><span></span></div>
+          </div>
+        
+          <a href="../../index.html" class="logo"><img src="../../assets/images/logo-site.svg" alt="WebDesign Master"></a>
+        
+        </div>
+
+        <div class="col-md-6 d-none d-md-block d-lg-block d-xl-block">
+          <div class="toggler"><button title="Переключить тему"></button></div>
+                    <div class="social">
+            <a title="ВКонтакте" href="https://vk.com/jediweb" target="_blank"><i class="fa fa-vk"></i></a>
+            <a title="Телеграм" href="https://t.me/jediweb" target="_blank"><i class="fa custom-tg"></i></a>
+            <a title="YouTube" href="https://youtube.com/@wdm" target="_blank"><i class="fa fa-youtube-play"></i></a>
+            <a title="GitHub" href="https://github.com/webdesign-masteru" target="_blank"><i class="fa fa-github"></i></a>
+            <a title="Дзен" href="https://dzen.ru/jediweb" target="_blank"><i class="fa custom-dzen"></i></a>
+          </div>
+
+          <div class="courses-link">
+            <a href="../../courses/index.html"><i class="fa fa-diamond"></i>Курсы</a>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="mobile-menu"></div>
+
+    </div>
+
+  </header>
+
+
+  <div class="content">
+    <div class="container-fluid">
+
+      <div class="row">
+
+        <div class="col-md-8">
+
+          <article class="list-item single-page">
+  <div class="item-link">
+
+    
+    <div class="item-img-wrap post-img">
+      <img class="img-responsive" src="../../public/images/thumbs/html-css/css-animation/css-animation.jpg" alt="Как создать красивую CSS анимацию. Подробный урок">
+    </div>
+    
+
+    <div class="item-content">
+
+    <div class="td">
+        <a href="../../blog/html-css/index.html" class="item-icon hidden-xs" title="Категория: Веб-разработка"><i class="fa fa-code"></i></a>
+      </div>
+      <div class="td article-title"><h1>Как создать красивую CSS анимацию. Подробный урок</h1></div>
+    
+
+      <div class="article-content">
+
+        <p>Сегодня мы рассмотрим интереснейшую тему - создание CSS анимаций на реальном примере. Кульминацией данного урока будет создание красивой CSS анимации логотипа.</p>
+
+<div class="likely-scroll">
+  <div class="likely">
+    <button class="vkontakte">Поделиться</button>
+    <button class="telegram">Отправить</button>
+    <button class="pinterest" data-media="https://webdesign-masteru.github.io/public/images/thumbs/html-css/css-animation/css-animation-cover.jpg">Запинить</button>
+    <button class="odnoklassniki">Класснуть</button>
+  </div>
+</div>
+
+
+<div class="video-wrap">
+  <div class="table">
+    <div class="tr">
+      <div class="td">
+        <div class="videowrapper" title="Смотреть урок «Как создать красивую CSS анимацию. Подробный урок» на YouTube">
+          <img class="img-responsive" src="../../public/images/thumbs/html-css/css-animation/css-animation-cover.jpg" alt="Как создать красивую CSS анимацию. Подробный урок - Видеоурок">
+        </div>
+        <a href="https://youtu.be/YWjuEzhPYqs" class="button button-youtube" target="_blank"><i class="fa fa-youtube-play"></i>Смотреть <span class="d-none d-lg-inline">урок </span>на YouTube</a>
+      </div>
+      <div class="td">
+        <a href="../../courses/bundle/index.html" class="premium-banner">
+          <img src="../../public/images/premium/bundle-b.jpg" alt="Все курсы канала WebDesign Master">
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<p>Результат урока: <a href="../../public/demos/css-animation/" target="_blank">Смотреть</a></p>
+
+<h3>Материалы урока</h3>
+
+<ul>
+  <li>Исходники: <a href="https://archive.org/download/css-animation/css-animation.zip">Скачать</a></li>
+  <li>Базовый пример из урока: <a href="https://codepen.io/agragregra/pen/PKNavm" target="_blank">codepen.io/agragregra/pen/PKNavm</a></li>
+  <li>Стартовый шаблон из урока: <a href="https://github.com/webdesign-masteru/optimizedhtml-start-template" target="_blank">На GitHub</a></li>
+</ul>
+
+<blockquote>
+  Внимание! При написании Sass-кода, с выходом новой версии Sass, следует подключить модуль math в САМОМ начале Sass-файла.
+  <br>Например (Scss синтаксис):
+<pre class="language-sass"><code>//Неправильно:
+.element {
+  margin-top: $box_h/2;
+}
+</code></pre>
+<pre class="language-sass"><code>// Правильно:
+@use 'sass:math';
+.element {
+  margin-top: math.div($box-h, 2);
+}
+
+</code></pre>
+</blockquote>
+
+<h3>Немного теории</h3>
+
+<p>Прежде, чем приступить к созданию анимированного примера, следует обратиться к основам <strong>CSS анимации</strong>, рассмотреть базовые термины, свойства и правила создания CSS анимаций.</p>
+
+<p>Если у вас уже был опыт создания анимаций в каких-либо приложениях, таких, как Adobe After Effects или престарелый Flash Professional (ныне Adobe Animate), то вам должны быть знакомы такие понятия, как «Ключевые кадры», «Временные функции или динамика движения», которые, как и в любой другой сфере анимации применимы и к анимации элементов на странице посредством CSS. Однако, в отличие от работы с интерфейсами приложений, вы создаете вашу CSS анимацию посредством написания кода в редакторе.</p>
+
+<h3>CSS правило @keyframes</h3>
+
+<p>Создание CSS анимации начинается с объявления имени анимации в блоке <strong>@keyframes</strong> и определения так называемых шагов анимации или ключевых кадров.</p>
+
+<blockquote>Для рассмотрения теории и основ мы будет использовать чистый CSS, а в дальнейшем, уже на более сложном примере подключим использование Sass препроцессора. Подробнее узнать о Sass вы можете в уроке <a href="../../blog/tools/sass.html" target="_blank">«Sass для самых маленьких - Подробное руководство»</a>. Кроме того, для более глубокого понимания основ CSS, также рекомендую ознакомиться с уроками <a href="../../blog/html-css/css-rukovodstvo.html" target="_blank">«Основы CSS - Руководство для самых маленьких»</a> и <a href="../../blog/html-css/586.html" target="_blank">«Все CSS селекторы в одном уроке»</a></blockquote>
+
+<p data-height="265" data-theme-id="0" data-slug-hash="PKNavm" data-default-tab="css,result" data-user="agragregra" data-embed-version="2" data-pen-title="Animation CSS Base Example" class="codepen">See the Pen <a href="https://codepen.io/agragregra/pen/PKNavm/">Animation CSS Base Example</a> by Алексей (<a href="https://codepen.io/agragregra">@agragregra</a>) on <a href="https://codepen.io">CodePen</a>.</p><script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+
+<br>
+
+<p>Давайте рассмотрим структуру @keyframes и работу с ключевыми кадрами на простом примере:</p>
+
+<pre class="language-sass"><code>@keyframes turning {
+  0% {
+    border-radius: 0 0 0 0;
+    transform: rotate(0deg);
+  }
+  25% {
+    border-radius: 50% 0 0 0;
+    transform: rotate(45deg);
+  }
+  50% {
+    border-radius: 50% 50% 0 0;
+    transform: rotate(90deg);
+  }
+  75% {
+    border-radius: 50% 50% 50% 0;
+    transform: rotate(135deg);
+  }
+  100% {
+    border-radius: 50% 50% 50% 50%;
+    transform: rotate(180deg);
+  }
+}
+</code></pre>
+
+<p>В первой строчке мы видим, что после ключевого слова @keyframes идет его название « turning». Это и есть наименование блока кеймфреймов, к которому мы будем обращаться далее.</p>
+
+<p>После объявления открывается фигурная скобка (в данном примере на чистом CSS), в которой последовательно от 0% до 100% прописываются свойства для каждого ключевого кадра. Обратите внимание, что между 0% и 100% вы можете вставлять сколько угодно промежуточных значений, будь-то 50%, 75% или даже 83%. Это очень похоже на таймлайн приложения для создания анимации, где между двумя состояниями можно добавить любое промежуточное.</p>
+
+<p>Далее этот блок кода с ключевыми кадрами можно применить к любому CSS селектору, но чаще всего они готовятся для конкретного селектора, если мы хотим добиться определенного поведения именно от нужного блока.</p>
+
+<h3>Обращение к блоку ключевых кадров</h3>
+
+<p>После того, как мы задали ключевые кадры для объекта (в жизни это делается параллельно или даже после обращения к блоку с ключевыми кадрами), можно обратиться к нашему новоиспеченному блоку. Давайте посмотрим на следующий простой код из примера выше:</p>
+
+<pre class="language-css"><code>div {
+  width: 120px;
+  height: 120px;
+  background-color: violet;
+  margin: 100px;
+  animation: turning 2s ease-out 1s infinite alternate;
+}
+</code></pre>
+
+<p>Ничего особенного до последней строчки. Здесь мы определяем то, как будет выглядеть объект изначально и в последней строчке блока обращаемся к блоку ключевых кадров с наименованием «turning»:</p>
+
+<pre class="language-css"><code>animation: turning 2s ease-out 1s infinite alternate;</code></pre>
+
+<p>Если с определением ключевых кадров все относительно понятно, то данная строчка нуждается в немедленном объяснении. Как мы видим, сначала идет CSS свойство «animation». Это сокращенная форма записи, как например,  свойство «margin: 20px 30px 40px 50px», которое можно разделить на несколько отдельных свойств:</p>
+
+<pre class="language-css"><code>margin-top: 20px
+margin-right: 30px
+margin-bottom: 40px
+margin-left: 50px
+</code></pre>
+
+<p>По данной аналогии, составное свойство «animation» можно разделить на несколько отдельных свойств:</p>
+
+<table>
+  <tr>
+    <td><strong>animation-name</strong></td>
+    <td>Название анимации, к которому происходит обращение из @keyframes</td>
+  </tr>
+  <tr>
+    <td><strong>animation-duration</strong></td>
+    <td>Продолжительность или на какое время растягивается выполнение CSS анимации. Может задаваться в секундах (s) или миллисекундах (ms)</td>
+  </tr>
+  <tr>
+    <td><strong>animation-timing-function</strong></td>
+    <td>Временная функция, динамика движения объекта или изменения свойства (<strong>ease</strong> - (по умолчанию) анимация начинается медленно, разгоняется и заканчивается медленно; <strong>linear</strong> - анимация происходит равномерно; <strong>ease-in</strong> - начинается медленно и ускоряется к последнему ключевому кадру; <strong>ease-out</strong> - начинается быстро и плавно замедляется вконце; <strong>ease-in-out</strong> - медленно начинается и медленно заканчивается)</td>
+  </tr>
+  <tr>
+    <td><strong>animation-delay</strong></td>
+    <td>Время задержки анимации ДО старта. Также задается в секундах или миллисекундах</td>
+  </tr>
+  <tr>
+    <td><strong>animation-iteration-count</strong></td>
+    <td>Количество повторов (итерации) анимации (<strong>infinite</strong> - бесконечно, или можно задать простое число без единиц измерения)</td>
+  </tr>
+  <tr>
+    <td><strong>animation-direction</strong></td>
+    <td>Направление анимации, последовательно, вспять или «туда-обратно» (<strong>normal</strong> - (по умолчанию) анимация проигрывается от начала до конца и останавливается; <strong>alternate</strong> - проигрывается от начала до конца и в обратном направлении; <strong>alternate-reverse</strong> - проигрывается с конца до начала и обратно; <strong>reverse</strong> - анимация проигрывается с конца.)</td>
+  </tr>
+  <tr>
+    <td><strong>animation-play-state</strong></td>
+    <td>Управление проигрыванием анимации (<strong>paused</strong> (пауза), <strong>running</strong> (запуск) и т.д.). Можно применить на :hover или из функции JS при необходимости</td>
+  </tr>
+  <tr>
+    <td><strong>animation-fill-mode</strong></td>
+    <td>Состояние элемента до и после воспроизведения анимации. Например, значение <strong>backwards</strong> позволяет вернуть все свойства к исходному состоянию сразу после применения анимации</td>
+  </tr>
+</table>
+
+<p>Чаще всего опытные разработчики не пишут все эти свойства по отдельности, а используют краткую запись и структура ее такова:</p>
+
+<p>animation: (1. animation-name - название) (2. animation-duration - продолжительность) (3. animation-timing-function динамика движения) (4. animation-delay - пауза перед стартом) (5. animation-iteration-count - количество выполнений) (6. animation-direction - направление)</p>
+
+<p>Пример:</p>
+
+<pre class="language-css"><code>animation: animationname 2s linear 1s infinite reverse</code></pre>
+
+<p>Из примера мы видим, что мы обращаемся к блоку @keyframes animationname, задаем продолжительность выполнения анимации 2 секунды, динамика линейная, пауза перед запуском составляет 1 секунду, повторяется анимация бесконечно и выполняется в обратную сторону.</p>
+
+<p>Как я уже говорил ранее, начинается краткая запись со свойства «<strong>animation</strong>», после чего идут значения, последовательность которых лучше не забывать, чтобы не возникало путаницы при написании CSS анимации.</p>
+
+<p>Однако, большинство этих свойств можно опустить, так как чаще всего их значения по умолчанию вполне удовлетворят большинство задач по созданию анимации. Какие-то из них можно не писать, однако оставшиеся следует указывать в той последовательности, которую мы рассмотрели ранее. Вообще, для функционирования вашей анимации достаточно всего два параметра в вашем составном свойстве - название (<strong>animation-name</strong>) и продолжительность (<strong>animation-duration</strong>).</p>
+
+
+                <div class="premium">
+          <div class="row">
+
+            <div class="col-md-12">
+              <h4>Премиум уроки от WebDesign Master</h4>
+            </div>
+
+            <div class="col-md-4 col-sm-6">
+              <a href="../../courses/jekyll/index.html" class="premium-item">
+                <span class="premium-img-wrap"><img src="../../public/images/premium/jekyll.jpg" alt="Курс по созданию сайта от А до Я на Jekyll" class="img-responsive"></span>
+                <p>Создание сайта от А до Я. Комплексный курс</p>
+              </a>
+            </div>
+
+            <div class="col-md-4 col-sm-6">
+              <a href="../../courses/webdesign/index.html" class="premium-item">
+                <span class="premium-img-wrap"><img src="../../public/images/premium/webdesign.jpg" alt="Большой комплексный курс по современному веб-дизайну" class="img-responsive"></span>
+                <p>Веб-дизайн с нейросетями для начинающих</p>
+              </a>
+            </div>
+
+            <div class="col-md-4 col-sm-6">
+              <a href="../../courses/freelance/index.html" class="premium-item">
+                <span class="premium-img-wrap"><img src="../../public/images/premium/freelance.jpg" alt="Фриланс для начинающих" class="img-responsive"></span>
+                <p>Я - фрилансер! Базовый курс для начинающих</p>
+              </a>
+            </div>
+
+          </div>
+        </div>
+
+
+        <div class="read-more">
+          <h4>Другие уроки по теме «Веб-разработка»</h4>
+          <ul>
+            
+            
+            
+              
+              <li><a href="../../blog/html-css/css-masonry.html">Создание адаптивных плиток Masonry на чистом CSS. Материалы урока</a></li>
+              
+            
+              
+              <li><a href="../../blog/html-css/floating-image-lesson.html">Создание красивого сайта с Parallax эффектом при движении мыши. Материалы урока</a></li>
+              
+            
+              
+              <li><a href="../../blog/html-css/grow-lesson.html">Создание красивого сайта с Parallax эффектом и анимацией заголовка. Материалы урока</a></li>
+              
+            
+              
+              <li><a href="../../blog/html-css/image-gallery-lesson.html">Создание красивой галереи на сайте. Материалы урока</a></li>
+              
+            
+              
+              <li><a href="../../blog/html-css/background-animation-website.html">Создание сайта с красивой анимацией фона. Материалы урока</a></li>
+              
+            
+              
+              <li><a href="../../blog/html-css/scrolling-3d-scene-website.html">Создание красивого сайта с 3D эффектом глубины при скролле. Материалы урока</a></li>
+              
+            
+          </ul>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</article>
+
+
+        </div>
+
+        <div class="col-md-4 col-aside">
+
+  <aside class="site-aside">
+
+
+
+<div class="box box-search">
+
+<form class="search" action="https://www.google.com/search" target="_blank">
+  <div>
+    <input type="text" name="q" size="55" placeholder="Поиск по сайту..." required>
+    <input type="hidden" name="sitesearch" value="https://webdesign-masteru.github.io">
+    <button type="submit">
+      <i class="fa fa-search"></i>
+    </button>
+  </div>
+</form>
+
+
+    </div>
+
+    <nav class="box box-mnu">
+      <p class="mnu-header">Разделы сайта:</p>
+      <ul class="list-unstyled box-dashed main-menu">
+
+  <li class="d-lg-none">
+    <a href="../../courses/index.html"><i class="fa fa-diamond"></i> Курсы</a>
+  </li>
+
+  <li>
+    <a href="../../blog/html-css/index.html"><i class="fa fa-code"></i> Веб-разработка</a>
+  </li>
+
+  <li>
+    <a href="../../blog/web-design/index.html"><i class="fa fa-paint-brush"></i> Веб-дизайн</a>
+  </li>
+
+  <li>
+    <a href="../../blog/tools/index.html"><i class="fa fa-cogs"></i> Инструменты</a>
+  </li>
+
+  <li>
+    <a href="../../blog/cms/index.html"><i class="fa fa-folder-open-o"></i> CMS/Framework</a>
+  </li>
+
+</ul>
+
+    </nav>
+
+    <nav class="box box-mnu services-mnu">
+      <p class="mnu-header">Полезные ресурсы:</p>
+      <ul class="list-unstyled">
+
+  <li>
+    <a href="../../blog/tools/wsl-nodejs-new.html"><i class="fa fa-cogs"></i> Установка WSL и окружения</a>
+  </li>
+
+  <li>
+    <a href="../../blog/docs/webdev-without-wsl.html"><i class="fa fa-cogs"></i> Настройка окружения без WSL</a>
+  </li>
+
+  <li>
+    <a href="../../blog/tools/hosting-lesson.html"><i class="fa fa-server"></i> Работа с хостингом от А до Я</a>
+  </li>
+
+  <li>
+    <a href="../../blog/tools/vscode.html"><i class="fa custom-vscode-3"></i> Настройка VS Code</a>
+  </li>
+
+  <li>
+    <a href="../../blog/tools/cubic-bezier/index.html"><i class="fa custom-bezier"></i> Cubic-Bezier Generator</a>
+  </li>
+
+  <li>
+    <a href="../../blog/tools/lazy-load/index.html"><i class="fa fa-image"></i> Lazy Load Placeholder</a>
+  </li>
+
+  <li>
+    <a href="../../blog/docs/gulp-documentation.html"><i class="fa fa-file-text-o"></i> Документация Gulp</a>
+  </li>
+
+</ul>
+
+    </nav>
+
+    <div class="box box-sidebar">
+      <div id="vk_groups"></div>
+    </div>
+
+  </aside>
+
+
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <footer class="main-foot">
+    <div class="container-fluid">
+
+      <span class="year"></span> © WebDesign Master
+
+    </div>
+    <div class="top" title="Наверх"><i class="fa fa-angle-double-up"></i></div>
+  </footer>
+
+  <script>(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return}}k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window,document,"script","https://mc.yandex.ru/metrika/tag.js","ym");ym(100695574,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true,webvisor:true});</script><noscript><div><img src="https://mc.yandex.ru/watch/100695574" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+
+
+</body>
+</html>
+

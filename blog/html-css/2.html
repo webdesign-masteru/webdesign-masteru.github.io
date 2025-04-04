@@ -1,0 +1,1790 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="canonical" href="https://webdesign-masteru.github.io/blog/html-css/2.html">
+  <meta name="generator" content="Jekyll v">
+
+  <title>Справочник EMMET сокращений для ускорения верстки</title>
+  <meta name="description" content="Справочник EMMET сокращений для ускорения верстки - все Emmet сокращения">
+
+  <link rel="icon" href="https://webdesign-masteru.github.io/favicon.ico?v=15" type="image/x-icon">
+  <meta property="og:image" content="../../public/images/thumbs/html-css/spravochnik-emmet/spravochnik-emmet-cover.jpg">
+
+  <link rel="stylesheet" href="../../styles/index.css?v=15">
+  
+  <script src="../../scripts/dist/main.js?v=15" defer></script>
+  
+  <script>/* no flicker */document.documentElement.classList.add(localStorage.getItem('mode') === 'auto' ? (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : localStorage.getItem('mode'))</script>
+
+</head>
+
+<body>
+
+  <header class="main-head">
+
+    <div class="container-fluid">
+
+      <div class="row">
+
+        <div class="col-md-6">
+          <div class="mobile-pannel d-xl-none d-lg-none d-md-none">
+            <div class="toggler"><button title="Переключить тему"></button></div>
+            <div class="toggle-mnu"><span></span></div>
+          </div>
+        
+          <a href="../../index.html" class="logo"><img src="../../assets/images/logo-site.svg" alt="WebDesign Master"></a>
+        
+        </div>
+
+        <div class="col-md-6 d-none d-md-block d-lg-block d-xl-block">
+          <div class="toggler"><button title="Переключить тему"></button></div>
+                    <div class="social">
+            <a title="ВКонтакте" href="https://vk.com/jediweb" target="_blank"><i class="fa fa-vk"></i></a>
+            <a title="Телеграм" href="https://t.me/jediweb" target="_blank"><i class="fa custom-tg"></i></a>
+            <a title="YouTube" href="https://youtube.com/@wdm" target="_blank"><i class="fa fa-youtube-play"></i></a>
+            <a title="GitHub" href="https://github.com/webdesign-masteru" target="_blank"><i class="fa fa-github"></i></a>
+            <a title="Дзен" href="https://dzen.ru/jediweb" target="_blank"><i class="fa custom-dzen"></i></a>
+          </div>
+
+          <div class="courses-link">
+            <a href="../../courses/index.html"><i class="fa fa-diamond"></i>Курсы</a>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="mobile-menu"></div>
+
+    </div>
+
+  </header>
+
+
+  <div class="content">
+    <div class="container-fluid">
+
+      <div class="row">
+
+        <div class="col-md-8">
+
+          <article class="list-item single-page">
+  <div class="item-link">
+
+    
+    <div class="item-img-wrap post-img">
+      <img class="img-responsive" src="../../public/images/thumbs/html-css/spravochnik-emmet/spravochnik-emmet.jpg" alt="Справочник EMMET сокращений для ускорения верстки">
+    </div>
+    
+
+    <div class="item-content">
+
+    <div class="td">
+        <a href="../../blog/html-css/index.html" class="item-icon hidden-xs" title="Категория: Веб-разработка"><i class="fa fa-code"></i></a>
+      </div>
+      <div class="td article-title"><h1>Справочник EMMET сокращений для ускорения верстки</h1></div>
+    
+
+      <div class="article-content">
+
+        <p>Справочник EMMET сокращений или шпаргалка <strong>EMMET</strong> представляет собой сборник всех комбинаций команд или аббревиатур широко известного плагина для ускорения верстки. EMMET может <s>все</s> использоваться совместно с такими редакторами, как <strong>Sublime Text</strong>, <strong>PHPStorm</strong> и <strong>WebStorm</strong>, <strong>NetBeans</strong>, <strong>Eclipse</strong>, <strong>Aptana</strong>, <strong>Coda</strong>, <strong>TextMate</strong>, <strong>Komodo Edit</strong>, <strong>Notepad++</strong>, <strong>CodeMirror</strong>, <strong>Brackets</strong>, <strong>Adobe Dreamviewer</strong> и <strong>Ace</strong></p>
+
+<table>
+<thead>
+  <tr>
+    <td><h4>Сокращение</h4></td>
+    <td><h4>Расшифровка сокращения</h4></td>
+  </tr>
+</thead>
+<tr>
+<td colspan="2"><h5>Базовый синтаксис EMMET</h5></td>
+</tr>
+<tr>
+<td>Дочерний: ></td>
+<td>
+<pre class="language-html"><code>nav>ul>li
+&lt;nav&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;
+</code></pre>
+</td>
+</tr>
+<tr>
+<td>Соединение: +</td>
+<td>
+<pre class="language-html"><code>div+p+bq
+&lt;div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;blockquote&gt;&lt;/blockquote&gt;
+</code></pre>
+</td>
+</tr>
+<tr>
+<td>Поместить выше (в дереве HTML): ^</td>
+<td>
+<pre class="language-html"><code>div>p>span+em^bq
+&lt;div&gt;
+  &lt;p&gt;&lt;span&gt;&lt;/span&gt;&lt;em&gt;&lt;/em&gt;&lt;/p&gt;
+  &lt;blockquote&gt;&lt;/blockquote&gt;
+&lt;/div&gt;
+</code></pre>
+</td>
+</tr>
+<tr>
+<td>Группировать: ()</td>
+<td>
+<pre class="language-html"><code>div>(header>ul>li)+footer>p
+&lt;div&gt;
+  &lt;header&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/header&gt;
+  &lt;footer&gt;
+    &lt;p&gt;&lt;/p&gt;
+  &lt;/footer&gt;
+&lt;/div&gt;
+</code></pre>
+</td>
+</tr>
+<tr>
+<td>Умножение: *</td>
+<td>
+<pre class="language-html"><code>ul>li*3
+&lt;ul&gt;
+  &lt;li&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+</td>
+</tr>
+<tr>
+<td>Нумерация: $</td>
+<td>
+<pre class="language-html"><code>ul>li.item_$*3
+&lt;ul&gt;
+  &lt;li class="item_1"&gt;&lt;/li&gt;
+  &lt;li class="item_2"&gt;&lt;/li&gt;
+  &lt;li class="item_3"&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+</td>
+</tr>
+<tr>
+<td>id и class</td>
+<td>
+<pre class="language-html"><code>#header+.class
+&lt;div id="header"&gt;&lt;/div&gt;
+&lt;div class="class"&gt;&lt;/div&gt;
+
+#hdr.cl_1.cl_2
+&lt;div id="hdr" class="cl_1 cl_2"&gt;&lt;/div&gt;
+</code></pre>
+</td>
+</tr>
+<tr>
+<td>Атрибуты: []</td>
+<td>
+<pre class="language-html"><code>a[title="Подсказка ссылки"]
+&lt;a href="" title="Подсказка ссылки"&gt;&lt;/a&gt;
+
+td[rowspan colspan title]
+&lt;td rowspan="" colspan="" title=""&gt;&lt;/td&gt;
+</code></pre>
+</td>
+</tr>
+<tr>
+<td>Текст: {}</td>
+<td>
+<pre class="language-html"><code>.class{свободный текст}
+&lt;div class="class"&gt;свободный текст&lt;/div&gt;
+
+p>{Кликните }+a{сюда}+{ скорее}
+&lt;p&gt;Кликните &lt;a href=""&gt;сюда&lt;/a&gt; скорее&lt;/p&gt;
+</code></pre>
+</td>
+</tr>
+<tr>
+<td>Сокращение тегов</td>
+<td>
+<pre class="language-html"><code>.class
+&lt;div class="class"&gt;&lt;/div&gt;
+
+em>.class
+&lt;em&gt;&lt;span class="class"&gt;&lt;/span&gt;&lt;/em&gt;
+
+ul>.class
+&lt;ul&gt;
+  &lt;li class="class"&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+table>.row>.col
+&lt;table&gt;
+  &lt;tr class="row"&gt;
+    &lt;td class="col"&gt;&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+</code></pre>
+</td>
+</tr>
+<tr>
+<td colspan="2"><h5>HTML сокращения</h5></td>
+</tr>
+<tr>
+<td>!</td>
+<td>
+<pre class="language-html"><code>&lt;!doctype html&gt;
+&lt;html lang="en"&gt;
+  &lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+</td>
+</tr>
+<tr>
+<td>a</td>
+<td>
+<pre class="language-html"><code>&lt;a href=""&gt;&lt;/a&gt;</code></pre>
+</td>
+</tr>
+<tr>
+<td>a:link</td>
+<td>
+<pre class="language-html"><code>&lt;a href="https://"&gt;&lt;/a&gt;</code></pre>
+</td>
+</tr>
+<tr>
+<td>a:mail</td>
+<td>
+<pre class="language-html"><code>&lt;a href="mailto:"&gt;&lt;/a&gt;</code></pre>
+</td>
+</tr>
+<tr>
+<td>base</td>
+<td>
+<pre class="language-html"><code>&lt;base href=""&gt;</code></pre>
+</td>
+</tr>
+<tr>
+<td>br</td>
+<td>
+<pre class="language-html"><code>&lt;br&gt;</code></pre>
+</td>
+</tr>
+<tr>
+<td>link</td>
+<td>
+<pre class="language-html"><code>&lt;link rel="stylesheet" href=""&gt;</code></pre>
+</td>
+</tr>
+<tr>
+<td>link:css</td>
+<td>
+<pre class="language-html"><code>&lt;link rel="stylesheet" href="style.css"&gt;</code></pre>
+</td>
+</tr>
+<tr>
+<td>link:favicon</td>
+<td>
+<pre class="language-html"><code>&lt;link rel="shortcut icon" type="image/x-icon"
+href="favicon.ico"&gt;</code></pre>
+</td>
+</tr>
+<tr>
+<td>link:rss</td>
+<td>
+<pre class="language-html"><code>&lt;link rel="alternate" type="application/rss+xml"
+title="RSS" href="rss.xml"&gt;</code></pre>
+</td>
+</tr>
+<tr>
+<td>link:atom</td>
+<td>
+<pre class="language-html"><code>&lt;link rel="alternate" type="application/atom+xml"
+title="Atom" href="atom.xml"&gt;</code></pre>
+</td>
+</tr>
+<tr>
+<td>meta:utf</td>
+<td>
+<pre class="language-html"><code>&lt;meta http-equiv="Content-Type"
+content="text/html;charset=UTF-8"&gt;</code></pre>
+</td>
+</tr>
+<tr>
+<td>meta:vp</td>
+<td>
+<pre class="language-html"><code>&lt;meta name="viewport" content="width=device-width,
+user-scalable=no, initial-scale=1.0,
+maximum-scale=1.0, minimum-scale=1.0"&gt;</code></pre>
+</td>
+</tr>
+<tr>
+<td>meta:compat</td>
+<td>
+<pre class="language-html"><code>&lt;meta http-equiv="X-UA-Compatible" content="IE=7"&gt;</code></pre>
+</td>
+</tr>
+<tr>
+<td>script:src</td>
+<td>
+<pre class="language-html"><code>&lt;script src=""&gt;&lt;/script&gt;</code></pre>
+</td>
+</tr>
+<tr>
+<td>img</td>
+<td>
+<pre class="language-html"><code>&lt;img src="" alt=""&gt;</code></pre>
+</td>
+</tr>
+<tr>
+<td>ifr</td>
+<td>
+<pre class="language-html"><code>&lt;iframe src="" frameborder="0"&gt;&lt;/iframe&gt;</code></pre>
+</td>
+</tr>
+<tr>
+<td>emb</td>
+<td>
+<pre class="language-html"><code>&lt;embed src="" type=""&gt;</code></pre>
+</td>
+</tr>
+<tr>
+<td>obj</td>
+<td>
+<pre class="language-html"><code>&lt;object data="" type=""&gt;&lt;/object&gt;</code></pre>
+</td>
+</tr>
+<tr>
+<td>map</td>
+<td>
+<pre class="language-html"><code>&lt;map name=""&gt;&lt;/map&gt;</code></pre>
+</td>
+</tr>
+<tr>
+<td>area</td>
+<td>
+<pre class="language-html"><code>&lt;area shape="" coords="" href="" alt=""&gt;</code></pre>
+</td>
+</tr>
+<tr>
+<td>form</td>
+<td>
+<pre class="language-html"><code>&lt;form action=""&gt;&lt;/form&gt;</code></pre>
+</td>
+</tr>
+<tr>
+<td>form:get<br />form:post</td>
+<td>
+<pre class="language-html"><code>&lt;form action="" method="get"&gt;&lt;/form&gt;
+&lt;form action="" method="post"&gt;&lt;/form&gt;
+</code></pre>
+</td>
+</tr>
+<tr>
+<td>label</td>
+<td>
+<pre class="language-html"><code>&lt;label for=""&gt;&lt;/label&gt;</code></pre>
+</td>
+</tr>
+<tr>
+<td>input</td>
+<td>
+<pre class="language-html"><code>&lt;input type="text"&gt;</code></pre>
+</td>
+</tr>
+<tr>
+<td>inp</td>
+<td>
+<pre class="language-html"><code>&lt;input type="text" name="" id=""&gt;</code></pre>
+</td>
+</tr>
+<tr>
+<td>input:h</td>
+<td>
+<pre class="language-html"><code>&lt;input type="hidden" name=""&gt;</code></pre>
+</td>
+</tr>
+<tr>
+<td>input:p</td>
+<td>
+<pre class="language-html"><code>&lt;input type="password" name="" id=""&gt;</code></pre>
+</td>
+</tr>
+<tr>
+<td>input:c</td>
+<td>
+<pre class="language-html"><code>&lt;input type="checkbox" name="" id=""&gt;</code></pre>
+</td>
+</tr>
+<tr>
+<td>input:r</td>
+<td>
+<pre class="language-html"><code>&lt;input type="radio" name="" id=""&gt;</code></pre>
+</td>
+</tr>
+<tr>
+<td>input:f</td>
+<td>
+<pre class="language-html"><code>&lt;input type="file" name="" id=""&gt;</code></pre>
+</td>
+</tr>
+<tr>
+<td>input:s</td>
+<td>
+<pre class="language-html"><code>&lt;input type="submit" value=""&gt;</code></pre>
+</td>
+</tr>
+<tr>
+<td>input:i</td>
+<td>
+<pre class="language-html"><code>&lt;input type="image" src="" alt=""&gt;</code></pre>
+</td>
+</tr>
+<tr>
+<td>input:b</td>
+<td>
+<pre class="language-html"><code>&lt;input type="button" value=""&gt;</code></pre>
+</td>
+</tr>
+<tr>
+<td>input:reset</td>
+<td>
+<pre class="language-html"><code>&lt;input type="reset" value=""&gt;</code></pre>
+</td>
+</tr>
+<tr>
+<td>select</td>
+<td>
+<pre class="language-html"><code>&lt;select name="" id=""&gt;&lt;/select&gt;</code></pre>
+</td>
+</tr>
+<tr>
+<td>opt</td>
+<td>
+<pre class="language-html"><code>&lt;option value=""&gt;&lt;/option&gt;</code></pre>
+</td>
+</tr>
+<tr>
+<td>tarea</td>
+<td>
+<pre class="language-html"><code>&lt;textarea name="" id="" cols="30" rows="10"&gt;
+&lt;/textarea&gt;</code></pre>
+</td>
+</tr>
+<tr>
+<td>video</td>
+<td>
+<pre class="language-html"><code>&lt;video src=""&gt;&lt;/video&gt;</code></pre>
+</td>
+</tr>
+<tr>
+<td>audio</td>
+<td>
+<pre class="language-html"><code>&lt;audio src=""&gt;&lt;/audio&gt;</code></pre>
+</td>
+</tr>
+<tr>
+<td>bq</td>
+<td>
+<pre class="language-html"><code>&lt;blockquote&gt;&lt;/blockquote&gt;</code></pre>
+</td>
+</tr>
+<tr>
+<td>fst</td>
+<td>
+<pre class="language-html"><code>&lt;fieldset&gt;&lt;/fieldset&gt;</code></pre>
+</td>
+</tr>
+<tr>
+<td>btn</td>
+<td>
+<pre class="language-html"><code>&lt;button&gt;&lt;/button&gt;</code></pre>
+</td>
+</tr>
+<tr>
+<td>btn:s</td>
+<td>
+<pre class="language-html"><code>&lt;button type="submit"&gt;&lt;/button&gt;</code></pre>
+</td>
+</tr>
+<tr>
+<td>btn:r</td>
+<td>
+<pre class="language-html"><code>&lt;button type="reset"&gt;&lt;/button&gt;</code></pre>
+</td>
+</tr>
+<tr>
+<td>sect</td>
+<td>
+<pre class="language-html"><code>&lt;section&gt;&lt;/section&gt;</code></pre>
+</td>
+</tr>
+<tr>
+<td>art</td>
+<td>
+<pre class="language-html"><code>&lt;article&gt;&lt;/article&gt;</code></pre>
+</td>
+</tr>
+<tr>
+<td>hdr</td>
+<td>
+<pre class="language-html"><code>&lt;header&gt;&lt;/header&gt;</code></pre>
+</td>
+</tr>
+<tr>
+<td>ftr</td>
+<td>
+<pre class="language-html"><code>&lt;footer&gt;&lt;/footer&gt;</code></pre>
+</td>
+</tr>
+<tr>
+<td>str</td>
+<td>
+<pre class="language-html"><code>&lt;strong&gt;&lt;/strong&gt;</code></pre>
+</td>
+</tr>
+<tr>
+<td>c</td>
+<td>
+<pre class="language-html"><code>&lt;!-- Комментарий --&gt;</code></pre>
+</td>
+</tr>
+<tr>
+<td>cc:ie</td>
+<td>
+<pre class="language-html"><code>&lt;!--[if IE]&gt;
+
+&lt;![endif]--&gt;</code></pre>
+</td>
+</tr>
+<tr>
+<td>cc:noie</td>
+<td>
+<pre class="language-html"><code>&lt;!--[if !IE]&gt;&lt;!--&gt;
+
+&lt;!--&lt;![endif]--&gt;</code></pre>
+</td>
+</tr>
+<tr>
+<td>Любой тег</td>
+<td>
+<pre class="language-html"><code>div
+&lt;div&gt;&lt;/div&gt;
+
+span
+&lt;span&gt;&lt;/span&gt;
+
+Любой другой тег
+&lt;tagname&gt;&lt;/tagname&gt;
+</code></pre>
+</td>
+</tr>
+<tr>
+<td colspan="2"><h5>CSS сокращения</h5></td>
+</tr>
+<tr>
+<td>pos</td>
+<td>
+<pre class="language-css"><code>position: relative;</code></pre>
+</td>
+</tr>
+<tr>
+<td>posa</td>
+<td>
+<pre class="language-css"><code>position: absolute;</code></pre>
+</td>
+</tr>
+<tr>
+<td>posr</td>
+<td>
+<pre class="language-css"><code>position: relative;</code></pre>
+</td>
+</tr>
+<tr>
+<td>posf</td>
+<td>
+<pre class="language-css"><code>position: fixed;</code></pre>
+</td>
+</tr>
+<tr>
+<td>t</td>
+<td>
+<pre class="language-css"><code>top: ;</code></pre>
+</td>
+</tr>
+<tr>
+<td>t:a</td>
+<td>
+<pre class="language-css"><code>top: auto;</code></pre>
+</td>
+</tr>
+<tr>
+<td>r</td>
+<td>
+<pre class="language-css"><code>right: ;</code></pre>
+</td>
+</tr>
+<tr>
+<td>r:a</td>
+<td>
+<pre class="language-css"><code>right: auto;</code></pre>
+</td>
+</tr>
+<tr>
+<td>b</td>
+<td>
+<pre class="language-css"><code>bottom: ;</code></pre>
+</td>
+</tr>
+<tr>
+<td>b:a</td>
+<td>
+<pre class="language-css"><code>bottom: auto;</code></pre>
+</td>
+</tr>
+<tr>
+<td>l</td>
+<td>
+<pre class="language-css"><code>left: ;</code></pre>
+</td>
+</tr>
+<tr>
+<td>l:a</td>
+<td>
+<pre class="language-css"><code>left: auto;</code></pre>
+</td>
+</tr>
+<tr>
+<td>z</td>
+<td>
+<pre class="language-css"><code>z-index: ;</code></pre>
+</td>
+</tr>
+<tr>
+<td>za</td>
+<td>
+<pre class="language-css"><code>z-index: auto;</code></pre>
+</td>
+</tr>
+<tr>
+<td>fl</td>
+<td>
+<pre class="language-css"><code>float: left;</code></pre>
+</td>
+</tr>
+<tr>
+<td>fln</td>
+<td>
+<pre class="language-css"><code>float: none;</code></pre>
+</td>
+</tr>
+<tr>
+<td>flr</td>
+<td>
+<pre class="language-css"><code>float: right;</code></pre>
+</td>
+</tr>
+<tr>
+<td>cl</td>
+<td>
+<pre class="language-css"><code>clear: both;</code></pre>
+</td>
+</tr>
+<tr>
+<td>d</td>
+<td>
+<pre class="language-css"><code>display: block;</code></pre>
+</td>
+</tr>
+<tr>
+<td>dn</td>
+<td>
+<pre class="language-css"><code>display: none;</code></pre>
+</td>
+</tr>
+<tr>
+<td>di</td>
+<td>
+<pre class="language-css"><code>display: inline;</code></pre>
+</td>
+</tr>
+<tr>
+<td>dib</td>
+<td>
+<pre class="language-css"><code>display: inline-block;</code></pre>
+</td>
+</tr>
+<tr>
+<td>dt</td>
+<td>
+<pre class="language-css"><code>display: table;</code></pre>
+</td>
+</tr>
+<tr>
+<td>dtc</td>
+<td>
+<pre class="language-css"><code>display: table-cell;</code></pre>
+</td>
+</tr>
+<tr>
+<td>dtr</td>
+<td>
+<pre class="language-css"><code>display: table-row;</code></pre>
+</td>
+</tr>
+<tr>
+<td>v</td>
+<td>
+<pre class="language-css"><code>visibility: hidden;</code></pre>
+</td>
+</tr>
+<tr>
+<td>vv</td>
+<td>
+<pre class="language-css"><code>visibility: visible;</code></pre>
+</td>
+</tr>
+<tr>
+<td>oh</td>
+<td>
+<pre class="language-css"><code>overflow: hidden;</code></pre>
+</td>
+</tr>
+<tr>
+<td>ovv</td>
+<td>
+<pre class="language-css"><code>overflow: visible;</code></pre>
+</td>
+</tr>
+<tr>
+<td>zm</td>
+<td>
+<pre class="language-css"><code>zoom: 1;</code></pre>
+</td>
+</tr>
+<tr>
+<td>cu</td>
+<td>
+<pre class="language-css"><code>cursor: pointer;</code></pre>
+</td>
+</tr>
+<tr>
+<td>cud</td>
+<td>
+<pre class="language-css"><code>cursor: default;</code></pre>
+</td>
+</tr>
+<tr>
+<td>cuha</td>
+<td>
+<pre class="language-css"><code>cursor: hand;</code></pre>
+</td>
+</tr>
+<tr>
+<td>cuh</td>
+<td>
+<pre class="language-css"><code>cursor: help;</code></pre>
+</td>
+</tr>
+<tr>
+<td>cum</td>
+<td>
+<pre class="language-css"><code>cursor: move;</code></pre>
+</td>
+</tr>
+<tr>
+<td>cut</td>
+<td>
+<pre class="language-css"><code>cursor: text;</code></pre>
+</td>
+</tr>
+<tr>
+<td>m</td>
+<td>
+<pre class="language-css"><code>margin: ;</code></pre>
+</td>
+</tr>
+<tr>
+<td>m:a</td>
+<td>
+<pre class="language-css"><code>margin: auto;</code></pre>
+</td>
+</tr>
+<tr>
+<td>mt</td>
+<td>
+<pre class="language-css"><code>margin-top: ;</code></pre>
+</td>
+</tr>
+<tr>
+<td>mta</td>
+<td>
+<pre class="language-css"><code>margin-top: auto;</code></pre>
+</td>
+</tr>
+<tr>
+<td>mr</td>
+<td>
+<pre class="language-css"><code>margin-right: ;</code></pre>
+</td>
+</tr>
+<tr>
+<td>mra</td>
+<td>
+<pre class="language-css"><code>margin-right: auto;</code></pre>
+</td>
+</tr>
+<tr>
+<td>mb</td>
+<td>
+<pre class="language-css"><code>margin-bottom: ;</code></pre>
+</td>
+</tr>
+<tr>
+<td>mba</td>
+<td>
+<pre class="language-css"><code>margin-bottom: auto;</code></pre>
+</td>
+</tr>
+<tr>
+<td>ml</td>
+<td>
+<pre class="language-css"><code>margin-left: ;</code></pre>
+</td>
+</tr>
+<tr>
+<td>mla</td>
+<td>
+<pre class="language-css"><code>margin-left: auto;</code></pre>
+</td>
+</tr>
+<tr>
+<td>p</td>
+<td>
+<pre class="language-css"><code>padding: ;</code></pre>
+</td>
+</tr>
+<tr>
+<td>pt</td>
+<td>
+<pre class="language-css"><code>padding-top: ;</code></pre>
+</td>
+</tr>
+<tr>
+<td>pr</td>
+<td>
+<pre class="language-css"><code>padding-right: ;</code></pre>
+</td>
+</tr>
+<tr>
+<td>pb</td>
+<td>
+<pre class="language-css"><code>padding-bottom: ;</code></pre>
+</td>
+</tr>
+<tr>
+<td>pl</td>
+<td>
+<pre class="language-css"><code>padding-left: ;</code></pre>
+</td>
+</tr>
+<tr>
+<td>bsh</td>
+<td>
+<pre class="language-css"><code>box-shadow: inset hoff voff blur #000;</code></pre>
+</td>
+</tr>
+<tr>
+<td>bshn</td>
+<td>
+<pre class="language-css"><code>box-shadow: none;</code></pre>
+</td>
+</tr>
+<tr>
+<td>w</td>
+<td>
+<pre class="language-css"><code>width: ;</code></pre>
+</td>
+</tr>
+<tr>
+<td>wa</td>
+<td>
+<pre class="language-css"><code>width: auto;</code></pre>
+</td>
+</tr>
+<tr>
+<td>h</td>
+<td>
+<pre class="language-css"><code>height: ;</code></pre>
+</td>
+</tr>
+<tr>
+<td>ha</td>
+<td>
+<pre class="language-css"><code>height: auto;</code></pre>
+</td>
+</tr>
+<tr>
+<td>maw</td>
+<td>
+<pre class="language-css"><code>max-width: ;</code></pre>
+</td>
+</tr>
+<tr>
+<td>mah</td>
+<td>
+<pre class="language-css"><code>max-height: ;</code></pre>
+</td>
+</tr>
+<tr>
+<td>mw</td>
+<td>
+<pre class="language-css"><code>min-width: ;</code></pre>
+</td>
+</tr>
+<tr>
+<td>mh</td>
+<td>
+<pre class="language-css"><code>min-height: ;</code></pre>
+</td>
+</tr>
+<tr>
+<td>f</td>
+<td>
+<pre class="language-css"><code>font: 1em sans-serif;</code></pre>
+</td>
+</tr>
+<tr>
+<td>fw</td>
+<td>
+<pre class="language-css"><code>font-weight: normal;</code></pre>
+</td>
+</tr>
+<tr>
+<td>fwb</td>
+<td>
+<pre class="language-css"><code>font-weight: bold;</code></pre>
+</td>
+</tr>
+<tr>
+<td>fs</td>
+<td>
+<pre class="language-css"><code>font-style: italic;</code></pre>
+</td>
+</tr>
+<tr>
+<td>fsn</td>
+<td>
+<pre class="language-css"><code>font-style: normal;</code></pre>
+</td>
+</tr>
+<tr>
+<td>fz</td>
+<td>
+<pre class="language-css"><code>font-size: ;</code></pre>
+</td>
+</tr>
+<tr>
+<td>ff</td>
+<td>
+<pre class="language-css"><code>font-family: serif;</code></pre>
+</td>
+</tr>
+<tr>
+<td>ffss</td>
+<td>
+<pre class="language-css"><code>font-family: sans-serif;</code></pre>
+</td>
+</tr>
+<tr>
+<td>ffm</td>
+<td>
+<pre class="language-css"><code>font-family: monospace;</code></pre>
+</td>
+</tr>
+<tr>
+<td>ffa</td>
+<td>
+<pre class="language-css"><code>font-family: Arial, "Helvetica Neue", Helvetica,
+sans-serif;</code></pre>
+</td>
+</tr>
+<tr>
+<td>va</td>
+<td>
+<pre class="language-css"><code>vertical-align: top;</code></pre>
+</td>
+</tr>
+<tr>
+<td>vam</td>
+<td>
+<pre class="language-css"><code>vertical-align: middle;</code></pre>
+</td>
+</tr>
+<tr>
+<td>vabl</td>
+<td>
+<pre class="language-css"><code>vertical-align: baseline;</code></pre>
+</td>
+</tr>
+<tr>
+<td>vab</td>
+<td>
+<pre class="language-css"><code>vertical-align: bottom;</code></pre>
+</td>
+</tr>
+<tr>
+<td>vas</td>
+<td>
+<pre class="language-css"><code>vertical-align: sub;</code></pre>
+</td>
+</tr>
+<tr>
+<td>ta</td>
+<td>
+<pre class="language-css"><code>text-align: left;</code></pre>
+</td>
+</tr>
+<tr>
+<td>tac</td>
+<td>
+<pre class="language-css"><code>text-align: center;</code></pre>
+</td>
+</tr>
+<tr>
+<td>tar</td>
+<td>
+<pre class="language-css"><code>text-align: right;</code></pre>
+</td>
+</tr>
+<tr>
+<td>taj</td>
+<td>
+<pre class="language-css"><code>text-align: justify;</code></pre>
+</td>
+</tr>
+<tr>
+<td>td</td>
+<td>
+<pre class="language-css"><code>text-decoration: none;</code></pre>
+</td>
+</tr>
+<tr>
+<td>tdu</td>
+<td>
+<pre class="language-css"><code>text-decoration: underline;</code></pre>
+</td>
+</tr>
+<tr>
+<td>tdo</td>
+<td>
+<pre class="language-css"><code>text-decoration: overline;</code></pre>
+</td>
+</tr>
+<tr>
+<td>tdl</td>
+<td>
+<pre class="language-css"><code>text-decoration: line-through;</code></pre>
+</td>
+</tr>
+<tr>
+<td>tt</td>
+<td>
+<pre class="language-css"><code>text-transform: uppercase;</code></pre>
+</td>
+</tr>
+<tr>
+<td>ttn</td>
+<td>
+<pre class="language-css"><code>text-transform: none;</code></pre>
+</td>
+</tr>
+<tr>
+<td>ttl</td>
+<td>
+<pre class="language-css"><code>text-transform: lowercase;</code></pre>
+</td>
+</tr>
+<tr>
+<td>ts</td>
+<td>
+<pre class="language-css"><code>text-shadow: hoff voff blur #000;</code></pre>
+</td>
+</tr>
+<tr>
+<td>ts</td>
+<td>
+<pre class="language-css"><code>text-shadow: hoff voff blur #000;</code></pre>
+</td>
+</tr>
+<tr>
+<td>tsn</td>
+<td>
+<pre class="language-css"><code>text-shadow: none;</code></pre>
+</td>
+</tr>
+<tr>
+<td>lh</td>
+<td>
+<pre class="language-css"><code>line-height: ;</code></pre>
+</td>
+</tr>
+<tr>
+<td>lts</td>
+<td>
+<pre class="language-css"><code>letter-spacing: ;</code></pre>
+</td>
+</tr>
+<tr>
+<td>whs</td>
+<td>
+<pre class="language-css"><code>white-space: nowrap;</code></pre>
+</td>
+</tr>
+<tr>
+<td>whsn</td>
+<td>
+<pre class="language-css"><code>white-space: normal;</code></pre>
+</td>
+</tr>
+<tr>
+<td>bg</td>
+<td>
+<pre class="language-css"><code>background: #000;</code></pre>
+</td>
+</tr>
+<tr>
+<td>bgnn</td>
+<td>
+<pre class="language-css"><code>background: none;</code></pre>
+</td>
+</tr>
+<tr>
+<td>bgc</td>
+<td>
+<pre class="language-css"><code>background-color: #fff;</code></pre>
+</td>
+</tr>
+<tr>
+<td>bgi</td>
+<td>
+<pre class="language-css"><code>background-image: url();</code></pre>
+</td>
+</tr>
+<tr>
+<td>bgin</td>
+<td>
+<pre class="language-css"><code>background-image: none;</code></pre>
+</td>
+</tr>
+<tr>
+<td>bgr</td>
+<td>
+<pre class="language-css"><code>background-repeat: no-repeat;</code></pre>
+</td>
+</tr>
+<tr>
+<td>bga</td>
+<td>
+<pre class="language-css"><code>background-attachment: fixed;</code></pre>
+</td>
+</tr>
+<tr>
+<td>bas</td>
+<td>
+<pre class="language-css"><code>background-attachment: scroll;</code></pre>
+</td>
+</tr>
+<tr>
+<td>bgp</td>
+<td>
+<pre class="language-css"><code>background-position: 0 0;</code></pre>
+</td>
+</tr>
+<tr>
+<td>bgz</td>
+<td>
+<pre class="language-css"><code>background-size: contain;</code></pre>
+</td>
+</tr>
+<tr>
+<td>bgsa</td>
+<td>
+<pre class="language-css"><code>background-size: auto;</code></pre>
+</td>
+</tr>
+<tr>
+<td>c</td>
+<td>
+<pre class="language-css"><code>color: #000;</code></pre>
+</td>
+</tr>
+<tr>
+<td>cra</td>
+<td>
+<pre class="language-css"><code>color: rgba(0, 0, 0, .5);</code></pre>
+</td>
+</tr>
+<tr>
+<td>op</td>
+<td>
+<pre class="language-css"><code>opacity: ;</code></pre>
+</td>
+</tr>
+<tr>
+<td>ct</td>
+<td>
+<pre class="language-css"><code>content: '';</code></pre>
+</td>
+</tr>
+<tr>
+<td>q</td>
+<td>
+<pre class="language-css"><code>quotes: ;</code></pre>
+</td>
+</tr>
+<tr>
+<td>ol</td>
+<td>
+<pre class="language-css"><code>outline: ;</code></pre>
+</td>
+</tr>
+<tr>
+<td>on</td>
+<td>
+<pre class="language-css"><code>overflow: none;</code></pre>
+</td>
+</tr>
+<tr>
+<td>tbl</td>
+<td>
+<pre class="language-css"><code>table-layout: fixed;</code></pre>
+</td>
+</tr>
+<tr>
+<td>cs</td>
+<td>
+<pre class="language-css"><code>caption-side: top;</code></pre>
+</td>
+</tr>
+<tr>
+<td>ec</td>
+<td>
+<pre class="language-css"><code>empty-cells: show;</code></pre>
+</td>
+</tr>
+<tr>
+<td>bd</td>
+<td>
+<pre class="language-css"><code>border: 1px solid #000;</code></pre>
+</td>
+</tr>
+<tr>
+<td>bdn</td>
+<td>
+<pre class="language-css"><code>border: none;</code></pre>
+</td>
+</tr>
+<tr>
+<td>bdc</td>
+<td>
+<pre class="language-css"><code>border-color: #000;</code></pre>
+</td>
+</tr>
+<tr>
+<td>bdi</td>
+<td>
+<pre class="language-css"><code>border-image: url();</code></pre>
+</td>
+</tr>
+<tr>
+<td>bdin</td>
+<td>
+<pre class="language-css"><code>border-image: none;</code></pre>
+</td>
+</tr>
+<tr>
+<td>bdf</td>
+<td>
+<pre class="language-css"><code>border-fit: repeat;</code></pre>
+</td>
+</tr>
+<tr>
+<td>bdle</td>
+<td>
+<pre class="language-css"><code>border-length: ;</code></pre>
+</td>
+</tr>
+<tr>
+<td>bsp</td>
+<td>
+<pre class="language-css"><code>border-spacing: ;</code></pre>
+</td>
+</tr>
+<tr>
+<td>bds</td>
+<td>
+<pre class="language-css"><code>border-style: none;</code></pre>
+</td>
+</tr>
+<tr>
+<td>bw</td>
+<td>
+<pre class="language-css"><code>border-width: ;</code></pre>
+</td>
+</tr>
+<tr>
+<td>bt</td>
+<td>
+<pre class="language-css"><code>border-top: 1px solid #000;</code></pre>
+</td>
+</tr>
+<tr>
+<td>bdtn</td>
+<td>
+<pre class="language-css"><code>border-top: none;</code></pre>
+</td>
+</tr>
+<tr>
+<td>bdr</td>
+<td>
+<pre class="language-css"><code>border-right: 1px solid #000;</code></pre>
+</td>
+</tr>
+<tr>
+<td>bdrn</td>
+<td>
+<pre class="language-css"><code>border-right: none;</code></pre>
+</td>
+</tr>
+<tr>
+<td>bb</td>
+<td>
+<pre class="language-css"><code>border-bottom: 1px solid #000;</code></pre>
+</td>
+</tr>
+<tr>
+<td>bdbn</td>
+<td>
+<pre class="language-css"><code>border-bottom: none;</code></pre>
+</td>
+</tr>
+<tr>
+<td>bl</td>
+<td>
+<pre class="language-css"><code>border-left: 1px solid #000;</code></pre>
+</td>
+</tr>
+<tr>
+<td>bdln</td>
+<td>
+<pre class="language-css"><code>border-left: none;</code></pre>
+</td>
+</tr>
+<tr>
+<td>bdrs</td>
+<td>
+<pre class="language-css"><code>border-radius: ;</code></pre>
+</td>
+</tr>
+<tr>
+<td>btrr</td>
+<td>
+<pre class="language-css"><code>border-top-right-radius: ;</code></pre>
+</td>
+</tr>
+<tr>
+<td>btlr</td>
+<td>
+<pre class="language-css"><code>border-top-left-radius: ;</code></pre>
+</td>
+</tr>
+<tr>
+<td>bblr</td>
+<td>
+<pre class="language-css"><code>border-bottom-left-radius: ;</code></pre>
+</td>
+</tr>
+<tr>
+<td>lis</td>
+<td>
+<pre class="language-css"><code>list-style: ;</code></pre>
+</td>
+</tr>
+<tr>
+<td>lisn</td>
+<td>
+<pre class="language-css"><code>list-style: none;</code></pre>
+</td>
+</tr>
+<tr>
+<td>lst</td>
+<td>
+<pre class="language-css"><code>list-style-type: disc;</code></pre>
+</td>
+</tr>
+<tr>
+<td>lstn</td>
+<td>
+<pre class="language-css"><code>list-style-type: none;</code></pre>
+</td>
+</tr>
+<tr>
+<td>lstc</td>
+<td>
+<pre class="language-css"><code>list-style-type: circle;</code></pre>
+</td>
+</tr>
+<tr>
+<td>lsts</td>
+<td>
+<pre class="language-css"><code>list-style-type: square;</code></pre>
+</td>
+</tr>
+<tr>
+<td>lstdm</td>
+<td>
+<pre class="language-css"><code>list-style-type: decimal;</code></pre>
+</td>
+</tr>
+<tr>
+<td>lsi</td>
+<td>
+<pre class="language-css"><code>list-style-image: ;</code></pre>
+</td>
+</tr>
+<tr>
+<td>lsin</td>
+<td>
+<pre class="language-css"><code>list-style-image: none;</code></pre>
+</td>
+</tr>
+<tr>
+<td>!</td>
+<td>
+<pre class="language-css"><code>!important</code></pre>
+</td>
+</tr>
+<tr>
+<td>@f</td>
+<td>
+<pre class="language-css"><code>@font-face {
+  font-family: ;
+  src: url();
+}</code></pre>
+</td>
+</tr>
+<tr>
+<td>@i</td>
+<td>
+<pre class="language-css"><code>@import url();</code></pre>
+</td>
+</tr>
+<tr>
+<td>@m</td>
+<td>
+<pre class="language-css"><code>@media screen {
+
+}</code></pre>
+</td>
+</tr>
+<tr>
+<td>anim</td>
+<td>
+<pre class="language-css"><code>animation: name duration timing-function delay iteration-count direction fill-mode;</code></pre>
+</td>
+</tr>
+<tr>
+<td>ap</td>
+<td>
+<pre class="language-css"><code>appearance: none;</code></pre>
+</td>
+</tr>
+<tr>
+<td>cm</td>
+<td>
+<pre class="language-css"><code>/* Комментарий */</code></pre>
+</td>
+</tr>
+<tr>
+<td>colm</td>
+<td>
+<pre class="language-css"><code>columns: ;</code></pre>
+</td>
+</tr>
+<tr>
+<td>trf</td>
+<td>
+<pre class="language-css"><code>transform: ;</code></pre>
+</td>
+</tr>
+<tr>
+<td>trfr</td>
+<td>
+<pre class="language-css"><code>transform: rotate(angle);</code></pre>
+</td>
+</tr>
+<tr>
+<td>trft</td>
+<td>
+<pre class="language-css"><code>transform: translate(x, y);</code></pre>
+</td>
+</tr>
+<tr>
+<td>tfo</td>
+<td>
+<pre class="language-css"><code>transform-origin: ;</code></pre>
+</td>
+</tr>
+<tr>
+<td>trs</td>
+<td>
+<pre class="language-css"><code>transition: prop time;</code></pre>
+</td>
+</tr>
+<tr>
+<td>trsde</td>
+<td>
+<pre class="language-css"><code>transition-delay: time;</code></pre>
+</td>
+</tr>
+<tr>
+<td>trsdu</td>
+<td>
+<pre class="language-css"><code>transition-duration: time;</code></pre>
+</td>
+</tr>
+<tr>
+<td>trsp</td>
+<td>
+<pre class="language-css"><code>transition-property: prop;</code></pre>
+</td>
+</tr>
+<tr>
+<td>us</td>
+<td>
+<pre class="language-css"><code>user-select: none;</code></pre>
+</td>
+</tr>
+</table>
+
+<p>В некоторые CSS сокращения можно подставлять свои значения, например:</p>
+
+<pre class="language-css"><code>/* mt20 */
+.class{
+  margin-top: 20px;
+}
+
+/* fsz20 */
+.class{
+  font-size: 20px;
+}
+
+/* p15 */
+.class{
+  padding: 15px;
+}
+</code></pre>
+
+
+                <div class="premium">
+          <div class="row">
+
+            <div class="col-md-12">
+              <h4>Премиум уроки от WebDesign Master</h4>
+            </div>
+
+            <div class="col-md-4 col-sm-6">
+              <a href="../../courses/jekyll/index.html" class="premium-item">
+                <span class="premium-img-wrap"><img src="../../public/images/premium/jekyll.jpg" alt="Курс по созданию сайта от А до Я на Jekyll" class="img-responsive"></span>
+                <p>Создание сайта от А до Я. Комплексный курс</p>
+              </a>
+            </div>
+
+            <div class="col-md-4 col-sm-6">
+              <a href="../../courses/webdesign/index.html" class="premium-item">
+                <span class="premium-img-wrap"><img src="../../public/images/premium/webdesign.jpg" alt="Большой комплексный курс по современному веб-дизайну" class="img-responsive"></span>
+                <p>Веб-дизайн с нейросетями для начинающих</p>
+              </a>
+            </div>
+
+            <div class="col-md-4 col-sm-6">
+              <a href="../../courses/freelance/index.html" class="premium-item">
+                <span class="premium-img-wrap"><img src="../../public/images/premium/freelance.jpg" alt="Фриланс для начинающих" class="img-responsive"></span>
+                <p>Я - фрилансер! Базовый курс для начинающих</p>
+              </a>
+            </div>
+
+          </div>
+        </div>
+
+
+        <div class="read-more">
+          <h4>Другие уроки по теме «Веб-разработка»</h4>
+          <ul>
+            
+            
+            
+              
+              <li><a href="../../blog/html-css/css-masonry.html">Создание адаптивных плиток Masonry на чистом CSS. Материалы урока</a></li>
+              
+            
+              
+              <li><a href="../../blog/html-css/floating-image-lesson.html">Создание красивого сайта с Parallax эффектом при движении мыши. Материалы урока</a></li>
+              
+            
+              
+              <li><a href="../../blog/html-css/grow-lesson.html">Создание красивого сайта с Parallax эффектом и анимацией заголовка. Материалы урока</a></li>
+              
+            
+              
+              <li><a href="../../blog/html-css/image-gallery-lesson.html">Создание красивой галереи на сайте. Материалы урока</a></li>
+              
+            
+              
+              <li><a href="../../blog/html-css/background-animation-website.html">Создание сайта с красивой анимацией фона. Материалы урока</a></li>
+              
+            
+              
+              <li><a href="../../blog/html-css/scrolling-3d-scene-website.html">Создание красивого сайта с 3D эффектом глубины при скролле. Материалы урока</a></li>
+              
+            
+          </ul>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</article>
+
+
+        </div>
+
+        <div class="col-md-4 col-aside">
+
+  <aside class="site-aside">
+
+
+
+<div class="box box-search">
+
+<form class="search" action="https://www.google.com/search" target="_blank">
+  <div>
+    <input type="text" name="q" size="55" placeholder="Поиск по сайту..." required>
+    <input type="hidden" name="sitesearch" value="https://webdesign-masteru.github.io">
+    <button type="submit">
+      <i class="fa fa-search"></i>
+    </button>
+  </div>
+</form>
+
+
+    </div>
+
+    <nav class="box box-mnu">
+      <p class="mnu-header">Разделы сайта:</p>
+      <ul class="list-unstyled box-dashed main-menu">
+
+  <li class="d-lg-none">
+    <a href="../../courses/index.html"><i class="fa fa-diamond"></i> Курсы</a>
+  </li>
+
+  <li>
+    <a href="../../blog/html-css/index.html"><i class="fa fa-code"></i> Веб-разработка</a>
+  </li>
+
+  <li>
+    <a href="../../blog/web-design/index.html"><i class="fa fa-paint-brush"></i> Веб-дизайн</a>
+  </li>
+
+  <li>
+    <a href="../../blog/tools/index.html"><i class="fa fa-cogs"></i> Инструменты</a>
+  </li>
+
+  <li>
+    <a href="../../blog/cms/index.html"><i class="fa fa-folder-open-o"></i> CMS/Framework</a>
+  </li>
+
+</ul>
+
+    </nav>
+
+    <nav class="box box-mnu services-mnu">
+      <p class="mnu-header">Полезные ресурсы:</p>
+      <ul class="list-unstyled">
+
+  <li>
+    <a href="../../blog/tools/wsl-nodejs-new.html"><i class="fa fa-cogs"></i> Установка WSL и окружения</a>
+  </li>
+
+  <li>
+    <a href="../../blog/docs/webdev-without-wsl.html"><i class="fa fa-cogs"></i> Настройка окружения без WSL</a>
+  </li>
+
+  <li>
+    <a href="../../blog/tools/hosting-lesson.html"><i class="fa fa-server"></i> Работа с хостингом от А до Я</a>
+  </li>
+
+  <li>
+    <a href="../../blog/tools/vscode.html"><i class="fa custom-vscode-3"></i> Настройка VS Code</a>
+  </li>
+
+  <li>
+    <a href="../../blog/tools/cubic-bezier/index.html"><i class="fa custom-bezier"></i> Cubic-Bezier Generator</a>
+  </li>
+
+  <li>
+    <a href="../../blog/tools/lazy-load/index.html"><i class="fa fa-image"></i> Lazy Load Placeholder</a>
+  </li>
+
+  <li>
+    <a href="../../blog/docs/gulp-documentation.html"><i class="fa fa-file-text-o"></i> Документация Gulp</a>
+  </li>
+
+</ul>
+
+    </nav>
+
+    <div class="box box-sidebar">
+      <div id="vk_groups"></div>
+    </div>
+
+  </aside>
+
+
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <footer class="main-foot">
+    <div class="container-fluid">
+
+      <span class="year"></span> © WebDesign Master
+
+    </div>
+    <div class="top" title="Наверх"><i class="fa fa-angle-double-up"></i></div>
+  </footer>
+
+  <script>(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return}}k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window,document,"script","https://mc.yandex.ru/metrika/tag.js","ym");ym(100695574,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true,webvisor:true});</script><noscript><div><img src="https://mc.yandex.ru/watch/100695574" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+
+
+</body>
+</html>
+

@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="canonical" href="https://webdesign-masteru.github.io/blog/web-design/figma-bootstrap-grid.html">
+  <meta name="generator" content="Jekyll v">
+
+  <title>Как создать сетку в Figma. Подробный урок</title>
+  <meta name="description" content="Сегодня мы рассмотрим создание сетки для Figma - одного из популярнейших UI UX инструментов в настоящее время">
+
+  <link rel="icon" href="https://webdesign-masteru.github.io/favicon.ico?v=15" type="image/x-icon">
+  <meta property="og:image" content="../../public/images/thumbs/web-design/figma-bootstrap-grid/figma-bootstrap-grid-cover.jpg">
+
+  <link rel="stylesheet" href="../../styles/index.css?v=15">
+  
+  <script src="../../scripts/dist/main.js?v=15" defer></script>
+  
+  <script>/* no flicker */document.documentElement.classList.add(localStorage.getItem('mode') === 'auto' ? (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : localStorage.getItem('mode'))</script>
+
+</head>
+
+<body>
+
+  <header class="main-head">
+
+    <div class="container-fluid">
+
+      <div class="row">
+
+        <div class="col-md-6">
+          <div class="mobile-pannel d-xl-none d-lg-none d-md-none">
+            <div class="toggler"><button title="Переключить тему"></button></div>
+            <div class="toggle-mnu"><span></span></div>
+          </div>
+        
+          <a href="../../index.html" class="logo"><img src="../../assets/images/logo-site.svg" alt="WebDesign Master"></a>
+        
+        </div>
+
+        <div class="col-md-6 d-none d-md-block d-lg-block d-xl-block">
+          <div class="toggler"><button title="Переключить тему"></button></div>
+                    <div class="social">
+            <a title="ВКонтакте" href="https://vk.com/jediweb" target="_blank"><i class="fa fa-vk"></i></a>
+            <a title="Телеграм" href="https://t.me/jediweb" target="_blank"><i class="fa custom-tg"></i></a>
+            <a title="YouTube" href="https://youtube.com/@wdm" target="_blank"><i class="fa fa-youtube-play"></i></a>
+            <a title="GitHub" href="https://github.com/webdesign-masteru" target="_blank"><i class="fa fa-github"></i></a>
+            <a title="Дзен" href="https://dzen.ru/jediweb" target="_blank"><i class="fa custom-dzen"></i></a>
+          </div>
+
+          <div class="courses-link">
+            <a href="../../courses/index.html"><i class="fa fa-diamond"></i>Курсы</a>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="mobile-menu"></div>
+
+    </div>
+
+  </header>
+
+
+  <div class="content">
+    <div class="container-fluid">
+
+      <div class="row">
+
+        <div class="col-md-8">
+
+          <article class="list-item single-page">
+  <div class="item-link">
+
+    
+    <div class="item-img-wrap post-img">
+      <img class="img-responsive" src="../../public/images/thumbs/web-design/figma-bootstrap-grid/figma-bootstrap-grid.jpg" alt="Как создать сетку в Figma. Подробный урок">
+    </div>
+    
+
+    <div class="item-content">
+
+    <div class="td">
+        <a href="../../blog/web-design/index.html" class="item-icon hidden-xs" title="Категория: Веб-дизайн"><i class="fa fa-paint-brush"></i></a>
+      </div>
+      <div class="td article-title"><h1>Как создать сетку в Figma. Подробный урок</h1></div>
+    
+
+      <div class="article-content">
+
+        <p>В этом уроке мы рассмотрим создание сетки в Figma - популярнейшем UI/UX инструменте для веб-дизайна. На странице урока вы найдете сетку, которую мы сегодня создадим в Figma и сможете использовать ее в своей работе.</p>
+
+<div class="likely-scroll">
+  <div class="likely">
+    <button class="vkontakte">Поделиться</button>
+    <button class="telegram">Отправить</button>
+    <button class="pinterest" data-media="https://webdesign-masteru.github.io/public/images/thumbs/web-design/figma-bootstrap-grid/figma-bootstrap-grid-cover.jpg">Запинить</button>
+    <button class="odnoklassniki">Класснуть</button>
+  </div>
+</div>
+
+
+<div class="video-wrap">
+  <div class="table">
+    <div class="tr">
+      <div class="td">
+        <div class="videowrapper" title="Смотреть урок «Как создать сетку в Figma. Подробный урок» на YouTube">
+          <img class="img-responsive" src="../../public/images/thumbs/web-design/figma-bootstrap-grid/figma-bootstrap-grid-cover.jpg" alt="Как создать сетку в Figma. Подробный урок - Видеоурок">
+        </div>
+        <a href="https://youtu.be/5CiuwqvtUa8" class="button button-youtube" target="_blank"><i class="fa fa-youtube-play"></i>Смотреть <span class="d-none d-lg-inline">урок </span>на YouTube</a>
+      </div>
+      <div class="td">
+        <a href="../../courses/bundle/index.html" class="premium-banner">
+          <img src="../../public/images/premium/bundle-b.jpg" alt="Все курсы канала WebDesign Master">
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<p>У нас уже были уроки по созданию сетки для различных графических программ, таких, как Photoshop, Adobe XD, Gimp, Inkscape и т.д. Ознакомиться с сопутствующими уроками и материалами:</p>
+
+<ul>
+  <li>Bootstrap сетка. Подробное руководство: <a href="../../blog/html-css/bootstrap.html" target="_blank">Посмотреть урок</a></li>
+  <li>Bootstrap Grid options: <a href="https://getbootstrap.com/docs/5.3/layout/grid/#grid-options" target="_blank">Документация</a></li>
+  <li>Photoshop (Сетка, PSD): <a href="../../blog/tools/bootstrap-psd.html" target="_blank">Посмотреть урок</a></li>
+  <li>Open Source Web Design: <a href="../../blog/web-design/master-web-design-4.html" target="_blank">Урок и сетка Inkscape</a></li>
+  <li>Сетка для Gimp: <a href="https://archive.org/download/bootstrap_XCF/bootstrap_XCF.zip">Скачать</a></li>
+</ul>
+
+<blockquote>Результат этого урока (готовые сетки Figma) вы можете скачать здесь:</blockquote>
+
+<div class="text-center">
+  <a href="https://archive.org/download/figma-bootstrap-grid/figma-bootstrap-grid.zip" class="button button-youtube button-add-q">Скачать сетку Figma</a>
+</div>
+
+<p>Настраивается сетка в Figma довольно быстро, я рекомендую настраивать ее для каждого отдельного проекта. На странице урока вы также найдете документ Figma с сетками, которые мы сегодня создадим и сможете использовать их в качестве наглядного примера. В конце урока я покажу, как это сделать.</p>
+
+<p>Итак, для начала создадим новый документ. Обычно я создаю документ для нового проекта с паттерном "Desktop":</p>
+
+<img src="../../public/images/blog/web-design/figma-bootstrap-grid/figma-create-new-document.jpg" alt="Создание нового документа Figma">
+
+<p>Здесь у нас создается фрейм шириной 1440 пикселей. Это среднее универсальное значение. Конечно-же можно сделать макет шире или наоборот уже, но, в целом, начинать создание дизайна можно именно с такой ширины макета. Как я говорил ранее, сетка в Figma настраивается довольно-таки быстро и просто. Однако, что касается двенадцати колоночной сетки, здесь есть подводные камни. Давайте разберемся подробнее.</p>
+
+<p>На панели справа найдем "Layout grid" и добавим сетку со следующими параметрами:</p>
+
+<img src="../../public/images/blog/web-design/figma-bootstrap-grid/figma-bootstrap-grid-settings.jpg" alt="Параметры сетки Bootstrap в Figma">
+
+<p>Сетка Bootstrap с настройками по умолчанию имеет общую ширину 1140 пикселей на больших разрешениях (Extra large, см. документацию), но при создании сетки в Figma следует учитывать тот факт, что CSS-сетка имеет дополнительные отступы слева и справа по 15px, а в программе этих отступов нет, можно указывать только общее значение Gutter между колонками. Соответственно, ширина сетки в Figma будет иметь общую ширину <span class="nowrap">1100px (1140px - 15px - 15px)</span>. Размер одной ячейки в этом случае рассчитывается следующим образом. Во-первых, у нас есть 12 промежутков по 30px (11 по 30px в самой сетке и 15px + 15px по бокам). Общая ширина всех отступов сетки составляет <span class="nowrap">12 * 30 = 360px</span>. Теперь вычтем из общей ширины сетки Bootstrap в CSS ширину всех отступов: <span class="nowrap">1140px - 360px = 780px</span>. Это общая ширина всех колонок без промежутков. Далее делим общую ширину всех колонок на 12 и получаем ширину одной колонки в системе сеток Bootstrap на самых больших разрешениях: <span class="nowrap">780px / 12 = 65px</span>.</p>
+
+<blockquote>Обратите внимание в "Type" мы указали "Center" – это значит, что мы без проблем сможем в дальнейшем управлять шириной макета. Например, если макет в результате окажется слишком широким, мы сможем его обрезать. И наоборот, если понадобится увеличить ширину макета, это также можно будет сделать без опасения, что нарисованный в системе сеток контент разъедется и дизайн придется переделывать.</blockquote>
+
+<p>Кроме 12-ти колоночной системы сеток Bootstrap, я также использую и горизонтальную разметку для соблюдения вертикального ритма. Давайте добавим еще одну сетку (Rows) и зададим следующие значения:</p>
+
+<img src="../../public/images/blog/web-design/figma-bootstrap-grid/figma-horizontal-grid.jpg" alt="Параметры сетки для вертикального ритма в Figma">
+
+<p>Здесь мы указываем "Count" - "Auto" для того, чтобы вся доступная область выбранного фрейма заполнялась сеткой. Для того, чтобы сетка не была такой контрастной и не мешала работе над дизайном, я обычно прибираю значение непрозрачности цвета "Color" до 5%.</p>
+
+<blockquote>Обратите внимание, что "Type" мы можем указать как "Center" или "Top" – это самые популярные параметры горизонтальной сетки для веб-дизайна в Figma. Однако, я рекомендую использовать именно "Top", чтобы в процессе работы, если понадобится сделать макет выше, сетка не съехала и дизайн не пришлось переделывать.</blockquote>
+
+<p>В качестве "Gutter" и "Height" мы указали 10px. Это адекватный вертикальный ритм для большинства проектов, однако вы можете использовать более популярное значение 8px для этих двух параметров. Экспериментируйте.</p>
+
+<blockquote>Внимание! Здесь, стоит добавить, что если вы используете в работе стартер <a href="../../blog/tools/optimizedhtml-5.html" target="_blank">OptimizedHTML 5</a>, то здесь уже определен наиболее оптимальный вертикальный ритм для дефолтного размера текста в 16px (line-height: 1.65). Эти значения являются результатом моего опыта работа над различными сайтами и являются наиболее адекватными для практически любого проекта. <br>Если вы планируете в дальнейшем использовать стартер OptimizedHTML 5 или общий межстрочный интервал в CSS <code>line-height: 1.65</code> и дефолтный размер шрифта проекта 16px, то при создании дизайна следует устанавливать значения "Gutter" и "Height" для горизонтальной сетки в 13px: <br><br>
+  <img src="../../public/images/blog/web-design/figma-bootstrap-grid/figma-optimized-html.jpg" alt="OptimizedHTML настройки для Figma">
+</blockquote>
+
+<p>На панели справа найдем секцию "Frame" в Figma, укажем высоту макета 3500 (H) и перейдем к созданию сетки для следующего разрешения.</p>
+
+<p>При создании 12 колоночных сеток в Figma и других графических редакторах для других разрешений следует учитывать, что если для самого большого разрешения ширина фрейма свободная и может меняться, то на остальных разрешениях, которые меньше, ширина фреймов должна быть привязана к соответствующим значениям из документации Bootstrap (см. Bootstrap Grid options):</p>
+
+<img src="../../public/images/blog/web-design/figma-bootstrap-grid/bootstrap-grid-options.jpg" alt="Bootstrap Grid options">
+
+<p>Соответственно, общая ширина фрейма для следующего разрешения составит 992px (Large):</p>
+
+<img src="../../public/images/blog/web-design/figma-bootstrap-grid/figma-bootstrap-grid-992.jpg" alt="Figma Bootstrap Grid 992px (Large)">
+
+<p>Ширина одной Bootstrap-колонки для данного разрешения, при условии, что будет отражено 12 колонок, составит 50px. Остальные параметры Bootstrap-сетки такие-же, как у предыдущего фрейма:</p>
+
+<img src="../../public/images/blog/web-design/figma-bootstrap-grid/figma-bootstrap-grid-992-columns.jpg" alt="Figma Bootstrap Grid 992px Columns">
+
+<p>Горизонтальная сетка (вертикальный ритм) для этого и последующих разрешений будет иметь те же параметры, что и у первого макета (см. скачанный файл Figma).</p>
+
+<p>Отлично! Переходим к созданию сетки для следующего разрешения. Создаем новый фрейм (по документации Bootstrap ширина 768px). В данном фрейме можно также отобразить 12 колонок. Зачастую, на таком разрешении адаптивный контент еще не "схлопывается", контент максимально вытягивается по высоте. Однако, в зависимости от задач, вы можете указать и другое количество колонок. Ширина одной колонки на таком разрешении составит 30px, если количество колонок указано 12. остальные параметры – как у предыдущих макетов.</p>
+
+<p>Следующий размер фрейма 576px. На таком разрешении целесообразнее отобразить 6 колонок. Ширина одной колонки 60px. Остальные параметры и горизонтальная сетка как у предыдущих макетов.</p>
+
+<p>И последний фрейм сделаем шириной 320px, отобразим 2 колонки, ширина колонки 130px. Остальные параметры как у предыдущих макетов. 320px – это минимальное разрешение в веб-дизайне, так как в настоящее время уже нет устройств, способных отобразить современный веб-контент меньше этого разрешения. Обычно на таком разрешении весь контент вытягивается в длинную ленту, однако иногда бывают случаи, когда необходимо разделить дизайн на колонки и на таком маленьком разрешении. Так как отступы в любом случае одинаковые по краям, можно сделать разлиновку на 2 колонки для того, чтобы в случае необходимости у нас была возможность воспользоваться колоночной системой.</p> 
+
+<p>Для того, чтобы воспользоваться созданной в данном уроке системой сеток в Figma, <a href="https://archive.org/download/figma-bootstrap-grid/figma-bootstrap-grid.zip">Скачайте</a> архив с документом Figma, распакуйте и перетащите файл в список проектов Figma (Drafts). У вас появится новый документ "Bootstrap-Figma". Откройте его.</p>
+
+<blockquote>Для того, чтобы включить или отключить сетки в Figma, воспользуйтесь горячими клавишами <span class="nowrap"><code>Ctrl</code> + <code>Shift</code> + <code>4</code></span>.</blockquote>
+
+<p>Любой из фреймов документа "Bootstrap-Figma" вы можете выделить, скопировать <span class="nowrap"><code>Ctrl</code> + <code>C</code></span> и вставить <span class="nowrap"><code>Ctrl</code> + <code>V</code></span> в новый проект и использовать в своей работе.</p>
+
+
+                <div class="premium">
+          <div class="row">
+
+            <div class="col-md-12">
+              <h4>Премиум уроки от WebDesign Master</h4>
+            </div>
+
+            <div class="col-md-4 col-sm-6">
+              <a href="../../courses/jekyll/index.html" class="premium-item">
+                <span class="premium-img-wrap"><img src="../../public/images/premium/jekyll.jpg" alt="Курс по созданию сайта от А до Я на Jekyll" class="img-responsive"></span>
+                <p>Создание сайта от А до Я. Комплексный курс</p>
+              </a>
+            </div>
+
+            <div class="col-md-4 col-sm-6">
+              <a href="../../courses/webdesign/index.html" class="premium-item">
+                <span class="premium-img-wrap"><img src="../../public/images/premium/webdesign.jpg" alt="Большой комплексный курс по современному веб-дизайну" class="img-responsive"></span>
+                <p>Веб-дизайн с нейросетями для начинающих</p>
+              </a>
+            </div>
+
+            <div class="col-md-4 col-sm-6">
+              <a href="../../courses/freelance/index.html" class="premium-item">
+                <span class="premium-img-wrap"><img src="../../public/images/premium/freelance.jpg" alt="Фриланс для начинающих" class="img-responsive"></span>
+                <p>Я - фрилансер! Базовый курс для начинающих</p>
+              </a>
+            </div>
+
+          </div>
+        </div>
+
+
+        <div class="read-more">
+          <h4>Другие уроки по теме «Веб-дизайн»</h4>
+          <ul>
+            
+            
+            
+              
+              <li><a href="../../blog/web-design/web-design-course.html">Веб-дизайн для начинающих. Полный курс</a></li>
+              
+            
+              
+              <li><a href="../../blog/web-design/sozdanie-dizaina-v-fgma-woodtech.html">Мастер-класс по веб-дизайну в Figma (Woodtech)</a></li>
+              
+            
+              
+            
+              
+              <li><a href="../../blog/web-design/s-chego-nachat-web-design.html">С чего начать изучение веб-дизайна</a></li>
+              
+            
+              
+              <li><a href="../../blog/web-design/master-web-design-7.html">Мастер-класс по созданию дизайна сайта салона красоты </a></li>
+              
+            
+              
+              <li><a href="../../blog/web-design/master-web-design-5.html">Мастер-класс по созданию дизайна сайта пиццерии</a></li>
+              
+            
+          </ul>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</article>
+
+
+        </div>
+
+        <div class="col-md-4 col-aside">
+
+  <aside class="site-aside">
+
+
+
+<div class="box box-search">
+
+<form class="search" action="https://www.google.com/search" target="_blank">
+  <div>
+    <input type="text" name="q" size="55" placeholder="Поиск по сайту..." required>
+    <input type="hidden" name="sitesearch" value="https://webdesign-masteru.github.io">
+    <button type="submit">
+      <i class="fa fa-search"></i>
+    </button>
+  </div>
+</form>
+
+
+    </div>
+
+    <nav class="box box-mnu">
+      <p class="mnu-header">Разделы сайта:</p>
+      <ul class="list-unstyled box-dashed main-menu">
+
+  <li class="d-lg-none">
+    <a href="../../courses/index.html"><i class="fa fa-diamond"></i> Курсы</a>
+  </li>
+
+  <li>
+    <a href="../../blog/html-css/index.html"><i class="fa fa-code"></i> Веб-разработка</a>
+  </li>
+
+  <li>
+    <a href="../../blog/web-design/index.html"><i class="fa fa-paint-brush"></i> Веб-дизайн</a>
+  </li>
+
+  <li>
+    <a href="../../blog/tools/index.html"><i class="fa fa-cogs"></i> Инструменты</a>
+  </li>
+
+  <li>
+    <a href="../../blog/cms/index.html"><i class="fa fa-folder-open-o"></i> CMS/Framework</a>
+  </li>
+
+</ul>
+
+    </nav>
+
+    <nav class="box box-mnu services-mnu">
+      <p class="mnu-header">Полезные ресурсы:</p>
+      <ul class="list-unstyled">
+
+  <li>
+    <a href="../../blog/tools/wsl-nodejs-new.html"><i class="fa fa-cogs"></i> Установка WSL и окружения</a>
+  </li>
+
+  <li>
+    <a href="../../blog/docs/webdev-without-wsl.html"><i class="fa fa-cogs"></i> Настройка окружения без WSL</a>
+  </li>
+
+  <li>
+    <a href="../../blog/tools/hosting-lesson.html"><i class="fa fa-server"></i> Работа с хостингом от А до Я</a>
+  </li>
+
+  <li>
+    <a href="../../blog/tools/vscode.html"><i class="fa custom-vscode-3"></i> Настройка VS Code</a>
+  </li>
+
+  <li>
+    <a href="../../blog/tools/cubic-bezier/index.html"><i class="fa custom-bezier"></i> Cubic-Bezier Generator</a>
+  </li>
+
+  <li>
+    <a href="../../blog/tools/lazy-load/index.html"><i class="fa fa-image"></i> Lazy Load Placeholder</a>
+  </li>
+
+  <li>
+    <a href="../../blog/docs/gulp-documentation.html"><i class="fa fa-file-text-o"></i> Документация Gulp</a>
+  </li>
+
+</ul>
+
+    </nav>
+
+    <div class="box box-sidebar">
+      <div id="vk_groups"></div>
+    </div>
+
+  </aside>
+
+
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <footer class="main-foot">
+    <div class="container-fluid">
+
+      <span class="year"></span> © WebDesign Master
+
+    </div>
+    <div class="top" title="Наверх"><i class="fa fa-angle-double-up"></i></div>
+  </footer>
+
+  <script>(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return}}k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window,document,"script","https://mc.yandex.ru/metrika/tag.js","ym");ym(100695574,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true,webvisor:true});</script><noscript><div><img src="https://mc.yandex.ru/watch/100695574" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+
+
+</body>
+</html>
+

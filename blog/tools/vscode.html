@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="canonical" href="https://webdesign-masteru.github.io/blog/tools/vscode.html">
+  <meta name="generator" content="Jekyll v">
+
+  <title>Настройка VS Code для веб-разработки</title>
+  <meta name="description" content="Сегодня мы рассмотрим настройку Visual Studio Code для веб-разработки">
+
+  <link rel="icon" href="https://webdesign-masteru.github.io/favicon.ico?v=15" type="image/x-icon">
+  <meta property="og:image" content="../../public/images/thumbs/tools/vscode/vscode-cover.jpg">
+
+  <link rel="stylesheet" href="../../styles/index.css?v=15">
+  
+  <script src="../../scripts/dist/main.js?v=15" defer></script>
+  
+  <script>/* no flicker */document.documentElement.classList.add(localStorage.getItem('mode') === 'auto' ? (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : localStorage.getItem('mode'))</script>
+
+</head>
+
+<body>
+
+  <header class="main-head">
+
+    <div class="container-fluid">
+
+      <div class="row">
+
+        <div class="col-md-6">
+          <div class="mobile-pannel d-xl-none d-lg-none d-md-none">
+            <div class="toggler"><button title="Переключить тему"></button></div>
+            <div class="toggle-mnu"><span></span></div>
+          </div>
+        
+          <a href="../../index.html" class="logo"><img src="../../assets/images/logo-site.svg" alt="WebDesign Master"></a>
+        
+        </div>
+
+        <div class="col-md-6 d-none d-md-block d-lg-block d-xl-block">
+          <div class="toggler"><button title="Переключить тему"></button></div>
+                    <div class="social">
+            <a title="ВКонтакте" href="https://vk.com/jediweb" target="_blank"><i class="fa fa-vk"></i></a>
+            <a title="Телеграм" href="https://t.me/jediweb" target="_blank"><i class="fa custom-tg"></i></a>
+            <a title="YouTube" href="https://youtube.com/@wdm" target="_blank"><i class="fa fa-youtube-play"></i></a>
+            <a title="GitHub" href="https://github.com/webdesign-masteru" target="_blank"><i class="fa fa-github"></i></a>
+            <a title="Дзен" href="https://dzen.ru/jediweb" target="_blank"><i class="fa custom-dzen"></i></a>
+          </div>
+
+          <div class="courses-link">
+            <a href="../../courses/index.html"><i class="fa fa-diamond"></i>Курсы</a>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="mobile-menu"></div>
+
+    </div>
+
+  </header>
+
+
+  <div class="content">
+    <div class="container-fluid">
+
+      <div class="row">
+
+        <div class="col-md-8">
+
+          <article class="list-item single-page">
+  <div class="item-link">
+
+    
+    <div class="item-img-wrap post-img">
+      <img class="img-responsive" src="../../public/images/thumbs/tools/vscode/vscode.jpg" alt="Настройка VS Code для веб-разработки">
+    </div>
+    
+
+    <div class="item-content">
+
+    <div class="td">
+        <a href="../../blog/tools/index.html" class="item-icon hidden-xs" title="Категория: Инструменты"><i class="fa fa-cogs custom-vscode-3"></i></a>
+      </div>
+      <div class="td article-title"><h1>Настройка VS Code для веб-разработки</h1></div>
+    
+
+      <div class="article-content">
+
+        <p>В этом уроке мы рассмотрим установку и настройку VS Code для веб-разработки. Я покажу, как пользоваться редактором, в результате мы получим удобную, лаконичную рабочую среду с необходимыми плагинами, которые я использую в своей работе. Visual Studio Code в настоящее время является самым популярным редактором кода благодаря широкому функционалу, кроссплатформенности, огромному сообществу разработчиков как самого редактора, так и расширений для него и открытой лицензии. Этот редактор я могу смело рекомендовать к использованию.</p>
+
+<div class="likely-scroll">
+  <div class="likely">
+    <button class="vkontakte">Поделиться</button>
+    <button class="telegram">Отправить</button>
+    <button class="pinterest" data-media="https://webdesign-masteru.github.io/public/images/thumbs/tools/vscode/vscode-cover.jpg">Запинить</button>
+    <button class="odnoklassniki">Класснуть</button>
+  </div>
+</div>
+
+
+<div class="video-wrap">
+  <div class="table">
+    <div class="tr">
+      <div class="td">
+        <div class="videowrapper" title="Смотреть урок «Настройка VS Code для веб-разработки» на YouTube">
+          <img class="img-responsive" src="../../public/images/thumbs/tools/vscode/vscode-cover.jpg" alt="Настройка VS Code для веб-разработки - Видеоурок">
+        </div>
+        <a href="https://youtu.be/JSGPd1E16-o" class="button button-youtube" target="_blank"><i class="fa fa-youtube-play"></i>Смотреть <span class="d-none d-lg-inline">урок </span>на YouTube</a>
+      </div>
+      <div class="td">
+        <a href="../../courses/bundle/index.html" class="premium-banner">
+          <img src="../../public/images/premium/bundle-b.jpg" alt="Все курсы канала WebDesign Master">
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<h3>Материалы урока и полезное</h3>
+
+<ul>
+  <li>Visual Studio Code: <a href="https://code.visualstudio.com" target="_blank">Страница редактора</a></li>
+  <li>Starter: <a href="../../blog/tools/starter.html" target="_blank">Ознакомиться и скачать</a></li>
+  <li>Урок по GitHub Gist: <a href="../../blog/tools/28.html" target="_blank">Ознакомиться с уроком</a></li>
+  <li>Архив с настройками: <a href="https://archive.org/download/vscode_settings/vscode.zip">Скачать</a></li>
+  <li>Верстка с Emmet: <a href="https://youtube.com/watch?v=RfFtACtO998" target="_blank">Смотреть урок</a></li>
+</ul>
+
+<h3>Рекомендуемые расширения</h3>
+
+<ul>
+  <li>Live Server</li>
+  <li>HTML CSS Support</li>
+  <li>CSS Variable Autocomplete</li>
+  <li>HTML to CSS autocompletion</li>
+  <li>IntelliSense for CSS class names in HTML</li>
+  <li>ES7+ React/Redux/React-Native snippets</li>
+  <li>innerHTML Syntax Highlighting</li>
+  <li>Tailwind CSS IntelliSense</li>
+  <li>One Dark Pro</li>
+  <li>Sass</li>
+  <li>Gist</li>
+</ul>
+
+<h3 id="preset">Пресет настроек settings.json</h3>
+
+<blockquote>Здесь представлен список актуальных настроек VS Code.</blockquote>
+
+<pre class="language-javascript"><code>{
+  "workbench.colorTheme": "One Dark Pro Darker",
+  "emmet.extensionsPath": [ "~/AppData/Roaming/Code/User/emmet" ],
+  // "php.validate.executablePath": "D:/OSPanel/modules/php/PHP_8.1/php.exe",
+  // "terminal.integrated.defaultProfile.windows": "Git Bash",
+  // "terminal.integrated.defaultProfile.windows": "Ubuntu (WSL)",
+  "explorer.compactFolders": false,
+  "workbench.startupEditor": "none",
+  "editor.smoothScrolling": true,
+  "editor.fontSize": 16,
+  "editor.minimap.enabled": false,
+  "breadcrumbs.enabled": false,
+  "editor.renderControlCharacters": true,
+  "editor.tabSize": 2,
+  "workbench.activityBar.location": "hidden",
+  "files.defaultLanguage": "html",
+  // "editor.detectIndentation": false,
+  "editor.folding": false,
+  "editor.glyphMargin": false,
+  // "editor.parameterHints.enabled": false,
+  // "editor.hover.enabled": false,
+  "terminal.integrated.fontSize": 16,
+  "editor.renderWhitespace": "trailing",
+  "editor.lineHeight": 23,
+  "security.workspace.trust.enabled": false,
+  "editor.linkedEditing": true,
+  "editor.bracketPairColorization.enabled": true,
+  "editor.wordSeparators": "`~!@#$%^&*()=+[{]}\\|;:'\",.&lt;&gt;/?",
+  "emmet.triggerExpansionOnTab": true,
+  // "editor.insertSpaces": false,
+  "editor.cursorSmoothCaretAnimation": "on",
+  // "git.openRepositoryInParentFolders": "never",
+  // "editor.quickSuggestions": { "other": "off" },
+  "explorer.confirmDelete": false,
+  "editor.stickyScroll.enabled": false,
+  // "liveServer.settings.donotShowInfoMsg": true, // При использовании Live Server
+  // "liveServer.settings.donotVerifyTags": true, // При использовании Live Server
+  "liveServer.settings.fullReload": true, // При использовании Live Server
+}
+</code></pre>
+
+<h3>Горячие клавиши keybindings.json</h3>
+
+<pre class="language-javascript"><code>[
+  {
+    "key": "ctrl+alt+backspace",
+    "command": "workbench.files.action.collapseExplorerFolders"
+  },
+  {
+    "key": "ctrl+shift+alt+s",
+    "command": "extension.liveServer.goOnline"
+  }
+]
+</code></pre>
+
+<h3>Пример сниппета emmet/snippets.json</h3>
+
+<pre class="language-javascript"><code>{
+  "html": {
+    "snippets": {
+      "d": "&lt;div class=\"${1}\"&gt;${2}&lt;/div&gt;",
+      "i": "&lt;img class=\"${1}\" src=\"${2}\" alt=\"${3}\"&gt;"
+    }
+  }
+}
+</code></pre>
+
+
+                <div class="premium">
+          <div class="row">
+
+            <div class="col-md-12">
+              <h4>Премиум уроки от WebDesign Master</h4>
+            </div>
+
+            <div class="col-md-4 col-sm-6">
+              <a href="../../courses/jekyll/index.html" class="premium-item">
+                <span class="premium-img-wrap"><img src="../../public/images/premium/jekyll.jpg" alt="Курс по созданию сайта от А до Я на Jekyll" class="img-responsive"></span>
+                <p>Создание сайта от А до Я. Комплексный курс</p>
+              </a>
+            </div>
+
+            <div class="col-md-4 col-sm-6">
+              <a href="../../courses/webdesign/index.html" class="premium-item">
+                <span class="premium-img-wrap"><img src="../../public/images/premium/webdesign.jpg" alt="Большой комплексный курс по современному веб-дизайну" class="img-responsive"></span>
+                <p>Веб-дизайн с нейросетями для начинающих</p>
+              </a>
+            </div>
+
+            <div class="col-md-4 col-sm-6">
+              <a href="../../courses/freelance/index.html" class="premium-item">
+                <span class="premium-img-wrap"><img src="../../public/images/premium/freelance.jpg" alt="Фриланс для начинающих" class="img-responsive"></span>
+                <p>Я - фрилансер! Базовый курс для начинающих</p>
+              </a>
+            </div>
+
+          </div>
+        </div>
+
+
+        <div class="read-more">
+          <h4>Другие уроки по теме «Инструменты»</h4>
+          <ul>
+            
+            
+            
+              
+              <li><a href="../../blog/tools/parcel.html">Настройка Parcel для веб-разработки</a></li>
+              
+            
+              
+              <li><a href="../../blog/tools/tailwind-lesson.html">Tailwind CSS для начинающих. Подробный урок по подключению, настройке и использованию</a></li>
+              
+            
+              
+            
+              
+              <li><a href="../../blog/tools/starter.html">Starter - Простой стартер для веб-разработки</a></li>
+              
+            
+              
+              <li><a href="../../blog/tools/hosting-lesson.html">Урок по хостингу от А до Я. Сайты, базы, домены, SSL, SSH, sFTP</a></li>
+              
+            
+              
+              <li><a href="../../blog/tools/gulp-4-lesson.html">Gulp - Актуальное и исчерпывающее руководство для самых маленьких</a></li>
+              
+            
+          </ul>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</article>
+
+
+        </div>
+
+        <div class="col-md-4 col-aside">
+
+  <aside class="site-aside">
+
+
+
+<div class="box box-search">
+
+<form class="search" action="https://www.google.com/search" target="_blank">
+  <div>
+    <input type="text" name="q" size="55" placeholder="Поиск по сайту..." required>
+    <input type="hidden" name="sitesearch" value="https://webdesign-masteru.github.io">
+    <button type="submit">
+      <i class="fa fa-search"></i>
+    </button>
+  </div>
+</form>
+
+
+    </div>
+
+    <nav class="box box-mnu">
+      <p class="mnu-header">Разделы сайта:</p>
+      <ul class="list-unstyled box-dashed main-menu">
+
+  <li class="d-lg-none">
+    <a href="../../courses/index.html"><i class="fa fa-diamond"></i> Курсы</a>
+  </li>
+
+  <li>
+    <a href="../../blog/html-css/index.html"><i class="fa fa-code"></i> Веб-разработка</a>
+  </li>
+
+  <li>
+    <a href="../../blog/web-design/index.html"><i class="fa fa-paint-brush"></i> Веб-дизайн</a>
+  </li>
+
+  <li>
+    <a href="../../blog/tools/index.html"><i class="fa fa-cogs"></i> Инструменты</a>
+  </li>
+
+  <li>
+    <a href="../../blog/cms/index.html"><i class="fa fa-folder-open-o"></i> CMS/Framework</a>
+  </li>
+
+</ul>
+
+    </nav>
+
+    <nav class="box box-mnu services-mnu">
+      <p class="mnu-header">Полезные ресурсы:</p>
+      <ul class="list-unstyled">
+
+  <li>
+    <a href="../../blog/tools/wsl-nodejs-new.html"><i class="fa fa-cogs"></i> Установка WSL и окружения</a>
+  </li>
+
+  <li>
+    <a href="../../blog/docs/webdev-without-wsl.html"><i class="fa fa-cogs"></i> Настройка окружения без WSL</a>
+  </li>
+
+  <li>
+    <a href="../../blog/tools/hosting-lesson.html"><i class="fa fa-server"></i> Работа с хостингом от А до Я</a>
+  </li>
+
+  <li>
+    <span><i class="fa custom-vscode-3"></i> Настройка VS Code</span>
+    
+  </li>
+
+  <li>
+    <a href="../../blog/tools/cubic-bezier/index.html"><i class="fa custom-bezier"></i> Cubic-Bezier Generator</a>
+  </li>
+
+  <li>
+    <a href="../../blog/tools/lazy-load/index.html"><i class="fa fa-image"></i> Lazy Load Placeholder</a>
+  </li>
+
+  <li>
+    <a href="../../blog/docs/gulp-documentation.html"><i class="fa fa-file-text-o"></i> Документация Gulp</a>
+  </li>
+
+</ul>
+
+    </nav>
+
+    <div class="box box-sidebar">
+      <div id="vk_groups"></div>
+    </div>
+
+  </aside>
+
+
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <footer class="main-foot">
+    <div class="container-fluid">
+
+      <span class="year"></span> © WebDesign Master
+
+    </div>
+    <div class="top" title="Наверх"><i class="fa fa-angle-double-up"></i></div>
+  </footer>
+
+  <script>(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return}}k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window,document,"script","https://mc.yandex.ru/metrika/tag.js","ym");ym(100695574,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true,webvisor:true});</script><noscript><div><img src="https://mc.yandex.ru/watch/100695574" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+
+
+</body>
+</html>
+

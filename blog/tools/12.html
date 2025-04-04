@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="canonical" href="https://webdesign-masteru.github.io/blog/tools/12.html">
+  <meta name="generator" content="Jekyll v">
+
+  <title>Рассылка E-mail писем по базе адресов (PHP скрипт)</title>
+  <meta name="description" content="Массовая рассылка E-mail писем с рекламными материалами, предложениями, различными анонсами уже не один миллион раз доказала на практике свою эффективность.">
+
+  <link rel="icon" href="https://webdesign-masteru.github.io/favicon.ico?v=15" type="image/x-icon">
+  <meta property="og:image" content="../../public/images/thumbs/tools/mymail/mymail-cover.jpg">
+
+  <link rel="stylesheet" href="../../styles/index.css?v=15">
+  
+  <script src="../../scripts/dist/main.js?v=15" defer></script>
+  
+  <script>/* no flicker */document.documentElement.classList.add(localStorage.getItem('mode') === 'auto' ? (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : localStorage.getItem('mode'))</script>
+
+</head>
+
+<body>
+
+  <header class="main-head">
+
+    <div class="container-fluid">
+
+      <div class="row">
+
+        <div class="col-md-6">
+          <div class="mobile-pannel d-xl-none d-lg-none d-md-none">
+            <div class="toggler"><button title="Переключить тему"></button></div>
+            <div class="toggle-mnu"><span></span></div>
+          </div>
+        
+          <a href="../../index.html" class="logo"><img src="../../assets/images/logo-site.svg" alt="WebDesign Master"></a>
+        
+        </div>
+
+        <div class="col-md-6 d-none d-md-block d-lg-block d-xl-block">
+          <div class="toggler"><button title="Переключить тему"></button></div>
+                    <div class="social">
+            <a title="ВКонтакте" href="https://vk.com/jediweb" target="_blank"><i class="fa fa-vk"></i></a>
+            <a title="Телеграм" href="https://t.me/jediweb" target="_blank"><i class="fa custom-tg"></i></a>
+            <a title="YouTube" href="https://youtube.com/@wdm" target="_blank"><i class="fa fa-youtube-play"></i></a>
+            <a title="GitHub" href="https://github.com/webdesign-masteru" target="_blank"><i class="fa fa-github"></i></a>
+            <a title="Дзен" href="https://dzen.ru/jediweb" target="_blank"><i class="fa custom-dzen"></i></a>
+          </div>
+
+          <div class="courses-link">
+            <a href="../../courses/index.html"><i class="fa fa-diamond"></i>Курсы</a>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="mobile-menu"></div>
+
+    </div>
+
+  </header>
+
+
+  <div class="content">
+    <div class="container-fluid">
+
+      <div class="row">
+
+        <div class="col-md-8">
+
+          <article class="list-item single-page">
+  <div class="item-link">
+
+    
+    <div class="item-img-wrap post-img">
+      <img class="img-responsive" src="../../public/images/thumbs/tools/mymail/mymail.jpg" alt="Рассылка E-mail писем по базе адресов (PHP скрипт)">
+    </div>
+    
+
+    <div class="item-content">
+
+    <div class="td">
+        <a href="../../blog/tools/index.html" class="item-icon hidden-xs" title="Категория: Инструменты"><i class="fa fa-cogs"></i></a>
+      </div>
+      <div class="td article-title"><h1>Рассылка E-mail писем по базе адресов (PHP скрипт)</h1></div>
+    
+
+      <div class="article-content">
+
+        <p>Массовая рассылка E-mail писем с рекламными материалами, предложениями, различными анонсами уже не один миллион раз доказала на практике свою эффективность. Продажи по E-mail имеют высокую эффективность и конверсию, по сравнению с конверсией из поискового или контекстного трафика.</p>
+
+<p>Такая задача возникла и у меня - мне нужно было разослать предложение о сотрудничестве множеству компаний. Поискав в интернете я нашел 3 решения данной задачи. Первое решение - покупка специальной программы, второе - воспользоваться специальными сервисами Email рассылки и третий, весьма сомнительный - заплатить за рассылку человеку, обладающему необходимыми для этого предприятия ресурсами.</p>
+
+<p>Ни один из способов меня не устроил: Первый и второй требует значительных затрат, а последний - весьма сомнительный. Мною было принято решение написать свой скрипт, который позволял бы мне делать безлимитные E-mail рассылки на адреса, которые находились бы в файле базы CSV – текстовая база данных.</p>
+
+<p>Когда скрипт был написан - я решил его проверить на практике. Эксперимент состоял в следующем - я собрал все E-mail адреса компаний определенного направления в 2GIS, их всего оказалось 1200 - это мебельные компании, у которых в 2GIS не был указан адрес сайта. Задача рассылки - предложить всем мебельным компаниям мегаполиса, у которых нет сайта предложить такую услугу.</p>
+
+<h3>Результаты эксперимента:</h3>
+
+<p>Было отправлено письмо на 1200 адресов. Всего я получил на сайт 300 переходов и 15 компаний в результате общения заказали у меня разработку сайта. Как видите, скрипт прекрасно работает, с учетом того, что на создание предложения и сбор писем у меня ушло пол дня.</p>
+
+<h3>Технические моменты работы скрипта myMail PHP</h3>
+
+<p>Скрипт, как видно из названия, работает на PHP. То есть для рассылок вам необходим, как минимум, средний хостинг с доменом (подойдет и тестовый домен). Я использую самый дешевый тариф на <a href="https://sweb.ru/?utm_term=axukwaaf" target="_blank">SpaceWeb</a>.</p>
+
+<p>Интерфейс программы:</p>
+
+<img src="../../public/images/blog/tools/mymail/2c23dc.png" title="Программа для рассылки"  alt="Программа для рассылки" />
+
+<h3>База E-mail адресов для рассылки</h3>
+
+<p>Для массовой рассылки вам необходимо подготовить базу E-mail адресов в формате CSV. Это простой текстовый файл с расширением .csv, который можно редактировать или в электронной табличке или в текстовом редакторе:</p>
+
+<img src="../../public/images/blog/tools/mymail/8507f9.png" title="Создание базы для рассылки"  alt="Создание базы для рассылки" />
+
+<p>E-mail адреса разделяются запятой и переносятся на новую строку, это важно. Запятой адреса могут не разделяться, но перенос обязателен, если вы работаете с текстовым редактором. Количество адресов в базе - не ограничено.</p>
+
+<h3>Шаблон HTML письма для рассылки</h3>
+
+<p>Тут немного посложнее. Изначально вместо шаблона можно использовать простой файл с текстом предложения, но я так делать не рекомендую. Дело в том, что обычные письма пользователи просто удаляют, даже не прочитав. В архиве со скриптом вы найдете пример HTML письма, который я для вас подготовил. Если у вас не достаточно знаний в области создания E-mail предложений - советую вам воспользоваться услугами компетентных дизайнеров на фрилансе. Я беру в разработку такие проекты - одно письмо у меня стоит 800 рублей - дизайн и верстка. Эффективность красивых и ярких писем выше в разы, проверено на практике.</p>
+
+<p>Кроме того, вы можете связаться со мной и проконсультироваться по любому вопросу по рассылкам.</p>
+
+<h3>Общие рекомендации для создания HTML писем:</h3>
+
+<ul>
+    <li>Не используйте подключаемые стили или стили в теге style, так как такие элементы вырезаются почтовиками. Все стили пишите инлайново style=”blabla:bla” у каждого элемента;</li>
+    <li>Старайтесь верстать табличками;</li>
+    <li>Максимальная ширина - желательно не больше 600 пикселей;</li>
+    <li>Все, что касается письма должно находиться в одном HTML файле. Все картинки располагайте на вашем хостинге и делайте ссылки на них полным путем, вместе с доменом, на котором они находятся.</li>
+</ul>
+
+<p>Есть еще несколько нюансов, но думаю запрос в Google “<strong>Как создать HTML письмо</strong>” поможет вам в решении этой проблемы.</p>
+
+<h3>Хостинг для рассылок</h3>
+
+<p>В среднем, у всех хостеров одинаковые ограничения на рассылку писем.</p>
+
+<p>Уточните у вашего хостера, какие лимиты на отправку писем установлены. В среднем, у всех хостеров лимит писем составляет 1000 писем в час. Те письма из базы, которые не вошли в отправленную 1000 писем будут поставлены в очередь и по истечении часа будут отправлены. Отправлять повторно письма нет ни какого смысла, так как даже если у вас 10000 адресатов, все письма все равно будут доставлены через какое-то время.</p>
+
+<p>Данный скрипт вряд ли пригодится офисным работникам, которые занимаются бухгалтерией, учетом инвентаря компании и взаимодействуют с интерфейсом программ только на уровне «клацнуть кнопку и готово», но если вы знакомы с HTML кодом и хорошо работаете на компьютере - вы можете делать вполне качественные рекламные рассылки самостоятельно, тем самым привлекая новых клиентов.</p>
+
+<p>Скачать скрипт: <a href="https://archive.org/download/myMailphp/myMail.zip">myMail</a></p>
+
+<p>Скрипт бесплатен. Спасибо за внимание, друзья. Желаю успешных рассылок и большой конверсии.</p>
+
+                <div class="premium">
+          <div class="row">
+
+            <div class="col-md-12">
+              <h4>Премиум уроки от WebDesign Master</h4>
+            </div>
+
+            <div class="col-md-4 col-sm-6">
+              <a href="../../courses/jekyll/index.html" class="premium-item">
+                <span class="premium-img-wrap"><img src="../../public/images/premium/jekyll.jpg" alt="Курс по созданию сайта от А до Я на Jekyll" class="img-responsive"></span>
+                <p>Создание сайта от А до Я. Комплексный курс</p>
+              </a>
+            </div>
+
+            <div class="col-md-4 col-sm-6">
+              <a href="../../courses/webdesign/index.html" class="premium-item">
+                <span class="premium-img-wrap"><img src="../../public/images/premium/webdesign.jpg" alt="Большой комплексный курс по современному веб-дизайну" class="img-responsive"></span>
+                <p>Веб-дизайн с нейросетями для начинающих</p>
+              </a>
+            </div>
+
+            <div class="col-md-4 col-sm-6">
+              <a href="../../courses/freelance/index.html" class="premium-item">
+                <span class="premium-img-wrap"><img src="../../public/images/premium/freelance.jpg" alt="Фриланс для начинающих" class="img-responsive"></span>
+                <p>Я - фрилансер! Базовый курс для начинающих</p>
+              </a>
+            </div>
+
+          </div>
+        </div>
+
+
+        <div class="read-more">
+          <h4>Другие уроки по теме «Инструменты»</h4>
+          <ul>
+            
+            
+            
+              
+              <li><a href="../../blog/tools/parcel.html">Настройка Parcel для веб-разработки</a></li>
+              
+            
+              
+              <li><a href="../../blog/tools/tailwind-lesson.html">Tailwind CSS для начинающих. Подробный урок по подключению, настройке и использованию</a></li>
+              
+            
+              
+              <li><a href="../../blog/tools/vscode.html">Настройка VS Code для веб-разработки</a></li>
+              
+            
+              
+              <li><a href="../../blog/tools/starter.html">Starter - Простой стартер для веб-разработки</a></li>
+              
+            
+              
+              <li><a href="../../blog/tools/hosting-lesson.html">Урок по хостингу от А до Я. Сайты, базы, домены, SSL, SSH, sFTP</a></li>
+              
+            
+              
+              <li><a href="../../blog/tools/gulp-4-lesson.html">Gulp - Актуальное и исчерпывающее руководство для самых маленьких</a></li>
+              
+            
+          </ul>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</article>
+
+
+        </div>
+
+        <div class="col-md-4 col-aside">
+
+  <aside class="site-aside">
+
+
+
+<div class="box box-search">
+
+<form class="search" action="https://www.google.com/search" target="_blank">
+  <div>
+    <input type="text" name="q" size="55" placeholder="Поиск по сайту..." required>
+    <input type="hidden" name="sitesearch" value="https://webdesign-masteru.github.io">
+    <button type="submit">
+      <i class="fa fa-search"></i>
+    </button>
+  </div>
+</form>
+
+
+    </div>
+
+    <nav class="box box-mnu">
+      <p class="mnu-header">Разделы сайта:</p>
+      <ul class="list-unstyled box-dashed main-menu">
+
+  <li class="d-lg-none">
+    <a href="../../courses/index.html"><i class="fa fa-diamond"></i> Курсы</a>
+  </li>
+
+  <li>
+    <a href="../../blog/html-css/index.html"><i class="fa fa-code"></i> Веб-разработка</a>
+  </li>
+
+  <li>
+    <a href="../../blog/web-design/index.html"><i class="fa fa-paint-brush"></i> Веб-дизайн</a>
+  </li>
+
+  <li>
+    <a href="../../blog/tools/index.html"><i class="fa fa-cogs"></i> Инструменты</a>
+  </li>
+
+  <li>
+    <a href="../../blog/cms/index.html"><i class="fa fa-folder-open-o"></i> CMS/Framework</a>
+  </li>
+
+</ul>
+
+    </nav>
+
+    <nav class="box box-mnu services-mnu">
+      <p class="mnu-header">Полезные ресурсы:</p>
+      <ul class="list-unstyled">
+
+  <li>
+    <a href="../../blog/tools/wsl-nodejs-new.html"><i class="fa fa-cogs"></i> Установка WSL и окружения</a>
+  </li>
+
+  <li>
+    <a href="../../blog/docs/webdev-without-wsl.html"><i class="fa fa-cogs"></i> Настройка окружения без WSL</a>
+  </li>
+
+  <li>
+    <a href="../../blog/tools/hosting-lesson.html"><i class="fa fa-server"></i> Работа с хостингом от А до Я</a>
+  </li>
+
+  <li>
+    <a href="../../blog/tools/vscode.html"><i class="fa custom-vscode-3"></i> Настройка VS Code</a>
+  </li>
+
+  <li>
+    <a href="../../blog/tools/cubic-bezier/index.html"><i class="fa custom-bezier"></i> Cubic-Bezier Generator</a>
+  </li>
+
+  <li>
+    <a href="../../blog/tools/lazy-load/index.html"><i class="fa fa-image"></i> Lazy Load Placeholder</a>
+  </li>
+
+  <li>
+    <a href="../../blog/docs/gulp-documentation.html"><i class="fa fa-file-text-o"></i> Документация Gulp</a>
+  </li>
+
+</ul>
+
+    </nav>
+
+    <div class="box box-sidebar">
+      <div id="vk_groups"></div>
+    </div>
+
+  </aside>
+
+
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <footer class="main-foot">
+    <div class="container-fluid">
+
+      <span class="year"></span> © WebDesign Master
+
+    </div>
+    <div class="top" title="Наверх"><i class="fa fa-angle-double-up"></i></div>
+  </footer>
+
+  <script>(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return}}k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window,document,"script","https://mc.yandex.ru/metrika/tag.js","ym");ym(100695574,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true,webvisor:true});</script><noscript><div><img src="https://mc.yandex.ru/watch/100695574" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+
+
+</body>
+</html>
+
